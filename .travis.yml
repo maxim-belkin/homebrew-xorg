@@ -1,0 +1,33 @@
+language: ruby
+rvm:
+  - 2.0.0
+services: docker
+
+before_install:
+  - if [ -f ".git/shallow" ]; then
+      travis_retry git fetch --unshallow;
+    fi
+  - docker pull linuxbrew/linuxbrew;
+  - docker run
+      -v $(pwd):/home/linuxbrew/homebrew-xorg
+      linuxbrew/linuxbrew
+      /bin/sh -c 'brew update && brew tap homebrew/dupes && mkdir $(brew --repo)/Library/Taps/linuxbrew && cp -rf ~/homebrew-xorg $(brew --repo)/Library/Taps/linuxbrew/homebrew-xorg';
+  - docker commit $(docker ps -l -q) linuxbrew;
+  - env | grep TRAVIS | tee /tmp/travis.env  
+
+install:
+  - PATH=$PWD/bin:$PATH
+  - export HOMEBREW_DEVELOPER="1"
+
+script:
+  - docker run
+    -w /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew/homebrew-xorg
+    --env-file /tmp/travis.env
+    -t
+    linuxbrew
+    brew test-bot --tap=linuxbrew/xorg;
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
