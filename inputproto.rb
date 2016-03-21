@@ -11,7 +11,7 @@ class Inputproto < Formula
   depends_on "util-macros"        =>  :build
 
   if build.with?("specs")
-   depends_on "asciidoc"           => :build
+    depends_on "asciidoc"         => :build
   end
 
   def install

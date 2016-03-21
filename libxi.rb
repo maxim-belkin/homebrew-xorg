@@ -47,7 +47,6 @@ class Libxi < Formula
     args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
     args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
-
     system "./configure", *args
     system "make"
     system "make", "check" if build.with?("check")

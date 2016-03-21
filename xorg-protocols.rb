@@ -6,7 +6,7 @@ class XorgProtocols < Formula
   sha256   "846477dd316964fe52e9f73c3752d3c0383f7099046dd06ddfda92c2f9baad5d"
   # tag "linuxbrew"
 
-  option "with-specs",  "Build specifications"
+  option "with-specs", "Build specifications"
   args = build.with?("specs") ? "with-specs" : ""
 
   # with specs

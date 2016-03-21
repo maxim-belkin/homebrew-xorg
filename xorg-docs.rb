@@ -16,7 +16,7 @@ class XorgDocs < Formula
   depends_on "fop"         => [:build, :recommended]
   depends_on "libxslt"     => [:build, :recommended]
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
-  
+
   # Patch for xmlto
   patch do
     url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
