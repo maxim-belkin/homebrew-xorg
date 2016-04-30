@@ -24,7 +24,7 @@ class Libxres < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
+    args << "--disable-static" if !build.with?("static")
 
     system "./configure", *args
     system "make"

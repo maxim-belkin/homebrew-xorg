@@ -16,7 +16,7 @@ class XcbUtilWm < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
     ]
-	  args << "--disable-static" if !build.with?("static")
+    args << "--disable-static" if !build.with?("static")
 
     system "./configure", *args
     system "make"
