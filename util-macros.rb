@@ -1,3 +1,4 @@
+# util-macros: Build a bottle for Linuxbrew
 class UtilMacros < Formula
   desc "Xorg util-macros"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
