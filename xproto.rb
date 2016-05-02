@@ -1,3 +1,4 @@
+# xproto: Build a bottle for Linuxbrew
 class Xproto < Formula
   desc "Xorg Protocol Headers: xproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
