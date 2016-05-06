@@ -1,3 +1,4 @@
+# damageproto: Build a bottle for Linuxbrew
 class Damageproto < Formula
   desc "X.Org Protocol Headers: damageproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
