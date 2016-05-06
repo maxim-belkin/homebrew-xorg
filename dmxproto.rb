@@ -1,3 +1,4 @@
+# dmxproto: Build a bottle for Linuxbrew
 class Dmxproto < Formula
   desc "X.Org Protocol Headers: dmxproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
