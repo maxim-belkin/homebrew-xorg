@@ -1,3 +1,4 @@
+# xcmiscproto: Build a bottle for Linuxbrew
 class Xcmiscproto < Formula
   desc "X.Org Protocol Headers: xcmiscproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
