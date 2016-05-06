@@ -1,3 +1,4 @@
+# fontsproto: Build a bottle for Linuxbrew
 class Fontsproto < Formula
   desc "X.Org Protocol Headers: fontsproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
