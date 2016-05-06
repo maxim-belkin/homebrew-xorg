@@ -1,3 +1,4 @@
+# randrproto: Build a bottle for Linuxbrew
 class Randrproto < Formula
   desc "X.Org Protocol Headers: randrproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
