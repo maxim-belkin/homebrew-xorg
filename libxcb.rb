@@ -1,3 +1,4 @@
+# libxcb: Build a bottle for Linuxbrew
 class Libxcb < Formula
   desc "An interface to the X Window System protocol, which replaces the current Xlib interface"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
