@@ -1,3 +1,4 @@
+# libx11: Build a bottle for Linuxbrew
 class Libx11 < Formula
   desc "X.Org Libraries: libX11"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
