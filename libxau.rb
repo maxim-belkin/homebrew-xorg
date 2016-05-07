@@ -1,3 +1,4 @@
+# libxau: Build a bottle for Linuxbrew
 class Libxau < Formula
   desc "X11 Authorization Protocol"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
