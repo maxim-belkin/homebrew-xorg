@@ -1,3 +1,4 @@
+# libfontenc: Build a bottle for Linuxbrew
 class Libfontenc < Formula
   desc "X.Org Libraries: libfontenc"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
@@ -11,6 +12,7 @@ class Libfontenc < Formula
   depends_on "pkg-config" =>  :build
   depends_on "xproto"     =>  :build
   depends_on "font-util"  =>  :build
+  depends_on "zlib"
 
   def install
     args = %W[
