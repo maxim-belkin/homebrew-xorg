@@ -1,3 +1,4 @@
+# xf86vidmodeproto: Build a bottle for Linuxbrew
 class Xf86vidmodeproto < Formula
   desc "X.Org Protocol Headers: xf86vidmodeproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
