@@ -1,3 +1,4 @@
+# xorg-protocols: Build a bottle for Linuxbrew
 class XorgProtocols < Formula
   desc "X.Org Protocols"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
