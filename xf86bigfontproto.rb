@@ -1,3 +1,4 @@
+# xf86bigfontproto: Build a bottle for Linuxbrew
 class Xf86bigfontproto < Formula
   desc "X.Org Protocol Headers: xf86bigfontproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
