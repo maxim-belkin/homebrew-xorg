@@ -1,3 +1,4 @@
+# kbproto: Build a bottle for Linuxbrew
 class Kbproto < Formula
   desc "X.Org Protocol Headers: kbproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
