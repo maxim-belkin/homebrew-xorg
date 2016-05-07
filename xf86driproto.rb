@@ -1,3 +1,4 @@
+# xf86driproto: Build a bottle for Linuxbrew
 class Xf86driproto < Formula
   desc "X.Org Protocol Headers: xf86driproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
