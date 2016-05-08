@@ -1,3 +1,4 @@
+# xcb-util: Build a bottle for Linuxbrew
 class XcbUtil < Formula
   desc "Additional extensions to the XCB library."
   homepage "http://xcb.freedesktop.org"
