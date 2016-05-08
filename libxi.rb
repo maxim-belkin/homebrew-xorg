@@ -1,3 +1,4 @@
+# libxi: Build a bottle for Linuxbrew
 class Libxi < Formula
   desc "X.Org Libraries: libXi"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
