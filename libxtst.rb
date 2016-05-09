@@ -1,3 +1,4 @@
+# libxtst: Build a bottle for Linuxbrew
 class Libxtst < Formula
   desc "X.Org Libraries: libXtst"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
@@ -9,6 +10,7 @@ class Libxtst < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
+  depends_on "util-macros" => :build
   depends_on "pkg-config" =>  :build
   depends_on "libxi"
 
