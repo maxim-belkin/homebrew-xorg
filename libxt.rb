@@ -1,13 +1,10 @@
+# build a bottle for linuxbrew
 class Libxt < Formula
   desc "X.Org Libraries: libXt"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXt-1.1.5.tar.bz2"
   sha256 "46eeb6be780211fdd98c5109286618f6707712235fdd19df4ce1e6954f349f1a"
   # tag "linuxbrew"
-
-  bottle do
-    sha256 "b4b320417e8883d375055a5fb272f9c069587e60ab7fbe9ff0ca365808e989e6" => :x86_64_linux
-  end
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
