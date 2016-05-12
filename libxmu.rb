@@ -1,13 +1,10 @@
+# build a bottle for linuxbrew
 class Libxmu < Formula
   desc "X.Org Libraries: libXmu"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXmu-1.1.2.tar.bz2"
   sha256 "756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b"
   # tag "linuxbrew"
-
-  bottle do
-    sha256 "9ef38b4bb41942c12149db60cfde607fa14ffc3bfdcb1e3408dda612606cfca4" => :x86_64_linux
-  end
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
