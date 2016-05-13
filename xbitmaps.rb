@@ -1,3 +1,4 @@
+# xbitmaps: Build a bottle for Linuxbrew
 class Xbitmaps < Formula
   desc "Bitmap images used by multiple applications"
   homepage "http://xcb.freedesktop.org"
