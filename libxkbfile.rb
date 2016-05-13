@@ -1,3 +1,4 @@
+# libxkbfile: Build a bottle for Linuxbrew
 class Libxkbfile < Formula
   desc "X.Org Libraries: libxkbfile"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
