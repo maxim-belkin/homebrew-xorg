@@ -17,7 +17,7 @@ class Libxi < Formula
 
   depends_on "pkg-config" =>  :build
 
-  depends_on "libxfixes"  =>  :build
+  depends_on "libxfixes"
   depends_on "xextproto"  =>  :build
   depends_on "libxext"
   depends_on "libx11"
