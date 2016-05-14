@@ -1,3 +1,4 @@
+# xorg-docs: Build a bottle for Linuxbrew
 class XorgDocs < Formula
   desc "X.Org ocumentation that doesn't better fit into other packages"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
@@ -16,6 +17,7 @@ class XorgDocs < Formula
   depends_on "fop"         => [:build, :recommended]
   depends_on "libxslt"     => [:build, :recommended]
   depends_on "xorg-sgml-doctools" => :build
+  depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
 
   # Patch for xmlto
@@ -34,6 +36,9 @@ class XorgDocs < Formula
     # Be explicit about the configure flags
     args << "--enable-docs=#{build.without?("docs") ? "no" : "yes"}"
     args << "--enable-specs=#{build.without?("specs") ? "no" : "yes"}"
+
+    # TEST
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     system "./configure", *args
     system "make"
