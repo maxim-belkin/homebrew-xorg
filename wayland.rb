@@ -15,6 +15,7 @@ class Wayland < Formula
   depends_on "expat"
   depends_on "libffi"
   depends_on "autoconf" if build.head?
+  depends_on "libxml2"
 
   def install
     args = %W[
