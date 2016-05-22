@@ -9,8 +9,7 @@ class Encodings < Formula
   # tag "linuxbrew"
 
   depends_on "pkg-config" =>  :build
-  depends_on "font-util"  =>  :build
-  depends_on "mkfontscale" => :build
+  depends_on "mkfontscale" => :build # ugh, circular dependencies...
 
   def install
     args = %W[
