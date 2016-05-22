@@ -8,7 +8,6 @@ class Encodings < Formula
   sha256 "ced6312988a45d23812c2ac708b4595f63fd7a49c4dcd9f66bdcd50d1057d539"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "mkfontscale" => :build
