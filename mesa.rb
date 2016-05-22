@@ -28,7 +28,7 @@ class Mesa < Formula
   #
 
   depends_on "libva" => :recommended
-  depends_on "autoconf" => :build if ( build.with?("libva") && !build.without?("wayland") )
+  depends_on "autoconf" => :build if (build.with?("libva") && !build.without?("wayland"))
 
   resource "libva" do
     url "http://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.0.tar.bz2"
@@ -46,7 +46,6 @@ class Mesa < Formula
   end
 
   def install
-
     args = %W[
       CFLAGS=-O2
       CXXFLAGS=-O2
@@ -65,39 +64,37 @@ class Mesa < Formula
       --with-egl-platforms=drm,x11
       --with-gallium-drivers=nouveau,r300,r600,radeonsi,svga,swrast
       --disable-llvm-shared-libs
-      ]
+    ]
 
-      # Be explicit about the configure flags
-      args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
-      system "./autogen.sh", *args
-      system "make"
-      system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}"
-      system "make", "check" if build.with?("test")
-      system "make", "install"
-      system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install"
-
-
+    system "./autogen.sh", *args
+    system "make"
+    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}"
+    system "make", "check" if build.with?("test")
+    system "make", "install"
+    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install"
   end
 
   def post_install
     if build.with?("libva")
       resource("libva").stage do
         args = %W[
-            --prefix=#{Formula["libva"].prefix}
-            --sysconfdir=#{etc}
-            --localstatedir=#{var}
-            --disable-dependency-tracking
-            --disable-silent-rules
-            ]
+          --prefix=#{Formula["libva"].prefix}
+          --sysconfdir=#{etc}
+          --localstatedir=#{var}
+          --disable-dependency-tracking
+          --disable-silent-rules
+        ]
 
-            # Be explicit about the configure flags
-            args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+        # Be explicit about the configure flags
+        args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
-            system "autoreconf", "-fi" if build.without?("wayland") # needed only if Wayland is not installed 
-            system "./configure", *args
-            system "make"
-            system "make", "install"
+        system "autoreconf", "-fi" if build.without?("wayland") # needed only if Wayland is not installed
+        system "./configure", *args
+        system "make"
+        system "make", "install"
       end
     end
   end
