@@ -51,5 +51,4 @@ class Bigreqsproto < Formula
 #     ln_sf "#{doc}", "#{Formula["xorg-sgml-doctools"].share}/doc/#{name}"
 #   end
 # end
-
 end

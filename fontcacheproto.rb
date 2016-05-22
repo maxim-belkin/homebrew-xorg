@@ -7,7 +7,6 @@ class Fontcacheproto < Formula
   sha256 "1dcaa659d416272ff68e567d1910ccc1e369768f13b983cffcccd6c563dbe3cb"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
 
   def install

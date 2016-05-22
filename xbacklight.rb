@@ -7,7 +7,6 @@ class Xbacklight < Formula
   sha256 "17f6cf51a35eaa918abec36b7871d28b712c169312e22a0eaf1ffe8d6468362b"
   # tag "linuxbrew"
 
-
   # xcb-randr >= 1.2 xcb-atom xcb-aux xcb
   depends_on "pkg-config" =>  :build
   depends_on "libxcb"

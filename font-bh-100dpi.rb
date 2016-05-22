@@ -8,7 +8,6 @@ class FontBh100dpi < Formula
   sha256 "23c07162708e4b79eb33095c8bfa62c783717a9431254bbf44863734ea239481"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build

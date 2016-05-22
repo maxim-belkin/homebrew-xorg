@@ -7,7 +7,6 @@ class Sessreg < Formula
   sha256 "551177657835e0902b5eee7b19713035beaa1581bbd3c6506baa553e751e017c"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "xproto"     =>  :build
 

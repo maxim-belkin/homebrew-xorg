@@ -8,7 +8,6 @@ class FontBhLucidatypewriter100dpi < Formula
   sha256 "62a83363c2536095fda49d260d21e0847675676e4e3415054064cbdffa641fbb"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build

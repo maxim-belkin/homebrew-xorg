@@ -7,7 +7,6 @@ class Xwd < Formula
   sha256 "3bb396a2268d78de4b1c3e5237a85f7849d3434e87b3cd1f4d57eef614227d79"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"

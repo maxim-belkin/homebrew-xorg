@@ -8,7 +8,6 @@ class FontAdobeUtopiaType1 < Formula
   sha256 "979435105f897a70f8993fa02c8362160b0513366c2ab896965416f96dbb8077"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build

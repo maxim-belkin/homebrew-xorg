@@ -7,7 +7,6 @@ class Iceauth < Formula
   sha256 "1216af2dee99b318fcf8bf9a259915273bcb37a7f1e7859af4f15d0ebf6f3f0a"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "xproto"     =>  :build
   depends_on "libice"

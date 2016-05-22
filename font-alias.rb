@@ -8,7 +8,6 @@ class FontAlias < Formula
   sha256 "8b453b2aae1cfa8090009ca037037b8c5e333550651d5a158b7264ce1d472c9a"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
 
   def install

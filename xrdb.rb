@@ -7,7 +7,6 @@ class Xrdb < Formula
   sha256 "73827b6bbfc9d27ca287d95a1224c306d7053cd7b8156641698d7dc541ca565b"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"

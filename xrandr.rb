@@ -28,6 +28,5 @@ class Xrandr < Formula
     system "make"
     system "make", "install"
     rm bin/"xkeystone" if build.without?("xkeystone")
-
   end
 end

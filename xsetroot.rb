@@ -7,7 +7,6 @@ class Xsetroot < Formula
   sha256 "ba215daaa78c415fce11b9e58c365d03bb602eaa5ea916578d76861a468cc3d9"
   # tag "linuxbrew"
 
-
   #xmuu x11 xbitmaps xcursor xproto
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build

@@ -7,7 +7,6 @@ class Xlsatoms < Formula
   sha256 "47e5dc7c3dbda6db2cf8c00cedac1722835c1550aa21cfdbc9ba83906694dea4"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "libxcb"
 
