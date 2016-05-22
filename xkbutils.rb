@@ -7,13 +7,12 @@ class Xkbutils < Formula
   sha256 "d2a18ab90275e8bca028773c44264d2266dab70853db4321bdbc18da75148130"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libxaw"
   depends_on "libxt"
   depends_on "libx11"
-  
+
   def install
     args = %W[
       --prefix=#{prefix}

@@ -24,9 +24,8 @@ class LibomxilBellagio < Formula
     system "autoreconf", "-fiv"
     system "./configure", *args
     ENV.deparallelize
-    system "make" 
+    system "make"
     system "make", "install"
     system "make", "check" if build.with?("test")
   end
 end
-

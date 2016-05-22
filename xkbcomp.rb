@@ -7,7 +7,6 @@ class Xkbcomp < Formula
   sha256 "0304dc9e0d4ac10831a9ef5d5419722375ddbc3eac3ff4413094d57bc1f1923d"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "libx11"
   depends_on "libxkbfile"

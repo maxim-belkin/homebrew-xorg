@@ -18,7 +18,6 @@ class LibvdpauVaGl < Formula
   depends_on "libvdpau"
 
   def install
-
     args = std_cmake_args
     args << "-DCMAKE_INSTALL_PREFIX=#{prefix}"
     args << ".."
@@ -31,6 +30,5 @@ class LibvdpauVaGl < Formula
       # X11 connection rejected because of wrong authentication
       system "make", "install"
     end
-
   end
 end

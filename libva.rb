@@ -40,7 +40,6 @@ class Libva < Formula
       --disable-silent-rules
     ]
 
-    # 
     args << "--disable-egl"
     args << "--disable-glx"
 

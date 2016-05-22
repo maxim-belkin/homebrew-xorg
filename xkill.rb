@@ -7,7 +7,6 @@ class Xkill < Formula
   sha256 "88ef2a304f32f24b255e879f03c1dcd3a2be3e71d5562205414f267d919f812e"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"

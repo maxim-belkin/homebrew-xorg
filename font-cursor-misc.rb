@@ -25,7 +25,6 @@ class FontCursorMisc < Formula
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
-
     system "./configure", *args
     system "make"
     system "make", "install"
