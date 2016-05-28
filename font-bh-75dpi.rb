@@ -1,3 +1,4 @@
+# font-bh-75dpi: Build a bottle for Linuxbrew
 class FontBh75dpi < Formula
   desc "X.Org Fonts: font bh 75dpi"
   homepage "http://www.x.org/"
