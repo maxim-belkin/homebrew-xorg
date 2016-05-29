@@ -1,3 +1,4 @@
+# font-isas-misc: Build a bottle for Linuxbrew
 class FontIsasMisc < Formula
   desc "X.Org Fonts: font isas misc"
   homepage "http://www.x.org/"
