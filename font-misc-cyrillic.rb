@@ -1,3 +1,4 @@
+# font-misc-cyrillic: Build a bottle for Linuxbrew
 class FontMiscCyrillic < Formula
   desc "X.Org Fonts: font misc cyrillic"
   homepage "http://www.x.org/"
