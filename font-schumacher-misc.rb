@@ -1,3 +1,4 @@
+# font-schumacher-misc: Build a bottle for Linuxbrew
 class FontSchumacherMisc < Formula
   desc "X.Org Fonts: font schumacher misc"
   homepage "http://www.x.org/"
