@@ -7,6 +7,7 @@ class Libsha1 < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "libtool"  => :build
 
   def install
@@ -24,6 +25,5 @@ class Libsha1 < Formula
     system "./configure", *args
     system "make"
     system "make", "install"
-
   end
 end
