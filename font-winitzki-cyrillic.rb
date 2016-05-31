@@ -1,3 +1,4 @@
+# font-winitzki-cyrillic: Build a bottle for Linuxbrew
 class FontWinitzkiCyrillic < Formula
   desc "X.Org Fonts: font winitzki cyrillic"
   homepage "http://www.x.org/"
