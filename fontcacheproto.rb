@@ -1,3 +1,4 @@
+# fontcacheproto: Build a bottle for Linuxbrew
 class Fontcacheproto < Formula
   desc "X.Org Proto: fontcacheproto"
   homepage "http://www.x.org/"
