@@ -6,10 +6,7 @@ class XorgProtocols < Formula
   sha256   "7d5cca1b4bdc2a3aefe2ef7fedf919ea8fe4f907493d5d31661c5f8fa81a3161"
   # tag "linuxbrew"
 
-  bottle do
-    cellar :any
-    sha256 "7ed972478c2ce565fb5abb7b3fb2377d29671137b8ec46f30ffcf9e966dd96d0" => :x86_64_linux
-  end
+  bottle :unneeded
 
   option "with-specs", "Build specifications (where applicable)"
 
