@@ -3,7 +3,7 @@ class XorgProtocols < Formula
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url      "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/README.md"
   version  "latest"
-  sha256   "846477dd316964fe52e9f73c3752d3c0383f7099046dd06ddfda92c2f9baad5d"
+  sha256   "7d5cca1b4bdc2a3aefe2ef7fedf919ea8fe4f907493d5d31661c5f8fa81a3161"
   # tag "linuxbrew"
 
   bottle do
