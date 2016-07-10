@@ -1,3 +1,4 @@
+# x11perf: Build a bottle for Linuxbrew
 class X11perf < Formula
   desc "X.Org Applications: x11perf"
   homepage "http://www.x.org/"
