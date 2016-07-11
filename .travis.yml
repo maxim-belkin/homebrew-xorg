@@ -17,11 +17,11 @@ before_install:
 
 install:
   - PATH=$PWD/bin:$PATH
-  - export HOMEBREW_DEVELOPER="1"
 
 script:
   - docker run
     -w /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew/homebrew-xorg
+    -e "HOMEBREW_DEVELOPER=1"
     --env-file /tmp/travis.env
     -t
     linuxbrew
