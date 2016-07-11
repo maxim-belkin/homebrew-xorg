@@ -1,3 +1,4 @@
+# xpr: Build a bottle for Linuxbrew (a third time)
 class Xpr < Formula
   desc "X.Org Applications: xpr"
   homepage "http://www.x.org/"
