@@ -1,7 +1,7 @@
 class XcbUtilImage < Formula
   desc "Additional extensions to the XCB library."
-  homepage "http://xcb.freedesktop.org"
-  url "http://xcb.freedesktop.org/dist/xcb-util-image-0.4.0.tar.bz2"
+  homepage "https://xcb.freedesktop.org"
+  url "https://xcb.freedesktop.org/dist/xcb-util-image-0.4.0.tar.bz2"
   sha256 "2db96a37d78831d643538dd1b595d7d712e04bdccf8896a5e18ce0f398ea2ffc"
 
   option "without-test", "Skip compile-time tests"
