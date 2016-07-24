@@ -1,3 +1,5 @@
+# xcb-util-image: Build a bottle for Linuxbrew
+# xcb-util-image: Build a bottle for Linuxbrew
 class XcbUtilImage < Formula
   desc "Additional extensions to the XCB library."
   homepage "https://xcb.freedesktop.org"
