@@ -1,3 +1,4 @@
+# xsetroot: Build a bottle for Linuxbrew (again)
 class Xsetroot < Formula
   desc "X.Org Applications: xsetroot"
   homepage "http://www.x.org/"
