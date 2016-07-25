@@ -1,3 +1,4 @@
+# xdpyinfo: Build a bottle for Linuxbrew
 class Xdpyinfo < Formula
   desc "X.Org Applications: xdpyinfo"
   homepage "http://www.x.org/"
