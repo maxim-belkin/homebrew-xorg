@@ -1,3 +1,4 @@
+# xorg-cf-files: Build a bottle for Linuxbrew
 class XorgCfFiles < Formula
   desc "X.Org Utilities: xorg-cf-files"
   homepage "http://www.x.org/"
