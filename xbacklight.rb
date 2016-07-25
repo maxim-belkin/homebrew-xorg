@@ -1,3 +1,4 @@
+# xbacklight: Build a bottle for Linuxbrew
 class Xbacklight < Formula
   desc "X.Org Applications: xbacklight"
   homepage "http://www.x.org/"
