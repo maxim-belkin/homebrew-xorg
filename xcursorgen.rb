@@ -1,3 +1,4 @@
+# xcursorgen: Build a bottle for Linuxbrew
 class Xcursorgen < Formula
   desc "X.Org Applications: xcursorgen"
   homepage "http://www.x.org/"
