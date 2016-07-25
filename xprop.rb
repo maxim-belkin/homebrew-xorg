@@ -1,3 +1,4 @@
+# xprop: Build a bottle for Linuxbrew
 class Xprop < Formula
   desc "X.Org Applications: xprop"
   homepage "http://www.x.org/"
