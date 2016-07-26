@@ -1,3 +1,4 @@
+# xlsatoms: Build a bottle for Linuxbrew
 class Xlsatoms < Formula
   desc "X.Org Applications: xlsatoms"
   homepage "http://www.x.org/"
