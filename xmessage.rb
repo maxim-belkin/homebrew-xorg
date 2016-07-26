@@ -1,3 +1,4 @@
+# xmessage: Build a bottle for Linuxbrew
 class Xmessage < Formula
   desc "X.Org Applications: xmessage"
   homepage "http://www.x.org/"
