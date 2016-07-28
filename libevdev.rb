@@ -1,3 +1,4 @@
+# libevdev: Build a bottle for Linuxbrew
 class Libevdev < Formula
   desc "Wrapper library for evdev devices"
   homepage "http://www.freedesktop.org"
