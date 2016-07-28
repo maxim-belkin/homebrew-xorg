@@ -1,14 +1,14 @@
 class Libevdev < Formula
   desc "Wrapper library for evdev devices"
   homepage "http://www.freedesktop.org"
+  url    "https://www.freedesktop.org/software/libevdev/libevdev-1.5.2.tar.xz"
+  sha256 "5ee2163656a61f5703cb5c08a05c9471ffb7b640bfbe2c55194ea50d908f629b"
+  # tag "linuxbrew"
+
   bottle do
     cellar :any_skip_relocation
     sha256 "46d8b9caf99e497dcf73c77f32b073cfe6ec4d979d5e63e1ddda67176a3ff9cd" => :x86_64_linux
   end
-
-  url    "https://www.freedesktop.org/software/libevdev/libevdev-1.2.2.tar.xz"
-  sha256 "860e9a1d5594393ff1f711cdeaf048efe354992019068408abbcfa4914ad6709"
-  # tag "linuxbrew"
 
   option "with-static", "Build static libraries (not recommended)"
   option "without-test", "Skip compile-time tests"
@@ -36,7 +36,10 @@ class Libevdev < Formula
   end
 
   test do
-    output = shell_output("ldd #{bin}/touchpad-edge-detector").chomp
-    assert_match "lib/libevdev.so.2", output
+    files = ["touchpad-edge-detector", "mouse-dpi-tool", "libevdev-tweak-device"]
+    files.each do |f|
+      output = shell_output("ldd #{bin}/#{f}").chomp
+      assert_match "lib/libevdev.so.2", output
+    end
   end
 end
