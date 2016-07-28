@@ -27,6 +27,6 @@ class Mtdev < Formula
 
   test do
     output = shell_output("ldd #{bin}/mtdev-test").chomp
-    assert_match "#{HOMEBREW_PREFIX}/lib/libmtdev.so.1", output
+    assert_match "lib/libmtdev.so.1", output
   end
 end
