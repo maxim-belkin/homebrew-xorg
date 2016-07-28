@@ -1,3 +1,4 @@
+# mtdev: Build a bottle for Linuxbrew
 class Mtdev < Formula
   desc "Multitouch Protocol Translation Library"
   homepage "http://bitmath.org"
