@@ -32,6 +32,6 @@ class Libevdev < Formula
 
   test do
     output = shell_output("ldd #{bin}/touchpad-edge-detector").chomp
-    assert_match "#{HOMEBREW_PREFIX}/lib/libevdev.so.2", output
+    assert_match "lib/libevdev.so.2", output
   end
 end
