@@ -7,7 +7,7 @@ class Libevdev < Formula
 
   bottle do
     cellar :any_skip_relocation
-    revision 1
+    revision 2
     sha256 "46d8b9caf99e497dcf73c77f32b073cfe6ec4d979d5e63e1ddda67176a3ff9cd" => :x86_64_linux
   end
 
