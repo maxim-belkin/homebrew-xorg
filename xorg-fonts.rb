@@ -4,7 +4,7 @@ class XorgFonts < Formula
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://gist.githubusercontent.com/maxim-belkin/6fd6422cbe4da6ea0555d7a8d9911bc2/raw/c38d109967382d35f9f8a89542c18abbfb27cf88/README.md"
   version  "20160522"
-  sha256   "f93f89000f05e50c9b27a00504815c7e1f2431d13ab838e60d3874bf356b8e1b"
+  sha256   "3baf64afb29129ea9f74d5ae5a223b072d0911d96283f834e37d8f65d751c5d7"
   # tag "linuxbrew"
 
   bottle :unneeded
