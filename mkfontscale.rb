@@ -13,6 +13,7 @@ class Mkfontscale < Formula
   depends_on "libfontenc"
   depends_on "freetype"
   depends_on "bzip2" if build.with?("bzip2")
+  depends_on "xproto" => :build
 
   def install
     args = %W[
