@@ -1,3 +1,4 @@
+# dri2proto: Build a bottle for Linuxbrew
 class Dri2proto < Formula
   desc "X.Org Protocol Headers: dri2proto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
