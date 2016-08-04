@@ -1,7 +1,7 @@
 class Libxcb < Formula
   desc "An interface to the X Window System protocol, which replaces the current Xlib interface"
-  homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://xcb.freedesktop.org/dist/libxcb-1.11.1.tar.bz2"
+  homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
+  url "https://xcb.freedesktop.org/dist/libxcb-1.11.1.tar.bz2"
   sha256 "b720fd6c7d200e5371affdb3f049cc8f88cff9aed942ff1b824d95eedbf69d30"
   # tag "linuxbrew"
 
@@ -20,7 +20,7 @@ class Libxcb < Formula
   depends_on "libpthread-stubs" => :build
   depends_on "libxdmcp" => :recommended
 
-  depends_on "doxygen" => :build if !build.with?("docs")
+  depends_on "doxygen" => :build if build.without?("docs")
   depends_on "check" => :build if build.with?("test")
   depends_on "libxslt" => [:build, :optional]
 
