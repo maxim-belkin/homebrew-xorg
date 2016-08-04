@@ -19,6 +19,7 @@ class Libdrm < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "libpciaccess" => :build
+  depends_on "libpthread-stubs" => :build
 
   def install
     args = %W[
@@ -32,9 +33,6 @@ class Libdrm < Formula
 
     # Be explicit about the configure flags
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-
-    ## Get rid of dependency on libpthread-stubs
-    inreplace "configure.ac", /PKG_CHECK_MODULES\(PTHREADSTUBS\, pthread-stubs\)/, ""
 
     ENV["ACLOCAL"] = "aclocal -I #{HOMEBREW_PREFIX}/share/aclocal"
     system "autoreconf", "-fiv"
