@@ -6,11 +6,14 @@ class FontMuttMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   sha256 "bd5f7adb34367c197773a9801df5bce7b019664941900b2a31fbfe1ff2830f8f"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "5c8837af4e8ba9511d30d38d90be64bccd4256daffbdc189bc46c092633ce506" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontMuttMisc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-mutt-misc.md"
   end
 end

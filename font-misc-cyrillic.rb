@@ -6,11 +6,14 @@ class FontMiscCyrillic < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-misc-cyrillic-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-misc-cyrillic-1.0.3.tar.bz2"
   sha256 "e40fe3e3323c62b738550795457ad555c70c008aa91b5912dfd46f8e745f5e60"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "75be1b09f79b6d72360be15db6959043499b4aa04222c12a196dd749da8edba2" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontMiscCyrillic < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-misc-cyrillic.md"
   end
 end

@@ -6,11 +6,14 @@ class FontSonyMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-sony-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-sony-misc-1.0.3.tar.bz2"
   sha256 "2043a326ba347c9da5ca1e9bc363e2521c3ea40b43b1f9662d333efd4867cff5"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "c77dc9ca04118b63a147cf8c8fb582f661810e3030cf53e17b28ce1467cf428a" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontSonyMisc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-sony-misc.md"
   end
 end

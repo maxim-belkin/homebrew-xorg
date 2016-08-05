@@ -6,11 +6,14 @@ class FontBhTtf < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-ttf-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bh-ttf-1.0.3.tar.bz2"
   sha256 "1b4bea63271b4db0726b5b52c97994c3313b6023510349226908090501abd25f"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "f01863adce18332c22535971770a6a67a2d2bc111ab93beff33d06b9a8d3e164" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -25,12 +28,11 @@ class FontBhTtf < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-bh-ttf.md"
   end
 end

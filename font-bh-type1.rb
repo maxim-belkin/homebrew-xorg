@@ -6,11 +6,14 @@ class FontBhType1 < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-type1-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bh-type1-1.0.3.tar.bz2"
   sha256 "761455a297486f3927a85d919b5c948d1d324181d4bea6c95d542504b68a63c1"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "2052581dfc1e47a9827aaf85ba312bc37cc59555a8377c8564e07d476e3f94c1" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -25,12 +28,11 @@ class FontBhType1 < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-bh-type1.md"
   end
 end

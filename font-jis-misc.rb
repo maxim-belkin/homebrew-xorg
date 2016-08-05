@@ -6,11 +6,14 @@ class FontJisMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-jis-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-jis-misc-1.0.3.tar.bz2"
   sha256 "2b18ce10b367ebafe95a17de799b6db9a24e2337188d124adaf68af05b1fac65"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "a5f05a677388629d38a95fad40f21593842298b284e83a8f789bdc1c8d20d979" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontJisMisc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-jis-misc.md"
   end
 end

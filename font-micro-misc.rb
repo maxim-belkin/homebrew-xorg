@@ -6,11 +6,14 @@ class FontMicroMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-micro-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-micro-misc-1.0.3.tar.bz2"
   sha256 "9a3381c10f32d9511f0ad4179df395914c50779103c16cddf7017f5220ed8db6"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "7f82a311ef48c929100ca8c25efc4f08e892c46297352cbea64a0e2b625ff778" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontMicroMisc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-micro-misc.md"
   end
 end

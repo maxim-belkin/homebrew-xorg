@@ -6,11 +6,14 @@ class FontIsasMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-isas-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-isas-misc-1.0.3.tar.bz2"
   sha256 "5824ab4b485951107dd245b8f7717d2822f1a6dbf6cea98f1ac7f49905c0a867"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "de832cdab10f2c5737883c84353b42b1dc2a4013060dfc8aa57e3621d352c988" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontIsasMisc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-isas-misc.md"
   end
 end

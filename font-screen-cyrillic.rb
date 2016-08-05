@@ -6,11 +6,14 @@ class FontScreenCyrillic < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
   sha256 "824231e8dffe15299454e47259f29d98001c9cf8ad3d6b5171399e4d71705e79"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "27754e120971e753c86a2e2fde9c739c804611933ae390dbceb708dbe0f3d1cb" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontScreenCyrillic < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-screen-cyrillic.md"
   end
 end

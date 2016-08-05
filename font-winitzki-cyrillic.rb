@@ -6,6 +6,7 @@ class FontWinitzkiCyrillic < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-winitzki-cyrillic-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-winitzki-cyrillic-1.0.3.tar.bz2"
   sha256 "abd13b63d02fcaec488686c23683e5cf640b43bd32f8ca22eeae6f84df0a36a0"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
@@ -26,13 +27,12 @@ class FontWinitzkiCyrillic < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-winitzki-cyrillic.md"
   end
 end

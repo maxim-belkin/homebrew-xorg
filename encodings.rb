@@ -13,6 +13,8 @@ class Encodings < Formula
     sha256 "08ecde6fe4edbf50e67b7c3464f7b55e51d031e73f81ef344f5b38717725043c" => :x86_64_linux
   end
 
+  keg_only "Part of Xorg-fonts package"
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "mkfontscale" => :build
@@ -24,12 +26,15 @@ class Encodings < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "encodings.md"
   end
+
+  # def post_install
+  #   (Formula["font-util"].share/"fonts/X11/encodings").install_symlink Dir[share/"fonts/X11/encodings/*"].select { |f| "fonts.dir" != f }
+  # end
 end

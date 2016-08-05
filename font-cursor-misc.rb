@@ -6,11 +6,14 @@ class FontCursorMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-cursor-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-cursor-misc-1.0.3.tar.bz2"
   sha256 "17363eb35eece2e08144da5f060c70103b59d0972b4f4d77fd84c9a7a2dba635"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "bb1d37bcc3afb9c16410df0b76e276582cbbd9090705e152c25f6d4662001362" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontCursorMisc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-cursor-misc.md"
   end
 end

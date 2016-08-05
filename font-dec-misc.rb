@@ -6,11 +6,14 @@ class FontDecMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
   sha256 "e19ddf8b5f8de914d81675358fdfe37762e9ce524887cc983adef34f2850ff7b"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "28ed77d6c517b4fde69dbacd40e6f5583bd5c0f08649ffadc840928254d689fc" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontDecMisc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-dec-misc.md"
   end
 end

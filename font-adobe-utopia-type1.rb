@@ -6,11 +6,14 @@ class FontAdobeUtopiaType1 < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
   sha256 "979435105f897a70f8993fa02c8362160b0513366c2ab896965416f96dbb8077"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "2260149266d0818de2534ad48108ff26a697777c690290002259e6edfb13d59c" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontAdobeUtopiaType1 < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-adobe-utopia-type1.md"
   end
 end

@@ -6,11 +6,14 @@ class FontAdobe75dpi < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-75dpi-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-adobe-75dpi-1.0.3.tar.bz2"
   sha256 "c6024a1e4a1e65f413f994dd08b734efd393ce0a502eb465deb77b9a36db4d09"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     sha256 "7b425c35d4f255a4fa59a32c24fbefae73953cf45b7940b3b4cc985a132c384d" => :x86_64_linux
   end
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -26,13 +29,12 @@ class FontAdobe75dpi < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
     args << "--with-compression=bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-adobe-75dpi.md"
   end
 end

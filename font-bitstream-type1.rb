@@ -6,7 +6,10 @@ class FontBitstreamType1 < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bitstream-type1-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bitstream-type1-1.0.3.tar.bz2"
   sha256 "c6ea0569adad2c577f140328dc3302e729cb1b1ea90cd0025caf380625f8a688"
+  revision 1
   # tag "linuxbrew"
+
+  keg_only "Part of Xorg-fonts package"
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
@@ -21,12 +24,11 @@ class FontBitstreamType1 < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-bitstream-type1.md"
   end
 end

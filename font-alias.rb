@@ -6,6 +6,7 @@ class FontAlias < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-alias-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-alias-1.0.3.tar.bz2"
   sha256 "8b453b2aae1cfa8090009ca037037b8c5e333550651d5a158b7264ce1d472c9a"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
@@ -22,12 +23,11 @@ class FontAlias < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-fontrootdir=#{share}/fonts/X11
     ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    prefix.install "README" => "font-alias.md"
   end
 end
