@@ -1,3 +1,4 @@
+# font-bitstream-type1: Build a bottle for Linuxbrew
 class FontBitstreamType1 < Formula
   desc "X.Org Fonts: font bitstream type1"
   homepage "http://www.x.org/"
