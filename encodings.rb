@@ -6,6 +6,7 @@ class Encodings < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/encodings-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/encodings-1.0.4.tar.bz2"
   sha256 "ced6312988a45d23812c2ac708b4595f63fd7a49c4dcd9f66bdcd50d1057d539"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

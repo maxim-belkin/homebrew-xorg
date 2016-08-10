@@ -6,6 +6,7 @@ class FontAdobe100dpi < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-100dpi-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-adobe-100dpi-1.0.3.tar.bz2"
   sha256 "b2c08433eab5cb202470aa9f779efefce8d9cab2534f34f3aa4a31d05671c054"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

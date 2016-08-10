@@ -6,6 +6,7 @@ class FontCursorMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-cursor-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-cursor-misc-1.0.3.tar.bz2"
   sha256 "17363eb35eece2e08144da5f060c70103b59d0972b4f4d77fd84c9a7a2dba635"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

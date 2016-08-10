@@ -6,6 +6,7 @@ class FontXfree86Type1 < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-xfree86-type1-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-xfree86-type1-1.0.4.tar.bz2"
   sha256 "caebf42aec7be7f3bd40e0f232d6f34881b853dc84acfcdf7458358701fbe34a"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

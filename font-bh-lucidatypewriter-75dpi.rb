@@ -6,6 +6,7 @@ class FontBhLucidatypewriter75dpi < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-lucidatypewriter-75dpi-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bh-lucidatypewriter-75dpi-1.0.3.tar.bz2"
   sha256 "4ac16afbe205480cc5572e2977ea63488c543d05be0ea8e5a94c845a6eebcb31"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

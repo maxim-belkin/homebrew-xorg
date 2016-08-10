@@ -6,6 +6,7 @@ class FontDecMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
   sha256 "e19ddf8b5f8de914d81675358fdfe37762e9ce524887cc983adef34f2850ff7b"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

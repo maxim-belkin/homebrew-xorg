@@ -6,6 +6,7 @@ class FontBhTtf < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-ttf-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bh-ttf-1.0.3.tar.bz2"
   sha256 "1b4bea63271b4db0726b5b52c97994c3313b6023510349226908090501abd25f"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

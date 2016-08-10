@@ -6,6 +6,7 @@ class FontSchumacherMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-schumacher-misc-1.1.2.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-schumacher-misc-1.1.2.tar.bz2"
   sha256 "e444028656e0767e2eddc6d9aca462b16a2be75a47244dbc199b2c44eca87e5a"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

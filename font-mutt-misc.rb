@@ -6,6 +6,7 @@ class FontMuttMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   sha256 "bd5f7adb34367c197773a9801df5bce7b019664941900b2a31fbfe1ff2830f8f"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

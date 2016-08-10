@@ -6,6 +6,7 @@ class FontAdobeUtopia75dpi < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-utopia-75dpi-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-adobe-utopia-75dpi-1.0.4.tar.bz2"
   sha256 "8732719c61f3661c8bad63804ebfd54fc7de21ab848e9a26a19b1778ef8b5c94"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

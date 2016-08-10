@@ -6,6 +6,7 @@ class FontSonyMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-sony-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-sony-misc-1.0.3.tar.bz2"
   sha256 "2043a326ba347c9da5ca1e9bc363e2521c3ea40b43b1f9662d333efd4867cff5"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

@@ -6,6 +6,7 @@ class FontSunMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-sun-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-sun-misc-1.0.3.tar.bz2"
   sha256 "481f4fcbbf7005658b080b3cf342c8c76de752e77f47958b2b383de73266d2e0"
+  revision 1
   # tag "linuxbrew"
 
   bottle do

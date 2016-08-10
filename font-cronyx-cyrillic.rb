@@ -6,6 +6,7 @@ class FontCronyxCyrillic < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-cronyx-cyrillic-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-cronyx-cyrillic-1.0.3.tar.bz2"
   sha256 "6e8631936157677c77ba032b5c7b1fb3cb2ee872dbcea0444f12cd602cd9212a"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
