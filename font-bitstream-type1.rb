@@ -6,7 +6,7 @@ class FontBitstreamType1 < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bitstream-type1-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bitstream-type1-1.0.3.tar.bz2"
   sha256 "c6ea0569adad2c577f140328dc3302e729cb1b1ea90cd0025caf380625f8a688"
-  revision 1
+  revision 2
   # tag "linuxbrew"
 
   keg_only "Part of Xorg-fonts package"
