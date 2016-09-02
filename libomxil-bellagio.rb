@@ -1,7 +1,7 @@
 class LibomxilBellagio < Formula
   desc "Mesa: cross-driver middleware"
   homepage "http://dri.freedesktop.org"
-  url "http://downloads.sourceforge.net/project/omxil/omxil/Bellagio%200.9.3/libomxil-bellagio-0.9.3.tar.gz"
+  url "https://downloads.sourceforge.net/project/omxil/omxil/Bellagio%200.9.3/libomxil-bellagio-0.9.3.tar.gz"
   sha256 "593c0729c8ef8c1467b3bfefcf355ec19a46dd92e31bfc280e17d96b0934d74c"
 
   option "without-test", "Skip compile-time tests"
@@ -9,6 +9,8 @@ class LibomxilBellagio < Formula
 
   depends_on "pkg-config" => :build
   depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
     args = %W[
