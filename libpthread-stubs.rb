@@ -1,3 +1,4 @@
+# libpthread-stubs: Build a bottle for Linuxbrew
 class LibpthreadStubs < Formula
   desc "X.Org Libraries: libpthread-stubs"
   homepage "http://www.x.org/"
