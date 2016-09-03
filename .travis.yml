@@ -1,31 +1,38 @@
 language: ruby
 rvm: 2.0.0
-services: docker
+sudo: required
 
 before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libxml-parser-perl
+  - sudo apt-get remove -y libncurses5-dev libtinfo-dev
+  # Fix error: Incorrect file permissions (664)
+  - chmod 0644 *.rb
+  - umask 022
+  - export TRAVIS_COMMIT="$(git rev-parse --verify -q HEAD)"
   - if [ -f ".git/shallow" ]; then
       travis_retry git fetch --unshallow;
     fi
-  - docker pull linuxbrew/linuxbrew;
-  - docker run
-      -v $(pwd):/home/linuxbrew/homebrew-xorg
-      linuxbrew/linuxbrew
-      /bin/sh -c 'brew update && brew tap homebrew/dupes && mkdir $(brew --repo)/Library/Taps/linuxbrew && cp -rf ~/homebrew-xorg $(brew --repo)/Library/Taps/linuxbrew/homebrew-xorg';
-  - docker commit $(docker ps -l -q) linuxbrew;
-  - env | grep TRAVIS | tee /tmp/travis.env
-
-install:
-  - PATH=$PWD/bin:$PATH
+  - HOME=/home/linuxbrew
+  - sudo mkdir $HOME
+  - sudo chown "$USER:" $HOME
+  - LINUXBREW=$HOME/.linuxbrew
+  - mkdir $LINUXBREW
+  - curl -L https://github.com/Linuxbrew/brew/tarball/master | tar xz -m --strip 1 -C $LINUXBREW
+  - export PATH="$LINUXBREW/bin:$LINUXBREW/sbin:$PATH"
+  - REPO="$(brew --repo linuxbrew/xorg)"
+  - rm -rf "$REPO"
+  - mkdir -p "$REPO"
+  - rsync -az "$TRAVIS_BUILD_DIR/" "$REPO"
+  - export TRAVIS_BUILD_DIR="$REPO"
+  - cd "$(brew --repo)"
+  - export HOMEBREW_DEVELOPER=1
+  - export HOMEBREW_NO_AUTO_UPDATE=1
+  - ulimit -n 1024
+  - brew tap homebrew/dupes
 
 script:
-  - docker run
-    -w /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew/homebrew-xorg
-    -e "HOMEBREW_DEVELOPER=1"
-    -e "HOMEBREW_NO_AUTO_UPDATE=1"
-    --env-file /tmp/travis.env
-    -t
-    linuxbrew
-    brew test-bot --tap=linuxbrew/xorg;
+  - brew test-bot --tap=linuxbrew/xorg
 
 notifications:
   email:
