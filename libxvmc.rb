@@ -12,13 +12,13 @@ class Libxvmc < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
 
   depends_on "libx11"
   depends_on "libxext"
   depends_on "libxv"
-  depends_on "xextproto"  =>  :build
-  depends_on "videoproto" =>  :build
+  depends_on "xextproto" => :build
+  depends_on "videoproto" => :build
 
   def install
     args = %W[
@@ -28,7 +28,7 @@ class Libxvmc < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-    args << "--disable-static" if !build.with?("static")
+    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
