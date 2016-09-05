@@ -1,3 +1,4 @@
+# xmodmap: Build a bottle for Linuxbrew
 class Xmodmap < Formula
   desc "X.Org Applications: xmodmap"
   homepage "http://www.x.org/"
