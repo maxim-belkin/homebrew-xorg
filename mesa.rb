@@ -7,10 +7,8 @@ class Mesa < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static",   "Build static libraries (not recommended)"
 
-  # DEPENDENCIES
   depends_on "pkg-config" => :build
 
-  # Python and it Mako module
   depends_on :python => :build
   resource "mako" do
     url "https://pypi.python.org/packages/7a/ae/925434246ee90b42e8ef57d3b30a0ab7caf9a2de3e449b876c56dcb48155/Mako-1.0.4.tar.gz"
@@ -19,6 +17,7 @@ class Mesa < Formula
 
   depends_on "flex"  => :build
   depends_on "bison" => :build
+  depends_on "libtool" => :build
 
   depends_on "xorg" # TODO: figure out which packages exactly are used and depend on them only
   depends_on "libdrm"
@@ -27,6 +26,7 @@ class Mesa < Formula
   depends_on "libelf" # ?
   depends_on "libomxil-bellagio"
   depends_on "wayland" => :recommended # => HEAD is preferred
+  depends_on "libpthread-stubs"
 
   #
   # Trivia:
