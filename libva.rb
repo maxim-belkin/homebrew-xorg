@@ -26,10 +26,6 @@ class Libva < Formula
 
   # recommended
   depends_on "wayland" => :recommended
-  # depends_on "xorg"    => :recommended
-
-  # optional
-  # depends_on "doxygen" => :optional
 
   def install
     args = %W[
