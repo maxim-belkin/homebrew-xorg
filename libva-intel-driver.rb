@@ -1,7 +1,7 @@
 class LibvaIntelDriver < Formula
   desc "libva Intel driver"
-  homepage "http://www.freedesktop.org/"
-  url "http://www.freedesktop.org/software/vaapi/releases/libva-intel-driver/libva-intel-driver-1.7.2.tar.bz2"
+  homepage "https://cgit.freedesktop.org/vaapi/intel-driver/"
+  url "https://www.freedesktop.org/software/vaapi/releases/libva-intel-driver/libva-intel-driver-1.7.2.tar.bz2"
   sha256 "099e7bf6aa826971ec2caff235babf4da995f754e2ca16a73b258671130e67bc"
 
   # Build-time
@@ -18,7 +18,7 @@ class LibvaIntelDriver < Formula
       --prefix=#{prefix}
       --disable-dependency-tracking
       --disable-silent-rules
-      ]
+    ]
 
     system "./configure", *args
     system "make"
