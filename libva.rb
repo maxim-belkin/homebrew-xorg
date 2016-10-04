@@ -1,7 +1,7 @@
 class Libva < Formula
   desc "Hardware accelerated video processing library"
-  homepage "http://www.freedesktop.org/"
-  url "http://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.2.tar.bz2"
+  homepage "https://freedesktop.org/wiki/Software/vaapi/"
+  url "https://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.2.tar.bz2"
   sha256 "5dd61cf16a5648b680e6146a58064e93be11bf4e65a9e4e30f1e9cb8ecfa2c13"
 
   option "with-static", "Build static libraries (not recommended)"
