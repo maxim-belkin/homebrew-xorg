@@ -1,8 +1,8 @@
 class LibvaIntelDriver < Formula
   desc "libva Intel driver"
   homepage "http://www.freedesktop.org/"
-  url "http://www.freedesktop.org/software/vaapi/releases/libva-intel-driver/libva-intel-driver-1.7.0.tar.bz2"
-  sha256 "9d19d6c789a9a4fbce23c4f0eaf993ba776b512bec4c87982ab17ac841435c0c"
+  url "http://www.freedesktop.org/software/vaapi/releases/libva-intel-driver/libva-intel-driver-1.7.2.tar.bz2"
+  sha256 "099e7bf6aa826971ec2caff235babf4da995f754e2ca16a73b258671130e67bc"
 
   # Build-time
   depends_on "pkg-config" => :build
