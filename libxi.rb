@@ -31,7 +31,7 @@ class Libxi < Formula
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
-  if build.with?("docs") or build.with?("specs")
+  if build.with?("docs") || build.with?("specs")
     depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
