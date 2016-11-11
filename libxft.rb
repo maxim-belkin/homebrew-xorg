@@ -15,13 +15,12 @@ class Libxft < Formula
   option "with-brewed-bzip2", "Use brewed bzip2"
   option "with-brewed-zlib", "Use brewed zlib"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
+  depends_on "pkg-config" => :build
 
-  depends_on "libxrender" =>  :build
-  depends_on "libx11"
-  depends_on "bzip2"      if build.with?("brewed-bzip2")
-  depends_on "zlib"       if build.with?("brewed-zlib")
+  depends_on "fontconfig"
+  depends_on "libxrender"
+  depends_on "bzip2" if build.with?("brewed-bzip2")
+  depends_on "zlib" if build.with?("brewed-zlib")
 
   def install
     args = %W[
@@ -31,7 +30,7 @@ class Libxft < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-    args << "--disable-static" if !build.with?("static")
+    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
