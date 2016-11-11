@@ -1,7 +1,7 @@
 class Libvdpau < Formula
-  desc "An open source Video Decode and Presentation API library"
+  desc "Open source Video Decode and Presentation API library"
   homepage "http://people.freedesktop.org/"
-  url "http://people.freedesktop.org/~aplattner/vdpau/libvdpau-1.1.1.tar.gz"
+  url "https://people.freedesktop.org/~aplattner/vdpau/libvdpau-1.1.1.tar.gz"
   sha256 "5fe093302432ef05086ca2ee429c789b7bf843e166d482d166e56859b08bef55"
 
   option "without-test", "Skip compile-time tests"
@@ -27,7 +27,7 @@ class Libvdpau < Formula
       --sysconfdir=#{etc}
       --disable-dependency-tracking
       --disable-silent-rules
-      ]
+    ]
 
     # Be explicit about the configure flags
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
@@ -36,6 +36,5 @@ class Libvdpau < Formula
     system "make"
     system "make", "check" if build.with?("test") # X11 connection rejected because of wrong authentication
     system "make", "install"
-
   end
 end
