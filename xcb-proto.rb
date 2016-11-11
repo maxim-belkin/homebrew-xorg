@@ -1,7 +1,7 @@
 class XcbProto < Formula
-  desc "XML-XCB protocol descriptions that libxcb uses to generate the majority of its code and API"
+  desc "XML-XCB protocol descriptions that libxcb uses for code generation"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://xcb.freedesktop.org/dist/xcb-proto-1.11.tar.bz2"
+  url    "https://xcb.freedesktop.org/dist/xcb-proto-1.11.tar.bz2"
   sha256 "b4aceee6502a0ce45fc39b33c541a2df4715d00b72e660ebe8c5bb444771e32e"
   # tag "linuxbrew"
 
