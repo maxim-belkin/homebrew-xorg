@@ -9,7 +9,7 @@ class Freeglut < Formula
 
   # Build-time
   depends_on "pkg-config" => :build
-  depends_on "libtool"    => :build
+  depends_on "libtool" => :build
 
   # Required
   depends_on "cmake" => :build
