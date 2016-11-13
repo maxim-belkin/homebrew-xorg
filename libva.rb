@@ -19,7 +19,7 @@ class Libva < Formula
 
   # Build-time
   depends_on "pkg-config" => :build
-  depends_on "autoconf"   => :build
+  depends_on "autoconf" => :build
 
   # Required
   depends_on "libdrm"
