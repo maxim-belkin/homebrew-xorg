@@ -18,7 +18,7 @@ class Libdrm < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "libpciaccess" => :build
+  depends_on "libpciaccess"
   depends_on "libpthread-stubs" => :build
 
   def install
