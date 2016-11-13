@@ -12,7 +12,7 @@ class Fontcacheproto < Formula
     sha256 "9651b2ef34a2415b3c851959ec2a66d05c06aafad108bea465f996a9f8ad90c2" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
