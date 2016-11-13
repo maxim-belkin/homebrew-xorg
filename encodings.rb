@@ -16,8 +16,8 @@ class Encodings < Formula
 
   keg_only "Part of Xorg-fonts package"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "font-util"  =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "font-util" => :build
   depends_on "mkfontscale" => :build
 
   def install
