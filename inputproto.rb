@@ -1,8 +1,8 @@
 class Inputproto < Formula
   desc "X.Org Protocol Headers: inputproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/proto/inputproto-2.3.1.tar.bz2"
-  sha256 "5a47ee62053a6acef3a83f506312494be1461068d0b9269d818839703b95c1d1"
+  url    "https://www.x.org/archive//individual/proto/inputproto-2.3.2.tar.bz2"
+  sha256 "893a6af55733262058a27b38eeb1edc733669f01d404e8581b167f03c03ef31d"
   # tag "linuxbrew"
 
   bottle do
