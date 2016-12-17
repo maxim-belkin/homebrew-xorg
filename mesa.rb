@@ -25,6 +25,7 @@ class Mesa < Formula
   depends_on "libelf" # ?
   depends_on "libomxil-bellagio"
   depends_on "wayland" => :recommended # => HEAD is preferred
+  depends_on "libpthread-stubs" => :build
 
   #
   # Trivia:
