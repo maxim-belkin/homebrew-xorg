@@ -7,11 +7,9 @@ class Mesa < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static",   "Build static libraries (not recommended)"
 
-  # DEPENDENCIES
   depends_on "pkg-config" => :build
-
-  # Python and it Mako module
   depends_on :python => :build
+
   resource "mako" do
     url "https://pypi.python.org/packages/7a/ae/925434246ee90b42e8ef57d3b30a0ab7caf9a2de3e449b876c56dcb48155/Mako-1.0.4.tar.gz"
     sha256 "fed99dbe4d0ddb27a33ee4910d8708aca9ef1fe854e668387a9ab9a90cbf9059"
@@ -46,7 +44,7 @@ class Mesa < Formula
   end
 
   patch :p1 do
-    url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-12.0.1-add_xdemos-1.patch"
+    url "http://www.linuxfromscratch.org/patches/downloads/mesa/mesa-12.0.1-add_xdemos-1.patch"
     sha256 "53492ca476e3df2de210f749983e17de4bec026a904db826acbcbd1ef83e71cd"
   end
 
