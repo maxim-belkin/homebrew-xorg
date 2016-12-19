@@ -42,7 +42,7 @@ class Libva < Formula
     # Be explicit about the configure flags
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
-    system "autoreconf", "-fi" if build.without?("wayland") # needed only if Wayland is not installed
+    system "autoreconf", "-fi" if build.without?("wayland")
     system "./configure", *args
     system "make"
     system "make", "install"
