@@ -1,30 +1,24 @@
 class Libva < Formula
   desc "Hardware accelerated video processing library"
   homepage "https://freedesktop.org/wiki/Software/vaapi/"
-  url "https://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.2.tar.bz2"
-  sha256 "5dd61cf16a5648b680e6146a58064e93be11bf4e65a9e4e30f1e9cb8ecfa2c13"
+  url "https://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.3.tar.bz2"
+  sha256 "22bc139498065a7950d966dbdb000cad04905cbd3dc8f3541f80d36c4670b9d9"
 
   option "with-static", "Build static libraries (not recommended)"
 
-  #
-  # Trivia:
-  # There is a circular dependency with Mesa.
-  #
-  # Libva should be installed:
-  #  1. before Mesa with "disable-egl" and "disable-egl" options ~> this package
-  #  2. after  Mesa without the above options.
-  #
-  # The second installations is hard-coded into Mesa as a post-installation step
-  #
+  # Trivia: there is a circular dependency with Mesa.
+  # Libva has to be installed:
+  #  1. before Mesa >> with "disable-egl" and "disable-glx" options >> this package
+  #  2. after  Mesa >> without these options
+  # Step #2 is hard-coded into mesa (if built with [default] `with-libva`) as a post-installation step
+  # Step #2 can be invoked manually here by specifying `with-eglx`
+
+  option "with-eglx", "Build libva with egl and glx support (use after building mesa)"
 
   # Build-time
   depends_on "pkg-config" => :build
   depends_on "autoconf" => :build
-
-  # Required
   depends_on "libdrm"
-
-  # recommended
   depends_on "wayland" => :recommended
 
   def install
@@ -34,13 +28,13 @@ class Libva < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
-    args << "--disable-egl"
-    args << "--disable-glx"
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+    if build.without? "eglx"
+      args << "--disable-egl"
+      args << "--disable-glx"
+    end
 
     system "autoreconf", "-fi" if build.without?("wayland")
     system "./configure", *args
