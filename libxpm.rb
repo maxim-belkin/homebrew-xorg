@@ -1,7 +1,7 @@
 class Libxpm < Formula
   desc "X.Org Libraries: libXpm"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libXpm-3.5.11.tar.bz2"
+  url "http://ftp.x.org/pub/individual/lib/libXpm-3.5.11.tar.bz2"
   sha256 "c5bdafa51d1ae30086fac01ab83be8d47fe117b238d3437f8e965434090e041c"
   # tag "linuxbrew"
 
@@ -12,9 +12,9 @@ class Libxpm < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "gettext"    =>  :build
-  depends_on "xproto"     =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "gettext" => :build
+  depends_on "xproto" => :build
   depends_on "libx11"
 
   def install
@@ -25,7 +25,7 @@ class Libxpm < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-    args << "--disable-static" if !build.with?("static")
+    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
