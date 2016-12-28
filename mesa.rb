@@ -9,6 +9,7 @@ class Mesa < Formula
 
   depends_on "pkg-config" => :build
   depends_on :python => :build
+  depends_on "libtool" => :build
 
   resource "mako" do
     url "https://pypi.python.org/packages/7a/ae/925434246ee90b42e8ef57d3b30a0ab7caf9a2de3e449b876c56dcb48155/Mako-1.0.4.tar.gz"
