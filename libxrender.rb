@@ -1,8 +1,8 @@
 class Libxrender < Formula
   desc "X.Org Libraries: libXrender"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libXrender-0.9.9.tar.bz2"
-  sha256 "fc2fe57980a14092426dffcd1f2d9de0987b9d40adea663bd70d6342c0e9be1a"
+  url "http://ftp.x.org/pub/individual/lib/libXrender-0.9.10.tar.bz2"
+  sha256 "c06d5979f86e64cabbde57c223938db0b939dff49fdb5a793a1d3d0396650949"
   # tag "linuxbrew"
 
   bottle do
