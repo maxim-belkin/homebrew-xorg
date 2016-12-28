@@ -1,15 +1,14 @@
 class Xkeyboardconfig < Formula
   desc "Keyboard configuration database for the X Window System"
-  homepage " http://xorg.freedesktop.org"
-  url "http://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.17.tar.bz2"
+  homepage "https://xorg.freedesktop.org"
+  url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.17.tar.bz2"
   mirror "ftp://ftp.x.org/pub/individual/data/xkeyboard-config/xkeyboard-config-2.17.tar.bz2"
   sha256 "dec6be44bd31775cdc1ab95bfd75d5f2c0055613eeca8b4e9c6480b183430701"
 
-  depends_on "pkg-config"  => :build
-  depends_on "xorg"        => :build
+  depends_on "pkg-config" => :build
+  depends_on "xorg" => :build
 
   def install
-
     # Standard XORG_CONFIG flags
     args = %W[
       --prefix=#{prefix}

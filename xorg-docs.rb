@@ -1,7 +1,7 @@
 class XorgDocs < Formula
   desc "X.Org ocumentation that doesn't better fit into other packages"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://www.x.org/archive/individual/doc/xorg-docs-1.7.tar.bz2"
+  url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.tar.bz2"
   sha256 "b9b1918bd365e9eb29c325e76bb8c4d774d37be707e433fb0af94da35683375f"
   # tag "linuxbrew"
 
@@ -31,7 +31,7 @@ class XorgDocs < Formula
   end
 
   def install
-    args = %W[
+    args = %w[
       --disable-dependency-tracking
       --disable-silent-rules
     ]
