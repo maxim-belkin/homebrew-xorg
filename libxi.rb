@@ -1,8 +1,8 @@
 class Libxi < Formula
   desc "X.Org Libraries: libXi"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libXi-1.7.6.tar.bz2"
-  sha256 "1f32a552cec0f056c0260bdb32e853cec0673d2f40646ce932ad5a9f0205b7ac"
+  url    "http://ftp.x.org/pub/individual/lib/libXi-1.7.8.tar.bz2"
+  sha256 "d8f2fa8d53141c41ff521627df9b2fa9c05f6f142fd9881152bab36549ac27bb"
   # tag "linuxbrew"
 
   bottle do
@@ -16,14 +16,14 @@ class Libxi < Formula
   option "with-docs",   "Build documentation"
   option "with-specs",  "Build specifications"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
 
   depends_on "libxfixes"
-  depends_on "xextproto"  =>  :build
+  depends_on "xextproto" => :build
   depends_on "libxext"
   depends_on "libx11"
-  depends_on "xproto"     =>  :build
-  depends_on "inputproto" =>  :build
+  depends_on "xproto" => :build
+  depends_on "inputproto" => :build
 
   # Patch for xmlto
   patch do
@@ -32,8 +32,8 @@ class Libxi < Formula
   end
 
   if build.with?("docs") || build.with?("specs")
-    depends_on "xmlto"   => :build
-    depends_on "fop"     => [:build, :recommended]
+    depends_on "xmlto" => :build
+    depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "asciidoc" => [:build, :optional]
     depends_on "xorg-sgml-doctools" => [:build, :recommended]
