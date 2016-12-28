@@ -1,8 +1,8 @@
 class Libxfont < Formula
   desc "X.Org Libraries: libXfont"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libXfont-1.5.1.tar.bz2"
-  sha256 "b70898527c73f9758f551bbab612af611b8a0962202829568d94f3edf4d86098"
+  url "http://ftp.x.org/pub/individual/lib/libXfont-1.5.2.tar.bz2"
+  sha256 "02945ea68da447102f3e6c2b896c1d2061fd115de99404facc2aca3ad7010d71"
   # tag "linuxbrew"
 
   bottle do
@@ -18,9 +18,9 @@ class Libxfont < Formula
   option "with-brewed-bzip2", "Use libbz2 to support bzip2 compressed bitmap fonts"
 
   # Required dependencies
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "xproto"
-  depends_on "xtrans"     =>  :build
+  depends_on "xtrans" => :build
   depends_on "fontsproto"
   depends_on "libfontenc"
   depends_on "freetype"
@@ -36,8 +36,8 @@ class Libxfont < Formula
   end
 
   if build.with?("devel-docs")
-    depends_on "xmlto"   => :build
-    depends_on "fop"     => [:build, :recommended]
+    depends_on "xmlto" => :build
+    depends_on "fop" => [:build, :recommended]
     depends_on "xorg-sgml-doctools" => [:build, :recommended]
   end
 
