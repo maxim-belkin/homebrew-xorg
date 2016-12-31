@@ -7,6 +7,7 @@ class Xkeyboardconfig < Formula
 
   depends_on "pkg-config" => :build
   depends_on "xorg" => :build
+  depends_on "intltool" => :build
 
   def install
     # Standard XORG_CONFIG flags
