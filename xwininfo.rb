@@ -7,10 +7,9 @@ class Xwininfo < Formula
   sha256 "218eb0ea95bd8de7903dfaa26423820c523ad1598be0751d2d8b6a2c23b23ff8"
   # tag "linuxbrew"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "libxcb"
   depends_on "xcb-util-wm"
-  # depends_on "libiconv" # currently does not compile under Linux
 
   def install
     args = %W[
@@ -21,8 +20,6 @@ class Xwininfo < Formula
       --disable-silent-rules
       --with-xcb-icccm
     ]
-    # Add the line below to the list of args after fixint libiconv for linux
-    #  --with-libiconv-prefix=#{Formula["libiconv"].prefix}
 
     system "./configure", *args
     system "make"

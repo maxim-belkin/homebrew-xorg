@@ -1,21 +1,16 @@
 class Freeglut < Formula
   desc "Open-source clone of the GLUT library"
   homepage "http://freeglut.sourceforge.net/"
-  url "http://downloads.sourceforge.net/freeglut/freeglut-3.0.0.tar.gz"
+  url "https://downloads.sourceforge.net/freeglut/freeglut-3.0.0.tar.gz"
   sha256 "2a43be8515b01ea82bcfa17d29ae0d40bd128342f0930cd1f375f1ff999f76a2"
 
   option "with-static", "Build static libraries (not recommended)"
   option "with-demos", "Build optional demo programs (not recommended)"
 
-  # Build-time
   depends_on "pkg-config" => :build
   depends_on "libtool" => :build
-
-  # Required
   depends_on "cmake" => :build
   depends_on "mesa"
-
-  # recommended
   depends_on "glu" => :recommended
 
   def install
