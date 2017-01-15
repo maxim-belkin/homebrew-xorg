@@ -1,9 +1,9 @@
 class XorgProtocols < Formula
   desc "X.Org Protocols"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url      "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/README.md"
-  version  "latest"
-  sha256   "76b4fd623d6b10d816069aedcffc411e2c9abc607533adf3fa810d7904b5f9d1"
+  url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/317ef5e60c62298a28f08bb44ca6a09d79793735/README.md"
+  version "20170115"
+  sha256 "76b4fd623d6b10d816069aedcffc411e2c9abc607533adf3fa810d7904b5f9d1"
   # tag "linuxbrew"
 
   bottle :unneeded
