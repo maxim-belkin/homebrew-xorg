@@ -1,7 +1,7 @@
 class Kbproto < Formula
   desc "X.Org Protocol Headers: kbproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/proto/kbproto-1.0.7.tar.bz2"
+  url "https://www.x.org/archive/individual/proto/kbproto-1.0.7.tar.bz2"
   sha256 "f882210b76376e3fa006b11dbd890e56ec0942bc56e65d1249ff4af86f90b857"
   # tag "linuxbrew"
 
