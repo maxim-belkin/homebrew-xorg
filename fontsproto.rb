@@ -1,7 +1,7 @@
 class Fontsproto < Formula
   desc "X.Org Protocol Headers: fontsproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/proto/fontsproto-2.1.3.tar.bz2"
+  url "https://www.x.org/archive/individual/proto/fontsproto-2.1.3.tar.bz2"
   sha256 "259046b0dd9130825c4a4c479ba3591d6d0f17a33f54e294b56478729a6e5ab8"
   # tag "linuxbrew"
 
