@@ -1,7 +1,7 @@
 class Scrnsaverproto < Formula
   desc "X.Org Protocol Headers: scrnsaverproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/proto/scrnsaverproto-1.2.2.tar.bz2"
+  url "https://www.x.org/archive/individual/proto/scrnsaverproto-1.2.2.tar.bz2"
   sha256 "8bb70a8da164930cceaeb4c74180291660533ad3cc45377b30a795d1b85bcd65"
   # tag "linuxbrew"
 
@@ -10,7 +10,7 @@ class Scrnsaverproto < Formula
     sha256 "95e9cd1b7784a93ae47b0a474e83653bdb0bed950852c4dff163fee559b50544" => :x86_64_linux
   end
 
-  option "with-specs",  "Build specifications"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
