@@ -25,7 +25,7 @@ class XorgProtocols < Formula
   end
 
   def install
-    ohai "Xorg Protocols have been installed!"
+    ohai "X.Org Protocols have been installed!"
     prefix.install "README.md" => "xorg-protocols.md"
   end
 end
