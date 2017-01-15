@@ -1,7 +1,7 @@
 class Xproto < Formula
   desc "X.Org Protocol Headers: xproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/proto/xproto-7.0.31.tar.bz2"
+  url "https://www.x.org/archive/individual/proto/xproto-7.0.31.tar.bz2"
   sha256 "c6f9747da0bd3a95f86b17fb8dd5e717c8f3ab7f0ece3ba1b247899ec1ef7747"
   # tag "linuxbrew"
 
