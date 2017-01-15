@@ -1,7 +1,7 @@
 class Glproto < Formula
   desc "X.Org Protocol Headers: glproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/proto/glproto-1.4.17.tar.bz2"
+  url "https://www.x.org/archive/individual/proto/glproto-1.4.17.tar.bz2"
   sha256 "adaa94bded310a2bfcbb9deb4d751d965fcfe6fb3a2f6d242e2df2d6589dbe40"
   # tag "linuxbrew"
 
