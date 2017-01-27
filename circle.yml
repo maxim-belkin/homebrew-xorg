@@ -1,6 +1,7 @@
 machine:
   environment:
     HOMEBREW_DEVELOPER: 1
+    HOMEBREW_VERBOSE: 1
     HOMEBREW_VERBOSE_USING_DOTS: 1
 checkout:
   post:
@@ -31,4 +32,4 @@ test:
   override:
     - umask 022;
       PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH";
-      brew install patchelf && brew test-bot --tap=linuxbrew/xorg --verbose
+      brew install patchelf && brew test-bot --tap=linuxbrew/xorg
