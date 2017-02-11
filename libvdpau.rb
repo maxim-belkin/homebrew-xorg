@@ -1,3 +1,4 @@
+# libvdpau: Build a bottle for Linuxbrew
 class Libvdpau < Formula
   desc "Open source Video Decode and Presentation API library"
   homepage "http://people.freedesktop.org/"
