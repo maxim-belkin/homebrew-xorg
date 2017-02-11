@@ -26,7 +26,8 @@ class Mesa < Formula
   depends_on "libglvnd" => :optional
   depends_on "libva" => :recommended
   depends_on "libvdpau"
-  depends_on "autoconf" => :build if build.with?("libva") && build.without?("wayland")
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "libpthread-stubs" => :build
 
   #
