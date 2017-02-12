@@ -1,3 +1,4 @@
+# freeglut: Build a bottle for Linuxbrew
 class Freeglut < Formula
   desc "Open-source clone of the GLUT library"
   homepage "http://freeglut.sourceforge.net/"
