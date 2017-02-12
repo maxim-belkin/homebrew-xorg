@@ -1,3 +1,4 @@
+# glu: Build a bottle for Linuxbrew
 class Glu < Formula
   desc "Mesa OpenGL Utility library"
   homepage "http://ftp.freedesktop.org/"
