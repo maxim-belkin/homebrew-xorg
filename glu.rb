@@ -1,7 +1,7 @@
 # glu: Build a bottle for Linuxbrew
 class Glu < Formula
   desc "Mesa OpenGL Utility library"
-  homepage "http://freedesktop.org/"
+  homepage "https://cgit.freedesktop.org/mesa/glu"
   url "ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.0.tar.bz2"
   sha256 "1f7ad0d379a722fcbd303aa5650c6d7d5544fde83196b42a73d1193568a4df12"
 
