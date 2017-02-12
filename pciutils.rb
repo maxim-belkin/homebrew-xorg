@@ -1,3 +1,4 @@
+# pciutils: Build a bottle for Linuxbrew
 class Pciutils < Formula
   desc "Programs for inspecting and manipulating configuration of PCI devices"
   homepage "http://www.x.org/"
