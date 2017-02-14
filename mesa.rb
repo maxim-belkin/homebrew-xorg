@@ -1,9 +1,8 @@
 class Mesa < Formula
   desc "Mesa: cross-driver middleware"
   homepage "http://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/13.0.4/mesa-13.0.4.tar.xz"
-  mirror "ftp://ftp.freedesktop.org/pub/mesa/13.0.4/mesa-13.0.4.tar.xz"
-  sha256 "a95d7ce8f7bd5f88585e4be3144a341236d8c0fc91f6feaec59bb8ba3120e726"
+  url "https://mesa.freedesktop.org/archive/17.0.0/mesa-17.0.0.tar.xz"
+  sha256 "39db3d59700159add7f977307d12a7dfe016363e760ad82280ac4168ea668481"
 
   bottle do
     sha256 "f170b6b46f520bd9c164429beec576fc5ed19e8b8ba27939dba6c5b8de75d9f3" => :x86_64_linux
