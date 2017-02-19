@@ -1,8 +1,8 @@
 class Libxi < Formula
   desc "X.Org Libraries: libXi"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libXi-1.7.8.tar.bz2"
-  sha256 "d8f2fa8d53141c41ff521627df9b2fa9c05f6f142fd9881152bab36549ac27bb"
+  url    "http://ftp.x.org/pub/individual/lib/libXi-1.7.9.tar.bz2"
+  sha256 "c2e6b8ff84f9448386c1b5510a5cf5a16d788f76db018194dacdc200180faf45"
   # tag "linuxbrew"
 
   bottle do
@@ -24,13 +24,14 @@ class Libxi < Formula
   depends_on "xproto" => :build
   depends_on "inputproto" => :build
 
-  # Patch for xmlto
-  patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
-    sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
-  end
 
   if build.with?("docs") || build.with?("specs")
+
+    patch do
+      url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+      sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
+    end
+
     depends_on "xmlto" => :build
     depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
@@ -45,16 +46,14 @@ class Libxi < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-docs=#{build.with?("docs") ? "yes" : "no"}
+      --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
-    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
