@@ -7,7 +7,9 @@ before_install:
   - sudo apt-get install -y libxml-parser-perl libxml-sax-perl
   - DEBIAN_FRONTEND=noninteractive sudo apt-get autoremove -y --purge
       libblas-dev
+      libbz2-dev
       libfreetype6-dev
+      libgdbm-dev
       libicu-dev
       libidn11-dev
       libjasper-dev
@@ -19,9 +21,11 @@ before_install:
       libtinfo-dev
       libwebp-dev
       libwmf-dev
+      libx11-dev
       libxml2-dev
       llvm-3.4
       mysql-common
+      zlib1g-dev
   # Fix error: Incorrect file permissions (664)
   - chmod 0644 *.rb
   - umask 022
