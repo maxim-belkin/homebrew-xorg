@@ -17,7 +17,7 @@ class Mesa < Formula
   depends_on "bison" => :build
   depends_on "libtool" => :build
 
-  depends_on "xorg"
+  depends_on :x11
   depends_on "libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
   depends_on "libsha1"
