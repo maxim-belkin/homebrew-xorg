@@ -14,9 +14,9 @@ class Xbacklight < Formula
 
   # xcb-randr >= 1.2 xcb-atom xcb-aux xcb
   depends_on "pkg-config" =>  :build
-  depends_on "libxcb"
-  depends_on "xcb-util"
-  depends_on "xcb-util-image"
+  depends_on "linuxbrew/xorg/libxcb"
+  depends_on "linuxbrew/xorg/xcb-util"
+  depends_on "linuxbrew/xorg/xcb-util-image"
 
   def install
     args = %W[

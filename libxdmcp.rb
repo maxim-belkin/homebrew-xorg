@@ -15,7 +15,7 @@ class Libxdmcp < Formula
   option "with-docs",   "Build documentation"
 
   depends_on "pkg-config"      => :build
-  depends_on "xorg-protocols"  => :build
+  depends_on "linuxbrew/xorg/xorg-protocols"  => :build
 
   # Patch for xmlto
   patch do
@@ -27,7 +27,7 @@ class Libxdmcp < Formula
     depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

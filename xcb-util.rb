@@ -12,7 +12,7 @@ class XcbUtil < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "libxcb"
+  depends_on "linuxbrew/xorg/libxcb"
 
   def install
     args = %W[

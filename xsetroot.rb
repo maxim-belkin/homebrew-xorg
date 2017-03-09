@@ -14,12 +14,12 @@ class Xsetroot < Formula
 
   # xmuu x11 xbitmaps xcursor xproto
   depends_on "pkg-config" =>  :build
-  depends_on "xproto" => :build
-  depends_on "util-macros" => :build
-  depends_on "libx11"
-  depends_on "libxmu"
-  depends_on "xbitmaps"
-  depends_on "libxcursor"
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxmu"
+  depends_on "linuxbrew/xorg/xbitmaps"
+  depends_on "linuxbrew/xorg/libxcursor"
 
   def install
     args = %W[

@@ -15,7 +15,7 @@ class Libxshmfence < Formula
 
   depends_on "pkg-config" =>  :build
 
-  depends_on "xproto"     =>  :build
+  depends_on "linuxbrew/xorg/xproto"     =>  :build
 
   def install
     args = %W[

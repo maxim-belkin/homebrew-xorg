@@ -12,8 +12,8 @@ class Setxkbmap < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libxkbfile"
-  depends_on "libx11"
+  depends_on "linuxbrew/xorg/libxkbfile"
+  depends_on "linuxbrew/xorg/libx11"
 
   def install
     args = %W[

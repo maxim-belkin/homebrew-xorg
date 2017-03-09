@@ -13,7 +13,7 @@ class Xlsatoms < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libxcb"
+  depends_on "linuxbrew/xorg/libxcb"
 
   def install
     args = %W[

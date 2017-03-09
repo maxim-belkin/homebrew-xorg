@@ -14,12 +14,12 @@ class Libdrm < Formula
   option "with-valgrind", "Build libdrm with valgrind support"
 
   depends_on "pkg-config" => :build
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "libpciaccess"
-  depends_on "libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/libpciaccess"
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
 
   def install
     args = %W[

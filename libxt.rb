@@ -17,11 +17,11 @@ class Libxt < Formula
 
   depends_on "pkg-config" =>  :build
 
-  depends_on "libsm"
-  depends_on "libice"
-  depends_on "libx11"
-  depends_on "xproto"     =>  :build
-  depends_on "kbproto"    =>  :build
+  depends_on "linuxbrew/xorg/libsm"
+  depends_on "linuxbrew/xorg/libice"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "linuxbrew/xorg/kbproto"    =>  :build
 
   # Patch for xmlto
   patch do
@@ -34,7 +34,7 @@ class Libxt < Formula
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "perl"    => [:build, :optional]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   if build.with?("glib")

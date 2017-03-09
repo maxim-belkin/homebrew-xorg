@@ -15,9 +15,9 @@ class Libxext < Formula
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" =>  :build
-  depends_on "xproto"     =>  :build
-  depends_on "libx11"
-  depends_on "xextproto"  =>  :build
+  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/xextproto"  =>  :build
 
   # Patch for xmlto
   patch do
@@ -29,7 +29,7 @@ class Libxext < Formula
     depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

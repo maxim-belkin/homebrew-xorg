@@ -24,7 +24,7 @@ class Xtrans < Formula
     depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

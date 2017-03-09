@@ -14,11 +14,11 @@ class Libx11 < Formula
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" =>  :build
-  depends_on "xextproto"  =>  :build
-  depends_on "xtrans"     =>  :build
-  depends_on "libxcb"
-  depends_on "kbproto"    =>  :build
-  depends_on "inputproto" =>  :build
+  depends_on "linuxbrew/xorg/xextproto"  =>  :build
+  depends_on "linuxbrew/xorg/xtrans"     =>  :build
+  depends_on "linuxbrew/xorg/libxcb"
+  depends_on "linuxbrew/xorg/kbproto"    =>  :build
+  depends_on "linuxbrew/xorg/inputproto" =>  :build
 
   # Patch for xmlto
   patch do
@@ -31,7 +31,7 @@ class Libx11 < Formula
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "perl"    => [:build, :optional]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

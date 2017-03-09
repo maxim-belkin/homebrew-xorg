@@ -14,9 +14,9 @@ class Libxtst < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
-  depends_on "libxi"
+  depends_on "linuxbrew/xorg/libxi"
 
   # Patch for xmlto
   patch do
@@ -28,7 +28,7 @@ class Libxtst < Formula
     depends_on "xmlto" => :build
     depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

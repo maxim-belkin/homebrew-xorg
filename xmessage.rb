@@ -13,7 +13,7 @@ class Xmessage < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libxaw"
+  depends_on "linuxbrew/xorg/libxaw"
 
   def install
     args = %W[

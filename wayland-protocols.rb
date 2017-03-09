@@ -11,7 +11,7 @@ class WaylandProtocols < Formula
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config"  => :build
-  depends_on "wayland"
+  depends_on "linuxbrew/xorg/wayland"
 
   def install
     args = %W[

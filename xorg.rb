@@ -27,44 +27,44 @@ class Xorg < Formula
   # If python3 has been requested,
   # add a direct dependence on xcb-proto package with python3 option
   if build.with?("python3")
-    depends_on "xcb-proto" => ["with-python3", args_check].reject(&:empty?)
+    depends_on "linuxbrew/xorg/xcb-proto" => ["with-python3", args_check].reject(&:empty?)
   end
 
-  depends_on "xtrans" => [args_docs].reject(&:empty?)
-  depends_on "libx11" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "libxext" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "libfs" => args_check_static
-  depends_on "libice" => [args_check, args_static, args_docs, args_specs].reject(&:empty?)
-  depends_on "libsm" => [args_check, args_static, args_docs].reject(&:empty?)
-  depends_on "libxscrnsaver" => args_check_static
-  depends_on "libxt" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "libxmu" => [args_check, args_static, args_docs].reject(&:empty?)
-  depends_on "libxpm" => args_check_static
-  depends_on "libxaw" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "libxfixes" => args_check_static
-  depends_on "libxcomposite" => args_check_static
-  depends_on "libxrender" => args_check_static
-  depends_on "libxcursor" => args_check_static
-  depends_on "libxdamage" => args_check_static
-  depends_on "libfontenc" => args_check_static
-  depends_on "libxfont" => [args_check, args_static, args_devel_docs].reject(&:empty?)
-  depends_on "libxft" => args_check_static
-  depends_on "libxi" => [args_check, args_static, args_docs, args_specs].reject(&:empty?)
-  depends_on "libxinerama" => args_check_static
-  depends_on "libxrandr" => args_check_static
-  depends_on "libxres" => args_check_static
-  depends_on "libxtst" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "libxv" => args_check_static
-  depends_on "libxvmc" => args_check_static
-  depends_on "libxxf86dga" => args_check_static
-  depends_on "libxxf86vm" => args_check_static
-  depends_on "libdmx" => args_check_static
-  depends_on "libpciaccess" => args_check_static
-  depends_on "libxkbfile" => args_check_static
-  depends_on "libxshmfence" => args_check_static
+  depends_on "linuxbrew/xorg/xtrans" => [args_docs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libx11" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxext" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libfs" => args_check_static
+  depends_on "linuxbrew/xorg/libice" => [args_check, args_static, args_docs, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libsm" => [args_check, args_static, args_docs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxscrnsaver" => args_check_static
+  depends_on "linuxbrew/xorg/libxt" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxmu" => [args_check, args_static, args_docs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxpm" => args_check_static
+  depends_on "linuxbrew/xorg/libxaw" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxfixes" => args_check_static
+  depends_on "linuxbrew/xorg/libxcomposite" => args_check_static
+  depends_on "linuxbrew/xorg/libxrender" => args_check_static
+  depends_on "linuxbrew/xorg/libxcursor" => args_check_static
+  depends_on "linuxbrew/xorg/libxdamage" => args_check_static
+  depends_on "linuxbrew/xorg/libfontenc" => args_check_static
+  depends_on "linuxbrew/xorg/libxfont" => [args_check, args_static, args_devel_docs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxft" => args_check_static
+  depends_on "linuxbrew/xorg/libxi" => [args_check, args_static, args_docs, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxinerama" => args_check_static
+  depends_on "linuxbrew/xorg/libxrandr" => args_check_static
+  depends_on "linuxbrew/xorg/libxres" => args_check_static
+  depends_on "linuxbrew/xorg/libxtst" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxv" => args_check_static
+  depends_on "linuxbrew/xorg/libxvmc" => args_check_static
+  depends_on "linuxbrew/xorg/libxxf86dga" => args_check_static
+  depends_on "linuxbrew/xorg/libxxf86vm" => args_check_static
+  depends_on "linuxbrew/xorg/libdmx" => args_check_static
+  depends_on "linuxbrew/xorg/libpciaccess" => args_check_static
+  depends_on "linuxbrew/xorg/libxkbfile" => args_check_static
+  depends_on "linuxbrew/xorg/libxshmfence" => args_check_static
 
   if build.with?("docs") # or build.with?("specs")
-    depends_on "xorg-docs" => :recommended
+    depends_on "linuxbrew/xorg/xorg-docs" => :recommended
     # xorg-docs is not a part of Xorg Libraries.
     # We build it by default when documentation / specifications are requested
 

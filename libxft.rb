@@ -18,7 +18,7 @@ class Libxft < Formula
   depends_on "pkg-config" => :build
 
   depends_on "fontconfig"
-  depends_on "libxrender"
+  depends_on "linuxbrew/xorg/libxrender"
   depends_on "bzip2" if build.with?("brewed-bzip2")
   depends_on "zlib" if build.with?("brewed-zlib")
 

@@ -14,7 +14,7 @@ class XorgCfFiles < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "font-util"  => :build
+  depends_on "linuxbrew/xorg/font-util"  => :build
 
   def install
     args = %W[

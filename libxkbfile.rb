@@ -15,8 +15,8 @@ class Libxkbfile < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "libx11"
-  depends_on "kbproto" => :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/kbproto" => :build
 
   def install
     args = %W[

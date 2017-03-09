@@ -8,11 +8,11 @@ class Xauth < Formula
   # tag "linuxbrew"
 
   depends_on "pkg-config" =>  :build
-  depends_on "libx11"
-  depends_on "libxau"
-  depends_on "libxext"
-  depends_on "libxmu"
-  depends_on "xproto" => :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxau"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxmu"
+  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[

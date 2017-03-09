@@ -16,7 +16,7 @@ class Glu < Formula
   depends_on "libtool"    => :build
 
   # Required
-  depends_on "mesa"
+  depends_on "linuxbrew/xorg/mesa"
 
   def install
     args = %W[

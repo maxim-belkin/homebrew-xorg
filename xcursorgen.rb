@@ -13,8 +13,8 @@ class Xcursorgen < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libx11"
-  depends_on "libxcursor"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxcursor"
   depends_on "libpng"
 
   def install

@@ -16,10 +16,10 @@ class Libxmu < Formula
 
   depends_on "pkg-config" =>  :build
 
-  depends_on "libxt"
-  depends_on "libxext"
-  depends_on "libx11"
-  depends_on "xextproto" =>  :build
+  depends_on "linuxbrew/xorg/libxt"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/xextproto" =>  :build
 
   # Patch for xmlto
   patch do
@@ -31,7 +31,7 @@ class Libxmu < Formula
     depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

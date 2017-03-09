@@ -13,11 +13,11 @@ class Smproxy < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libsm"
-  depends_on "libice"
-  depends_on "libxt"
-  depends_on "libxmu"
-  depends_on "libx11"
+  depends_on "linuxbrew/xorg/libsm"
+  depends_on "linuxbrew/xorg/libice"
+  depends_on "linuxbrew/xorg/libxt"
+  depends_on "linuxbrew/xorg/libxmu"
+  depends_on "linuxbrew/xorg/libx11"
 
   def install
     args = %W[

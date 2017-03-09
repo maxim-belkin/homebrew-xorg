@@ -13,10 +13,10 @@ class Mkfontscale < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libfontenc"
+  depends_on "linuxbrew/xorg/libfontenc"
   depends_on "freetype"
   depends_on "bzip2" => :recommended
-  depends_on "xproto" => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[

@@ -13,10 +13,10 @@ class Libxcursor < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
-  depends_on "libxrender"
-  depends_on "libxfixes"
-  depends_on "libx11"
-  depends_on "fixesproto" =>  :build
+  depends_on "linuxbrew/xorg/libxrender"
+  depends_on "linuxbrew/xorg/libxfixes"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/fixesproto" =>  :build
 
   def install
     args = %W[

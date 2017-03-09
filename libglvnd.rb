@@ -8,12 +8,12 @@ class Libglvnd < Formula
   option "with-static",   "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "autoconf" => :build
 
-  depends_on "libx11"
-  depends_on "libxext"
-  depends_on "glproto" => :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/glproto" => :build
 
   def install
     args = %W[

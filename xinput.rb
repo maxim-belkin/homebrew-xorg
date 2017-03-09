@@ -13,12 +13,12 @@ class Xinput < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libx11"
-  depends_on "libxext"
-  depends_on "libxi"
-  depends_on "inputproto" => :build
-  depends_on "libxrandr"
-  depends_on "libxinerama"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxi"
+  depends_on "linuxbrew/xorg/inputproto" => :build
+  depends_on "linuxbrew/xorg/libxrandr"
+  depends_on "linuxbrew/xorg/libxinerama"
 
   def install
     args = %W[

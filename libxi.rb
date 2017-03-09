@@ -17,12 +17,12 @@ class Libxi < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "libxfixes"
-  depends_on "xextproto" => :build
-  depends_on "libxext"
-  depends_on "libx11"
-  depends_on "xproto" => :build
-  depends_on "inputproto" => :build
+  depends_on "linuxbrew/xorg/libxfixes"
+  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/inputproto" => :build
 
 
   if build.with?("docs") || build.with?("specs")
@@ -36,7 +36,7 @@ class Libxi < Formula
     depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "asciidoc" => [:build, :optional]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

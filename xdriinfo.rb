@@ -8,9 +8,9 @@ class Xdriinfo < Formula
   # tag "linuxbrew"
 
   depends_on "pkg-config" =>  :build
-  depends_on "libx11"
-  depends_on "glproto"
-  depends_on "mesa"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/glproto"
+  depends_on "linuxbrew/xorg/mesa"
 
   def install
     args = %W[

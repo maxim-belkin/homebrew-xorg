@@ -8,10 +8,10 @@ class Xkbutils < Formula
   # tag "linuxbrew"
 
   depends_on "pkg-config" =>  :build
-  depends_on "xproto" => :build
-  depends_on "libxaw"
-  depends_on "libxt"
-  depends_on "libx11"
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/libxaw"
+  depends_on "linuxbrew/xorg/libxt"
+  depends_on "linuxbrew/xorg/libx11"
 
   def install
     args = %W[

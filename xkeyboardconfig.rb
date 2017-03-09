@@ -11,7 +11,7 @@ class Xkeyboardconfig < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "xorg" => :build
+  depends_on "linuxbrew/xorg/xorg" => :build
   depends_on "intltool" => :build
 
   def install

@@ -14,9 +14,9 @@ class XcbUtilWm < Formula
   option "with-docs",    "Regenerate documentation (requires doxygen)"
 
   depends_on "pkg-config" => :build
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "doxygen" => :build if build.with?("docs")
-  depends_on "libxcb"
+  depends_on "linuxbrew/xorg/libxcb"
 
   def install
     args = %W[

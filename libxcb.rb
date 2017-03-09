@@ -15,10 +15,10 @@ class Libxcb < Formula
   option "with-docs", "Generate API documentation"
 
   depends_on "pkg-config" => :build
-  depends_on "libxau"
-  depends_on "xcb-proto" => :build
-  depends_on "libpthread-stubs" => :build
-  depends_on "libxdmcp" => :recommended
+  depends_on "linuxbrew/xorg/libxau"
+  depends_on "linuxbrew/xorg/xcb-proto" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/libxdmcp" => :recommended
 
   depends_on "doxygen" => :build if build.with? "docs"
   depends_on "check" => :build if build.with? "test"

@@ -13,9 +13,9 @@ class Xwd < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "xproto" => :build
-  depends_on "libx11"
-  depends_on "libxkbfile"
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxkbfile"
 
   def install
     args = %W[

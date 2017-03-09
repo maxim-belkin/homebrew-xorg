@@ -13,7 +13,7 @@ class Inputproto < Formula
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" => :build
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
 
   if build.with?("specs")
     depends_on "asciidoc" => :build

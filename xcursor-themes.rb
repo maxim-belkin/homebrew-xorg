@@ -14,8 +14,8 @@ class XcursorThemes < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libxcursor"
-  depends_on "xcursorgen"
+  depends_on "linuxbrew/xorg/libxcursor"
+  depends_on "linuxbrew/xorg/xcursorgen"
 
   def install
     args = %W[

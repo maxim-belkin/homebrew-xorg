@@ -14,12 +14,12 @@ class Libxrandr < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "randrproto" => :build
-  depends_on "xextproto" => :build
-  depends_on "renderproto" => :build
+  depends_on "linuxbrew/xorg/randrproto" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/renderproto" => :build
 
-  depends_on "libxext"
-  depends_on "libxrender"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxrender"
 
   def install
     args = %W[

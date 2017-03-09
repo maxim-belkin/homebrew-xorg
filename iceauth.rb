@@ -13,8 +13,8 @@ class Iceauth < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "xproto" => :build
-  depends_on "libice"
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/libice"
 
   def install
     args = %W[

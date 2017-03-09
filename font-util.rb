@@ -16,7 +16,7 @@ class FontUtil < Formula
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config" => :build
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
 
   def install
     args = %W[

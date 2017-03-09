@@ -13,11 +13,11 @@ class X11perf < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libx11"
-  depends_on "libxmu"
-  depends_on "xproto" => :build
-  depends_on "libxrender" # crucial
-  depends_on "libxft" # not crucial
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxmu"
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/libxrender" # crucial
+  depends_on "linuxbrew/xorg/libxft" # not crucial
 
   def install
     args = %W[

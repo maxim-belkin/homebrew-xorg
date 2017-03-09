@@ -8,10 +8,10 @@ class LibvaIntelDriver < Formula
   depends_on "pkg-config" => :build
 
   # Required
-  depends_on "libva"
+  depends_on "linuxbrew/xorg/libva"
 
   # optional
-  depends_on "wayland" => :recommended # if libva was built with wayland support
+  depends_on "linuxbrew/xorg/wayland" => :recommended # if libva was built with wayland support
 
   def install
     args = %W[

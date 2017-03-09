@@ -18,20 +18,20 @@ class Mesa < Formula
   depends_on "libtool" => :build
 
   depends_on :x11
-  depends_on "libdrm"
+  depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
-  depends_on "libsha1"
+  depends_on "linuxbrew/xorg/libsha1"
   depends_on "llvm"
   depends_on "libelf" # radeonsi requires libelf when using llvm
-  depends_on "libomxil-bellagio"
-  depends_on "wayland" => :recommended
+  depends_on "linuxbrew/xorg/libomxil-bellagio"
+  depends_on "linuxbrew/xorg/wayland" => :recommended
   depends_on "valgrind" => :recommended
-  depends_on "libglvnd" => :optional
-  depends_on "libva" => :recommended
-  depends_on "libvdpau"
+  depends_on "linuxbrew/xorg/libglvnd" => :optional
+  depends_on "linuxbrew/xorg/libva" => :recommended
+  depends_on "linuxbrew/xorg/libvdpau"
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
 
   #
   # There is a circular dependency between Mesa and libva:

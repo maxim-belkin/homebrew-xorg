@@ -8,8 +8,8 @@ class Xwininfo < Formula
   # tag "linuxbrew"
 
   depends_on "pkg-config" => :build
-  depends_on "libxcb"
-  depends_on "xcb-util-wm"
+  depends_on "linuxbrew/xorg/libxcb"
+  depends_on "linuxbrew/xorg/xcb-util-wm"
 
   def install
     args = %W[

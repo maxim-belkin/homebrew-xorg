@@ -14,10 +14,10 @@ class Libxfixes < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
-  depends_on "xproto"     =>  :build
-  depends_on "fixesproto" =>  :build
-  depends_on "xextproto"  =>  :build
-  depends_on "libx11"
+  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "linuxbrew/xorg/fixesproto" =>  :build
+  depends_on "linuxbrew/xorg/xextproto"  =>  :build
+  depends_on "linuxbrew/xorg/libx11"
 
   def install
     args = %W[

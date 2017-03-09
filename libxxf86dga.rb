@@ -15,11 +15,11 @@ class Libxxf86dga < Formula
 
   depends_on "pkg-config" =>  :build
 
-  depends_on "libx11"
-  depends_on "libxext"
-  depends_on "xproto"     =>  :build
-  depends_on "xextproto"  =>  :build
-  depends_on "xf86dgaproto" => :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "linuxbrew/xorg/xextproto"  =>  :build
+  depends_on "linuxbrew/xorg/xf86dgaproto" => :build
 
   def install
     args = %W[

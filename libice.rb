@@ -17,8 +17,8 @@ class Libice < Formula
 
   # Required dependencies
   depends_on "pkg-config" =>  :build
-  depends_on "xproto"     =>  :build
-  depends_on "xtrans"     =>  :build
+  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "linuxbrew/xorg/xtrans"     =>  :build
 
   # Patch for xmlto
   patch do
@@ -30,7 +30,7 @@ class Libice < Formula
     depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

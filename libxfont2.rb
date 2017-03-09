@@ -18,10 +18,10 @@ class Libxfont2 < Formula
   option "with-brewed-bzip2", "Use libbz2 to support bzip2 compressed bitmap fonts"
 
   depends_on "pkg-config" => :build
-  depends_on "xproto"
-  depends_on "xtrans" => :build
-  depends_on "fontsproto"
-  depends_on "libfontenc"
+  depends_on "linuxbrew/xorg/xproto"
+  depends_on "linuxbrew/xorg/xtrans" => :build
+  depends_on "linuxbrew/xorg/fontsproto"
+  depends_on "linuxbrew/xorg/libfontenc"
   depends_on "freetype"
 
   depends_on "bzip2" if build.with?("brewed-bzip2")
@@ -36,7 +36,7 @@ class Libxfont2 < Formula
 
     depends_on "xmlto" => :build
     depends_on "fop" => :build
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

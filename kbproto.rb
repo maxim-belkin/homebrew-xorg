@@ -13,7 +13,7 @@ class Kbproto < Formula
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" => :build
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
 
   # Patch for xmlto
   patch do
@@ -25,7 +25,7 @@ class Kbproto < Formula
     depends_on "xmlto" => :build
     depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install

@@ -10,7 +10,7 @@ class Xbitmaps < Formula
   end
 
   depends_on "pkg-config"  => :build
-  depends_on "util-macros" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
 
   def install
     args = %W[

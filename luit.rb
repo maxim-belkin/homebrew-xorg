@@ -12,8 +12,8 @@ class Luit < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libx11"     =>  :build
-  depends_on "libfontenc"
+  depends_on "linuxbrew/xorg/libx11"     =>  :build
+  depends_on "linuxbrew/xorg/libfontenc"
 
   patch :DATA
 

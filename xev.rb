@@ -13,9 +13,9 @@ class Xev < Formula
   end
 
   depends_on "pkg-config" =>  :build
-  depends_on "libxrandr"
-  depends_on "libx11"
-  depends_on "xproto" => :build
+  depends_on "linuxbrew/xorg/libxrandr"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[
