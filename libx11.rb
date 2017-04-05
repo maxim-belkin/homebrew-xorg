@@ -1,8 +1,8 @@
 class Libx11 < Formula
   desc "X.Org Libraries: libX11"
-  homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libX11-1.6.4.tar.bz2"
-  sha256 "b7c748be3aa16ec2cbd81edc847e9b6ee03f88143ab270fb59f58a044d34e441"
+  homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
+  url "https://ftp.x.org/pub/individual/lib/libX11-1.6.5.tar.bz2"
+  sha256 "4d3890db2ba225ba8c55ca63c6409c1ebb078a2806de59fb16342768ae63435d"
   # tag "linuxbrew"
 
   bottle do
@@ -19,6 +19,7 @@ class Libx11 < Formula
   depends_on "linuxbrew/xorg/libxcb"
   depends_on "linuxbrew/xorg/kbproto"    =>  :build
   depends_on "linuxbrew/xorg/inputproto" =>  :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
 
   # Patch for xmlto
   patch do
@@ -49,7 +50,7 @@ class Libx11 < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
