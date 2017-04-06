@@ -13,12 +13,13 @@ class Libx11 < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "linuxbrew/xorg/xextproto"  =>  :build
-  depends_on "linuxbrew/xorg/xtrans"     =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/xtrans" => :build
   depends_on "linuxbrew/xorg/libxcb"
-  depends_on "linuxbrew/xorg/kbproto"    =>  :build
-  depends_on "linuxbrew/xorg/inputproto" =>  :build
+  depends_on "linuxbrew/xorg/kbproto" => :build
+  depends_on "linuxbrew/xorg/inputproto" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build
 
   # Patch for xmlto
@@ -28,10 +29,10 @@ class Libx11 < Formula
   end
 
   if build.with?("specs")
-    depends_on "xmlto"   => :build
-    depends_on "fop"     => [:build, :recommended]
+    depends_on "xmlto" => :build
+    depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "perl"    => [:build, :optional]
+    depends_on "perl" => [:build, :optional]
     depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
