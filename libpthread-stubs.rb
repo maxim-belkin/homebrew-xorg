@@ -10,7 +10,7 @@ class LibpthreadStubs < Formula
     sha256 "ab61c92ab2a15907df6a29d08963290c4896b1aa7939524932d343acbe7d8026" => :x86_64_linux
   end
 
-  depends_on "pkg-config"  => :build
+  depends_on "pkg-config" => :build
 
   def install
     system "./configure", "--prefix=#{prefix}"

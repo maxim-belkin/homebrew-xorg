@@ -7,14 +7,14 @@ class Libevdev < Formula
 
   bottle do
     cellar :any_skip_relocation
-    revision 2
+    rebuild 2
     sha256 "df1e8d2e2d1d3f4710e135bef0599506238bcd0b7f6fee6dfb414ca64b28e0e1" => :x86_64_linux
   end
 
   option "with-static", "Build static libraries (not recommended)"
   option "without-test", "Skip compile-time tests"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on :python => :build
   depends_on "check" => :build if build.with?("test")
 

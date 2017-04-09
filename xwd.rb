@@ -12,7 +12,7 @@ class Xwd < Formula
     sha256 "c7fb19fb47fe77f00f1e11950c0f2da90d13f148cc984c3718683470fd29f644" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxkbfile"

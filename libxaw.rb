@@ -13,11 +13,11 @@ class Libxaw < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/xextproto"  =>  :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/libxt"
   depends_on "linuxbrew/xorg/libxmu"
   depends_on "linuxbrew/xorg/libxpm"

@@ -24,7 +24,6 @@ class Libxi < Formula
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/inputproto" => :build
 
-
   if build.with?("docs") || build.with?("specs")
 
     patch do

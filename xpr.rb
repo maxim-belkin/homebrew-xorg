@@ -12,7 +12,7 @@ class Xpr < Formula
     sha256 "16e431229c4449d346f353b3776293362d252a90f52d6815feefbff7ac28d748" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxmu"

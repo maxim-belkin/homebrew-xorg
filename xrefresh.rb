@@ -12,7 +12,7 @@ class Xrefresh < Formula
     sha256 "d67050f24859d830f0d9abf1427651125cd70027c72e1ec649e8e1bf2b046158" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 

@@ -12,7 +12,7 @@ class Bdftopcf < Formula
     sha256 "0189f9d16ceacee801ecf1f0ff438fabac5d1ff23ce021b6a7ca1039a25331a2" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxfont"
   depends_on "bzip2"
 

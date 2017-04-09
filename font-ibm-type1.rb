@@ -15,11 +15,11 @@ class FontIbmType1 < Formula
 
   keg_only "Part of Xorg-fonts package"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util"  =>  :build
   depends_on "linuxbrew/xorg/bdftopcf"   =>  :build
   depends_on "linuxbrew/xorg/mkfontdir"  =>  :build
-  depends_on "fontconfig" =>  :build
+  depends_on "fontconfig" => :build
 
   def install
     args = %W[

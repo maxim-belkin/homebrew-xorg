@@ -9,7 +9,7 @@ class Pciutils < Formula
   sha256 "2bf3a4605a562fb6b8b7673bff85a474a5cf383ed7e4bd8886b4f0939013d42f"
   # tag "linuxbrew"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[

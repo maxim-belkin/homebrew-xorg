@@ -11,7 +11,7 @@ class Setxkbmap < Formula
     sha256 "03e3d22d49be9eb2e6d667e9b3a748e6b034bf78b701ffbdc06742654b13d407" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxkbfile"
   depends_on "linuxbrew/xorg/libx11"
 

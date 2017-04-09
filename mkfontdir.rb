@@ -12,7 +12,7 @@ class Mkfontdir < Formula
     sha256 "b6e91d7d3264faea12876fd7aaceea3f32496298504438d83afeba812423ad10" => :x86_64_linux
   end
 
-  depends_on "pkg-config"  => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/mkfontscale" => :run
 

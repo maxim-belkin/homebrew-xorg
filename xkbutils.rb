@@ -7,7 +7,7 @@ class Xkbutils < Formula
   sha256 "d2a18ab90275e8bca028773c44264d2266dab70853db4321bdbc18da75148130"
   # tag "linuxbrew"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libxaw"
   depends_on "linuxbrew/xorg/libxt"

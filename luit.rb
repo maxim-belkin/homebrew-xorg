@@ -11,8 +11,8 @@ class Luit < Formula
     sha256 "a715c922cbe8266de203bc7a3e4dfbbfb30a239326480208fe33d02da51a3776" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
-  depends_on "linuxbrew/xorg/libx11"     =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/libx11" => :build
   depends_on "linuxbrew/xorg/libfontenc"
 
   patch :DATA

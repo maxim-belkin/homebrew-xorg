@@ -13,7 +13,7 @@ class FontArabicMisc < Formula
     sha256 "150690eeea069e7edddb42eab16d73d3340bcfb6503787eda47d7a3e459edd10" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util"  =>  :build
   depends_on "linuxbrew/xorg/bdftopcf"   =>  :build
   depends_on "linuxbrew/xorg/mkfontdir"  =>  :build

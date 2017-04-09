@@ -12,7 +12,7 @@ class Smproxy < Formula
     sha256 "0c02e96efa8483785b137dcae94a9e76f7f2a42a51263a464d5e42aea83a9b11" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libsm"
   depends_on "linuxbrew/xorg/libice"
   depends_on "linuxbrew/xorg/libxt"

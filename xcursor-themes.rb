@@ -13,7 +13,7 @@ class XcursorThemes < Formula
     sha256 "5191796c5ae5b8cb6d6e32be715fe4b839e7a060a3abbc6342314fc9c10c72c9" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxcursor"
   depends_on "linuxbrew/xorg/xcursorgen"
 

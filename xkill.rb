@@ -12,7 +12,7 @@ class Xkill < Formula
     sha256 "230a7daf447a45a70ec70effac3fecab5c56a3fc62c29987a4f2497e099048a7" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxmu"

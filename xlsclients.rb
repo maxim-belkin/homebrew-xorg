@@ -12,7 +12,7 @@ class Xlsclients < Formula
     sha256 "5d7dbf8acf9f395456e20cd8b82fb4d118a686924da4311e07e46606d541417d" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxcb"
 
   def install

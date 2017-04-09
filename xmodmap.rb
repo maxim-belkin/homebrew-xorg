@@ -12,7 +12,7 @@ class Xmodmap < Formula
     sha256 "aa467c3ef7804c0609957eaf4cb636fd394d32c1efaf142774ea40b0339f9496" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 

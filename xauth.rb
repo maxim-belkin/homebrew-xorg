@@ -7,7 +7,7 @@ class Xauth < Formula
   sha256 "56ce1523eb48b1f8a4f4244fe1c3d8e6af1a3b7d4b0e6063582421b0b68dc28f"
   # tag "linuxbrew"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxau"
   depends_on "linuxbrew/xorg/libxext"

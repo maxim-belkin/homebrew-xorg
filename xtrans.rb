@@ -12,7 +12,7 @@ class Xtrans < Formula
 
   option "with-docs", "Build documentation"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
 
   # Patch for xmlto
   patch do

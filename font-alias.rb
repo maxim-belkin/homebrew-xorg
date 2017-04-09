@@ -13,7 +13,7 @@ class FontAlias < Formula
     sha256 "1486363066ac2288cb10218c7fd9b1672f56e42e79f5853df122068bef063db8" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[

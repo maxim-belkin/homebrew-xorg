@@ -12,7 +12,7 @@ class Xwud < Formula
     sha256 "daa425a235d783858b9d1e27ba1d6090105ad438714e0819afba9f011c43c55a" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 

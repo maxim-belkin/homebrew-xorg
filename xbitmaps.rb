@@ -9,7 +9,7 @@ class Xbitmaps < Formula
     sha256 "fb234ad593ff26c68e520b1c33ad27c6668b2cd1c6a569c08f9e6608ce74d9b1" => :x86_64_linux
   end
 
-  depends_on "pkg-config"  => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
 
   def install

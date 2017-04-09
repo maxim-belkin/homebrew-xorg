@@ -12,7 +12,7 @@ class Xprop < Formula
     sha256 "88570f896f5181fc75405867ecdabc6d901b5d21dfe54c619430d9b5cb521ec1" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 

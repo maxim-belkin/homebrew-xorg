@@ -12,7 +12,7 @@ class Xdpyinfo < Formula
     sha256 "5ad449cbcce936b2d12f06b938626c06782f38bce097b6121d639d4df14364b7" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxtst"
@@ -27,10 +27,10 @@ class Xdpyinfo < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-      #  --without-dga           Disable dga support.
-      #  --without-xf86misc      Disable xf86misc support.
-      #  --without-xinerama      Disable xinerama support.
-      #  --without-dmx           Disable dmx support.
+    #  --without-dga           Disable dga support.
+    #  --without-xf86misc      Disable xf86misc support.
+    #  --without-xinerama      Disable xinerama support.
+    #  --without-dmx           Disable dmx support.
 
     system "./configure", *args
     system "make"

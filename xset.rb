@@ -7,7 +7,7 @@ class Xset < Formula
   sha256 "4382f4fb29b88647e13f3b4bc29263134270747fc159cfc5f7e3af23588c8063"
   # tag "linuxbrew"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libxmu"
   depends_on "linuxbrew/xorg/libx11"

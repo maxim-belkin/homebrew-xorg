@@ -14,10 +14,10 @@ class Libxext < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/xextproto"  =>  :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
 
   # Patch for xmlto
   patch do

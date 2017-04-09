@@ -9,8 +9,8 @@ class Libxfontcache < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   # Required dependencies
-  depends_on "pkg-config" =>  :build
-  depends_on "linuxbrew/xorg/xextproto"  =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/fontcacheproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"

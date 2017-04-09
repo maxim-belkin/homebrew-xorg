@@ -12,7 +12,7 @@ class Xcmsdb < Formula
     sha256 "d5676e7e2e01a4ff146775c05aaa3873fde28451fea6f403266e5e82ab3b0ddf" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
 
   def install

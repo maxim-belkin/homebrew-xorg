@@ -12,8 +12,8 @@ class Sessreg < Formula
     sha256 "17242c86ba919ff7bc10828ef3700ed097cb661508918c1bf8d0c75c748584df" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
-  depends_on "linuxbrew/xorg/xproto"     =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[
@@ -24,7 +24,7 @@ class Sessreg < Formula
       --disable-silent-rules
     ]
 
-    inreplace "man/Makefile.in", '$(CPP) $(DEFS)', '$(CPP) -P $(DEFS)'
+    inreplace "man/Makefile.in", "$(CPP) $(DEFS)", "$(CPP) -P $(DEFS)"
 
     system "./configure", *args
     system "make"

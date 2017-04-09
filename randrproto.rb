@@ -10,8 +10,8 @@ class Randrproto < Formula
     sha256 "a9e7fbd62f760ebd53a3b64cfa09d3129c2ce51f4ed43f6c0e048d32697ea1a6" => :x86_64_linux
   end
 
-  depends_on "pkg-config"         =>  :build
-  depends_on "linuxbrew/xorg/util-macros"        =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
 
   def install
     args = %W[

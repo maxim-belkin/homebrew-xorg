@@ -13,7 +13,7 @@ class Xsetroot < Formula
   end
 
   # xmuu x11 xbitmaps xcursor xproto
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/libx11"

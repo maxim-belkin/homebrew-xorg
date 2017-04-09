@@ -13,10 +13,10 @@ class Libxcomposite < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "linuxbrew/xorg/compositeproto" =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/compositeproto" => :build
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxfixes"  =>  :build
+  depends_on "linuxbrew/xorg/libxfixes" => :build
 
   # Configure script says that libXcomposite depends on xmlto
   # which  is used to regenerate documentation.

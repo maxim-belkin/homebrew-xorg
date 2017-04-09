@@ -11,7 +11,7 @@ class Xkbevd < Formula
     sha256 "92d578bf17698d728a06a482156b83c2b9c342df3c4b1095f774ebd25d0b24ab" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxkbfile"
   depends_on "linuxbrew/xorg/libx11"
 

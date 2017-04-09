@@ -11,7 +11,7 @@ class Xkbcomp < Formula
     sha256 "d78b21a398b359dfdd4f008f5e8abe53523147b3edfbad931138a3c17981abd2" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxkbfile"
 

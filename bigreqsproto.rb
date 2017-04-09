@@ -44,11 +44,11 @@ class Bigreqsproto < Formula
     system "make", "install"
   end
 
-# def post_install
-#   if build.with?("specs")
-#     mkdir_p "#{Formula["xorg-sgml-doctools"].prefix}/share/doc"
-#     rm_f "#{Formula["xorg-sgml-doctools"].share}/doc/#{name}"
-#     ln_sf "#{doc}", "#{Formula["xorg-sgml-doctools"].share}/doc/#{name}"
-#   end
-# end
+  # def post_install
+  #   if build.with?("specs")
+  #     mkdir_p "#{Formula["xorg-sgml-doctools"].prefix}/share/doc"
+  #     rm_f "#{Formula["xorg-sgml-doctools"].share}/doc/#{name}"
+  #     ln_sf "#{doc}", "#{Formula["xorg-sgml-doctools"].share}/doc/#{name}"
+  #   end
+  # end
 end

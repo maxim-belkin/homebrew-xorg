@@ -13,7 +13,7 @@ class Libpciaccess < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[

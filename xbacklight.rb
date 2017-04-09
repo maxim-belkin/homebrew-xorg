@@ -13,7 +13,7 @@ class Xbacklight < Formula
   end
 
   # xcb-randr >= 1.2 xcb-atom xcb-aux xcb
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxcb"
   depends_on "linuxbrew/xorg/xcb-util"
   depends_on "linuxbrew/xorg/xcb-util-image"

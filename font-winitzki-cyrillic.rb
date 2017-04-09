@@ -13,7 +13,7 @@ class FontWinitzkiCyrillic < Formula
     sha256 "59c5fc648ee887898636805abd19f38d3662837c1921a646ec63a6e7201f43e2" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util"  =>  :build
   depends_on "linuxbrew/xorg/bdftopcf"   =>  :build
   depends_on "linuxbrew/xorg/mkfontdir"  =>  :build

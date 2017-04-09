@@ -12,7 +12,7 @@ class Xmessage < Formula
     sha256 "6a38fe5a90818f80f322186e6372684893e3b7362007eee0b45015f07e295415" => :x86_64_linux
   end
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxaw"
 
   def install

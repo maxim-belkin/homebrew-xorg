@@ -10,17 +10,17 @@ class FontXfree86Type1 < Formula
   # tag "linuxbrew"
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "9b233d97e93dda17c3ab99cad08ee76346a92baef99af21655ee5b39007f33fc" => :x86_64_linux
   end
 
   keg_only "Part of Xorg-fonts package"
 
-  depends_on "pkg-config" =>  :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util"  =>  :build
   depends_on "linuxbrew/xorg/bdftopcf"   =>  :build
   depends_on "linuxbrew/xorg/mkfontdir"  =>  :build
-  depends_on "fontconfig" =>  :build
+  depends_on "fontconfig" => :build
 
   def install
     args = %W[
