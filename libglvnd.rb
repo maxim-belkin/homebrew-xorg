@@ -10,6 +10,7 @@ class Libglvnd < Formula
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "autoconf" => :build
+  depends_on "libtool" => :build
 
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
