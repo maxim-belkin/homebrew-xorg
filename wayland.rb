@@ -1,8 +1,8 @@
 class Wayland < Formula
   desc "Protocol for a compositor to talk to its clients"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-1.11.0.tar.xz"
-  sha256 "9540925f7928becfdf5e3b84c70757f6589bf1ceef09bea78784d8e4772c0db0"
+  url "https://wayland.freedesktop.org/releases/wayland-1.13.0.tar.xz"
+  sha256 "69b052c031a61e89af7cc8780893d0da1e301492352aa449dee9345043e6fe51"
 
   bottle do
     rebuild 1
@@ -41,7 +41,7 @@ class Wayland < Formula
     end
     system "make"
     ENV.deparallelize
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
