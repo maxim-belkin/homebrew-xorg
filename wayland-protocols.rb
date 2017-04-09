@@ -1,8 +1,8 @@
 class WaylandProtocols < Formula
   desc "Additional Wayland protocols"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.5.tar.xz"
-  sha256 "7d0b426ccaeafc084fc579bb2a139f8ad4ea3492d54b7b0210d124c61fbeb2bf"
+  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.7.tar.xz"
+  sha256 "635f2a937d318f1fecb97b54074ca211486e38af943868dd0fa82ea38d091c1f"
 
   head do
     url "git://anongit.freedesktop.org/wayland/wayland-protocols"
@@ -18,15 +18,12 @@ class WaylandProtocols < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --disable-dependency-tracking
       --disable-silent-rules
     ]
 
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
