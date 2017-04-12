@@ -18,9 +18,9 @@ class XorgProtocols < Formula
 
   resources.each do |r|
     if reswithspec.include?(r) && build.with?("specs")
-      depends_on r => "with-specs"
+      depends_on "linuxbrew/xorg/#{r}" => "with-specs"
     else
-      depends_on r
+      depends_on "linuxbrew/xorg/#{r}"
     end
   end
 
