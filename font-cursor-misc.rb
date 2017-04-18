@@ -1,3 +1,4 @@
+# font-cursor-misc: Build a bottle for Linuxbrew
 class FontCursorMisc < Formula
   desc "X.Org Fonts: font cursor misc"
   homepage "http://www.x.org/"
