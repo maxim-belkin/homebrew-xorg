@@ -1,3 +1,4 @@
+# libxmu: Build a bottle for Linuxbrew
 class Libxmu < Formula
   desc "X.Org Libraries: libXmu"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
