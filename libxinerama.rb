@@ -1,3 +1,4 @@
+# libxinerama: Build a bottle for Linuxbrew
 class Libxinerama < Formula
   desc "X.Org Libraries: libXinerama"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
