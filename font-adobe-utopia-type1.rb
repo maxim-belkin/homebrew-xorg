@@ -1,3 +1,4 @@
+# font-adobe-utopia-type1: Build a bottle for Linuxbrew
 class FontAdobeUtopiaType1 < Formula
   desc "X.Org Fonts: font adobe utopia type1"
   homepage "http://www.x.org/"
