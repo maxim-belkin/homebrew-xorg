@@ -1,3 +1,4 @@
+# scrnsaverproto: Build a bottle for Linuxbrew
 class Scrnsaverproto < Formula
   desc "X.Org Protocol Headers: scrnsaverproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
