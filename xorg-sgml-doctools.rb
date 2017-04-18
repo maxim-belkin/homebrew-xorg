@@ -1,3 +1,4 @@
+# xorg-sgml-doctools: Build a bottle for Linuxbrew
 class XorgSgmlDoctools < Formula
   desc "X.Org SGML DocTools"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
