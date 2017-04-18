@@ -1,3 +1,4 @@
+# libdmx: Build a bottle for Linuxbrew
 class Libdmx < Formula
   desc "X.Org Libraries: libdmx"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
