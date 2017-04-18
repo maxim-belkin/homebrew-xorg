@@ -1,3 +1,4 @@
+# iceauth: Build a bottle for Linuxbrew
 class Iceauth < Formula
   desc "X.Org Applications: iceauth"
   homepage "http://www.x.org/"
