@@ -1,3 +1,4 @@
+# renderproto: Build a bottle for Linuxbrew
 class Renderproto < Formula
   desc "X.Org Protocol Headers: renderproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
