@@ -1,3 +1,4 @@
+# libxscrnsaver: Build a bottle for Linuxbrew
 class Libxscrnsaver < Formula
   desc "X.Org Libraries: libXScrnSaver"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
