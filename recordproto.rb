@@ -1,3 +1,4 @@
+# recordproto: Build a bottle for Linuxbrew
 class Recordproto < Formula
   desc "X.Org Protocol Headers: recordproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
