@@ -1,3 +1,4 @@
+# font-sony-misc: Build a bottle for Linuxbrew
 class FontSonyMisc < Formula
   desc "X.Org Fonts: font sony misc"
   homepage "http://www.x.org/"
