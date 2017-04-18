@@ -1,3 +1,4 @@
+# font-cronyx-cyrillic: Build a bottle for Linuxbrew
 class FontCronyxCyrillic < Formula
   desc "X.Org Fonts: font cronyx cyrillic"
   homepage "http://www.x.org/"
