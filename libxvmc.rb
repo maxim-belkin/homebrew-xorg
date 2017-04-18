@@ -1,3 +1,4 @@
+# libxvmc: Build a bottle for Linuxbrew
 class Libxvmc < Formula
   desc "X.Org Libraries: libXvMC"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
