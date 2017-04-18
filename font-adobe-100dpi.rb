@@ -1,3 +1,4 @@
+# font-adobe-100dpi: Build a bottle for Linuxbrew
 class FontAdobe100dpi < Formula
   desc "X.Org Fonts: font adobe 100dpi"
   homepage "http://www.x.org/"
