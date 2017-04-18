@@ -1,3 +1,4 @@
+# libxt: Build a bottle for Linuxbrew
 class Libxt < Formula
   desc "X.Org Libraries: libXt"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
