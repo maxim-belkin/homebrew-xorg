@@ -1,3 +1,4 @@
+# font-bh-lucidatypewriter-100dpi: Build a bottle for Linuxbrew
 class FontBhLucidatypewriter100dpi < Formula
   desc "X.Org Fonts: font bh lucidatypewriter 100dpi"
   homepage "http://www.x.org/"
