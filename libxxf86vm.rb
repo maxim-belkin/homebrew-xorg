@@ -1,3 +1,4 @@
+# libxxf86vm: Build a bottle for Linuxbrew
 class Libxxf86vm < Formula
   desc "X.Org Libraries: libXxf86vm"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
