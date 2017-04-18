@@ -1,3 +1,4 @@
+# font-alias: Build a bottle for Linuxbrew
 class FontAlias < Formula
   desc "X.Org Fonts: font alias"
   homepage "http://www.x.org/"
