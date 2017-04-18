@@ -1,3 +1,4 @@
+# font-sun-misc: Build a bottle for Linuxbrew
 class FontSunMisc < Formula
   desc "X.Org Fonts: font sun misc"
   homepage "http://www.x.org/"
