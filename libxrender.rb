@@ -1,3 +1,4 @@
+# libxrender: Build a bottle for Linuxbrew
 class Libxrender < Formula
   desc "X.Org Libraries: libXrender"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
