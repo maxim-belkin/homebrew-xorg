@@ -1,3 +1,4 @@
+# compositeproto: Build a bottle for Linuxbrew
 class Compositeproto < Formula
   desc "X.Org Protocol Headers: compositeproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
