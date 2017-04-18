@@ -1,3 +1,4 @@
+# font-screen-cyrillic: Build a bottle for Linuxbrew
 class FontScreenCyrillic < Formula
   desc "X.Org Fonts: font screen cyrillic"
   homepage "http://www.x.org/"
