@@ -1,3 +1,4 @@
+# libxext: Build a bottle for Linuxbrew
 class Libxext < Formula
   desc "X.Org Libraries: libXext"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
