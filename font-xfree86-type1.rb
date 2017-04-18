@@ -1,3 +1,4 @@
+# font-xfree86-type1: Build a bottle for Linuxbrew
 class FontXfree86Type1 < Formula
   desc "X.Org Fonts: font xfree86 type1"
   homepage "http://www.x.org/"
