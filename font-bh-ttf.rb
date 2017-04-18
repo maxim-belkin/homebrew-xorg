@@ -1,3 +1,4 @@
+# font-bh-ttf: Build a bottle for Linuxbrew
 class FontBhTtf < Formula
   desc "X.Org Fonts: font bh ttf"
   homepage "http://www.x.org/"
