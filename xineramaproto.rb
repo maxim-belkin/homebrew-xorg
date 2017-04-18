@@ -1,3 +1,4 @@
+# xineramaproto: Build a bottle for Linuxbrew
 class Xineramaproto < Formula
   desc "X.Org Protocol Headers: xineramaproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
