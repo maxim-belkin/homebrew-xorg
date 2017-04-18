@@ -1,3 +1,4 @@
+# font-micro-misc: Build a bottle for Linuxbrew
 class FontMicroMisc < Formula
   desc "X.Org Fonts: font micro misc"
   homepage "http://www.x.org/"
