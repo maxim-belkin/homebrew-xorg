@@ -1,3 +1,4 @@
+# font-bitstream-100dpi: Build a bottle for Linuxbrew
 class FontBitstream100dpi < Formula
   desc "X.Org Fonts: font bitstream 100dpi"
   homepage "http://www.x.org/"
