@@ -1,3 +1,4 @@
+# font-daewoo-misc: Build a bottle for Linuxbrew
 class FontDaewooMisc < Formula
   desc "X.Org Fonts: font daewoo misc"
   homepage "http://www.x.org/"
