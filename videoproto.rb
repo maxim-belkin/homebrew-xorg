@@ -1,3 +1,4 @@
+# videoproto: Build a bottle for Linuxbrew
 class Videoproto < Formula
   desc "X.Org Protocol Headers: videoproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
