@@ -1,3 +1,4 @@
+# font-mutt-misc: Build a bottle for Linuxbrew
 class FontMuttMisc < Formula
   desc "X.Org Fonts: font mutt misc"
   homepage "http://www.x.org/"
