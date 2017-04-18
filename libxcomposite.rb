@@ -1,3 +1,4 @@
+# libxcomposite: Build a bottle for Linuxbrew
 class Libxcomposite < Formula
   desc "X.Org Libraries: libXcomposite"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
