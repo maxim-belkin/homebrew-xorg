@@ -1,3 +1,4 @@
+# libxrandr: Build a bottle for Linuxbrew
 class Libxrandr < Formula
   desc "X.Org Libraries: libXrandr"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
