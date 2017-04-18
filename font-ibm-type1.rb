@@ -1,3 +1,4 @@
+# font-ibm-type1: Build a bottle for Linuxbrew
 class FontIbmType1 < Formula
   desc "X.Org Fonts: font ibm type1"
   homepage "http://www.x.org/"
