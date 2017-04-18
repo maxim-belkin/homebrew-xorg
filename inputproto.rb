@@ -1,3 +1,4 @@
+# inputproto: Build a bottle for Linuxbrew
 class Inputproto < Formula
   desc "X.Org Protocol Headers: inputproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
