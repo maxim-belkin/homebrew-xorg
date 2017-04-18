@@ -1,3 +1,4 @@
+# xcb-proto: Build a bottle for Linuxbrew
 class XcbProto < Formula
   desc "XML-XCB protocol descriptions that libxcb uses for code generation"
   homepage "https://www.x.org/"
