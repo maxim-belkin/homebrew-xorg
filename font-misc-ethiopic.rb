@@ -1,3 +1,4 @@
+# font-misc-ethiopic: Build a bottle for Linuxbrew
 class FontMiscEthiopic < Formula
   desc "X.Org Fonts: font misc ethiopic"
   homepage "http://www.x.org/"
