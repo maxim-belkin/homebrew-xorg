@@ -1,3 +1,4 @@
+# xcmsdb: Build a bottle for Linuxbrew
 class Xcmsdb < Formula
   desc "X.Org Applications: xcmsdb"
   homepage "http://www.x.org/"
