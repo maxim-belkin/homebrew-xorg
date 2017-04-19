@@ -1,3 +1,5 @@
+# mkfontdir: Build a bottle for Linuxbrew
+# mkfontdir: Build a bottle for Linuxbrew
 class Mkfontdir < Formula
   desc "X.Org Applications: mkfontdir"
   homepage "http://www.x.org/"
