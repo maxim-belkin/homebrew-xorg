@@ -1,3 +1,4 @@
+# xcursor-themes: Build a bottle for Linuxbrew
 class XcursorThemes < Formula
   desc "X.Org: redglass and whiteglass animated cursor themes"
   homepage "http://www.x.org/"
