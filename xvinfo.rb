@@ -1,3 +1,4 @@
+# xvinfo: Build a bottle for Linuxbrew
 class Xvinfo < Formula
   desc "X.Org Applications: xvinfo"
   homepage "http://www.x.org/"
