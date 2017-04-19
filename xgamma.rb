@@ -1,3 +1,4 @@
+# xgamma: Build a bottle for Linuxbrew
 class Xgamma < Formula
   desc "X.Org Applications: xgamma"
   homepage "http://www.x.org/"
