@@ -1,3 +1,4 @@
+# setxkbmap: Build a bottle for Linuxbrew
 class Setxkbmap < Formula
   desc "X.Org Applications: setxkbmap"
   homepage "http://www.x.org/"
