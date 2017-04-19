@@ -1,3 +1,4 @@
+# xkill: Build a bottle for Linuxbrew (again)
 class Xkill < Formula
   desc "X.Org Applications: xkill"
   homepage "http://www.x.org/"
