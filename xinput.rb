@@ -1,3 +1,4 @@
+# xinput: Build a bottle for Linuxbrew
 class Xinput < Formula
   desc "X.Org Applications: xinput"
   homepage "http://www.x.org/"
