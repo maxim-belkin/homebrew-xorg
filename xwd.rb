@@ -1,3 +1,4 @@
+# xwd: Build a bottle for Linuxbrew
 class Xwd < Formula
   desc "X.Org Applications: xwd"
   homepage "http://www.x.org/"
