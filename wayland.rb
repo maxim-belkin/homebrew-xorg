@@ -1,3 +1,4 @@
+# wayland: Build a bottle for Linuxbrew
 class Wayland < Formula
   desc "Protocol for a compositor to talk to its clients"
   homepage "https://wayland.freedesktop.org"
