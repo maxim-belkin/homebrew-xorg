@@ -1,3 +1,4 @@
+# sessreg: Build a bottle for Linuxbrew
 class Sessreg < Formula
   desc "X.Org Applications: sessreg"
   homepage "http://www.x.org/"
