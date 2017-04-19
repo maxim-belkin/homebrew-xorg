@@ -1,3 +1,4 @@
+# xhost: Build a bottle for Linuxbrew
 class Xhost < Formula
   desc "X.Org Applications: xhost"
   homepage "http://www.x.org/"
