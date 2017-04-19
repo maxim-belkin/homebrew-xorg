@@ -1,3 +1,4 @@
+# xrdb: Build a bottle for Linuxbrew
 class Xrdb < Formula
   desc "X.Org Applications: xrdb"
   homepage "http://www.x.org/"
