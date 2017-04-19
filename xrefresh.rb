@@ -1,3 +1,4 @@
+# xrefresh: Build a bottle for Linuxbrew
 class Xrefresh < Formula
   desc "X.Org Applications: xrefresh"
   homepage "http://www.x.org/"
