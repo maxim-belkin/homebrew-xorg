@@ -1,3 +1,4 @@
+# encodings: Build a bottle for Linuxbrew
 class Encodings < Formula
   desc "X.Org Fonts: encodings"
   homepage "http://www.x.org/"
