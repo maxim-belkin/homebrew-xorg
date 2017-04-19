@@ -1,3 +1,4 @@
+# smproxy: Build a bottle for Linuxbrew
 class Smproxy < Formula
   desc "X.Org Applications: smproxy"
   homepage "http://www.x.org/"
