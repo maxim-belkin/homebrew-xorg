@@ -1,3 +1,4 @@
+# font-util: Build a bottle for Linuxbrew
 class FontUtil < Formula
   desc "X.Org font package creation/installation utilities"
   homepage "http://www.x.org/"
