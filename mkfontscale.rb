@@ -1,3 +1,4 @@
+# mkfontscale: Build a bottle for Linuxbrew
 class Mkfontscale < Formula
   desc "X.Org Applications: mkfontscale"
   homepage "http://www.x.org/"
