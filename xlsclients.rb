@@ -1,3 +1,4 @@
+# xlsclients: Build a bottle for Linuxbrew
 class Xlsclients < Formula
   desc "X.Org Applications: xlsclients"
   homepage "http://www.x.org/"
