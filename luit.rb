@@ -1,3 +1,4 @@
+# luit: Build a bottle for Linuxbrew
 class Luit < Formula
   desc "X.Org Applications: luit"
   homepage "http://www.x.org/"
