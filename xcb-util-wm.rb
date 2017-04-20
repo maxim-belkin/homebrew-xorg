@@ -1,3 +1,4 @@
+# xcb-util-wm: Build a bottle for Linuxbrew
 class XcbUtilWm < Formula
   desc "Client and window-manager helpers for EWMH and ICCCM"
   homepage "http://xcb.freedesktop.org"
