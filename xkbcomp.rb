@@ -1,3 +1,4 @@
+# xkbcomp: Build a bottle for Linuxbrew
 class Xkbcomp < Formula
   desc "X.Org Applications: xkbcomp"
   homepage "http://www.x.org/"
