@@ -1,3 +1,4 @@
+# mesa: Build a bottle for Linuxbrew
 class Mesa < Formula
   desc "Mesa: cross-driver middleware"
   homepage "http://dri.freedesktop.org"
