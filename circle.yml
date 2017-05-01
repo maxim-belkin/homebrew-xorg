@@ -9,8 +9,8 @@ checkout:
     - git remote set-url origin $CIRCLE_REPOSITORY_URL
     - if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
     - git fetch origin
-    - git config user.name LinuxbrewTestBot
-    - git config user.email testbot@linuxbrew.sh
+    - git config --global user.name LinuxbrewTestBot
+    - git config --global user.email testbot@linuxbrew.sh
     - sudo mkdir /home/linuxbrew
     - sudo chown "$USER:" /home/linuxbrew
     - git clone https://github.com/Linuxbrew/brew /home/linuxbrew/.linuxbrew
@@ -25,16 +25,20 @@ dependencies:
     - DEBIAN_FRONTEND=noninteractive sudo apt-get autoremove -y --purge
         libblas-dev
         libbz2-dev
+        libexpat1-dev
         libfreetype6-dev
         libgdbm-dev
         libicu-dev
         libidn11-dev
+        libjack-jackd2-0
+        libjack0
         libjasper-dev
         libjbig-dev
         libkrb5-dev
         liblzma-dev
         libncurses5-dev
         libpcre3-dev
+        libpq-dev
         libtinfo-dev
         libwebp-dev
         libwmf-dev
@@ -53,7 +57,6 @@ test:
       PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH";
       eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)";
       brew install patchelf
-        && brew tap homebrew/dupes
         && brew test-bot
     - mv *bottle*.json *.tar.gz $CIRCLE_ARTIFACTS/ || true
 notify:

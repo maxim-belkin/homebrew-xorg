@@ -1,6 +1,8 @@
 language: ruby
+os: linux
 rvm: 2.0.0
 sudo: required
+dist: trusty
 
 before_install:
   - sudo apt-get -qq update
@@ -8,16 +10,20 @@ before_install:
   - DEBIAN_FRONTEND=noninteractive sudo apt-get autoremove -y --purge
       libblas-dev
       libbz2-dev
+      libexpat1-dev
       libfreetype6-dev
       libgdbm-dev
       libicu-dev
       libidn11-dev
+      libjack-jackd2-0
+      libjack0
       libjasper-dev
       libjbig-dev
       libkrb5-dev
       liblzma-dev
       libncurses5-dev
       libpcre3-dev
+      libpq-dev
       libtinfo-dev
       libwebp-dev
       libwmf-dev
@@ -26,9 +32,8 @@ before_install:
       llvm-3.4
       mysql-common
       zlib1g-dev
-  # Fix error: Incorrect file permissions (664)
-  - chmod 0644 *.rb
-  - umask 022
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "travis-ci@linuxbrew.sh"
   - export TRAVIS_COMMIT="$(git rev-parse --verify -q HEAD)"
   - if [ -f ".git/shallow" ]; then
       travis_retry git fetch --unshallow;
@@ -37,19 +42,22 @@ before_install:
   - sudo mkdir $HOME
   - sudo chown "$USER:" $HOME
   - LINUXBREW=$HOME/.linuxbrew
-  - git clone https://github.com/Linuxbrew/brew $LINUXBREW
+  - git clone --depth=1 https://github.com/Linuxbrew/brew "$LINUXBREW"
   - export PATH="$LINUXBREW/bin:$LINUXBREW/sbin:$PATH"
-  - REPO="$(brew --repo $TRAVIS_REPO_SLUG)"
+  - REPO="$(brew --repo "$TRAVIS_REPO_SLUG")"
   - rm -rf "$REPO"
-  - mkdir -p "$REPO"
+  - mkdir -p "$(dirname "$REPO")"
+  # Fix error: Incorrect file permissions (664)
+  - chmod 0644 *.rb
+  - umask 022
   - rsync -az "$TRAVIS_BUILD_DIR/" "$REPO"
   - export TRAVIS_BUILD_DIR="$REPO"
   - cd "$(brew --repo)"
   - export HOMEBREW_DEVELOPER=1
   - export HOMEBREW_NO_AUTO_UPDATE=1
   - export HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1
+  - env | grep TRAVIS | tee /tmp/travis.env
   - ulimit -n 1024
-  - brew tap homebrew/dupes
 
 script:
   - brew test-bot
