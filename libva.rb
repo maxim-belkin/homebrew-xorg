@@ -22,8 +22,15 @@ class Libva < Formula
   # Build-time
   depends_on "pkg-config" => :build
   depends_on "autoconf" => :build
+
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/wayland" => :recommended
+
+  # Needed for X11 bindings
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxfixes"
+
+  depends_on "libtool" => :build if build.without?("wayland")
 
   def install
     args = %W[
