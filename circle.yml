@@ -30,8 +30,8 @@ dependencies:
         libgdbm-dev
         libicu-dev
         libidn11-dev
-        libjack-jackd2-dev
         libjack-dev
+        libjack-jackd2-dev
         libjasper-dev
         libjbig-dev
         libkrb5-dev
