@@ -2,7 +2,7 @@ class Xsetroot < Formula
   desc "X.Org Applications: xsetroot"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xsetroot-1.1.1.tar.bz2"
+  url "https://www.x.org/pub/individual/app/xsetroot-1.1.1.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/xsetroot-1.1.1.tar.bz2"
   sha256 "ba215daaa78c415fce11b9e58c365d03bb602eaa5ea916578d76861a468cc3d9"
   # tag "linuxbrew"

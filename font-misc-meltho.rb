@@ -2,7 +2,7 @@ class FontMiscMeltho < Formula
   desc "X.Org Fonts: font misc meltho"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url    "https://www.x.org/pub/individual/font/font-misc-meltho-1.0.3.tar.bz2"
+  url "https://www.x.org/pub/individual/font/font-misc-meltho-1.0.3.tar.bz2"
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-misc-meltho-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-misc-meltho-1.0.3.tar.bz2"
   sha256 "3721323f13855cf7ca609115a1f7b182491e9b2b9c6e01eb1a2c7f8edd480791"

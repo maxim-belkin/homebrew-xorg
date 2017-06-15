@@ -1,7 +1,7 @@
 class Libxkbfile < Formula
   desc "X.Org Libraries: libxkbfile"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libxkbfile-1.0.9.tar.bz2"
+  url "http://ftp.x.org/pub/individual/lib/libxkbfile-1.0.9.tar.bz2"
   sha256 "51817e0530961975d9513b773960b4edd275f7d5c72293d5a151ed4f42aeb16a"
   # tag "linuxbrew"
 

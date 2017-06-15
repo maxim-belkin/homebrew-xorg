@@ -2,7 +2,7 @@ class Xkill < Formula
   desc "X.Org Applications: xkill"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xkill-1.0.4.tar.bz2"
+  url "https://www.x.org/pub/individual/app/xkill-1.0.4.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/xkill-1.0.4.tar.bz2"
   sha256 "88ef2a304f32f24b255e879f03c1dcd3a2be3e71d5562205414f267d919f812e"
   # tag "linuxbrew"

@@ -1,7 +1,7 @@
 class Libfs < Formula
   desc "X.Org Libraries: libFS"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libFS-1.0.7.tar.bz2"
+  url "http://ftp.x.org/pub/individual/lib/libFS-1.0.7.tar.bz2"
   sha256 "2e9d4c07026a7401d4fa4ffae86e6ac7fec83f50f3268fa85f52718e479dc4f3"
   # tag "linuxbrew"
 

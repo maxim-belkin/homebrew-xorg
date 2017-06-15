@@ -2,7 +2,7 @@ class Xlsatoms < Formula
   desc "X.Org Applications: xlsatoms"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xlsatoms-1.1.2.tar.bz2"
+  url "https://www.x.org/pub/individual/app/xlsatoms-1.1.2.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/xlsatoms-1.1.2.tar.bz2"
   sha256 "47e5dc7c3dbda6db2cf8c00cedac1722835c1550aa21cfdbc9ba83906694dea4"
   # tag "linuxbrew"

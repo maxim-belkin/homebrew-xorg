@@ -2,7 +2,7 @@ class Xrandr < Formula
   desc "X.Org Applications: xrandr"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xrandr-1.5.0.tar.bz2"
+  url "https://www.x.org/pub/individual/app/xrandr-1.5.0.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/xrandr-1.5.0.tar.bz2"
   sha256 "c1cfd4e1d4d708c031d60801e527abc9b6d34b85f2ffa2cadd21f75ff38151cd"
   # tag "linuxbrew"

@@ -2,7 +2,7 @@ class Xinput < Formula
   desc "X.Org Applications: xinput"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xinput-1.6.2.tar.bz2"
+  url "https://www.x.org/pub/individual/app/xinput-1.6.2.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/xinput-1.6.2.tar.bz2"
   sha256 "3694d29b4180952fbf13c6d4e59541310cbb11eef5bf888ff3d8b7f4e3aee5c4"
   # tag "linuxbrew"

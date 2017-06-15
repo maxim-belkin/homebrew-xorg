@@ -1,7 +1,7 @@
 class Libxaw < Formula
   desc "X.Org Libraries: libXaw"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libXaw-1.0.13.tar.bz2"
+  url "http://ftp.x.org/pub/individual/lib/libXaw-1.0.13.tar.bz2"
   sha256 "8ef8067312571292ccc2bbe94c41109dcf022ea5a4ec71656a83d8cce9edb0cd"
   # tag "linuxbrew"
 

@@ -2,7 +2,7 @@ class Xpr < Formula
   desc "X.Org Applications: xpr"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xpr-1.0.4.tar.bz2"
+  url "https://www.x.org/pub/individual/app/xpr-1.0.4.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/xpr-1.0.4.tar.bz2"
   sha256 "fed98df31eb93d3dca4688cb535aabad06be572e70ace3b1685679c18dd86cb5"
   # tag "linuxbrew"

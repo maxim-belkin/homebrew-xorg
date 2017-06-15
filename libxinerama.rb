@@ -1,7 +1,7 @@
 class Libxinerama < Formula
   desc "X.Org Libraries: libXinerama"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libXinerama-1.1.3.tar.bz2"
+  url "http://ftp.x.org/pub/individual/lib/libXinerama-1.1.3.tar.bz2"
   sha256 "7a45699f1773095a3f821e491cbd5e10c887c5a5fce5d8d3fced15c2ff7698e2"
   # tag "linuxbrew"
 

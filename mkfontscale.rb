@@ -2,7 +2,7 @@ class Mkfontscale < Formula
   desc "X.Org Applications: mkfontscale"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/mkfontscale-1.1.2.tar.bz2"
+  url "https://www.x.org/pub/individual/app/mkfontscale-1.1.2.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/mkfontscale-1.1.2.tar.bz2"
   sha256 "8c6d5228af885477b9aec60ca6f172578e7d2de42234357af62fb00439453f20"
   # tag "linuxbrew"

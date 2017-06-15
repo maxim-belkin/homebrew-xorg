@@ -1,7 +1,7 @@
 class Libdmx < Formula
   desc "X.Org Libraries: libdmx"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libdmx-1.1.3.tar.bz2"
+  url "http://ftp.x.org/pub/individual/lib/libdmx-1.1.3.tar.bz2"
   sha256 "c97da36d2e56a2d7b6e4f896241785acc95e97eb9557465fd66ba2a155a7b201"
   # tag "linuxbrew"
 

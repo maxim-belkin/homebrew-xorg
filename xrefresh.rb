@@ -2,7 +2,7 @@ class Xrefresh < Formula
   desc "X.Org Applications: xrefresh"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xrefresh-1.0.5.tar.bz2"
+  url "https://www.x.org/pub/individual/app/xrefresh-1.0.5.tar.bz2"
   mirror "http://ftp.x.org/pub/individual/app/xrefresh-1.0.5.tar.bz2"
   sha256 "3213671b0a8a9d1e8d1d5d9e3fd86842c894dd9acc1be2560eda50bc1fb791d6"
   # tag "linuxbrew"

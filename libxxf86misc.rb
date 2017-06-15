@@ -1,7 +1,7 @@
 class Libxxf86misc < Formula
   desc "X.Org Libraries: libXxf86misc"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "https://www.x.org/archive//individual/lib/libXxf86misc-1.0.3.tar.gz"
+  url "https://www.x.org/archive//individual/lib/libXxf86misc-1.0.3.tar.gz"
   sha256 "358f692f793af00f6ef4c7a8566c1bcaeeea37e417337db3f519522cc1df3946"
   # tag "linuxbrew"
 
