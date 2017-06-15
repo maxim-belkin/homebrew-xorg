@@ -1,14 +1,14 @@
 class Libxfont2 < Formula
   desc "X.Org Libraries: libXfont"
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "d8d172cb57f3abc49174f5a88d46ab1ca4d24bec859eed8635de8b3d356c81df" => :x86_64_linux
-  end
-
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "http://ftp.x.org/pub/individual/lib/libXfont2-2.0.1.tar.bz2"
   sha256 "e9fbbb475ddd171b3a6a54b989cbade1f6f874fc35d505ebc5be426bc6e4db7e"
   # tag "linuxbrew"
+
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "d8d172cb57f3abc49174f5a88d46ab1ca4d24bec859eed8635de8b3d356c81df" => :x86_64_linux
+  end
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
