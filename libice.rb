@@ -17,8 +17,8 @@ class Libice < Formula
 
   # Required dependencies
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto"     =>  :build
-  depends_on "linuxbrew/xorg/xtrans"     =>  :build
+  depends_on "linuxbrew/xorg/xproto"     => :build
+  depends_on "linuxbrew/xorg/xtrans"     => :build
 
   # Patch for xmlto
   patch do

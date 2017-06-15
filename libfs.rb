@@ -15,9 +15,9 @@ class Libfs < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "linuxbrew/xorg/xproto"     =>  :build
-  depends_on "linuxbrew/xorg/fontsproto" =>  :build
-  depends_on "linuxbrew/xorg/xtrans"     =>  :build
+  depends_on "linuxbrew/xorg/xproto"     => :build
+  depends_on "linuxbrew/xorg/fontsproto" => :build
+  depends_on "linuxbrew/xorg/xtrans"     => :build
 
   def install
     args = %W[

@@ -20,8 +20,8 @@ class Libxt < Formula
   depends_on "linuxbrew/xorg/libsm"
   depends_on "linuxbrew/xorg/libice"
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/xproto"     =>  :build
-  depends_on "linuxbrew/xorg/kbproto"    =>  :build
+  depends_on "linuxbrew/xorg/xproto"     => :build
+  depends_on "linuxbrew/xorg/kbproto"    => :build
 
   # Patch for xmlto
   patch do
