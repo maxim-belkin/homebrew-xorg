@@ -1,7 +1,7 @@
 class Libxres < Formula
   desc "X.Org Libraries: libXres"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libXres-1.0.7.tar.bz2"
+  url "https://ftp.x.org/pub/individual/lib/libXres-1.0.7.tar.bz2"
   sha256 "26899054aa87f81b17becc68e8645b240f140464cf90c42616ebb263ec5fa0e5"
   # tag "linuxbrew"
 

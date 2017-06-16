@@ -1,7 +1,7 @@
 class Libxfont < Formula
   desc "X.Org Libraries: libXfont"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libXfont-1.5.2.tar.bz2"
+  url "https://ftp.x.org/pub/individual/lib/libXfont-1.5.2.tar.bz2"
   sha256 "02945ea68da447102f3e6c2b896c1d2061fd115de99404facc2aca3ad7010d71"
   # tag "linuxbrew"
 

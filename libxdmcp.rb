@@ -1,7 +1,7 @@
 class Libxdmcp < Formula
   desc "X Display Manager Control Protocol"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libXdmcp-1.1.2.tar.bz2"
+  url "https://ftp.x.org/pub/individual/lib/libXdmcp-1.1.2.tar.bz2"
   sha256 "81fe09867918fff258296e1e1e159f0dc639cb30d201c53519f25ab73af4e4e2"
   # tag "linuxbrew"
 

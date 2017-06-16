@@ -1,7 +1,7 @@
 class Libxv < Formula
   desc "X.Org Libraries: libXv"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libXv-1.0.11.tar.bz2"
+  url "https://ftp.x.org/pub/individual/lib/libXv-1.0.11.tar.bz2"
   sha256 "d26c13eac99ac4504c532e8e76a1c8e4bd526471eb8a0a4ff2a88db60cb0b088"
   # tag "linuxbrew"
 

@@ -1,7 +1,7 @@
 class Libxdamage < Formula
   desc "X.Org Libraries: libXdamage"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libXdamage-1.1.4.tar.bz2"
+  url "https://ftp.x.org/pub/individual/lib/libXdamage-1.1.4.tar.bz2"
   sha256 "7c3fe7c657e83547f4822bfde30a90d84524efb56365448768409b77f05355ad"
   # tag "linuxbrew"
 

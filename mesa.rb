@@ -1,6 +1,6 @@
 class Mesa < Formula
   desc "Mesa: cross-driver middleware"
-  homepage "http://dri.freedesktop.org"
+  homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/17.0.0/mesa-17.0.0.tar.xz"
   sha256 "39db3d59700159add7f977307d12a7dfe016363e760ad82280ac4168ea668481"
 

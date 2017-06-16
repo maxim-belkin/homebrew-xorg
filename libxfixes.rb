@@ -1,7 +1,7 @@
 class Libxfixes < Formula
   desc "X.Org Libraries: libXfixes"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "http://ftp.x.org/pub/individual/lib/libXfixes-5.0.3.tar.bz2"
+  url "https://ftp.x.org/pub/individual/lib/libXfixes-5.0.3.tar.bz2"
   sha256 "de1cd33aff226e08cefd0e6759341c2c8e8c9faf8ce9ac6ec38d43e287b22ad6"
   # tag "linuxbrew"
 
