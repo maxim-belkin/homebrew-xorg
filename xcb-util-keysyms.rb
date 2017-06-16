@@ -1,6 +1,6 @@
 class XcbUtilKeysyms < Formula
   desc "Additional extensions to the XCB library."
-  homepage "http://xcb.freedesktop.org"
+  homepage "https://xcb.freedesktop.org"
   url "https://xcb.freedesktop.org/dist/xcb-util-keysyms-0.4.0.tar.bz2"
   sha256 "0ef8490ff1dede52b7de533158547f8b454b241aa3e4dcca369507f66f216dd9"
 
