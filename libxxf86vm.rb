@@ -17,8 +17,8 @@ class Libxxf86vm < Formula
 
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/xproto"     => :build
-  depends_on "linuxbrew/xorg/xextproto"  => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/xf86vidmodeproto" => :build
 
   def install

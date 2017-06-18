@@ -17,7 +17,7 @@ class Libxdamage < Formula
   depends_on "linuxbrew/xorg/damageproto" => :build
   depends_on "linuxbrew/xorg/libxfixes"
   depends_on "linuxbrew/xorg/fixesproto" => :build
-  depends_on "linuxbrew/xorg/xextproto"  => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 
   def install

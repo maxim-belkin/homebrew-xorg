@@ -15,8 +15,8 @@ class Libxxf86misc < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "linuxbrew/xorg/xproto"     => :build
-  depends_on "linuxbrew/xorg/xextproto"  => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/xf86miscproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"

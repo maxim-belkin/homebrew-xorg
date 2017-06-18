@@ -14,7 +14,7 @@ class Libxdmcp < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
 
-  depends_on "pkg-config"      => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xorg-protocols" => :build
 
   # Patch for xmlto
@@ -24,7 +24,7 @@ class Libxdmcp < Formula
   end
 
   if build.with?("docs")
-    depends_on "xmlto"   => :build
+    depends_on "xmlto" => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]

@@ -28,7 +28,7 @@ class Libxmu < Formula
   end
 
   if build.with?("docs")
-    depends_on "xmlto"   => :build
+    depends_on "xmlto" => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]

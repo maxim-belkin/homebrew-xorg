@@ -20,9 +20,9 @@ class Libvdpau < Formula
   depends_on "linuxbrew/xorg/libx11"
 
   # optional
-  depends_on "doxygen"  => :optional
+  depends_on "doxygen" => :optional
   depends_on "graphviz" => :optional
-  depends_on "texlive"  => :optional
+  depends_on "texlive" => :optional
 
   def install
     args = %W[
