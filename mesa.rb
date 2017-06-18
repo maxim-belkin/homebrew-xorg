@@ -3,6 +3,7 @@ class Mesa < Formula
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/17.0.0/mesa-17.0.0.tar.xz"
   sha256 "39db3d59700159add7f977307d12a7dfe016363e760ad82280ac4168ea668481"
+  revision 1
 
   bottle do
     sha256 "c4261b5848761366779d18b7ad50c86798ed1513249da942a7072623823822e3" => :x86_64_linux
@@ -94,7 +95,7 @@ class Mesa < Formula
       --enable-vdpau
       --enable-xvmc
       --disable-llvm-shared-libs
-      --with-dri-drivers=nouveau,radeon,r200,swrast
+      --with-dri-drivers=i965,nouveau,radeon,r200,swrast
       --with-sha1=libsha1
       --enable-gallium-llvm
       --enable-sysfs
