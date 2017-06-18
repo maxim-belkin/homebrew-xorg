@@ -10,7 +10,7 @@ class Inputproto < Formula
     sha256 "9131115dd042851453e924e25a93a91206c776df26c6cde1e7c47d3fcfcb5d09" => :x86_64_linux
   end
 
-  option "with-specs",  "Build specifications"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build

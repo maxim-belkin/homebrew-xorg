@@ -12,9 +12,9 @@ class XorgDocs < Formula
 
   # unlike other packages, this one is all about documentation
   # so we build docs + specs unless requested otherwise
-  option "without-docs",  "Do not build documentation"
+  option "without-docs", "Do not build documentation"
   option "without-specs", "Do not build specifications"
-  option "without-test",  "Skip compile-time testsation"
+  option "without-test", "Skip compile-time testsation"
 
   depends_on "linuxbrew/xorg/util-macros" => [:build, :recommended]
   depends_on "xmlto" => :build

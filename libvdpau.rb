@@ -9,7 +9,7 @@ class Libvdpau < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static",   "Build static libraries (not recommended)"
+  option "with-static", "Build static libraries (not recommended)"
 
   # Build-time
   depends_on "pkg-config" => :build

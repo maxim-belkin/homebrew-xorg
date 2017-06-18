@@ -11,7 +11,7 @@ class Libxaw < Formula
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
-  option "with-specs",  "Build specifications"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xproto" => :build

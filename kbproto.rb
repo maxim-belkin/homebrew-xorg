@@ -10,7 +10,7 @@ class Kbproto < Formula
     sha256 "3d6b25f6545716ad960db544ddd46b60c5e73c46fcc4a8b6ebea34e8fcdaf478" => :x86_64_linux
   end
 
-  option "with-specs",  "Build specifications"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build

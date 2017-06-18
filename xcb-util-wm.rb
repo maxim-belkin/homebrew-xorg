@@ -10,8 +10,8 @@ class XcbUtilWm < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static",  "Build static libraries (not recommended)"
-  option "with-docs",    "Regenerate documentation (requires doxygen)"
+  option "with-static", "Build static libraries (not recommended)"
+  option "with-docs", "Regenerate documentation (requires doxygen)"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build

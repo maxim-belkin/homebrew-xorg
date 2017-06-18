@@ -10,7 +10,7 @@ class Fontsproto < Formula
     sha256 "5d04e66c6c6e5c17731f3d732f1c093b44009dbd07b22c1b629593d1cdd497fd" => :x86_64_linux
   end
 
-  option "with-specs",  "Build specifications"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build

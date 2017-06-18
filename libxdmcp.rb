@@ -12,7 +12,7 @@ class Libxdmcp < Formula
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
-  option "with-docs",   "Build documentation"
+  option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/xorg-protocols" => :build

@@ -12,8 +12,8 @@ class Libxt < Formula
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
-  option "with-specs",  "Build specifications"
-  option "with-glib",   "Build with glib (for unit testing)"
+  option "with-specs", "Build specifications"
+  option "with-glib", "Build with glib (for unit testing)"
 
   depends_on "pkg-config" => :build
 

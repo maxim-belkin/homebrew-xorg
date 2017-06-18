@@ -12,8 +12,8 @@ class Libxi < Formula
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
-  option "with-docs",   "Build documentation"
-  option "with-specs",  "Build specifications"
+  option "with-docs", "Build documentation"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
 

@@ -10,7 +10,7 @@ class Xproto < Formula
     sha256 "322e6bbffb0a66affa15afea302134281b73fecb85ad4ca606c6e829c38ef1b6" => :x86_64_linux
   end
 
-  option "with-specs",  "Build specifications"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build

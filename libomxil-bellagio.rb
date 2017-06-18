@@ -9,7 +9,7 @@ class LibomxilBellagio < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static",   "Build static libraries (not recommended)"
+  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
   depends_on "autoconf" => :build

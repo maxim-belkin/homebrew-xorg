@@ -71,7 +71,7 @@ class Xorg < Formula
     ### Provide a way to override default options for the packages.
     ### These options will be later combined into args_extra variable
     ### and passed to formulas that accept them
-    # option "without-fop",     "Build without fop support"
+    # option "without-fop", "Build without fop support"
     # option "without-libxslt", "Build without libxslt support"
     # option "without-xorg-sgml-doctools", "Build without xorg-sgml-doctools support"
     # ###

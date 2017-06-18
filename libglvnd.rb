@@ -9,7 +9,7 @@ class Libglvnd < Formula
     sha256 "0eddfa4d5ad43b3365900d84507c42061831b082fbbb027759c06a8ceda8bc5c" => :x86_64_linux
   end
 
-  option "with-static",   "Build static libraries (not recommended)"
+  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
