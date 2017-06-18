@@ -51,7 +51,7 @@ class Mesa < Formula
   end
 
   patch :p1 do
-    url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-17.1.2-add_xdemos-1.patch"
+    url "https://gist.githubusercontent.com/rwhogg/088a3e771be0f0556d2286c034544d18/raw/efd587120964745a61a2571a431ffc38341dc37c/mesa-patch-from-linux-from-scratch.patch"
     sha256 "53492ca476e3df2de210f749983e17de4bec026a904db826acbcbd1ef83e71cd"
   end
 
