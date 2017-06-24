@@ -22,7 +22,7 @@ class Libxcb < Formula
 
   depends_on "doxygen" => :build if build.with? "docs"
   depends_on "check" => :build if build.with? "test"
-  depends_on "libxslt" => [:build, :optional]
+  depends_on "libxslt" => %i(build optional)
 
   if build.with? "python3"
     depends_on :python3      => :build

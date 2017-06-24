@@ -20,7 +20,7 @@ class FontDaewooMisc < Formula
   depends_on "linuxbrew/xorg/bdftopcf" => :build
   depends_on "linuxbrew/xorg/mkfontdir" => :build
   depends_on "fontconfig" => :build
-  depends_on "bzip2"      => [:build, :recommended]
+  depends_on "bzip2" => %i(build recommended)
 
   def install
     args = %W[

@@ -37,7 +37,7 @@ class Libxfont < Formula
 
     depends_on "xmlto" => :build
     depends_on "fop" => :build
-    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => %i(build recommended)
   end
 
   def install

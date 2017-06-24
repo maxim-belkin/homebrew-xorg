@@ -25,9 +25,9 @@ class Libxdmcp < Formula
 
   if build.with?("docs")
     depends_on "xmlto" => :build
-    depends_on "fop"     => [:build, :recommended]
-    depends_on "libxslt" => [:build, :recommended]
-    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "fop" => %i(build recommended)
+    depends_on "libxslt" => %i(build recommended)
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => %i(build recommended)
   end
 
   def install
