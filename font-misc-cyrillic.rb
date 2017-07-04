@@ -13,7 +13,7 @@ class FontMiscCyrillic < Formula
     sha256 "f6fa4203c01fc448ceda1a1628303f5269213ceebbbdf10b3660571034b6886e" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
