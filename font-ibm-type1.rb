@@ -13,7 +13,7 @@ class FontIbmType1 < Formula
     sha256 "e5557df70a617f487529147dd44834abcc8ee20e364f9ff558adcb0ec38b40b2" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
