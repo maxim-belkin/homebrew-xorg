@@ -13,7 +13,7 @@ class FontBhLucidatypewriter100dpi < Formula
     sha256 "1acd5d3c7eb230a2cf8fe4d125522f3893cbb4691eb5d31740965135a3a9e564" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
