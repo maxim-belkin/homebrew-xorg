@@ -13,7 +13,7 @@ class FontSonyMisc < Formula
     sha256 "0c25b9c97a94670867c137b1c1f03beb5f458bb4df8c2fb2d475a9677e16b08d" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
