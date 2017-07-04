@@ -13,7 +13,7 @@ class FontMicroMisc < Formula
     sha256 "6ed219758dbdd467c430fcd746bf1c4380144fd605710a14032c284ad247d169" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
