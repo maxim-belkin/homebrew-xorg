@@ -13,7 +13,7 @@ class FontJisMisc < Formula
     sha256 "c2f51db2f65e98ed6b50d3b79152722e4c1ff49f47da79db51a3593bb513cbdc" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
