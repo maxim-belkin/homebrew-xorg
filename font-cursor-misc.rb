@@ -13,7 +13,7 @@ class FontCursorMisc < Formula
     sha256 "467daf5b42875a9ea59e6cac6920c9bf3a6218e728b3de1fb753fd4a0fab49e9" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
