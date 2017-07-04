@@ -13,7 +13,7 @@ class FontMiscEthiopic < Formula
     sha256 "0d5247e5301246e6d86f50d73901d952d76bc58f9e88973340d61d6d51530557" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
