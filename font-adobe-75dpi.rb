@@ -13,7 +13,7 @@ class FontAdobe75dpi < Formula
     sha256 "5fb855142edaad70987a116a51fa8bc7e07c1b1044e9c3906e0784a123de0e05" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
