@@ -13,7 +13,7 @@ class FontMuttMisc < Formula
     sha256 "6375fb662f3f8892cceb5e82779a74038479816fce9fd44920c72804248a366c" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
