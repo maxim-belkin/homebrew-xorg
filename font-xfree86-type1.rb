@@ -14,7 +14,7 @@ class FontXfree86Type1 < Formula
     sha256 "9b233d97e93dda17c3ab99cad08ee76346a92baef99af21655ee5b39007f33fc" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
