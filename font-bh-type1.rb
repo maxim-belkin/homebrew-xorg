@@ -13,7 +13,7 @@ class FontBhType1 < Formula
     sha256 "f2661f4b46de64ac5cbeb5de96a4b520e02b9a6c49fb05d340d96d571d5479d8" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
