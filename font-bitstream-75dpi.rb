@@ -13,7 +13,7 @@ class FontBitstream75dpi < Formula
     sha256 "4da5e621aee2faf3622f5e431dbf66ee5492a3035fa11e62b6da421d764e3e8a" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
