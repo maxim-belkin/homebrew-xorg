@@ -13,7 +13,7 @@ class FontBitstreamType1 < Formula
     sha256 "dba686a6a51936e06bcb7de93d3f2f2d6f3b1b7bfe52c7eb0c75758d8a41c84a" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
