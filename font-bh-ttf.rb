@@ -13,7 +13,7 @@ class FontBhTtf < Formula
     sha256 "0a24a4cfb38a8c3350a99c4da06e4e42267dd8770e50c628408acb8e60ee70e0" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
