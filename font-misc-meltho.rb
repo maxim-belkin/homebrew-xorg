@@ -13,7 +13,7 @@ class FontMiscMeltho < Formula
     sha256 "fde87b8065adb016d78cf6b9b16fa4eface5109cc75269a3008135dfe4ad991d" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
