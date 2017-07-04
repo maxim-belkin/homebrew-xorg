@@ -13,7 +13,7 @@ class FontDaewooMisc < Formula
     sha256 "82befe88a91fda095936f91e2592ff62ec213e8bcdc716d23ce49869a63915b6" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
