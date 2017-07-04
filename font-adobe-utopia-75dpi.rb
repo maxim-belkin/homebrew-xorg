@@ -13,7 +13,7 @@ class FontAdobeUtopia75dpi < Formula
     sha256 "293b881efa2650c70d603725b62beef60a99c15037617b5666622267d111fada" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
