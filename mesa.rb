@@ -1,5 +1,5 @@
 class Mesa < Formula
-  desc "Mesa: cross-driver middleware"
+  desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/17.0.0/mesa-17.0.0.tar.xz"
   sha256 "39db3d59700159add7f977307d12a7dfe016363e760ad82280ac4168ea668481"
@@ -42,7 +42,7 @@ class Mesa < Formula
   #
 
   resource "mako" do
-    url "https://pypi.python.org/packages/56/4b/cb75836863a6382199aefb3d3809937e21fa4cb0db15a4f4ba0ecc2e7e8e/Mako-1.0.6.tar.gz"
+    url "https://files.pythonhosted.org/packages/56/4b/cb75836863a6382199aefb3d3809937e21fa4cb0db15a4f4ba0ecc2e7e8e/Mako-1.0.6.tar.gz"
     sha256 "48559ebd872a8e77f92005884b3d88ffae552812cdf17db6768e5c3be5ebbe0d"
   end
 
