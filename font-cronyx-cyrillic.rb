@@ -13,7 +13,7 @@ class FontCronyxCyrillic < Formula
     sha256 "94fd339a7f2858e59f0e21c1db0e376ef738f906e6c7175f3dc1defae58bd6d9" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
