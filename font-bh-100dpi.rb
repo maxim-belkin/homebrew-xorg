@@ -13,7 +13,7 @@ class FontBh100dpi < Formula
     sha256 "3c54560deb82bf754a7ea1cb500a105a021fe7ffc9ec049fc89839a2f28a4b3b" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
