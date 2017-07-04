@@ -13,7 +13,7 @@ class FontScreenCyrillic < Formula
     sha256 "5104d13989ec22da09421c9ff80d9c2251e0687aff60fa1eac6ebe6d8fc20456" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
