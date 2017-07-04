@@ -13,7 +13,7 @@ class FontSchumacherMisc < Formula
     sha256 "557113547fe9582e11ffa7c55275ea79ef2e764cd9e7502f208c3c30ff8543d2" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
