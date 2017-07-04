@@ -13,7 +13,7 @@ class FontSunMisc < Formula
     sha256 "c516e800165641ab852931d59a63d01cf2ce411fc6bdbac362bb06edf83ca855" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
