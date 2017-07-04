@@ -14,7 +14,7 @@ class Encodings < Formula
     sha256 "80e9c0aea351de9f225610fb98692d95b6cdaa4d0800592b96cb9bfa5ebe5449" => :x86_64_linux
   end
 
-  keg_only "Part of Xorg-fonts package"
+  keg_only "part of Xorg-fonts package"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
