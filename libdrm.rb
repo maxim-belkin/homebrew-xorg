@@ -1,5 +1,5 @@
 class Libdrm < Formula
-  desc "libdrm: cross-driver middleware"
+  desc "Library for accessing the direct rendering manager"
   homepage "https://dri.freedesktop.org"
   url "https://dri.freedesktop.org/libdrm/libdrm-2.4.80.tar.bz2"
   sha256 "a82a519601e9cdfad795e760807eb07ac8913b225e25fc8fe9bc03e3be6549f1"
