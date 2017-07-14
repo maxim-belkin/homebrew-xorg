@@ -1,5 +1,5 @@
 class Libglvnd < Formula
-  desc "libglvnd: GL Vendor-Neutral Dispatch library"
+  desc "GL Vendor-Neutral Dispatch library"
   homepage "https://github.com/NVIDIA/libglvnd"
 
   url "https://github.com/NVIDIA/libglvnd.git"
