@@ -2,9 +2,9 @@ class Sessreg < Formula
   desc "X.Org Applications: sessreg"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/sessreg-1.1.0.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/sessreg-1.1.0.tar.bz2"
-  sha256 "551177657835e0902b5eee7b19713035beaa1581bbd3c6506baa553e751e017c"
+  url "https://www.x.org/pub/individual/app/sessreg-1.1.1.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/sessreg-1.1.1.tar.bz2"
+  sha256 "78a76ae3f3f6a26547a34630d1b740f42344848b5fb6d7c9c7f7da255e35a6e1"
   # tag "linuxbrew"
 
   bottle do
@@ -23,8 +23,6 @@ class Sessreg < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-
-    inreplace "man/Makefile.in", "$(CPP) $(DEFS)", "$(CPP) -P $(DEFS)"
 
     system "./configure", *args
     system "make"
