@@ -1,8 +1,8 @@
 class Libdrm < Formula
   desc "Library for accessing the direct rendering manager"
   homepage "https://dri.freedesktop.org"
-  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.80.tar.bz2"
-  sha256 "a82a519601e9cdfad795e760807eb07ac8913b225e25fc8fe9bc03e3be6549f1"
+  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.82.tar.bz2"
+  sha256 "43fa2dbd422d6d41ac141272cc9855360ce4d08c7cf7f2c7bb55dfe449c4ce1c"
 
   bottle do
     sha256 "f16f0b130bb765d8fe39400b4a32ca2aa955594538f1c7184f636231f9139124" => :x86_64_linux
