@@ -57,9 +57,6 @@ class Mesa < Formula
   end
 
   def install
-    # Reduce memory usage below 4 GB for Circle CI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     # inreplace "configure.ac", "$SED -i -e 's/brw_blorp.cpp/brw_blorp.c/'", "# $SED -i -e 's/brw_blorp.cpp/brw_blorp.c/'"
 
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
@@ -110,7 +107,7 @@ class Mesa < Formula
     inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
 
     # Reduce memory usage below 4 GB for Circle CI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
+    ENV["MAKEFLAGS"] = "-j6" if ENV["CIRCLECI"]
 
     system "./autogen.sh", *args
     system "make"
