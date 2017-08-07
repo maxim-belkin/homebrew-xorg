@@ -58,7 +58,7 @@ class Mesa < Formula
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
-    ENV["MAKEFLAGS"] = "-j6" if ENV["CIRCLECI"]
+    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
 
     # inreplace "configure.ac", "$SED -i -e 's/brw_blorp.cpp/brw_blorp.c/'", "# $SED -i -e 's/brw_blorp.cpp/brw_blorp.c/'"
 
