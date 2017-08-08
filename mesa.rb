@@ -1,8 +1,9 @@
 class Mesa < Formula
-  desc "Mesa: cross-driver middleware"
+  desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/17.0.0/mesa-17.0.0.tar.xz"
   sha256 "39db3d59700159add7f977307d12a7dfe016363e760ad82280ac4168ea668481"
+  revision 1
 
   bottle do
     sha256 "c4261b5848761366779d18b7ad50c86798ed1513249da942a7072623823822e3" => :x86_64_linux
@@ -41,7 +42,7 @@ class Mesa < Formula
   #
 
   resource "mako" do
-    url "https://pypi.python.org/packages/56/4b/cb75836863a6382199aefb3d3809937e21fa4cb0db15a4f4ba0ecc2e7e8e/Mako-1.0.6.tar.gz"
+    url "https://files.pythonhosted.org/packages/56/4b/cb75836863a6382199aefb3d3809937e21fa4cb0db15a4f4ba0ecc2e7e8e/Mako-1.0.6.tar.gz"
     sha256 "48559ebd872a8e77f92005884b3d88ffae552812cdf17db6768e5c3be5ebbe0d"
   end
 
@@ -56,9 +57,6 @@ class Mesa < Formula
   end
 
   def install
-    # Reduce memory usage below 4 GB for Circle CI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     # inreplace "configure.ac", "$SED -i -e 's/brw_blorp.cpp/brw_blorp.c/'", "# $SED -i -e 's/brw_blorp.cpp/brw_blorp.c/'"
 
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
@@ -94,7 +92,7 @@ class Mesa < Formula
       --enable-vdpau
       --enable-xvmc
       --disable-llvm-shared-libs
-      --with-dri-drivers=nouveau,radeon,r200,swrast
+      --with-dri-drivers=i965,nouveau,radeon,r200,swrast
       --with-sha1=libsha1
       --enable-gallium-llvm
       --enable-sysfs
@@ -107,6 +105,9 @@ class Mesa < Formula
     args << "--enable-libglvnd" if build.with? "libglvnd"
 
     inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
+
+    # Reduce memory usage below 4 GB for Circle CI.
+    ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
 
     system "./autogen.sh", *args
     system "make"
