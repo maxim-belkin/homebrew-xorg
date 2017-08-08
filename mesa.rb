@@ -107,7 +107,7 @@ class Mesa < Formula
     inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
 
     # Reduce memory usage below 4 GB for Circle CI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
+    ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
 
     system "./autogen.sh", *args
     system "make"
