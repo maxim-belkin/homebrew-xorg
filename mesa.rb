@@ -1,13 +1,8 @@
 class Mesa < Formula
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/17.0.0/mesa-17.0.0.tar.xz"
-  sha256 "39db3d59700159add7f977307d12a7dfe016363e760ad82280ac4168ea668481"
-  revision 1
-
-  bottle do
-    sha256 "98441d93448a0dfb655834b07716a0848ec5270ebf3dfd5ad08bfdac06dc0c75" => :x86_64_linux
-  end
+  url "https://mesa.freedesktop.org/archive/mesa-17.1.6.tar.xz"
+  sha256 "0686deadde1f126b20aa67e47e8c50502043eee4ecdf60d5009ffda3cebfee50"
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
