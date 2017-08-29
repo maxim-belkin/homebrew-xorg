@@ -1,12 +1,8 @@
 class Libva < Formula
   desc "Hardware accelerated video processing library"
   homepage "https://freedesktop.org/wiki/Software/vaapi/"
-  url "https://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.3.tar.bz2"
-  sha256 "22bc139498065a7950d966dbdb000cad04905cbd3dc8f3541f80d36c4670b9d9"
-
-  bottle do
-    sha256 "202cad95248823257d1d9cedefb76fc95593ef3dd61d93721a14f000f75bd0db" => :x86_64_linux
-  end
+  url "https://www.freedesktop.org/software/vaapi/releases/libva/libva-1.8.2.tar.bz2"
+  sha256 "9ed3e3ddc8f47a715d4c6ec366beb21c83fc4e8a3d4d39a811baff76f0a0cede"
 
   option "with-static", "Build static libraries (not recommended)"
 
@@ -20,13 +16,14 @@ class Libva < Formula
   option "with-eglx", "Build libva with egl and glx support (use after building mesa)"
 
   # Build-time
-  depends_on "pkg-config" => :build
   depends_on "autoconf" => :build
-
-  depends_on "linuxbrew/xorg/libdrm"
-  depends_on "linuxbrew/xorg/wayland" => :recommended
-
+  depends_on "pkg-config" => :build
   depends_on "libtool" => :build if build.without?("wayland")
+  depends_on "linuxbrew/xorg/libdrm"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxfixes"
+  depends_on "linuxbrew/xorg/wayland" => :recommended
 
   def install
     args = %W[
