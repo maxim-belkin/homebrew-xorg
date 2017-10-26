@@ -1,8 +1,8 @@
 class WaylandProtocols < Formula
   desc "Additional Wayland protocols"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.7.tar.xz"
-  sha256 "635f2a937d318f1fecb97b54074ca211486e38af943868dd0fa82ea38d091c1f"
+  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.11.tar.xz"
+  sha256 "3afcee1d51c5b1d70b59da790c9830b354236324b19b2b7af9683bd3b7be6804"
 
   bottle do
     cellar :any_skip_relocation
