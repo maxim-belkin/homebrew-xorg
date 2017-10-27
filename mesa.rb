@@ -1,8 +1,8 @@
 class Mesa < Formula
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/mesa-17.1.6.tar.xz"
-  sha256 "0686deadde1f126b20aa67e47e8c50502043eee4ecdf60d5009ffda3cebfee50"
+  url "https://mesa.freedesktop.org/archive/mesa-17.2.3.tar.xz"
+  sha256 "a0b0ec8f7b24dd044d7ab30a8c7e6d3767521e245f88d4ed5dd93315dc56f837"
 
   bottle do
     sha256 "6649e7b0e29d3bebd8632a0527194375f0ea720d201e3d1ea99b2d42a2a58117" => :x86_64_linux
@@ -24,7 +24,7 @@ class Mesa < Formula
   depends_on "llvm"
   depends_on "libelf" # radeonsi requires libelf when using llvm
   depends_on "linuxbrew/xorg/libomxil-bellagio"
-  depends_on "linuxbrew/xorg/wayland" => :recommended
+  depends_on "linuxbrew/xorg/wayland-protocols" => :recommended
   depends_on "valgrind" => :recommended
   depends_on "linuxbrew/xorg/libglvnd" => :optional
   depends_on "linuxbrew/xorg/libva" => :recommended
