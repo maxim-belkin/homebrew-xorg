@@ -62,6 +62,7 @@ class Xorg < Formula
   depends_on "linuxbrew/xorg/libpciaccess" => args_check_static
   depends_on "linuxbrew/xorg/libxkbfile" => args_check_static
   depends_on "linuxbrew/xorg/libxshmfence" => args_check_static
+  depends_on "linuxbrew/xorg/xdpyinfo" => args_check_static
 
   if build.with?("docs") # or build.with?("specs")
     depends_on "linuxbrew/xorg/xorg-docs" => :recommended
