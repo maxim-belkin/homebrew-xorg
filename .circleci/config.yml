@@ -30,22 +30,9 @@ jobs:
           PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH";
           brew install patchelf
           && brew test-bot
-      - persist_to_workspace:
-          root: /home/linuxbrew
-          paths:
-            - bottles
-      - store_test_results:
-          path: /home/linuxbrew/bottles
-  collect-bottles:
-    docker:
-      - image: linuxbrew/linuxbrew
-    steps:
-      - attach_workspace:
-          at: /tmp/workspace
       - store_artifacts:
           path: /tmp/workspace/bottles
           destination: bottles
 notify:
   webhooks:
     - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload
-
