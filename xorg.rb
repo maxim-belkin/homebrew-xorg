@@ -41,6 +41,7 @@ class Xorg < Formula
   depends_on "linuxbrew/xorg/libxmu" => [args_check, args_static, args_docs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxpm" => args_check_static
   depends_on "linuxbrew/xorg/libxaw" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxaw3d" => [args_check, args_static, args_specs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxfixes" => args_check_static
   depends_on "linuxbrew/xorg/libxcomposite" => args_check_static
   depends_on "linuxbrew/xorg/libxrender" => args_check_static
