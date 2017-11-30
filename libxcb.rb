@@ -32,7 +32,7 @@ class Libxcb < Formula
 
   patch :p1 do
     url "https://cgit.freedesktop.org/xcb/libxcb/patch/?id=8740a288ca468433141341347aa115b9544891d3"
-    sha256 "fef834cb600cdeafac052be9535f9e84e5e71d2434bdd43deef8b116a459123b"
+    sha256 "aa3bdbf37c951d6b42b6aeb3c182b87065761027b3180b6f381088fdd13809b4"
   end
 
   def install
