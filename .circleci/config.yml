@@ -15,22 +15,21 @@ jobs:
           git fetch origin --unshallow --tags
           git reset --hard origin/master
       - checkout
-      - run: |
-          git remote set-url origin $CIRCLE_REPOSITORY_URL
-          if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
-          git fetch origin
-          git config --global user.name LinuxbrewTestBot
-          git config --global user.email testbot@linuxbrew.sh
-          chmod 0644 *.rb
-          mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
-          cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/$CIRCLE_PROJECT_REPONAME
+      - run: git remote set-url origin $CIRCLE_REPOSITORY_URL
+      - run: if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
+      - run: git fetch origin
+      - run: git config --global user.name LinuxbrewTestBot
+      - run: git config --global user.email testbot@linuxbrew.sh
+      - run: chmod 0644 *.rb
+      - run: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew
+      - run: cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/$CIRCLE_PROJECT_REPONAME
       - run: |
           mkdir /tmp/bottles
           cd /tmp/bottles
           umask 022
           PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
           brew install patchelf
-          brew test-bot
+          brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh --keep-old
       - store_artifacts:
           path: /tmp/bottles
           destination: bottles
@@ -38,4 +37,4 @@ jobs:
           path: /tmp/bottles
 notify:
   webhooks:
-    - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload
+    - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload?keep-old=1
