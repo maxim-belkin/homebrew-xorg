@@ -3,10 +3,10 @@ class Libxcb < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://xcb.freedesktop.org/dist/libxcb-1.12.tar.bz2"
   sha256 "4adfb1b7c67e99bc9c2ccb110b2f175686576d2f792c8a71b9c8b19014057b5b"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
-    sha256 "bef9335b37b56b41fab4ac15f9213127dba3b62a891e01fb103478669f9484b5" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
@@ -25,9 +25,9 @@ class Libxcb < Formula
   depends_on "libxslt" => [:build, :optional]
 
   if build.with? "python3"
-    depends_on :python3      => :build
+    depends_on "python3" => :build
   else
-    depends_on :python       => :build
+    depends_on "python" => :build
   end
 
   patch :p1 do
