@@ -3,11 +3,11 @@ class XcbProto < Formula
   homepage "https://www.x.org/"
   url "https://xcb.freedesktop.org/dist/xcb-proto-1.12.tar.bz2"
   sha256 "5922aba4c664ab7899a29d92ea91a87aa4c1fc7eb5ee550325c3216c480a4906"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0ec19b9b90a8235851afea7055e95e03e8c732c900b38d6c687c1aaf785f453d" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
@@ -17,9 +17,9 @@ class XcbProto < Formula
   depends_on "libxml2" => :build if build.with? "test"
 
   if build.with? "python3"
-    depends_on :python3      => :build
+    depends_on "python3" => :build
   else
-    depends_on :python       => :build
+    depends_on "python" => :build
   end
 
   patch :p1 do
