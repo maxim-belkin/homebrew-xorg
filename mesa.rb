@@ -3,16 +3,16 @@ class Mesa < Formula
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/mesa-17.2.3.tar.xz"
   sha256 "a0b0ec8f7b24dd044d7ab30a8c7e6d3767521e245f88d4ed5dd93315dc56f837"
+  revision 1
 
   bottle do
-    sha256 "4dba62b910f68cc67b2a27d9b3f3d54a2711943cfdd0ace71ec0246137c9e737" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on :python => :build
+  depends_on "python" => :build
   depends_on "flex" => :build
   depends_on "bison" => :build
   depends_on "libtool" => :build
