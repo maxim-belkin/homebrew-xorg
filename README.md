@@ -61,12 +61,6 @@ To see the list of optional flags when compiling libraries with documentation, u
 brew info xorg --with-docs
 ```
 
-To use `python3` when building `xcb-proto` package, use `--with-python3` flag, _i.e._:
-
-```bash
-brew install xorg --with-python3
-```
-
 When building packages from source code, compile-time tests are enabled by default.
 To skip then, use `--without-test` flag, _i.e._:
 
@@ -83,7 +77,7 @@ brew install xorg --with-static
 You can combine (all) of the above options (flags), _i.e._:
 
 ```bash
-brew install xorg --with-docs --with-python3
+brew install xorg --with-docs
 ```
 
 ## Issues / Ongoing work
