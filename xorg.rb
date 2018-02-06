@@ -5,12 +5,12 @@ class Xorg < Formula
   url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/317ef5e60c62298a28f08bb44ca6a09d79793735/README.md"
   version "20170115"
   sha256 "76b4fd623d6b10d816069aedcffc411e2c9abc607533adf3fa810d7904b5f9d1"
+  revision 1
   # tag "linuxbrew"
 
   bottle :unneeded
 
   option "with-docs", "Build documentation and specifications (where applicable)"
-  option "with-python3", "Build xcb-proto with python3 (default python is used otherwise)"
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
@@ -23,12 +23,6 @@ class Xorg < Formula
 
   # Frequently Used Option
   args_check_static = [args_check, args_static].reject(&:empty?)
-
-  # If python3 has been requested,
-  # add a direct dependence on xcb-proto package with python3 option
-  if build.with?("python3")
-    depends_on "linuxbrew/xorg/xcb-proto" => ["with-python3", args_check].reject(&:empty?)
-  end
 
   depends_on "linuxbrew/xorg/xtrans" => [args_docs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libx11" => [args_check, args_static, args_specs].reject(&:empty?)
