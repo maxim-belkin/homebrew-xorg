@@ -1,13 +1,13 @@
-class Xproto < Formula
-  desc "X.Org Protocol Headers: xproto"
+class Xcmiscproto < Formula
+  desc "X.Org Protocol Headers: xcmiscproto"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/proto/xproto-7.0.31.tar.bz2"
-  sha256 "c6f9747da0bd3a95f86b17fb8dd5e717c8f3ab7f0ece3ba1b247899ec1ef7747"
+  url "https://www.x.org/archive/individual/proto/xcmiscproto-1.2.2.tar.bz2"
+  sha256 "b13236869372256c36db79ae39d54214172677fb79e9cdc555dceec80bd9d2df"
   # tag "linuxbrew"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "322e6bbffb0a66affa15afea302134281b73fecb85ad4ca606c6e829c38ef1b6" => :x86_64_linux
+    cellar :any
+    sha256 "46caab02275016fa14276b31198a280a928336004767f5808a78617efbb8814f" => :x86_64_linux
   end
 
   option "with-specs", "Build specifications"
@@ -17,7 +17,7 @@ class Xproto < Formula
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Formula/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 

@@ -1,13 +1,13 @@
-class Scrnsaverproto < Formula
-  desc "X.Org Protocol Headers: scrnsaverproto"
+class Kbproto < Formula
+  desc "X.Org Protocol Headers: kbproto"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/proto/scrnsaverproto-1.2.2.tar.bz2"
-  sha256 "8bb70a8da164930cceaeb4c74180291660533ad3cc45377b30a795d1b85bcd65"
+  url "https://www.x.org/archive/individual/proto/kbproto-1.0.7.tar.bz2"
+  sha256 "f882210b76376e3fa006b11dbd890e56ec0942bc56e65d1249ff4af86f90b857"
   # tag "linuxbrew"
 
   bottle do
     cellar :any
-    sha256 "95e9cd1b7784a93ae47b0a474e83653bdb0bed950852c4dff163fee559b50544" => :x86_64_linux
+    sha256 "3d6b25f6545716ad960db544ddd46b60c5e73c46fcc4a8b6ebea34e8fcdaf478" => :x86_64_linux
   end
 
   option "with-specs", "Build specifications"
@@ -17,7 +17,7 @@ class Scrnsaverproto < Formula
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Formula/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 

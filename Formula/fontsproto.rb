@@ -1,13 +1,13 @@
-class Xextproto < Formula
-  desc "X.Org Protocol Headers: xextproto"
+class Fontsproto < Formula
+  desc "X.Org Protocol Headers: fontsproto"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/proto/xextproto-7.3.0.tar.bz2"
-  sha256 "f3f4b23ac8db9c3a9e0d8edb591713f3d70ef9c3b175970dd8823dfc92aa5bb0"
+  url "https://www.x.org/archive/individual/proto/fontsproto-2.1.3.tar.bz2"
+  sha256 "259046b0dd9130825c4a4c479ba3591d6d0f17a33f54e294b56478729a6e5ab8"
   # tag "linuxbrew"
 
   bottle do
     cellar :any
-    sha256 "3fd3b60e950663a08b196c60d4a6ec702afad82c5334232a829d9168f3bd59b6" => :x86_64_linux
+    sha256 "5d04e66c6c6e5c17731f3d732f1c093b44009dbd07b22c1b629593d1cdd497fd" => :x86_64_linux
   end
 
   option "with-specs", "Build specifications"
@@ -17,7 +17,7 @@ class Xextproto < Formula
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Formula/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 

@@ -1,13 +1,13 @@
-class Recordproto < Formula
-  desc "X.Org Protocol Headers: recordproto"
+class Xextproto < Formula
+  desc "X.Org Protocol Headers: xextproto"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/proto/recordproto-1.14.2.tar.bz2"
-  sha256 "a777548d2e92aa259f1528de3c4a36d15e07a4650d0976573a8e2ff5437e7370"
+  url "https://www.x.org/archive/individual/proto/xextproto-7.3.0.tar.bz2"
+  sha256 "f3f4b23ac8db9c3a9e0d8edb591713f3d70ef9c3b175970dd8823dfc92aa5bb0"
   # tag "linuxbrew"
 
   bottle do
     cellar :any
-    sha256 "e23cb1e1cb66b34322fdd448fd79c684b38acb1b0fc7c4f0f6231fe4028ea97e" => :x86_64_linux
+    sha256 "3fd3b60e950663a08b196c60d4a6ec702afad82c5334232a829d9168f3bd59b6" => :x86_64_linux
   end
 
   option "with-specs", "Build specifications"
@@ -17,7 +17,7 @@ class Recordproto < Formula
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Formula/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
@@ -33,6 +33,8 @@ class Recordproto < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
+      --disable-dependency-tracking
+      --disable-silent-rules
     ]
 
     # Be explicit about the configure flags

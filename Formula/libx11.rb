@@ -1,36 +1,38 @@
-class Libxmu < Formula
-  desc "X.Org Libraries: libXmu"
+class Libx11 < Formula
+  desc "X.Org Libraries: libX11"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXmu-1.1.2.tar.bz2"
-  sha256 "756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b"
+  url "https://ftp.x.org/pub/individual/lib/libX11-1.6.5.tar.bz2"
+  sha256 "4d3890db2ba225ba8c55ca63c6409c1ebb078a2806de59fb16342768ae63435d"
   # tag "linuxbrew"
 
   bottle do
-    rebuild 1
-    sha256 "2b0c683b9deddbed3c238bf167b96ada9e76587f22ed0a8d28d8f87955d38e20" => :x86_64_linux
+    sha256 "83ef79752cdd15f34eabfe1c38b82e78d3fe75b77f2ecd22a26ea18af14753d5" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
-  option "with-docs", "Build documentation"
+  option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
-
-  depends_on "linuxbrew/xorg/libxt"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/xtrans" => :build
+  depends_on "linuxbrew/xorg/libxcb"
+  depends_on "linuxbrew/xorg/kbproto" => :build
+  depends_on "linuxbrew/xorg/inputproto" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Formula/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
-  if build.with?("docs")
+  if build.with?("specs")
     depends_on "xmlto" => :build
-    depends_on "fop"     => [:build, :recommended]
+    depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
+    depends_on "perl" => [:build, :optional]
     depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
 
@@ -45,11 +47,11 @@ class Libxmu < Formula
 
     # Be explicit about the configure flags
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
+    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end

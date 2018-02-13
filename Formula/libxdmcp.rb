@@ -1,34 +1,29 @@
-class Libxaw < Formula
-  desc "X.Org Libraries: libXaw"
+class Libxdmcp < Formula
+  desc "X Display Manager Control Protocol"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXaw-1.0.13.tar.bz2"
-  sha256 "8ef8067312571292ccc2bbe94c41109dcf022ea5a4ec71656a83d8cce9edb0cd"
+  url "https://ftp.x.org/pub/individual/lib/libXdmcp-1.1.2.tar.bz2"
+  sha256 "81fe09867918fff258296e1e1e159f0dc639cb30d201c53519f25ab73af4e4e2"
   # tag "linuxbrew"
 
   bottle do
-    sha256 "427db63fe8e595a92a5a2de288137a57d7eff69aeb2764f41b758aab2f6bb305" => :x86_64_linux
+    cellar :any
+    sha256 "b6ce973996bb3bee6493bf298605cabdebb538ff3092d97e9b98f2eeb7f24da3" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
-  option "with-specs", "Build specifications"
+  option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/libxt"
-  depends_on "linuxbrew/xorg/libxmu"
-  depends_on "linuxbrew/xorg/libxpm"
+  depends_on "linuxbrew/xorg/xorg-protocols" => :build
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Formula/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
-  if build.with?("specs")
+  if build.with?("docs")
     depends_on "xmlto" => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
@@ -46,7 +41,7 @@ class Libxaw < Formula
 
     # Be explicit about the configure flags
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
+    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"

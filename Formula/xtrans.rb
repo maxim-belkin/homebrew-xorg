@@ -1,27 +1,22 @@
-class Libsm < Formula
-  desc "X.Org Libraries: libSM"
+class Xtrans < Formula
+  desc "X.Org Libraries: xtrans"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libSM-1.2.2.tar.bz2"
-  sha256 "0baca8c9f5d934450a70896c4ad38d06475521255ca63b717a6510fdb6e287bd"
+  url "https://ftp.x.org/pub/individual/lib/xtrans-1.3.5.tar.bz2"
+  sha256 "adbd3b36932ce4c062cd10f57d78a156ba98d618bdb6f50664da327502bc8301"
   # tag "linuxbrew"
 
   bottle do
     cellar :any
-    sha256 "9f8352dcb67ddc5d59478beea50824af610ad017cd697b703fad842a23586cef" => :x86_64_linux
+    sha256 "90e5852ee25ed85ba47acaa55723a0506c8313c599671b892024ac1766b15449" => :x86_64_linux
   end
 
-  option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libice"
-  depends_on "linuxbrew/xorg/xtrans" => :build
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Formula/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
@@ -42,12 +37,9 @@ class Libsm < Formula
     ]
 
     # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
     args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
 
     system "./configure", *args
-    system "make"
-    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end
