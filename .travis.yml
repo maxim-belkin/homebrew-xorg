@@ -1,6 +1,5 @@
 language: ruby
-os: linux
-rvm: 2.0.0
+rvm: system
 sudo: required
 dist: trusty
 
@@ -82,23 +81,29 @@ before_install:
   - git clone --depth=1 https://github.com/Linuxbrew/brew "$LINUXBREW/Homebrew"
   - ln -s ../Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/
   - export PATH="$LINUXBREW/bin:$LINUXBREW/sbin:$PATH"
+  - export HOMEBREW_DEVELOPER=1
+  - export HOMEBREW_FORCE_VENDOR_RUBY=1
+  - export HOMEBREW_NO_AUTO_UPDATE=1
   - HOMEBREW_TAP_DIR="$(brew --repo "$TRAVIS_REPO_SLUG")"
   - rm -rf "$HOMEBREW_TAP_DIR"
   - mkdir -p "$(dirname "$HOMEBREW_TAP_DIR")"
   - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
   # Fix error: Incorrect file permissions (664)
-  - chmod 0644 *.rb
+  - chmod 0644 Formula/*.rb
   - umask 022
-  - export HOMEBREW_DEVELOPER=1
-  - export HOMEBREW_NO_AUTO_UPDATE=1
-  - export HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1
   - env | grep TRAVIS | tee /tmp/travis.env
   - ulimit -n 1024
-  - brew tap homebrew/science
+  - brew tap linuxbrew/extra
+
+matrix:
+  fast_finish: true
+
 script:
-  - brew test-bot
+  - brew test-bot --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
 
 notifications:
+  slack:
+    secure: PvK4LXijxgFTbT6SvWUveluJdbe7AfnJ+Ip/xb2gVRsq71DHSi96OtaEZq+qAvU6UU07VaCY/55cTb+HZE1twCOE4aE4l6iJONVmwIb+s9bGQfV9+H/r+y+J1EJzIzAfTbsn4mGJpkG9e2326c0vGcM/lFpHH0qarhOEYs4jLt17Ijg4mk+I5jLIOZ2vZsC7IZ0W8oe7Qzomyyfzj5XW2kUa41e8CgZf4byqAvnVpPpfvkm/rODGPREOmcpOr2Pu8fhNLrswXRlhgakZgi5JPPdaRocIhnbRbyqE2Qngnlk/wzno1e3NZYDcxTa5xAgAa5h/TIpyLeB/pXfpc1n5RuP7BjA/mZSYaG5Dg1IIvGPu/23+HlZ9umMn0E0f5j3EsV66CwErJGChm6hN7xPAxLz1Mj9v2E3CIDjyYcg/aZ+O27oaUlGoBGrX51g8poq6LhG+SxHx/VkDAJ+X4T56EQYTCA+ezEIs6KdWZl7AB4ztHqTe7w4YJIIhh509iViFKX4pJdQnajNf97IvRl9hHsLa9k9GuLWOQvxjkEJ/1LSfVkNEfPxHd2btIVdg6DQsVrxyfwufF+KlQDKNHR4Jbz+KEvrWIbXWQAj+2g7xwj5l2/Tyv69gR7FqBpSxh+Ue7wrWrVCIkzn/BEU4H0nHGR5D4dOwmgiOxXVhEZjYqjU=
   email:
     on_success: never
     on_failure: always
