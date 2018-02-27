@@ -17,7 +17,7 @@ class Bigreqsproto < Formula
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/092cd00d56e1b2eaeaa3c08bbd42f8eff5eb5852/Patches/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
