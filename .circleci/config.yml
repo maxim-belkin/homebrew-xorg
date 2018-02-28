@@ -4,39 +4,48 @@ jobs:
     docker:
       - image: linuxbrew/linuxbrew
     environment:
-      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-xorg
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_VERBOSE: 1
       HOMEBREW_VERBOSE_USING_DOTS: 1
     steps:
-      - run: |
-          cd /home/linuxbrew/.linuxbrew/Homebrew
-          git fetch origin --unshallow --tags
-          git reset --hard origin/master
-      - checkout
-      - run: git remote set-url origin $CIRCLE_REPOSITORY_URL
-      - run: if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
-      - run: git fetch origin
-      - run: git config --global user.name LinuxbrewTestBot
-      - run: git config --global user.email testbot@linuxbrew.sh
-      - run: chmod 0644 Formula/*.rb
-      - run: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
-      - run: cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/$CIRCLE_PROJECT_REPONAME
       - run:
-         no_output_timeout: 30m
-         command: |
+        name: Set up Git
+        command: |
+          git config --global user.name LinuxbrewTestBot
+          git config --global user.email testbot@linuxbrew.sh
+      - run:
+        name: Set up Linuxbrew
+        working_directory: /home/linuxbrew/.linuxbrew/Homebrew
+        no_output_timeout: 5m
+        command: |
+          git pull --ff-only
+      - run:
+        name: Set up Linuxbrew/$CIRCLE_PROJECT_REPONAME
+        no_output_timeout: 5m
+        command: |
+          if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
+              git fetch https://github.com/Linuxbrew/$CIRCLE_PROJECT_REPONAME pull/$CIRCLE_PR_NUMBER/head
+          fi
+          git reset --hard $CIRCLE_SHA1
+          mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
+          cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/$CIRCLE_PROJECT_REPONAME
+      - run:
+        name: Prepare for the main test
+        no_output_timeout: 5m
+        command: |
           mkdir /tmp/bottles
-          cd /tmp/bottles
-          umask 022
-          PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
           brew install patchelf
-          brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+      - run:
+        name: Main test 
+        working_directory: /tmp/bottles
+        no_output_timeout: 30m
+        command: brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - store_artifacts:
-          path: /tmp/bottles
+          path: /home/linuxbrew/test-bot
           destination: bottles
       - store_test_results:
-          path: /tmp/bottles
+          path: /home/linuxbrew/test-bot
 notify:
   webhooks:
     - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload
