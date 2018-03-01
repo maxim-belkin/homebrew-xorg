@@ -18,10 +18,10 @@ jobs:
         name: Create a directory for Linux taps
         command: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
       - run:
-        name: Set up Linuxbrew/$CIRCLE_PROJECT_REPONAME
+        name: Set up linuxbrew/xorg tap
         working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
         command: |
-          git clone $CIRCLE_REPOSITORY_URL $CIRCLE_PROJECT_REPONAME
+          git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
           cd $CIRCLE_PROJECT_REPONAME
           if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
               git fetch origin pull/$CIRCLE_PR_NUMBER/head
