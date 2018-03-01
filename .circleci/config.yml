@@ -39,10 +39,10 @@ jobs:
         no_output_timeout: 30m
         command: brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - store_artifacts:
-          path: /home/linuxbrew/test-bot
+          path: /tmp/bottles
           destination: bottles
       - store_test_results:
-          path: /home/linuxbrew/test-bot
+          path: /tmp/bottles
 notify:
   webhooks:
     - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload
