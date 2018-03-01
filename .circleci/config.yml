@@ -29,7 +29,6 @@ jobs:
           git reset --hard $CIRCLE_SHA1
       - run:
         name: Prepare for the main test
-        no_output_timeout: 5m 
         command: |
           mkdir /tmp/bottles
           brew install patchelf
