@@ -15,24 +15,21 @@ jobs:
           git config --global user.name LinuxbrewTestBot
           git config --global user.email testbot@linuxbrew.sh
       - run:
-        name: Set up Linuxbrew
-        working_directory: /home/linuxbrew/.linuxbrew/Homebrew
-        no_output_timeout: 5m
-        command: |
-          git pull --ff-only
+        name: Create a directory for Linux taps
+        command: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
       - run:
         name: Set up Linuxbrew/$CIRCLE_PROJECT_REPONAME
-        no_output_timeout: 5m
+        working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
         command: |
+          git clone $CIRCLE_REPOSITORY_URL $CIRCLE_PROJECT_REPONAME
+          cd $CIRCLE_PROJECT_REPONAME
           if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
-              git fetch https://github.com/Linuxbrew/$CIRCLE_PROJECT_REPONAME pull/$CIRCLE_PR_NUMBER/head
+              git fetch origin pull/$CIRCLE_PR_NUMBER/head
           fi
           git reset --hard $CIRCLE_SHA1
-          mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
-          cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/$CIRCLE_PROJECT_REPONAME
       - run:
         name: Prepare for the main test
-        no_output_timeout: 5m
+        no_output_timeout: 5m 
         command: |
           mkdir /tmp/bottles
           brew install patchelf
