@@ -16,10 +16,10 @@ jobs:
             git config --global user.email testbot@linuxbrew.sh
       - run:
           name: Set up linuxbrew/xorg tap
-          working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps
+          working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
           command: |
-            git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME linuxbrew/$CIRCLE_PROJECT_REPONAME
-            cd linuxbrew/$CIRCLE_PROJECT_REPONAME
+            git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+            cd $CIRCLE_PROJECT_REPONAME
             if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
                 git fetch origin pull/$CIRCLE_PR_NUMBER/head
             fi
