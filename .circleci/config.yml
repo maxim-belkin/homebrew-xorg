@@ -4,39 +4,31 @@ jobs:
     docker:
       - image: linuxbrew/linuxbrew
     environment:
+      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-xorg
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_VERBOSE: 1
       HOMEBREW_VERBOSE_USING_DOTS: 1
     steps:
-      - run:
-          name: Set up Git
-          command: |
-            git config --global user.name LinuxbrewTestBot
-            git config --global user.email testbot@linuxbrew.sh
-      - run:
-          name: Create a directory for Linux taps
-          command: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
-      - run:
-          name: Set up linuxbrew/xorg tap
-          working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
-          command: |
-            git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
-            cd $CIRCLE_PROJECT_REPONAME
-            if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
-                git fetch origin pull/$CIRCLE_PR_NUMBER/head
-            fi
-            git reset --hard $CIRCLE_SHA1
-      - run:
-          name: Prepare for the main test
-          command: |
-            mkdir /tmp/bottles
-            brew install patchelf
-      - run:
-          name: Main test 
-          working_directory: /tmp/bottles
-          no_output_timeout: 30m
-          command: brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+      - run: |
+          cd /home/linuxbrew/.linuxbrew/Homebrew
+          git fetch origin --unshallow --tags
+          git reset --hard origin/master
+      - checkout
+      - run: git remote set-url origin $CIRCLE_REPOSITORY_URL
+      - run: if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
+      - run: git fetch origin
+      - run: git config --global user.name LinuxbrewTestBot
+      - run: git config --global user.email testbot@linuxbrew.sh
+      - run: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
+      - run: cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/$CIRCLE_PROJECT_REPONAME
+      - run: |
+          mkdir /tmp/bottles
+          cd /tmp/bottles
+          umask 022
+          PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+          brew install patchelf
+          brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - store_artifacts:
           path: /tmp/bottles
           destination: bottles
