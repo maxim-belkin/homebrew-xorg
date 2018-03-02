@@ -18,7 +18,7 @@ jobs:
           name: Set up linuxbrew/xorg tap
           working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
           command: |
-            git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+            git clone https://github.com/Linuxbrew/$CIRCLE_PROJECT_REPONAME
             cd $CIRCLE_PROJECT_REPONAME
             if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
                 git fetch origin pull/$CIRCLE_PR_NUMBER/head
