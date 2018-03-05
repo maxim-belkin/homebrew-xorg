@@ -15,7 +15,6 @@ class Libva < Formula
 
   option "with-eglx", "Build libva with egl and glx support (use after building mesa)"
 
-  # Build-time
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
   depends_on "libtool" => :build if build.without?("wayland")
