@@ -3,17 +3,16 @@ class Mesa < Formula
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/mesa-17.2.3.tar.xz"
   sha256 "a0b0ec8f7b24dd044d7ab30a8c7e6d3767521e245f88d4ed5dd93315dc56f837"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 "216095c0b906b6abfd8034a0a71f07fe69dd6ef1a45b0edca823057698406ff6" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@2" => :build
   depends_on "flex" => :build
   depends_on "bison" => :build
   depends_on "libtool" => :build
@@ -63,7 +62,7 @@ class Mesa < Formula
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
 
     resource("mako").stage do
-      system "python", *Language::Python.setup_install_args(libexec/"vendor")
+      system "python2", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
     args = %W[
