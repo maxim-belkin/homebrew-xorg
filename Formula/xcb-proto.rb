@@ -16,7 +16,7 @@ class XcbProto < Formula
 
   depends_on "pkg-config" => :build
   depends_on "libxml2" => :build if build.with? "test"
-  depends_on "python@2" => [:build] unless which "python2.7"
+  depends_on "python@2" => :build unless which "python2.7"
 
   patch :p1 do
     url "http://www.linuxfromscratch.org/patches/blfs/svn/xcb-proto-1.12-python3-1.patch"

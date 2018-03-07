@@ -23,7 +23,7 @@ class Libxcb < Formula
   depends_on "doxygen" => :build if build.with? "docs"
   depends_on "check" => :build if build.with? "test"
   depends_on "libxslt" => [:build, :optional]
-  depends_on "python@2" => [:build] unless which "python2.7"
+  depends_on "python@2" => :build unless which "python2.7"
 
   patch :p1 do
     url "https://cgit.freedesktop.org/xcb/libxcb/patch/?id=8740a288ca468433141341347aa115b9544891d3"

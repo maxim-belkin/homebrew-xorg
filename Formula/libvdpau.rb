@@ -15,7 +15,7 @@ class Libvdpau < Formula
   depends_on "pkg-config" => :build
 
   # Required
-  depends_on "linuxbrew/xorg/dri2proto"
+  depends_on "linuxbrew/xorg/dri2proto" => :build
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libx11"
 

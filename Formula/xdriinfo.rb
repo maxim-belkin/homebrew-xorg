@@ -9,7 +9,7 @@ class Xdriinfo < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/glproto"
+  depends_on "linuxbrew/xorg/glproto" => :build
   depends_on "linuxbrew/xorg/mesa"
 
   def install
