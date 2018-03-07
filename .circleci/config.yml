@@ -15,6 +15,9 @@ jobs:
             git config --global user.name LinuxbrewTestBot
             git config --global user.email testbot@linuxbrew.sh
       - run:
+          name: Update Linuxbrew
+          command: brew update
+      - run:
           name: Set up linuxbrew/xorg tap
           working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
           command: |
