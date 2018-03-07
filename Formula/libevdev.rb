@@ -3,19 +3,18 @@ class Libevdev < Formula
   homepage "https://www.freedesktop.org/wiki/Software/libevdev/"
   url "https://www.freedesktop.org/software/libevdev/libevdev-1.5.2.tar.xz"
   sha256 "5ee2163656a61f5703cb5c08a05c9471ffb7b640bfbe2c55194ea50d908f629b"
-  revision 1
+  revision 2
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "b9b9a05753dea11724cc09650fcb86fe999fae062cabe2d2b0e68345df423502" => :x86_64_linux
   end
 
   option "with-static", "Build static libraries (not recommended)"
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@2" => :build
   depends_on "check" => :build if build.with?("test")
 
   def install
