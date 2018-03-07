@@ -11,6 +11,11 @@ jobs:
       HOMEBREW_VERBOSE_USING_DOTS: 1
     steps:
       - run:
+          name: Install minimal python for libxcb build
+          command: |
+            sudo apt-get update
+            sudo apt-get install --yes --force-yes python2.7-minimal
+      - run:
           name: Set up Git
           command: |
             git config --global user.name LinuxbrewTestBot

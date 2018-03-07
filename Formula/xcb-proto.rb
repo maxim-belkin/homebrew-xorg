@@ -3,25 +3,19 @@ class XcbProto < Formula
   homepage "https://www.x.org/"
   url "https://xcb.freedesktop.org/dist/xcb-proto-1.12.tar.bz2"
   sha256 "5922aba4c664ab7899a29d92ea91a87aa4c1fc7eb5ee550325c3216c480a4906"
-  revision 1
+  revision 2
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1b2b12848e39c48870a3db864572e0f4eb63fd4f9d7c715fe7765b302c378c33" => :x86_64_linux
   end
 
-  option "without-test", "Skip compile-time tests"
+  option "with-test", "Skip compile-time tests"
   option "with-python3", "Build with python3 (default version is used otherwise)"
 
   depends_on "pkg-config" => :build
   depends_on "libxml2" => :build if build.with? "test"
-
-  if build.with? "python3"
-    depends_on "python3" => :build
-  else
-    depends_on "python" => :build
-  end
+  depends_on "python@2" => [:build] unless which "python2.7"
 
   patch :p1 do
     url "http://www.linuxfromscratch.org/patches/blfs/svn/xcb-proto-1.12-python3-1.patch"
@@ -40,8 +34,6 @@ class XcbProto < Formula
       --localstatedir=#{var}
       --disable-silent-rules
     ]
-
-    ENV["PYTHON"] = "python3" if build.with? "python3"
 
     system "./configure", *args
     system "make"
