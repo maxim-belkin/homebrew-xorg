@@ -17,7 +17,7 @@ class Libxtst < Formula
 
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxi"
+  depends_on "linuxbrew/xorg/libxi" => :build
 
   # Patch for xmlto
   patch do

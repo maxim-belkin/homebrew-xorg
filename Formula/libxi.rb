@@ -17,7 +17,7 @@ class Libxi < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "linuxbrew/xorg/libxfixes"
+  depends_on "linuxbrew/xorg/libxfixes" => :build
   depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libx11"

@@ -16,7 +16,7 @@ class Libxvmc < Formula
 
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libxv"
+  depends_on "linuxbrew/xorg/libxv" => :build
   depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/videoproto" => :build
 
