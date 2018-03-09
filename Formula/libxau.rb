@@ -14,7 +14,7 @@ class Libxau < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xorg-protocols" => :build
+  depends_on "linuxbrew/xorg/xproto"
 
   def install
     args = %W[
