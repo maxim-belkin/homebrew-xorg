@@ -17,7 +17,7 @@ class Libxcb < Formula
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxau"
   depends_on "linuxbrew/xorg/xcb-proto" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/xproto"
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build # xcb.pc references pthread-stubs
   depends_on "linuxbrew/xorg/libxdmcp" => :recommended
 
