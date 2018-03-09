@@ -15,7 +15,7 @@ class Libxdmcp < Formula
   option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xorg-protocols" => :build
+  depends_on "linuxbrew/xorg/xproto"
 
   # Patch for xmlto
   patch do
