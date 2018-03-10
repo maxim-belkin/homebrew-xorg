@@ -13,7 +13,10 @@ class Bdftopcf < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/util-macros"=> :build
   depends_on "linuxbrew/xorg/libxfont"
+  depends_on "linuxbrew/xorg/fontsproto"
+  depends_on "linuxbrew/xorg/xproto"
   depends_on "bzip2"
 
   def install
