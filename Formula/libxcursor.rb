@@ -13,10 +13,15 @@ class Libxcursor < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/fixesproto" => :build
+  depends_on "linuxbrew/xorg/renderproto" => :build
+  depends_on "linuxbrew/xorg/kbproto" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/xproto" # include/X11/Xcursor/Xcursor.h: #include <X11/Xfuncproto.h>
   depends_on "linuxbrew/xorg/libxrender"
   depends_on "linuxbrew/xorg/libxfixes"
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/fixesproto" => :build
 
   def install
     args = %W[
