@@ -14,8 +14,8 @@ class Libdrm < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libpciaccess"
-  depends_on "cunit" if build.with? "test"
-  depends_on "cairo" if build.with? "test"
+  depends_on "cunit" => :build if build.with? "test"
+  depends_on "cairo" => :build if build.with? "test"
   depends_on "valgrind" => :optional
 
   def install
