@@ -19,12 +19,12 @@ class XcbProto < Formula
   depends_on "python@2" => :build unless which "python2.7"
 
   patch :p1 do
-    url "http://www.linuxfromscratch.org/patches/blfs/svn/xcb-proto-1.12-python3-1.patch"
+    url "http://www.linuxfromscratch.org/patches/blfs/8.2/xcb-proto-1.12-python3-1.patch"
     sha256 "4eef0285392c525fcb7aeb54c1b6dc8406dc33c5845c1311b65b3efc409bea2e"
   end
 
   patch :p1 do
-    url "http://www.linuxfromscratch.org/patches/blfs/svn/xcb-proto-1.12-schema-1.patch"
+    url "http://www.linuxfromscratch.org/patches/blfs/8.2/xcb-proto-1.12-schema-1.patch"
     sha256 "3bc1a1871d17325d1f591a8ec2091f956b2071d83a6e9998d7d4880c4abf3e8b"
   end
 
