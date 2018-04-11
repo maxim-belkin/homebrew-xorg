@@ -14,7 +14,7 @@ class Mkfontdir < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/mkfontscale" => :run
+  depends_on "linuxbrew/xorg/mkfontscale"
 
   def install
     args = %W[
