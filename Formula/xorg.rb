@@ -58,6 +58,8 @@ class Xorg < Formula
   depends_on "linuxbrew/xorg/libxkbfile" => args_check_static
   depends_on "linuxbrew/xorg/libxshmfence" => args_check_static
   depends_on "linuxbrew/xorg/xdpyinfo" => args_check_static
+  # libpthread-stubs is needed by a lot of formulae at build time (pango, cairo, ...)
+  depends_on "linuxbrew/xorg/libpthread-stubs"
 
   if build.with?("docs") # or build.with?("specs")
     depends_on "linuxbrew/xorg/xorg-docs" => :recommended
