@@ -17,11 +17,15 @@ class Mesa < Formula
   depends_on "flex" => :build
   depends_on "bison" => :build
   depends_on "libtool" => :build
+  
+  depends_on "linuxbrew/xorg/damageproto"
+  depends_on "linuxbrew/xorg/dri2proto"
+  depends_on "linuxbrew/xorg/glproto"
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
   depends_on "linuxbrew/xorg/libsha1"
-  depends_on "llvm"
+  depends_on "llvm@4" # failed with llvm@6
   depends_on "libelf" # radeonsi requires libelf when using llvm
   depends_on "linuxbrew/xorg/libomxil-bellagio"
   depends_on "linuxbrew/xorg/wayland-protocols" => :recommended
@@ -95,8 +99,9 @@ class Mesa < Formula
       --disable-llvm-shared-libs
       --with-dri-drivers=i965,nouveau,radeon,r200,swrast
       --with-sha1=libsha1
-      --enable-gallium-llvm
+      --enable-llvm
       --enable-sysfs
+      --with-llvm-prefix=#{Formula["llvm@4"].opt_prefix}
     ]
 
     # enable-opencl => needs libclc
