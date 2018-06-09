@@ -21,6 +21,7 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/damageproto"
   depends_on "linuxbrew/xorg/dri2proto"
   depends_on "linuxbrew/xorg/glproto"
+  depends_on "linuxbrew/xorg/kbproto"
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
