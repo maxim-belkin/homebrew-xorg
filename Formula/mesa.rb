@@ -25,6 +25,7 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/xextproto"
   depends_on "linuxbrew/xorg/xf86vidmodeproto"
   depends_on "linuxbrew/xorg/fixesproto"
+  depends_on "linuxbrew/xorg/videoproto"
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
