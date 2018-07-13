@@ -32,6 +32,6 @@ class LibomxilBellagio < Formula
     ENV.deparallelize
     system "make CFLAGS="
     system "make", "install"
-    system "make CFLAGS=", "check" if build.with?("test")
+    system "make", "check CFLAGS=" if build.with?("test")
   end
 end
