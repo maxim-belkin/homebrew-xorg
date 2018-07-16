@@ -26,12 +26,11 @@ class LibomxilBellagio < Formula
 
     # Be explicit about the configure flags
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-
-    #system "autoreconf", "-fiv"
     system "./configure", *args
     ENV.deparallelize
-    system "CFLAGS='' make"
+    ENV.delete "CFLAGS"
+    system "make"
     system "make", "install"
-    system "CFLAGS='' make", "check" if build.with?("test")
+    system "make", "check" if build.with?("test")
   end
 end
