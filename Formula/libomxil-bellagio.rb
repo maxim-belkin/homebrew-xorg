@@ -17,6 +17,7 @@ class LibomxilBellagio < Formula
   depends_on "libtool" => :build
 
   def install
+    ENV.delete "CFLAGS"
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
@@ -29,7 +30,7 @@ class LibomxilBellagio < Formula
     
     system "./configure", *args
     ENV.deparallelize
-    ENV.delete "CFLAGS"
+
     system "make"
     system "make", "install"
     system "make", "check" if build.with?("test")
