@@ -30,8 +30,8 @@ class LibomxilBellagio < Formula
     #system "autoreconf", "-fiv"
     system "./configure", *args
     ENV.deparallelize
-    system "make CFLAGS="
+    system "CFLAGS='' make"
     system "make", "install"
-    system "make", "check CFLAGS=" if build.with?("test")
+    system "CFLAGS='' make", "check" if build.with?("test")
   end
 end
