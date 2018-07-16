@@ -30,7 +30,6 @@ class LibomxilBellagio < Formula
     
     system "./configure", *args
     ENV.deparallelize
-
     system "make"
     system "make", "install"
     system "make", "check" if build.with?("test")
