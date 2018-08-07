@@ -32,7 +32,6 @@ class Mesa < Formula
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
-  depends_on "linuxbrew/xorg/libsha1"
   depends_on "llvm@4" # failed with llvm@6
   depends_on "libelf" # radeonsi requires libelf when using llvm
   depends_on "linuxbrew/xorg/libomxil-bellagio"
@@ -90,7 +89,6 @@ class Mesa < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --enable-opengl
-      --with-sha1=libsha1
       --enable-llvm
       --disable-llvm-shared-libs
       --enable-shared-glapi
