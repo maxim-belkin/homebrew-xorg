@@ -114,13 +114,13 @@ class Mesa < Formula
 
     if build.with? "gpu"
       args += %W[
-        --with-egl-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
+        --with-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
         --with-gallium-drivers=i915,nouveau,r300,r600,radeonsi,svga,swrast,swr
         --with-dri-drivers=i965,nouveau,radeon,r200,swrast
       ]
     else
       args += %W[
-        --with-egl-platforms=
+        --with-platforms=
         --with-gallium-drivers=swrast,swr
         --with-dri-drivers=
       ]
