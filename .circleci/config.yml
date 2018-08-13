@@ -21,10 +21,14 @@ jobs:
             git config --global user.name LinuxbrewTestBot
             git config --global user.email testbot@linuxbrew.sh
       - run:
+          name: Unshallow Linuxbrew/brew
+          working_directory: /home/linuxbrew/.linuxbrew/Homebrew
+          command: git fetch origin --unshallow --tags
+      - run:
           name: Update Linuxbrew
           command: brew update
       - run:
-          name: Set up linuxbrew/xorg tap
+          name: Set up Linuxbrew/xorg tap
           working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
           command: |
             git clone https://github.com/Linuxbrew/$CIRCLE_PROJECT_REPONAME
@@ -34,10 +38,10 @@ jobs:
             fi
             git reset --hard $CIRCLE_SHA1
       - run:
-          name: Prepare for the main test
+          name: Install patchelf
           command: brew install patchelf
       - run:
-          name: Main test
+          name: Main test (test-bot)
           working_directory: /tmp/bottles
           no_output_timeout: 30m
           command: brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
