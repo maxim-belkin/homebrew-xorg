@@ -3,7 +3,7 @@ class Mesa < Formula
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/mesa-17.2.3.tar.xz"
   sha256 "a0b0ec8f7b24dd044d7ab30a8c7e6d3767521e245f88d4ed5dd93315dc56f837"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
@@ -13,6 +13,7 @@ class Mesa < Formula
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
+  option "without-gpu", "Build without graphics hardware"
 
   depends_on "pkg-config" => :build
   depends_on "python" => :build
@@ -31,7 +32,6 @@ class Mesa < Formula
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
-  depends_on "linuxbrew/xorg/libsha1"
   depends_on "llvm@4" # failed with llvm@6
   depends_on "libelf" # radeonsi requires libelf when using llvm
   depends_on "linuxbrew/xorg/libomxil-bellagio"
@@ -77,6 +77,9 @@ class Mesa < Formula
       system "python", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
+    gpu = build.with?("gpu") ? "yes" : "no"
+    nogpu = build.with?("gpu") ? "no" : "yes"
+
     args = %W[
       CFLAGS=#{ENV.cflags}
       CXXFLAGS=#{ENV.cflags}
@@ -85,31 +88,46 @@ class Mesa < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
-      --enable-texture-float
-      --enable-gles1
-      --enable-gles2
-      --enable-osmesa
-      --enable-xa
-      --enable-gbm
-      --with-egl-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
-      --with-gallium-drivers=i915,nouveau,r300,r600,radeonsi,svga,swrast,swr
-      --enable-glx-tls
-      --enable-dri
-      --enable-dri3
-      --enable-gallium-tests
-      --enable-glx
       --enable-opengl
-      --enable-shared-glapi
-      --enable-va
-      --enable-vdpau
-      --enable-xvmc
-      --disable-llvm-shared-libs
-      --with-dri-drivers=i965,nouveau,radeon,r200,swrast
-      --with-sha1=libsha1
       --enable-llvm
-      --enable-sysfs
+      --disable-llvm-shared-libs
+      --enable-shared-glapi
       --with-llvm-prefix=#{Formula["llvm@4"].opt_prefix}
+      --enable-dri3=#{gpu}
+      --enable-dri=#{gpu}
+      --enable-egl=#{gpu}
+      --enable-gallium-osmesa=#{nogpu}
+      --enable-gallium-tests=#{gpu}
+      --enable-gbm=#{gpu}
+      --enable-gles1=#{gpu}
+      --enable-gles2=#{gpu}
+      --enable-glx-tls=#{gpu}
+      --enable-glx=#{gpu}
+      --enable-osmesa=#{gpu}
+      --enable-sysfs=#{gpu}
+      --enable-texture-float=#{gpu}
+      --enable-va=#{gpu}
+      --enable-vdpau=#{gpu}
+      --enable-xa=#{gpu}
+      --enable-xvmc=#{gpu}
     ]
+
+    if build.with? "gpu"
+      args += %W[
+        --with-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
+        --with-gallium-drivers=i915,nouveau,r300,r600,radeonsi,svga,swrast,swr
+        --with-dri-drivers=i965,nouveau,radeon,r200,swrast
+      ]
+    else
+      args += %W[
+        --with-platforms=
+        --with-gallium-drivers=swrast,swr
+        --with-dri-drivers=
+      ]
+    end
+
+    # Possible gallium drivers:
+    # ddebug,etnaviv,freedreno,i915,imx,llvmpipe,noop,nouveau,pl111,r300,r600,radeon,radeonsi,rbug,softpipe,svga,swr,trace,vc4,virgl
 
     # enable-opencl => needs libclc
     # enable-gallium-osmesa => mutually exclusive with enable-osmesa
@@ -121,10 +139,10 @@ class Mesa < Formula
 
     system "./autogen.sh", *args
     system "make"
-    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}"
+    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}" if build.with? "gpu"
     system "make", "check" if build.with?("test")
     system "make", "install"
-    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install"
+    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install" if build.with? "gpu"
 
     if build.with?("libva")
       resource("libva").stage do
@@ -201,3 +219,4 @@ class Mesa < Formula
     end
   end
 end
+
