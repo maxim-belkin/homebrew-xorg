@@ -3,7 +3,7 @@ class Mesa < Formula
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/mesa-17.2.3.tar.xz"
   sha256 "a0b0ec8f7b24dd044d7ab30a8c7e6d3767521e245f88d4ed5dd93315dc56f837"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
