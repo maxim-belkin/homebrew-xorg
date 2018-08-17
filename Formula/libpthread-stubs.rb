@@ -18,6 +18,6 @@ class LibpthreadStubs < Formula
   end
 
   test do
-    assert_predicate "#{lib}/pkgconfig/pthread-stubs.pc", :exist?
+    assert_predicate lib/"pkgconfig/pthread-stubs.pc", :exist?
   end
 end
