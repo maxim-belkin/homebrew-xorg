@@ -20,14 +20,14 @@ class Mesa < Formula
   depends_on "bison" => :build
   depends_on "libtool" => :build
 
-  depends_on "linuxbrew/xorg/damageproto"
-  depends_on "linuxbrew/xorg/dri2proto"
-  depends_on "linuxbrew/xorg/glproto"
-  depends_on "linuxbrew/xorg/kbproto"
-  depends_on "linuxbrew/xorg/xextproto"
-  depends_on "linuxbrew/xorg/xf86vidmodeproto"
-  depends_on "linuxbrew/xorg/fixesproto"
-  depends_on "linuxbrew/xorg/videoproto"
+  depends_on "linuxbrew/xorg/damageproto" => :build
+  depends_on "linuxbrew/xorg/dri2proto" => :build
+  depends_on "linuxbrew/xorg/glproto" => :build
+  depends_on "linuxbrew/xorg/kbproto" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/xf86vidmodeproto" => :build
+  depends_on "linuxbrew/xorg/fixesproto" => :build
+  depends_on "linuxbrew/xorg/videoproto" => :build
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
