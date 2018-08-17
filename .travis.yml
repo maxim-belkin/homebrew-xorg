@@ -98,7 +98,8 @@ matrix:
   fast_finish: true
 
 script:
-  - brew style linuxbrew/xorg
+  - brew style "$TRAVIS_REPO_SLUG"
+  - brew audit $(cd $(brew --repo "$TRAVIS_REPO_SLUG")/Formula; ls *.rb | sed 's|.rb$||')
 
 notifications:
   email:
