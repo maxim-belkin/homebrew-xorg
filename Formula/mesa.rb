@@ -143,18 +143,16 @@ class Mesa < Formula
     system "make", "install"
     system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install" if build.with? "gpu"
 
-    if build.with?("libva")
+    if build.with? "libva"
       resource("libva").stage do
-        args = %W[
+        libvaargs = %W[
           --prefix=#{Formula["libva"].opt_prefix}
-          --sysconfdir=#{etc}
-          --localstatedir=#{var}
+          --sysconfdir=#{Formula["libva"].opt_prefix}/etc
+          --localstatedir=#{Formula["libva"].opt_prefix}/var
           --disable-dependency-tracking
           --disable-silent-rules
+          --enable-static=#{build.with?("static") ? "yes" : "no"}
         ]
-
-        # Be explicit about the configure flags
-        args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
         ### Set environment flags:
         # $ pkg-config --cflags egl | tr ' ' '\n'
@@ -182,8 +180,8 @@ class Mesa < Formula
         ENV["EGL_LIBS"] = "-L#{lib} -lEGL"
         ENV["GLX_LIBS"] = "-L#{lib} -lGL"
 
-        system "autoreconf", "-fi" if build.without?("wayland") # needed only if Wayland is not installed
-        system "./configure", *args
+        system "autoreconf", "-fi" if build.without? "wayland" # needed only if Wayland is not installed
+        system "./configure", *libvaargs
         system "make"
         system "make", "install"
       end
