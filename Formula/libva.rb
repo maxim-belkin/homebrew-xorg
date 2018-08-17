@@ -19,20 +19,24 @@ class Libva < Formula
 
   option "with-eglx", "Build libva with egl and glx support (use after building mesa)"
 
-  # Build-time
   depends_on "pkg-config" => :build
-  depends_on "autoconf" => :build
-
-  depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/wayland" => :recommended
 
-  depends_on "libtool" => :build if build.without?("wayland")
+  if build.without? "wayland"
+    depends_on "autoconf" => :build
+    depends_on "libtool" => :build
+  end
+
+  depends_on "linuxbrew/xorg/libdrm"
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxfixes"
 
   def install
     args = %W[
       --prefix=#{prefix}
-      --sysconfdir=#{etc}
-      --localstatedir=#{var}
+      --sysconfdir=#{prefix}/etc
+      --localstatedir=#{prefix}/var
       --disable-dependency-tracking
       --disable-silent-rules
       --enable-static=#{build.with?("static") ? "yes" : "no"}
@@ -43,7 +47,7 @@ class Libva < Formula
       args << "--disable-glx"
     end
 
-    system "autoreconf", "-fi" if build.without?("wayland")
+    system "autoreconf", "-fi" if build.without? "wayland"
     system "./configure", *args
     system "make"
     system "make", "install"
