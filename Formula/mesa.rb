@@ -118,7 +118,7 @@ class Mesa < Formula
         --with-dri-drivers=i965,nouveau,radeon,r200,swrast
       ]
     else
-      args += %W[
+      args += %w[
         --with-platforms=
         --with-gallium-drivers=swrast,swr
         --with-dri-drivers=

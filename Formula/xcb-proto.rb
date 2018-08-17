@@ -32,7 +32,6 @@ class XcbProto < Formula
     sha256 "3bc1a1871d17325d1f591a8ec2091f956b2071d83a6e9998d7d4880c4abf3e8b"
   end
 
-
   def install
     args = %W[
       --prefix=#{prefix}

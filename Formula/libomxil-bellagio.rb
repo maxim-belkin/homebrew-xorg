@@ -43,6 +43,5 @@ class LibomxilBellagio < Formula
       end
       system "make", "check"
     end
-
   end
 end

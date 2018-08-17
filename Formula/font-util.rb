@@ -34,7 +34,7 @@ class FontUtil < Formula
   end
 
   def post_install
-    dirs = ["encodings", "75dpi", "100dpi", "misc"]
+    dirs = %w[encodings 75dpi 100dpi misc]
     dirs.each do |d|
       mkdir_p share/"fonts/X11/#{d}"
     end
