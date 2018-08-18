@@ -99,8 +99,8 @@ matrix:
 
 script:
   - brew style "$TRAVIS_REPO_SLUG"
-  - brew audit $(cd $(brew --repo "$TRAVIS_REPO_SLUG")/Formula; ls *.rb | sed 's|.rb$||')
-  - brew audit --strict $(cd $(brew --repo "$TRAVIS_REPO_SLUG")/Formula; ls *.rb | sed 's|.rb$||') || :
+  - brew audit $(cd $(brew --repo $TRAVIS_REPO_SLUG)/Formula; ls *.rb | sed 's|.rb$||')
+  - brew audit --strict $(cd $(brew --repo $TRAVIS_REPO_SLUG)/Formula; ls *.rb | sed 's|.rb$||') || :
 
 notifications:
   email:
