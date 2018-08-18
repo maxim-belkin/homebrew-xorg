@@ -98,9 +98,11 @@ matrix:
   fast_finish: true
 
 script:
+  - brew test-bot --tap=linuxbrew/xorg --fast
   - brew style linuxbrew/xorg
-  - brew audit $(cd $(brew --repo linuxbrew/xorg)/Formula; ls *.rb | sed 's|.rb$||')
-  - brew audit --strict $(cd $(brew --repo linuxbrew/xorg)/Formula; ls *.rb | sed 's|.rb$||') || true
+  - brew audit -D --except=revision_and_version_scheme $(cd $(brew --repo linuxbrew/xorg)/Formula; ls *.rb | sed 's|.rb$||')
+  - brew audit -D --except=revision_and_version_scheme --strict $(cd $(brew --repo linuxbrew/xorg)/Formula; ls *.rb | sed 's|.rb$||') || true
+  - brew readall --aliases --syntax linuxbrew/xorg
 
 notifications:
   email:
