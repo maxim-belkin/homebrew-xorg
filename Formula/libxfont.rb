@@ -3,6 +3,7 @@ class Libxfont < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://ftp.x.org/pub/individual/lib/libXfont-1.5.2.tar.bz2"
   sha256 "02945ea68da447102f3e6c2b896c1d2061fd115de99404facc2aca3ad7010d71"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
@@ -15,21 +16,16 @@ class Libxfont < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
 
-  option "with-brewed-zlib", "Use brewed zlib"
-  option "with-brewed-bzip2", "Use libbz2 to support bzip2 compressed bitmap fonts"
-
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/xtrans" => :build
+  depends_on "bzip2"
+  depends_on "freetype"
   depends_on "linuxbrew/xorg/fontsproto" => :build
   depends_on "linuxbrew/xorg/libfontenc"
-  depends_on "freetype"
+  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/xtrans" => :build
+  depends_on "zlib"
 
-  depends_on "bzip2" if build.with?("brewed-bzip2")
-  depends_on "zlib"  if build.with?("brewed-zlib")
-
-  if build.with?("devel-docs")
-
+  if build.with? "devel-docs"
     patch do
       url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/patch_configure.diff"
       sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
@@ -50,11 +46,12 @@ class Libxfont < Formula
       --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-devel-docs=#{build.with?("devel-docs") ? "yes" : "no"}
       --with-freetype-config=#{Formula["freetype"].opt_bin}/freetype-config
+      --with-bzip2
     ]
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 
