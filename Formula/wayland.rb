@@ -1,8 +1,8 @@
 class Wayland < Formula
   desc "Protocol for a compositor to talk to its clients"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-1.14.0.tar.xz"
-  sha256 "ed80cabc0961a759a42092e2c39aabfc1ec9a13c86c98bbe2b812f008da27ab8"
+  url "https://wayland.freedesktop.org/releases/wayland-1.16.0.tar.xz"
+  sha256 "4e72c2b56109ccfb6610d776e465f4ca0af2280c9c2f7d5cc23f0ed2548752f5"
 
   bottle do
     sha256 "de56421f631ade864552e02c5ba1c81cf63732d531368880f49d6efd8b479c90" => :x86_64_linux
@@ -29,9 +29,8 @@ class Wayland < Formula
       --disable-dependency-tracking
       --disable-silent-rules
       --disable-documentation
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     if build.head?
       system "./autogen.sh", *args
