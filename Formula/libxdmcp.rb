@@ -15,7 +15,7 @@ class Libxdmcp < Formula
   option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto"
+  depends_on "linuxbrew/xorg/xproto" => :build
 
   # Patch for xmlto
   patch do
@@ -23,7 +23,7 @@ class Libxdmcp < Formula
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
-  if build.with?("docs")
+  if build.with? "docs"
     depends_on "xmlto" => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
@@ -37,15 +37,13 @@ class Libxdmcp < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-docs=#{build.with?("docs") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
