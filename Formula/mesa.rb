@@ -14,11 +14,21 @@ class Mesa < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@2" => :build
   depends_on "flex" => :build
   depends_on "bison" => :build
   depends_on "libtool" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+
+  depends_on "linuxbrew/xorg/wayland" => :optional
+  depends_on "linuxbrew/xorg/libglvnd" => :optional
+  depends_on "linuxbrew/xorg/libvdpau" if build.with? "gpu"
+
+  depends_on "linuxbrew/xorg/libva" => [:recommended, :build]
+  depends_on "valgrind" => :recommended
 
   depends_on "linuxbrew/xorg/damageproto" => :build
   depends_on "linuxbrew/xorg/dri2proto" => :build
@@ -31,25 +41,24 @@ class Mesa < Formula
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
-  depends_on "llvm@4" # failed with llvm@6
-  depends_on "libelf" # radeonsi requires libelf when using llvm
+  if build.with? "gpu"
+    depends_on "llvm@4" # failed with llvm@6
+    depends_on "libelf" # radeonsi requires libelf when using llvm
+  end
   depends_on "linuxbrew/xorg/libomxil-bellagio"
-  depends_on "linuxbrew/xorg/wayland-protocols" => :recommended
-  depends_on "valgrind" => :recommended
-  depends_on "linuxbrew/xorg/libglvnd" => :optional
-  depends_on "linuxbrew/xorg/libva" => :recommended
-  depends_on "linuxbrew/xorg/libvdpau"
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
-  depends_on "linuxbrew/xorg/xorg"
+  depends_on "linuxbrew/xorg/libdrm"
+  depends_on "linuxbrew/xorg/libxdamage"
+  depends_on "linuxbrew/xorg/libxshmfence"
+  depends_on "linuxbrew/xorg/libxv"
+  depends_on "linuxbrew/xorg/libxvmc"
 
-  #
+  depends_on "libelf" if build.with? "llvm" # radeonsi requires libelf when using llvm
+  # Revisit later [@maxim-belkin, March 6, 2018]: depends_on "linuxbrew/xorg/wayland-protocols" => :recommended
+
   # There is a circular dependency between Mesa and libva:
   # libva should be installed:
   #  1. before Mesa with "disable-egl" and "disable-egl" options  [libva formula]
   #  2. after  Mesa without the above two options                 [this formula]
-  #
 
   resource "mako" do
     url "https://files.pythonhosted.org/packages/56/4b/cb75836863a6382199aefb3d3809937e21fa4cb0db15a4f4ba0ecc2e7e8e/Mako-1.0.6.tar.gz"
@@ -73,7 +82,7 @@ class Mesa < Formula
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
 
     resource("mako").stage do
-      system "python", *Language::Python.setup_install_args(libexec/"vendor")
+      system "python2", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
     gpu = build.with?("gpu") ? "yes" : "no"
@@ -88,10 +97,9 @@ class Mesa < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --enable-opengl
-      --enable-llvm
-      --disable-llvm-shared-libs
+      --disable-pwr8
+      --enable-nine
       --enable-shared-glapi
-      --with-llvm-prefix=#{Formula["llvm@4"].opt_prefix}
       --enable-dri3=#{gpu}
       --enable-dri=#{gpu}
       --enable-egl=#{gpu}
@@ -109,10 +117,17 @@ class Mesa < Formula
       --enable-vdpau=#{gpu}
       --enable-xa=#{gpu}
       --enable-xvmc=#{gpu}
+      --with-vulkan-drivers=intel
+      --with-swr-archs=avx,avx2
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-libglvnd=#{build.with?("libglvnd") ? "yes" : "no"}
     ]
 
     if build.with? "gpu"
       args += %W[
+        --enable-llvm
+        --disable-llvm-shared-libs
+        --with-llvm-prefix=#{Formula["llvm@4"].opt_prefix}
         --with-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
         --with-gallium-drivers=i915,nouveau,r300,r600,radeonsi,svga,swrast,swr
         --with-dri-drivers=i965,nouveau,radeon,r200,swrast
@@ -130,9 +145,6 @@ class Mesa < Formula
 
     # enable-opencl => needs libclc
     # enable-gallium-osmesa => mutually exclusive with enable-osmesa
-
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-libglvnd" if build.with? "libglvnd"
 
     inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
 
