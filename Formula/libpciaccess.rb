@@ -1,9 +1,9 @@
 class Libpciaccess < Formula
   desc "X.Org Libraries: libpciaccess"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/pub/individual/lib/libpciaccess-0.13.5.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/lib/libpciaccess-0.13.5.tar.bz2"
-  sha256 "752c54e9b3c311b4347cb50aea8566fa48eab274346ea8a06f7f15de3240b999"
+  url "https://www.x.org/pub/individual/lib/libpciaccess-0.14.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/lib/libpciaccess-0.14.tar.bz2"
+  sha256 "3df543e12afd41fea8eac817e48cbfde5aed8817b81670a4e9e493bb2f5bf2a4"
   # tag "linuxbrew"
 
   bottle do
@@ -23,8 +23,8 @@ class Libpciaccess < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
