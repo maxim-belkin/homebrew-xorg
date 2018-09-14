@@ -1,9 +1,9 @@
 class UtilMacros < Formula
   desc "X.Org util-macros"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/util/util-macros-1.19.0.tar.bz2"
-  mirror "ftp://ftp.x.org/pub/individual/util/util-macros-1.19.0.tar.bz2"
-  sha256 "2835b11829ee634e19fa56517b4cfc52ef39acea0cd82e15f68096e27cbed0ba"
+  url "https://www.x.org/archive/individual/util/util-macros-1.19.2.tar.bz2"
+  mirror "ftp://ftp.x.org/pub/individual/util/util-macros-1.19.2.tar.bz2"
+  sha256 "d7e43376ad220411499a79735020f9d145fdc159284867e99467e0d771f3e712"
   # tag "linuxbrew"
 
   bottle do
