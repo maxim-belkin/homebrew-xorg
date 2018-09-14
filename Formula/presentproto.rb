@@ -1,8 +1,8 @@
 class Presentproto < Formula
   desc "X.Org Protocol Headers: presentproto"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/proto/presentproto-1.0.tar.bz2"
-  sha256 "812c7d48721f909a0f7a2cb1e91f6eead76159a36c4712f4579ca587552839ce"
+  url "https://www.x.org/archive/individual/proto/presentproto-1.1.tar.bz2"
+  sha256 "f69b23a8869f78a5898aaf53938b829c8165e597cda34f06024d43ee1e6d26b9"
   # tag "linuxbrew"
 
   bottle do
