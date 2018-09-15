@@ -2,9 +2,9 @@ class Mkfontscale < Formula
   desc "X.Org Applications: mkfontscale"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/mkfontscale-1.1.2.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/mkfontscale-1.1.2.tar.bz2"
-  sha256 "8c6d5228af885477b9aec60ca6f172578e7d2de42234357af62fb00439453f20"
+  url "https://www.x.org/pub/individual/app/mkfontscale-1.1.3.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/mkfontscale-1.1.3.tar.bz2"
+  sha256 "1e98df69ee5f4542d711e140e1d93e2c3f2775407ccbb7849110d52b91782a6a"
   # tag "linuxbrew"
 
   bottle do
@@ -13,10 +13,10 @@ class Mkfontscale < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libfontenc"
   depends_on "freetype"
   depends_on "bzip2" => :recommended
-  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[
@@ -25,8 +25,8 @@ class Mkfontscale < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-bzip2=#{build.with?("bzip2") ? "yes" : "no"}
     ]
-    args << "--with-bzip2" if build.with?("bzip2")
 
     system "./configure", *args
     system "make"
