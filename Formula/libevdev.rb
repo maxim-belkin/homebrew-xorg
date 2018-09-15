@@ -1,9 +1,8 @@
 class Libevdev < Formula
   desc "Wrapper library for evdev devices"
   homepage "https://www.freedesktop.org/wiki/Software/libevdev/"
-  url "https://www.freedesktop.org/software/libevdev/libevdev-1.5.2.tar.xz"
-  sha256 "5ee2163656a61f5703cb5c08a05c9471ffb7b640bfbe2c55194ea50d908f629b"
-  revision 2
+  url "https://www.freedesktop.org/software/libevdev/libevdev-1.5.9.tar.xz"
+  sha256 "e1663751443bed9d3e76a4fe2caf6fa866a79705d91cacad815c04e706198a75"
   # tag "linuxbrew"
 
   bottle do
@@ -13,10 +12,12 @@ class Libevdev < Formula
 
   option "with-static", "Build static libraries (not recommended)"
   option "without-test", "Skip compile-time tests"
+  option "with-python@2", "Build with Python 2"
 
   depends_on "pkg-config" => :build
-  depends_on "python@2" => :build
-  depends_on "check" => :build if build.with?("test")
+  depends_on "check" => :build if build.with? "test"
+  depends_on "python@2" => [:build, :optional]
+  depends_on "python" => :build if build.without? "python@2"
 
   def install
     args = %W[
@@ -25,14 +26,12 @@ class Libevdev < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "test" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 
