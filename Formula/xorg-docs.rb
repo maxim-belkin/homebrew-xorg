@@ -1,8 +1,8 @@
 class XorgDocs < Formula
-  desc "X.Org ocumentation that doesn't better fit into other packages"
+  desc "X.Org ocumentation that is not part of other Xorg packages"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.tar.bz2"
-  sha256 "b9b1918bd365e9eb29c325e76bb8c4d774d37be707e433fb0af94da35683375f"
+  url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.1.tar.bz2"
+  sha256 "24b8677c3462c10465cf50d40576d76682acd5835526093a575865b2aa242c4b"
   # tag "linuxbrew"
 
   bottle do
@@ -16,13 +16,16 @@ class XorgDocs < Formula
   option "without-specs", "Do not build specifications"
   option "without-test", "Skip compile-time testsation"
 
-  depends_on "linuxbrew/xorg/util-macros" => [:build, :recommended]
-  depends_on "xmlto" => :build
-  depends_on "fop"         => [:build, :recommended]
-  depends_on "libxslt"     => [:build, :recommended]
-  depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
+  depends_on :java => :build
+  depends_on "pkg-config" => :build
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
+  depends_on "fop" => :build
+  depends_on "libxslt" => :build
+  depends_on "lynx" => :build # required for xmlto to work correctly
+  depends_on "xmlto" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
 
   # Patch for xmlto
   patch do
@@ -31,22 +34,22 @@ class XorgDocs < Formula
   end
 
   def install
-    args = %w[
+    args = %W[
+      --prefix=#{prefix}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-xmlto=yes
+      --with-fop=yes
+      --enable-docs=#{build.with?("docs") ? "yes" : "no"}
+      --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
-    args << "--prefix=#{prefix}"
-
-    # Be explicit about the configure flags
-    args << "--enable-docs=#{build.without?("docs") ? "no" : "yes"}"
-    args << "--enable-specs=#{build.without?("specs") ? "no" : "yes"}"
 
     # ensure we can find the docbook XML tags
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
