@@ -1,9 +1,8 @@
 class Libxfont < Formula
   desc "X.Org Libraries: libXfont"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXfont-1.5.2.tar.bz2"
-  sha256 "02945ea68da447102f3e6c2b896c1d2061fd115de99404facc2aca3ad7010d71"
-  revision 1
+  url "https://ftp.x.org/pub/individual/lib/libXfont-1.5.4.tar.bz2"
+  sha256 "1a7f7490774c87f2052d146d1e0e64518d32e6848184a18654e8d0bb57883242"
   # tag "linuxbrew"
 
   bottle do
@@ -17,23 +16,24 @@ class Libxfont < Formula
   option "with-devel-docs", "Build developer documentation"
 
   depends_on "pkg-config" => :build
-  depends_on "bzip2"
-  depends_on "freetype"
   depends_on "linuxbrew/xorg/fontsproto" => :build
-  depends_on "linuxbrew/xorg/libfontenc"
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/xtrans" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "bzip2"
+  depends_on "freetype"
   depends_on "zlib"
+  depends_on "linuxbrew/xorg/libfontenc"
 
   if build.with? "devel-docs"
-    patch do
-      url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/patch_configure.diff"
-      sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
-    end
-
+    depends_on :java => :build
+    depends_on "docbook" => :build
+    depends_on "docbook-xsl" => :build
+    depends_on "libxslt" => :build
     depends_on "xmlto" => :build
+    depends_on "lynx" => :build # required for xmlto to work correctly
     depends_on "fop" => :build
-    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
   end
 
   def install
@@ -49,10 +49,14 @@ class Libxfont < Formula
       --with-bzip2
     ]
 
+    # ensure we can find the docbook XML tags
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog" if build.with? "devel-docs"
+
     system "./configure", *args
     system "make"
     system "make", "check" if build.with? "test"
     system "make", "install"
+    pkgshare.install Dir["doc/*.{pdf,html,ps,txt}"] if build.with? "devel-docs"
   end
 
   test do
