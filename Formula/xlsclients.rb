@@ -2,9 +2,9 @@ class Xlsclients < Formula
   desc "X.Org Applications: xlsclients"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xlsclients-1.1.3.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xlsclients-1.1.3.tar.bz2"
-  sha256 "5d9666fcc6c3de210fc70d5a841a404955af709a616fde530fe4e8f7723e3d3d"
+  url "https://www.x.org/pub/individual/app/xlsclients-1.1.4.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xlsclients-1.1.4.tar.bz2"
+  sha256 "773f2af49c7ea2c44fba4213bee64325875c1b3c9bc4bbcd8dac9261751809c1"
   # tag "linuxbrew"
 
   bottle do
@@ -13,6 +13,8 @@ class Xlsclients < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libxcb"
 
   def install
