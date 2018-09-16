@@ -2,9 +2,9 @@ class Bdftopcf < Formula
   desc "X.Org Applications: bdftopcf"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/bdftopcf-1.0.5.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/bdftopcf-1.0.5.tar.bz2"
-  sha256 "38f447be0c61f94c473f128cf519dd0cff63b5d7775240a2e895a183a61e2026"
+  url "https://www.x.org/pub/individual/app/bdftopcf-1.1.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/bdftopcf-1.1.tar.bz2"
+  sha256 "4b4df05fc53f1e98993638d6f7e178d95b31745c4568cee407e167491fd311a2"
   # tag "linuxbrew"
 
   bottle do
