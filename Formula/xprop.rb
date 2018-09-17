@@ -2,9 +2,9 @@ class Xprop < Formula
   desc "X.Org Applications: xprop"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xprop-1.2.2.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xprop-1.2.2.tar.bz2"
-  sha256 "9bee88b1025865ad121f72d32576dd3027af1446774aa8300cce3c261d869bc6"
+  url "https://www.x.org/pub/individual/app/xprop-1.2.3.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xprop-1.2.3.tar.bz2"
+  sha256 "d22afb28c86d85fff10a50156a7d0fa930c80ae865d70b26d805fd28a17a521b"
   # tag "linuxbrew"
 
   bottle do
@@ -13,7 +13,7 @@ class Xprop < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/libx11"
 
   def install
