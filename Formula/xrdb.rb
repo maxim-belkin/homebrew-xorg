@@ -2,9 +2,9 @@ class Xrdb < Formula
   desc "X.Org Applications: xrdb"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xrdb-1.1.0.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xrdb-1.1.0.tar.bz2"
-  sha256 "73827b6bbfc9d27ca287d95a1224c306d7053cd7b8156641698d7dc541ca565b"
+  url "https://www.x.org/pub/individual/app/xrdb-1.1.1.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xrdb-1.1.1.tar.bz2"
+  sha256 "2d23ade7cdbb487996bf77cbb32cbe9bdb34d004748a53de7a4a97660d2217b7"
   # tag "linuxbrew"
 
   bottle do
@@ -13,8 +13,7 @@ class Xrdb < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/libxmu"
 
   def install
