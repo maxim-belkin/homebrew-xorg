@@ -2,9 +2,9 @@ class Xrefresh < Formula
   desc "X.Org Applications: xrefresh"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xrefresh-1.0.5.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xrefresh-1.0.5.tar.bz2"
-  sha256 "3213671b0a8a9d1e8d1d5d9e3fd86842c894dd9acc1be2560eda50bc1fb791d6"
+  url "https://www.x.org/pub/individual/app/xrefresh-1.0.6.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xrefresh-1.0.6.tar.bz2"
+  sha256 "287dfb9bb7e8d780d07e672e3252150850869cb550958ed5f8401f0835cd6353"
   # tag "linuxbrew"
 
   bottle do
@@ -13,7 +13,6 @@ class Xrefresh < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 
   def install
