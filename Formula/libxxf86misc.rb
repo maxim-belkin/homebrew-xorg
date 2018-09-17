@@ -1,8 +1,8 @@
 class Libxxf86misc < Formula
   desc "X.Org Libraries: libXxf86misc"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive//individual/lib/libXxf86misc-1.0.3.tar.gz"
-  sha256 "358f692f793af00f6ef4c7a8566c1bcaeeea37e417337db3f519522cc1df3946"
+  url "https://www.x.org/archive//individual/lib/libXxf86misc-1.0.4.tar.gz"
+  sha256 "63a68b2fafd03236f9b0135de21976e9194d6d811ca2fd774c13a6b4be576676"
   # tag "linuxbrew"
 
   bottle do
@@ -14,10 +14,7 @@ class Libxxf86misc < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/xf86miscproto" => :build
+  depends_on "linuxbrew/xorg/xf86miscproto"
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
 
@@ -28,14 +25,12 @@ class Libxxf86misc < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
