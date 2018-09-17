@@ -2,9 +2,9 @@ class Xkill < Formula
   desc "X.Org Applications: xkill"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xkill-1.0.4.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xkill-1.0.4.tar.bz2"
-  sha256 "88ef2a304f32f24b255e879f03c1dcd3a2be3e71d5562205414f267d919f812e"
+  url "https://www.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
+  sha256 "c5f0bb6a95e1ac7c4def8a657496d5d2f21ccd41eb47ef2c9ccb03fb6d6aff6b"
   # tag "linuxbrew"
 
   bottle do
@@ -13,9 +13,8 @@ class Xkill < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxmu"
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/libxmu" # brings in libx11
 
   def install
     args = %W[
