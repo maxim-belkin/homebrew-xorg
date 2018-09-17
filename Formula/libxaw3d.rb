@@ -1,9 +1,9 @@
 class Libxaw3d < Formula
   desc "3D Athena widget set based on the X Toolkit Intrinsics (Xt) library"
   homepage "https://www.x.org"
-  url "https://www.x.org/archive/individual/lib/libXaw3d-1.6.2.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/lib/libXaw3d-1.6.2.tar.bz2"
-  sha256 "b74f11681061c1492c03cbbe6e318f9635b3877af0761fc0e67e1467c3a6972b"
+  url "https://www.x.org/archive/individual/lib/libXaw3d-1.6.3.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/lib/libXaw3d-1.6.3.tar.bz2"
+  sha256 "2dba993f04429ec3d7e99341e91bf46be265cc482df25963058c15f1901ec544"
 
   bottle do
     sha256 "25a7abe20dd0374befda6986e116c28bce2fe8537470c6648dbd60030e8d2af2" => :x86_64_linux
@@ -15,9 +15,9 @@ class Libxaw3d < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxt"
   depends_on "linuxbrew/xorg/libxmu"
+  depends_on "linuxbrew/xorg/libxt"
+  depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxpm" if build.with? "multiplane-bitmaps"
 
@@ -30,9 +30,10 @@ class Libxaw3d < Formula
       --disable-silent-rules
       --enable-gray-stipples
       --enable-arrow-scrollbars
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
     args << "--enable-multiplane-bitmaps" if build.with? "multiplane-bitmaps"
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+
     system "./configure", *args
     system "make"
     system "make", "check" if build.with? "test"
