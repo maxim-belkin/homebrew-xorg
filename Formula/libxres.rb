@@ -1,8 +1,8 @@
 class Libxres < Formula
   desc "X.Org Libraries: libXres"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXres-1.0.7.tar.bz2"
-  sha256 "26899054aa87f81b17becc68e8645b240f140464cf90c42616ebb263ec5fa0e5"
+  url "https://ftp.x.org/pub/individual/lib/libXres-1.2.0.tar.bz2"
+  sha256 "ff75c1643488e64a7cfbced27486f0f944801319c84c18d3bd3da6bf28c812d4"
   # tag "linuxbrew"
 
   bottle do
@@ -14,11 +14,9 @@ class Libxres < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-
+  depends_on "linuxbrew/xorg/resourceproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/resourceproto" => :build
 
   def install
     args = %W[
@@ -27,12 +25,12 @@ class Libxres < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
