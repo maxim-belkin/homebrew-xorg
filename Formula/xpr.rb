@@ -2,9 +2,9 @@ class Xpr < Formula
   desc "X.Org Applications: xpr"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xpr-1.0.4.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xpr-1.0.4.tar.bz2"
-  sha256 "fed98df31eb93d3dca4688cb535aabad06be572e70ace3b1685679c18dd86cb5"
+  url "https://www.x.org/pub/individual/app/xpr-1.0.5.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xpr-1.0.5.tar.bz2"
+  sha256 "b936e0f1f8d63f5ad097a0bbdce2e67c34f5d49b7263f32a832ff62d394d1e1f"
   # tag "linuxbrew"
 
   bottle do
@@ -13,8 +13,7 @@ class Xpr < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/libxmu"
 
   def install
