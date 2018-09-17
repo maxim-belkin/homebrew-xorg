@@ -1,8 +1,8 @@
 class Libx11 < Formula
   desc "X.Org Libraries: libX11"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libX11-1.6.5.tar.bz2"
-  sha256 "4d3890db2ba225ba8c55ca63c6409c1ebb078a2806de59fb16342768ae63435d"
+  url "https://ftp.x.org/pub/individual/lib/libX11-1.6.6.tar.bz2"
+  sha256 "65fe181d40ec77f45417710c6a67431814ab252d21c2e85c75dd1ed568af414f"
   # tag "linuxbrew"
 
   bottle do
@@ -14,26 +14,20 @@ class Libx11 < Formula
   option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/inputproto" => :build
+  depends_on "linuxbrew/xorg/kbproto" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/xf86bigfontproto" => :build
   depends_on "linuxbrew/xorg/xtrans" => :build
   depends_on "linuxbrew/xorg/libxcb"
-  depends_on "linuxbrew/xorg/kbproto" => :build
-  depends_on "linuxbrew/xorg/inputproto" => :build
-  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
 
-  # Patch for xmlto
-  patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/patch_configure.diff"
-    sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
-  end
-
-  if build.with?("specs")
+  if build.with? "specs"
     depends_on "xmlto" => :build
-    depends_on "fop" => [:build, :recommended]
-    depends_on "libxslt" => [:build, :recommended]
-    depends_on "perl" => [:build, :optional]
-    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "lynx" => :build
+    depends_on "libxslt" => :build
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
   end
 
   def install
@@ -43,11 +37,18 @@ class Libx11 < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-unix-transport
+      --enable-tcp-transport
+      --enable-ipv6
+      --enable-local-transport
+      --enable-loadable-i18n
+      --enable-xthreads
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
 
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
+    # ensure we can find the docbook XML tags
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog" if build.with? "specs"
 
     system "./configure", *args
     system "make"
