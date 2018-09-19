@@ -1,30 +1,31 @@
 class LibvaIntelDriver < Formula
   desc "libva Intel driver"
-  homepage "https://cgit.freedesktop.org/vaapi/intel-driver/"
-  url "https://www.freedesktop.org/software/vaapi/releases/libva-intel-driver/libva-intel-driver-1.7.2.tar.bz2"
-  sha256 "099e7bf6aa826971ec2caff235babf4da995f754e2ca16a73b258671130e67bc"
+  homepage "https://cgit.freedesktop.org/vaapi/intel-driver"
+  url "https://github.com/intel/intel-vaapi-driver/releases/download/2.2.0/intel-vaapi-driver-2.2.0.tar.bz2"
+  sha256 "e8a5f54694eb76aad42653b591030b8a53b1513144c09a80defb3d8d8c875c18"
 
-  # Build-time
+  option "with-static", "Build static libraries (not recommended)"
+
   depends_on "pkg-config" => :build
-
-  # Required
-  depends_on "linuxbrew/xorg/libva"
-
-  # optional
-  depends_on "linuxbrew/xorg/wayland" => :recommended # if libva was built with wayland support
+  depends_on "linuxbrew/xorg/libva" => :build
+  depends_on "linuxbrew/xorg/libdrm"
+  depends_on "linuxbrew/xorg/wayland"
 
   def install
+    ENV["LIBVA_DRIVERS_PATH"] = lib
     args = %W[
       --prefix=#{prefix}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-x11
+      --enable-wayland
+      --enable-hybrid-codec
+      --enable-tests
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    ohai "libva Intel driver has been installed"
-    prefix.install "README" => "libva-intel-driver.md"
   end
 end
