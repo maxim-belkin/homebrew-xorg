@@ -12,27 +12,29 @@ class LibomxilBellagio < Formula
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
+  option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "doxygen" => :build if build.with? "docs"
 
   def install
-    ENV.refurbish_args # needed for `./configure`
-
     args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --disable-dependency-tracking
+      --enable-doc=#{build.with?("docs") ? "yes" : "no"}
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     ENV.deparallelize
     system "make"
+    # system "make", "check" if build.with? "test"
+    # 'make check' Fails with omxvolcontroltest.h:38:22: fatal error: OMX_Core.h: No such file or directory
     system "make", "install"
+    system "make", "installcheck" if build.with? "test"
+    doc.install Dir["doc/libomxil-bellagio/*"] if build.with? "docs"
 
     if build.with? "test"
       ["audio_effects", "resource_manager"].each do |f|
