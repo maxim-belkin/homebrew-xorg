@@ -1,3 +1,4 @@
+# libglvnd: Build a bottle for Linuxbrew
 class Libglvnd < Formula
   desc "GL Vendor-Neutral Dispatch library"
   homepage "https://github.com/NVIDIA/libglvnd"
