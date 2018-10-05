@@ -1,3 +1,4 @@
+# xorgproto: Build a bottle for Linuxbrew
 class Xorgproto < Formula
   desc "X.Org Protocol Headers"
   homepage "https://www.x.org/"
