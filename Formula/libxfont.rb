@@ -20,9 +20,8 @@ class Libxfont < Formula
   depends_on "pkg-config" => :build
   depends_on "bzip2"
   depends_on "freetype"
-  depends_on "linuxbrew/xorg/fontsproto"
   depends_on "linuxbrew/xorg/libfontenc"
-  depends_on "linuxbrew/xorg/xproto"
+  depends_on "linuxbrew/xorg/xorgproto"
   depends_on "zlib"
 
   if build.with? "devel-docs"

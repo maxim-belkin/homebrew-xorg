@@ -12,13 +12,13 @@ class Xinput < Formula
     sha256 "346e245f0b0bea4836e0ad8d268e118958b374c54c2c3cd4965664355067b202" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxi"
-  depends_on "linuxbrew/xorg/inputproto" => :build
-  depends_on "linuxbrew/xorg/libxrandr"
   depends_on "linuxbrew/xorg/libxinerama"
+  depends_on "linuxbrew/xorg/libxrandr"
 
   def install
     args = %W[

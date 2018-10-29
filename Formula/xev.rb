@@ -12,10 +12,10 @@ class Xev < Formula
     sha256 "797f3a6ae4c84b37a60f3c2e9c1eca9128b5e9defc50209ac97dac48f4b587c1" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxrandr"
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/libxrandr"
 
   def install
     args = %W[

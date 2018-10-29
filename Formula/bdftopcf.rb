@@ -13,12 +13,11 @@ class Bdftopcf < Formula
     sha256 "5053b8540a1a6a17e82d2636e8228fd0c2863f1d75a55c82c8c0bdd28ac1bf87" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/fontsproto" => :build
   depends_on "linuxbrew/xorg/util-macros"=> :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libxfont"
+  depends_on "linuxbrew/xorg/xorgproto" => :build
+  depends_on "pkg-config" => :build
   depends_on "bzip2"
+  depends_on "linuxbrew/xorg/libxfont"
 
   def install
     args = %W[

@@ -18,7 +18,7 @@ class Libxxf86misc < Formula
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/xf86miscproto"
+  depends_on "linuxbrew/xorg/xorgproto"
 
   def install
     args = %W[

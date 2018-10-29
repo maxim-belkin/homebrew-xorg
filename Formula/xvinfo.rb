@@ -12,8 +12,8 @@ class Xvinfo < Formula
     sha256 "500a1d2d594d056a6b4b23d43278a6eeaff7a5c9c7c7c62f9ae487c3c3ed84e9" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxv"
 

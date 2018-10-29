@@ -13,10 +13,10 @@ class Iceauth < Formula
     sha256 "9d70e587531b5ef404a1542d06aa7fd38975d970f98f8336cb161f28e06b3258" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libice"
   depends_on "splint" => [:build, :optional]
+  depends_on "linuxbrew/xorg/libice"
 
   def install
     args = %W[

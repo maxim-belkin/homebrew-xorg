@@ -12,10 +12,10 @@ class Xgamma < Formula
     sha256 "87fabdb6407145ed9e5e2329b8f3049188f07c42e3e5d52df2c964f7eac68161" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxxf86vm"
-  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[

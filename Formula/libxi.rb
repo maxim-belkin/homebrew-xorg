@@ -16,10 +16,10 @@ class Libxi < Formula
   option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/inputproto"
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxfixes"
+  depends_on "linuxbrew/xorg/xorgproto"
 
   if build.with?("docs") || build.with?("specs")
 

@@ -12,14 +12,12 @@ class Xcursorgen < Formula
     sha256 "5eb5cc0e64c2c05bf5c8f626e0aa8f796bf8d1a572d1d6bff9916f6bae6a1510" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/fixesproto" => :build
-  depends_on "linuxbrew/xorg/renderproto" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/xorgproto" => :build
+  depends_on "pkg-config" => :build
+  depends_on "libpng"
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxcursor"
-  depends_on "libpng"
 
   def install
     args = %W[

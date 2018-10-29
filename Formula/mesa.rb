@@ -14,40 +14,30 @@ class Mesa < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
-  depends_on "pkg-config" => :build
-  depends_on "python" => :build
-  depends_on "flex" => :build
-  depends_on "bison" => :build
-  depends_on "libtool" => :build
-
-  depends_on "linuxbrew/xorg/damageproto" => :build
-  depends_on "linuxbrew/xorg/dri2proto" => :build
-  depends_on "linuxbrew/xorg/glproto" => :build
-  depends_on "linuxbrew/xorg/kbproto" => :build
-  depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/xf86vidmodeproto" => :build
-  depends_on "linuxbrew/xorg/fixesproto" => :build
-  depends_on "linuxbrew/xorg/videoproto" => :build
-
-  depends_on "linuxbrew/xorg/libdrm"
-  depends_on "systemd" # provides libudev <= needed by "gbm"
-  depends_on "llvm@4" => :build # failed with llvm@6
-  depends_on "libelf" # radeonsi requires libelf when using llvm
-  depends_on "linuxbrew/xorg/libomxil-bellagio"
-  depends_on "linuxbrew/xorg/wayland-protocols" => [:recommended, :build]
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "valgrind" => :recommended
-  depends_on "linuxbrew/xorg/libglvnd" => :optional
-  depends_on "linuxbrew/xorg/libva" => :recommended
-  depends_on "linuxbrew/xorg/libvdpau" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "bison" => :build
+  depends_on "flex" => :build
+  depends_on "libtool" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/libvdpau" => :build
+  depends_on "linuxbrew/xorg/wayland-protocols" => [:recommended, :build]
+  depends_on "linuxbrew/xorg/xorgproto" => :build
+  depends_on "llvm@4" => :build
+  depends_on "pkg-config" => :build
+  depends_on "python" => :build
+  depends_on "libelf"
+  depends_on "linuxbrew/xorg/libdrm"
+  depends_on "linuxbrew/xorg/libomxil-bellagio"
   depends_on "linuxbrew/xorg/libxdamage"
   depends_on "linuxbrew/xorg/libxshmfence"
   depends_on "linuxbrew/xorg/libxv"
   depends_on "linuxbrew/xorg/libxvmc"
   depends_on "linuxbrew/xorg/libxxf86vm"
+  depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
+  depends_on "linuxbrew/xorg/libva" => :recommended
+  depends_on "valgrind" => :recommended
+  depends_on "linuxbrew/xorg/libglvnd" => :optional
 
   #
   # There is a circular dependency between Mesa and libva:
@@ -165,20 +155,15 @@ class Mesa < Formula
         ENV["EGL_CFLAGS"] = "-I#{include}"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].opt_include}"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].opt_include}/libdrm"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdamage"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["damageproto"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxfixes"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["fixesproto"].opt_include}"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libx11"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxcb"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxxf86vm"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxext"].opt_include}"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libxau"].opt_include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxcb"].opt_include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdamage"].opt_include}"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libxdmcp"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["xproto"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["kbproto"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["xextproto"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["xf86vidmodeproto"].opt_include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxext"].opt_include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxfixes"].opt_include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxxf86vm"].opt_include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["xorgproto"].opt_include}"
 
         ENV["GLX_CFLAGS"] = ENV["EGL_CFLAGS"]
 

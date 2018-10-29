@@ -12,8 +12,8 @@ class Xhost < Formula
     sha256 "44654e8fde19bf1d959066ee8377ba29513becfdfe330be5e12958adc0c6caba" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxmu"
 

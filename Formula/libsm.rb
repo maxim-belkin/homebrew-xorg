@@ -14,7 +14,7 @@ class Libsm < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
-  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "linuxbrew/xorg/xtrans" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libice"

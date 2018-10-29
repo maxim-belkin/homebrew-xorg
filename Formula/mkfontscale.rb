@@ -13,10 +13,10 @@ class Mkfontscale < Formula
     sha256 "36cc314dc5775411b3868f930cbbb7f21d297562c10aba75edf8c381b54e90d3" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libfontenc"
   depends_on "freetype"
+  depends_on "linuxbrew/xorg/libfontenc"
   depends_on "bzip2" => :recommended
 
   def install

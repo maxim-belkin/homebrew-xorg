@@ -9,11 +9,11 @@ class Xrandr < Formula
 
   option "without-xkeystone", "Delete (broken) xkeystone script"
 
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxrandr"
   depends_on "linuxbrew/xorg/libxrender"
-  depends_on "linuxbrew/xorg/libx11"
 
   def install
     args = %W[

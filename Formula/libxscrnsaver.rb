@@ -17,7 +17,7 @@ class Libxscrnsaver < Formula
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/scrnsaverproto"
+  depends_on "linuxbrew/xorg/xorgproto"
 
   def install
     args = %W[

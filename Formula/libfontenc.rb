@@ -14,7 +14,7 @@ class Libfontenc < Formula
 
   depends_on "linuxbrew/xorg/font-util" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
   depends_on "zlib"
 

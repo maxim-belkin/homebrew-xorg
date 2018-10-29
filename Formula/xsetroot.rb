@@ -13,12 +13,12 @@ class Xsetroot < Formula
     sha256 "8a2c03ef486e7dcfa3c6239a78f50cfc0346b58b3b8d0075e5adbfe314918ade" => :x86_64_linux
   end
 
-  # xmuu x11 xbitmaps xcursor xproto
-  depends_on "pkg-config" => :build
+  # xmuu x11 xbitmaps xcursor xorgproto
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xbitmaps" => :build
-  depends_on "linuxbrew/xorg/libxmu"
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxcursor"
+  depends_on "linuxbrew/xorg/libxmu"
 
   def install
     args = %W[

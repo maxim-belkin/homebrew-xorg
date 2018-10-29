@@ -12,12 +12,13 @@ class X11perf < Formula
     sha256 "44fd4be54b3c9608490dea106d2ad134d6de072135e9d6b602848e2a2b5553c6" => :x86_64_linux
   end
 
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxft" # not critical
   depends_on "linuxbrew/xorg/libxmu"
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libxrender" # crucial
-  depends_on "linuxbrew/xorg/libxft" # not crucial
+  depends_on "linuxbrew/xorg/libxrender" # critical
 
   def install
     args = %W[

@@ -15,7 +15,7 @@ class Libxrender < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/renderproto"
+  depends_on "linuxbrew/xorg/xorgproto"
 
   def install
     args = %W[

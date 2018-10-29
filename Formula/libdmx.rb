@@ -14,11 +14,10 @@ class Libdmx < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/dmxproto"
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxext" # also brings libx11
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/xorgproto" # also brings libx11
 
   def install
     args = %W[
