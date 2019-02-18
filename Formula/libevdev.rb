@@ -1,8 +1,8 @@
 class Libevdev < Formula
   desc "Wrapper library for evdev devices"
   homepage "https://www.freedesktop.org/wiki/Software/libevdev/"
-  url "https://www.freedesktop.org/software/libevdev/libevdev-1.5.9.tar.xz"
-  sha256 "e1663751443bed9d3e76a4fe2caf6fa866a79705d91cacad815c04e706198a75"
+  url "https://www.freedesktop.org/software/libevdev/libevdev-1.6.0.tar.xz"
+  sha256 "f5005c865987d980cc1279b9ec6131b06a89fd9892f649f2a68262b8786ef814"
   # tag "linuxbrew"
 
   bottle do
