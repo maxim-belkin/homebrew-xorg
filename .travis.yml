@@ -4,8 +4,6 @@ sudo: required
 dist: trusty
 
 before_install:
-  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
-  - gem install bundler -v '< 2'
   - sudo apt-get -qq update
   - sudo apt-get install -y libc6-dbg libxml-parser-perl libxml-sax-perl
   - DEBIAN_FRONTEND=noninteractive sudo apt-get autoremove -y --purge
