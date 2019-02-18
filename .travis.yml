@@ -4,7 +4,7 @@ dist: trusty
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install libc6-dbg libxml-parser-perl libxml-sax-perl ruby ruby-dev
+  - sudo apt-get install --no-install-recommends libc6-dbg libxml-parser-perl libxml-sax-perl ruby ruby-dev
   - sudo apt-get autoremove --purge
       bison
       comerr-dev
