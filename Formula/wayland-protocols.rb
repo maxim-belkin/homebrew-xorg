@@ -1,8 +1,8 @@
 class WaylandProtocols < Formula
   desc "Additional Wayland protocols"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.16.tar.xz"
-  sha256 "6b1485951fdcd36a960c870c46f28b03a3e5121fb46246916333ed07f78c98c5"
+  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.17.tar.xz"
+  sha256 "df1319cf9705643aea9fd16f9056f4e5b2471bd10c0cc3713d4a4cdc23d6812f"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
@@ -16,8 +16,8 @@ class WaylandProtocols < Formula
 
   option "without-test", "Skip compile-time tests"
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/wayland" => :build
+  depends_on "pkg-config" => :build
 
   if build.head?
     depends_on "autoconf" => :build
