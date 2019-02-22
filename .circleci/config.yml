@@ -14,7 +14,7 @@ jobs:
           name: Install minimal python for libxcb build
           command: |
             sudo apt-get update
-            sudo apt-get install --yes --force-yes python2.7-minimal
+            sudo apt-get install -y --no-install-recommends python2.7-minimal
       - run:
           name: Set up Git
           command: |
