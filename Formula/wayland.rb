@@ -1,8 +1,8 @@
 class Wayland < Formula
   desc "Protocol for a compositor to talk to its clients"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-1.16.0.tar.xz"
-  sha256 "4e72c2b56109ccfb6610d776e465f4ca0af2280c9c2f7d5cc23f0ed2548752f5"
+  url "https://wayland.freedesktop.org/releases/wayland-1.16.91.tar.xz"
+  sha256 "d51b83a51034ed5474517e0b0bca2d4e7056e4c51d720ea885f0c34f243fee90"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
@@ -17,9 +17,9 @@ class Wayland < Formula
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config" => :build
+  depends_on "autoconf" if build.head?
   depends_on "expat"
   depends_on "libffi"
-  depends_on "autoconf" if build.head?
   depends_on "libxml2"
 
   def install
