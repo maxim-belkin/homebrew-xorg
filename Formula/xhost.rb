@@ -2,9 +2,9 @@ class Xhost < Formula
   desc "X.Org Applications: xhost"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xhost-1.0.7.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xhost-1.0.7.tar.bz2"
-  sha256 "93e619ee15471f576cfb30c663e18f5bc70aca577a63d2c2c03f006a7837c29a"
+  url "https://www.x.org/pub/individual/app/xhost-1.0.8.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xhost-1.0.8.tar.bz2"
+  sha256 "a2dc3c579e13674947395ef8ccc1b3763f89012a216c2cc6277096489aadc396"
   # tag "linuxbrew"
 
   bottle do
