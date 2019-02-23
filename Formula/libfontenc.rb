@@ -1,8 +1,8 @@
 class Libfontenc < Formula
   desc "X.Org Libraries: libfontenc"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libfontenc-1.1.3.tar.bz2"
-  sha256 "70588930e6fc9542ff38e0884778fbc6e6febf21adbab92fd8f524fe60aefd21"
+  url "https://ftp.x.org/pub/individual/lib/libfontenc-1.1.4.tar.bz2"
+  sha256 "2cfcce810ddd48f2e5dc658d28c1808e86dcf303eaff16728b9aa3dbc0092079"
   # tag "linuxbrew"
 
   bottle do
