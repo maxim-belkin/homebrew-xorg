@@ -1,8 +1,8 @@
 class Libxcb < Formula
   desc "Interface to the X Window System protocol and replacement for Xlib"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://xcb.freedesktop.org/dist/libxcb-1.13.tar.bz2"
-  sha256 "188c8752193c50ff2dbe89db4554c63df2e26a2e47b0fa415a70918b5b851daa"
+  url "https://xcb.freedesktop.org/dist/libxcb-1.13.1.tar.bz2"
+  sha256 "a89fb7af7a11f43d2ce84a844a4b38df688c092bf4b67683aef179cdf2a647c4"
   # tag "linuxbrew"
 
   bottle do
