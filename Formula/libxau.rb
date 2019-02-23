@@ -1,8 +1,8 @@
 class Libxau < Formula
   desc "X11 Authorization Protocol"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXau-1.0.8.tar.bz2"
-  sha256 "fdd477320aeb5cdd67272838722d6b7d544887dfe7de46e1e7cc0c27c2bea4f2"
+  url "https://ftp.x.org/pub/individual/lib/libXau-1.0.9.tar.bz2"
+  sha256 "ccf8cbf0dbf676faa2ea0a6d64bcc3b6746064722b606c8c52917ed00dcb73ec"
   # tag "linuxbrew"
 
   bottle do
