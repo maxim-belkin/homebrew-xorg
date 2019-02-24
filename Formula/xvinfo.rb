@@ -2,9 +2,9 @@ class Xvinfo < Formula
   desc "X.Org Applications: xvinfo"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xvinfo-1.1.3.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xvinfo-1.1.3.tar.bz2"
-  sha256 "9fba8b68daf53863e66d5004fa9c703fcecf69db4d151ea2d3d885d621e6e5eb"
+  url "https://www.x.org/pub/individual/app/xvinfo-1.1.4.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xvinfo-1.1.4.tar.bz2"
+  sha256 "0353220d6606077ba42363db65f50410759f9815352f77adc799e2adfa76e73f"
   # tag "linuxbrew"
 
   bottle do
