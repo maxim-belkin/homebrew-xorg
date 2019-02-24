@@ -2,9 +2,9 @@ class Xmodmap < Formula
   desc "X.Org Applications: xmodmap"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xmodmap-1.0.9.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xmodmap-1.0.9.tar.bz2"
-  sha256 "b7b0e5cc5f10d0fb6d2d6ea4f00c77e8ac0e847cc5a73be94cd86139ac4ac478"
+  url "https://www.x.org/pub/individual/app/xmodmap-1.0.10.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xmodmap-1.0.10.tar.bz2"
+  sha256 "473f0941d7439d501bb895ff358832b936ec34c749b9704c37a15e11c318487c"
   # tag "linuxbrew"
 
   bottle do
