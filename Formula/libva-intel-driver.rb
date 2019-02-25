@@ -1,8 +1,8 @@
 class LibvaIntelDriver < Formula
   desc "Libva Intel driver"
   homepage "https://cgit.freedesktop.org/vaapi/intel-driver"
-  url "https://github.com/intel/intel-vaapi-driver/releases/download/2.2.0/intel-vaapi-driver-2.2.0.tar.bz2"
-  sha256 "e8a5f54694eb76aad42653b591030b8a53b1513144c09a80defb3d8d8c875c18"
+  url "https://github.com/intel/intel-vaapi-driver/releases/download/2.3.0/intel-vaapi-driver-2.3.0.tar.bz2"
+  sha256 "5c2e5deab024a0a6ae81dfe77ef455542a88d824eda7bfd07684337407ecdfe3"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
