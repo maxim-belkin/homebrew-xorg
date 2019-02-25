@@ -1,8 +1,8 @@
 class Libva < Formula
   desc "Hardware accelerated video processing library"
   homepage "https://github.com/01org/libva"
-  url "https://github.com/intel/libva/releases/download/2.2.0/libva-2.2.0.tar.bz2"
-  sha256 "6f6ca04c785544d30d315ef130a6aeb9435b75f934d7fbe0e4e9ba6084ce4ef2"
+  url "https://github.com/intel/libva/releases/download/2.4.0/libva-2.4.0.tar.bz2"
+  sha256 "99263056c21593a26f2ece812aee6fe60142b49e6cd46cb33c8dddf18fc19391"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
