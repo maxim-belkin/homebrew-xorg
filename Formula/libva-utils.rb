@@ -1,8 +1,8 @@
 class LibvaUtils < Formula
   desc "Collection of utilities and examples to exercise VA-API"
   homepage "https://github.com/01org/libva-utils"
-  url "https://github.com/intel/libva-utils/releases/download/2.2.0/libva-utils-2.2.0.tar.bz2"
-  sha256 "ed7a6ed1fab657df4e83ea11f90310efcf31c27828f32d65351a28ca3c404dc0"
+  url "https://github.com/intel/libva-utils/releases/download/2.4.0/libva-utils-2.4.0.tar.bz2"
+  sha256 "5b7d1954b40fcb2c0544be20125c71a0852049715ab85a3e8aba60434a40c6b3"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
