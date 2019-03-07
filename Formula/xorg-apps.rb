@@ -12,7 +12,6 @@ class XorgApps < Formula
   depends_on "linuxbrew/xorg/bdftopcf"
   depends_on "linuxbrew/xorg/iceauth"
   depends_on "linuxbrew/xorg/luit"
-  depends_on "linuxbrew/xorg/mkfontdir"
   depends_on "linuxbrew/xorg/mkfontscale"
   depends_on "linuxbrew/xorg/sessreg"
   depends_on "linuxbrew/xorg/setxkbmap"
