@@ -3,21 +3,18 @@ class XcbProto < Formula
   homepage "https://www.x.org/"
   url "https://xcb.freedesktop.org/dist/xcb-proto-1.13.tar.bz2"
   sha256 "7b98721e669be80284e9bbfeab02d2d0d54cd11172b72271e47a2fe875e2bde1"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "68f456b5eeeb486d33019d410ab25acc3cdc8fb10240c4c08f3b59d4e5bf5d1e" => :x86_64_linux
   end
 
-  option "without-test", "Skip compile-time tests"
-  option "with-python@2", "Build with Python 2"
-
-  depends_on "libxml2" => :build if build.with? "test"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build if build.without? "python@2"
-  depends_on "python@2" => [:build, :optional]
+  depends_on "minimal-python"
 
   def install
     args = %W[
@@ -27,9 +24,9 @@ class XcbProto < Formula
       --disable-silent-rules
     ]
 
+    system "./autogen.sh"
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
