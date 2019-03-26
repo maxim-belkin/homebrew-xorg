@@ -3,12 +3,12 @@ class Libxcb < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://xcb.freedesktop.org/dist/libxcb-1.13.1.tar.bz2"
   sha256 "a89fb7af7a11f43d2ce84a844a4b38df688c092bf4b67683aef179cdf2a647c4"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "657c38f163f14bc65729f6b15414da87d896adc3d005642289bd9d4c0544b05f" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
@@ -17,7 +17,6 @@ class Libxcb < Formula
 
   depends_on "linuxbrew/xorg/xcb-proto" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" # xcb.pc references pthread-stubs
   depends_on "linuxbrew/xorg/libxau"
   depends_on "linuxbrew/xorg/libxdmcp"
@@ -25,11 +24,6 @@ class Libxcb < Formula
   if build.with? "devel-docs"
     depends_on "doxygen" => :build
     depends_on "graphviz" => :build
-  end
-
-  if build.with? "test"
-    depends_on "check" => :build
-    depends_on "libxslt" => [:build, :recommended]
   end
 
   def install
@@ -53,7 +47,6 @@ class Libxcb < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
