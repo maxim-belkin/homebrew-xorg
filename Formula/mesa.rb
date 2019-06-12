@@ -1,9 +1,9 @@
 class Mesa < Formula
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/mesa-17.2.3.tar.xz"
-  sha256 "a0b0ec8f7b24dd044d7ab30a8c7e6d3767521e245f88d4ed5dd93315dc56f837"
-  revision 3
+  url "https://mesa.freedesktop.org/archive/mesa-19.0.6.tar.xz"
+  sha256 "2db2f2fcaa4048b16e066fad76b8a93944f7d06d329972b0f5fd5ce692ce3d24"
+  head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
@@ -23,13 +23,14 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/libvdpau" => :build
   depends_on "linuxbrew/xorg/wayland-protocols" => [:recommended, :build]
   depends_on "linuxbrew/xorg/xorgproto" => :build
-  depends_on "llvm@4" => :build
+  depends_on "llvm@7" => :build
   depends_on "pkg-config" => :build
   depends_on "python" => :build
   depends_on "libelf"
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/libomxil-bellagio"
   depends_on "linuxbrew/xorg/libxdamage"
+  depends_on "linuxbrew/xorg/libxrandr"
   depends_on "linuxbrew/xorg/libxshmfence"
   depends_on "linuxbrew/xorg/libxv"
   depends_on "linuxbrew/xorg/libxvmc"
@@ -47,13 +48,13 @@ class Mesa < Formula
   #
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/56/4b/cb75836863a6382199aefb3d3809937e21fa4cb0db15a4f4ba0ecc2e7e8e/Mako-1.0.6.tar.gz"
-    sha256 "48559ebd872a8e77f92005884b3d88ffae552812cdf17db6768e5c3be5ebbe0d"
+    url "https://files.pythonhosted.org/packages/f9/93/63f78c552e4397549499169198698de23b559b52e57f27d967690811d16d/Mako-1.0.10.tar.gz"
+    sha256 "7165919e78e1feb68b4dbe829871ea9941398178fa58e6beedb9ba14acf63965"
   end
 
   resource "libva" do
-    url "https://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.3.tar.bz2"
-    sha256 "22bc139498065a7950d966dbdb000cad04905cbd3dc8f3541f80d36c4670b9d9"
+    url "https://github.com/intel/libva/releases/download/2.4.0/libva-2.4.0.tar.bz2"
+    sha256 "99263056c21593a26f2ece812aee6fe60142b49e6cd46cb33c8dddf18fc19391"
   end
 
   patch :p1 do
@@ -77,6 +78,7 @@ class Mesa < Formula
     args = %W[
       CFLAGS=#{ENV.cflags}
       CXXFLAGS=#{ENV.cflags}
+      --enable-autotools
       --disable-silent-rules
       --disable-dependency-tracking
       --prefix=#{prefix}
@@ -86,7 +88,7 @@ class Mesa < Formula
       --enable-llvm
       --disable-llvm-shared-libs
       --enable-shared-glapi
-      --with-llvm-prefix=#{Formula["llvm@4"].opt_prefix}
+      --with-llvm-prefix=#{Formula["llvm@7"].opt_prefix}
       --enable-dri3=#{gpu}
       --enable-dri=#{gpu}
       --enable-egl=#{gpu}
