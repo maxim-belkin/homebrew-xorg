@@ -25,7 +25,7 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "llvm@7" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@2" => :build
   depends_on "libelf"
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/libomxil-bellagio"
