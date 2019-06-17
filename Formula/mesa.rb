@@ -30,7 +30,7 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/libomxil-bellagio"
   depends_on "linuxbrew/xorg/libxdamage"
-  depends_on "linuxbrew/xorg/libxrandr"
+  depends_on "linuxbrew/xorg/libxrandr" => :build
   depends_on "linuxbrew/xorg/libxshmfence"
   depends_on "linuxbrew/xorg/libxv"
   depends_on "linuxbrew/xorg/libxvmc"
