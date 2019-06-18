@@ -21,6 +21,7 @@ class Mesa < Formula
   depends_on "libtool" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build
   depends_on "linuxbrew/xorg/libvdpau" => :build
+  depends_on "linuxbrew/xorg/libxrandr" => :build
   depends_on "linuxbrew/xorg/wayland-protocols" => [:recommended, :build]
   depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "llvm@7" => :build
@@ -30,7 +31,6 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/libomxil-bellagio"
   depends_on "linuxbrew/xorg/libxdamage"
-  depends_on "linuxbrew/xorg/libxrandr" => :build
   depends_on "linuxbrew/xorg/libxshmfence"
   depends_on "linuxbrew/xorg/libxv"
   depends_on "linuxbrew/xorg/libxvmc"
