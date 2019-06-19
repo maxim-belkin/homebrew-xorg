@@ -1,9 +1,8 @@
 class Xkeyboardconfig < Formula
   desc "Keyboard configuration database for the X Window System"
   homepage "https://xorg.freedesktop.org"
-  url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.26.tar.bz2"
-  mirror "ftp://ftp.x.org/pub/individual/data/xkeyboard-config/xkeyboard-config-2.26.tar.bz2"
-  sha256 "393718c7460cd06c4e8cb819d943ca54812ea476f32714c4d8975c77031a038e"
+  url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.27.tar.bz2"
+  sha256 "690daec8fea63526c07620c90e6f3f10aae34e94b6db6e30906173480721901f"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
