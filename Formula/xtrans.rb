@@ -1,9 +1,8 @@
 class Xtrans < Formula
   desc "X.Org Libraries: xtrans"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/xtrans-1.3.5.tar.bz2"
-  sha256 "adbd3b36932ce4c062cd10f57d78a156ba98d618bdb6f50664da327502bc8301"
-  revision 1
+  url "https://ftp.x.org/pub/individual/lib/xtrans-1.4.0.tar.bz2"
+  sha256 "377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773"
   # tag "linuxbrew"
 
   bottle do
