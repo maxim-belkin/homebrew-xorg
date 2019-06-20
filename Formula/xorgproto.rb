@@ -1,8 +1,8 @@
 class Xorgproto < Formula
   desc "X.Org Protocol Headers"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2018.4.tar.bz2"
-  sha256 "fee885e0512899ea5280c593fdb2735beb1693ad170c22ebcc844470eec415a0"
+  url "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2019.1.tar.bz2"
+  sha256 "a6daaa7a6cbc8e374032d83ff7f47d41be98f1e0f4475d66a4da3aa766a0d49b"
   head "git://anongit.freedesktop.org/git/xorg/proto/xorgproto"
 
   bottle do
