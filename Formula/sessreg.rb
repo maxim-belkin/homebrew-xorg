@@ -2,9 +2,8 @@ class Sessreg < Formula
   desc "X.Org Applications: sessreg"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/sessreg-1.1.1.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/sessreg-1.1.1.tar.bz2"
-  sha256 "78a76ae3f3f6a26547a34630d1b740f42344848b5fb6d7c9c7f7da255e35a6e1"
+  url "https://www.x.org/pub/individual/app/sessreg-1.1.2.tar.bz2"
+  sha256 "dfcb9e954273ace63879aec053c7880466f8755752a35aa9ced3fa5f04fd2c33"
   # tag "linuxbrew"
 
   bottle do
