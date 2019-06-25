@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: linuxbrew/linuxbrew
+      - image: linuxbrew/brew
     environment:
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_ANALYTICS: 1
