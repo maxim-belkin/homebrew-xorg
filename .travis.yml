@@ -95,8 +95,6 @@ before_install:
 
 matrix:
   fast_finish: true
-  allow_failures:
-    - os: linux
 
 script:
   - brew test-bot --tap=linuxbrew/xorg --fast
