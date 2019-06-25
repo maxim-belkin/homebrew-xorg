@@ -65,6 +65,7 @@ before_install:
       x11proto-input-dev
       x11proto-kb-dev
       x11proto-xext-dev
+  - sudo rm -rf /usr/local/clang-5.0.0
   - git config --global user.name "Travis CI"
   - git config --global user.email "travis-ci@linuxbrew.sh"
   - export TRAVIS_COMMIT="$(git rev-parse --verify -q HEAD)"
