@@ -1,25 +1,44 @@
 # Linuxbrew Xorg
 
 
-[Xorg libraries](http://www.x.org/wiki/guide/client-ecosystem/) for Linuxbrew users
+This repository provides [Xorg libraries][xorg-libs] for [Homebrew on Linux][homebrew-brew].
+Examples include such packages as xorgproto, libxau, libxcb, libx11, mesa, and even the entire Xorg!
 
-## Install
+## How to use
+
+All you need to do to start using this repository is tap it once:
 
 ```bash
-brew tap linuxbrew/homebrew-xorg &&
-brew install xorg
+brew tap linuxbrew/xorg
 ```
 
-This will install (all) Xorg libraries. To see the progress of the installation, enable verbose messaging by providing the `-v` (`--verbose`) flag:
+Once this repository has been tapped,
+you can install any formula it has with:
 
 ```bash
-brew install -v xorg
+brew install linuxbrew/xorg/formula  # use an actual formula name instead of 'formula'
 ```
 
-You can also install individual libraries/packages  provided in this tap by running
+## Examples
+
+To install `mesa`, execute:
 
 ```bash
-brew install <formula-name>
+brew install linuxbrew/xorg/mesa
+```
+
+To install all Xorg libraries, execute:
+
+```bash
+brew install linuxbrew/xorg/xorg
+```
+
+Installing all Xorg libraries is a time-consuming process,
+so if you would like to see the progress of the installation,
+enable verbose messaging by providing the `-v` (`--verbose`) flag:
+
+```bash
+brew install -v linuxbrew/xorg/xorg
 ```
 
 ## Requirements
@@ -44,7 +63,7 @@ To build documentation (enabled with `--with-docs` flag), the following packages
 
 ## Details
 
-Installation proceeds according to the instructions from [Linux From Scratch](http://www.linuxfromscratch.org/blfs/view/stable/x/x7lib.html)
+Installation proceeds according to the instructions from [Linux From Scratch][lfs]
 
 To build documentation, use `--with-docs` flag, _i.e._:
 
@@ -84,3 +103,7 @@ brew install xorg --with-docs
 
 * Reciprocal dependency with `fop` is not resolved. As a result, not all documentation might be built.
 * Provide other Xorg packages
+
+[homebrew-brew]: https://github.com/Homebrew/brew
+[lfs]: http://www.linuxfromscratch.org/blfs/view/stable/x/x7lib.htmlhttp://www.linuxfromscratch.org/blfs/view/stable/x/x7lib.html
+[xorg-libs]: http://www.x.org/wiki/guide/client-ecosystem/
