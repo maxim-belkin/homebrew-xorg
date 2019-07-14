@@ -1,9 +1,8 @@
 class Libpciaccess < Formula
   desc "X.Org Libraries: libpciaccess"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/pub/individual/lib/libpciaccess-0.14.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/lib/libpciaccess-0.14.tar.bz2"
-  sha256 "3df543e12afd41fea8eac817e48cbfde5aed8817b81670a4e9e493bb2f5bf2a4"
+  url "https://www.x.org/pub/individual/lib/libpciaccess-0.15.tar.bz2"
+  sha256 "a75643bb5cd02f6da8667d437b76492842dd56bc88e3dfb8410f5d535b99f5dc"
   # tag "linuxbrew"
 
   bottle do
