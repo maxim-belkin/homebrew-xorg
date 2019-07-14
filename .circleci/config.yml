@@ -44,7 +44,13 @@ jobs:
           name: Main test (test-bot)
           working_directory: /tmp/bottles
           no_output_timeout: 30m
-          command: brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          command: |
+            brew test-bot --tap=linuxbrew/xorg \
+                   --bintray-org=linuxbrew \
+                   --git-email=testbot@linuxbrew.sh \
+                   --git-name=LinuxbrewTestBot \
+                   --skip-recursive-dependents
+
       - store_artifacts:
           path: /tmp/bottles
           destination: bottles
