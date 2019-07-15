@@ -22,18 +22,47 @@ jobs:
             git config --global user.name LinuxbrewTestBot
             git config --global user.email testbot@linuxbrew.sh
       - run:
-          name: Fetch Linuxbrew/brew
+          name: Remember date for caching purposes
+          command: date +%F > date
+      - restore_cache:
+          keys:
+            - linuxbrew-daily-cache-{{ checksum "date" }}
+            - linuxbrew-daily-cache
+      - run:
+          name: Fetch Homebrew/brew
           working_directory: /home/linuxbrew/.linuxbrew/Homebrew
           command: git fetch origin --tags
+      - save_cache:
+          key: linuxbrew-daily-cache-{{ checksum "date" }}
+          paths:
+            - /home/linuxbrew/.linuxbrew/Homebrew/.git
+      - restore_cache:
+          keys:
+            - homebrew-core-daily-cache-{{ checksum "date" }}
+            - homebrew-core-daily-cache
       - run:
-          name: Update Linuxbrew
+          name: Update Homebrew
           command: brew update
+      - save_cache:
+          key: homebrew-core-daily-cache-{{ checksum "date" }}
+          paths:
+            - /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core
+      - restore_cache:
+          keys:
+            - linuxbrew-xorg-daily-cache-{{ checksum "date" }}
+            - linuxbrew-xorg-daily-cache
       - run:
-          name: Set up Linuxbrew/xorg tap
-          working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
+          name: Tap Linuxbrew/xorg
+          command: brew tap linuxbrew/xorg
+      - save_cache:
+          key: linuxbrew-xorg-daily-cache-{{ checksum "date" }}
+          paths:
+            - /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
+      - run:
+          name: Configure Linuxbrew/xorg tap
+          working_directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
           command: |
-            git clone https://github.com/Linuxbrew/$CIRCLE_PROJECT_REPONAME
-            cd $CIRCLE_PROJECT_REPONAME
+            git pull origin master
             if [[ -n "$CIRCLE_PR_NUMBER" ]]; then
                 git fetch origin pull/$CIRCLE_PR_NUMBER/head
             fi
