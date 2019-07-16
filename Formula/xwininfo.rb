@@ -2,9 +2,8 @@ class Xwininfo < Formula
   desc "X.Org Applications: xwininfo"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xwininfo-1.1.4.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xwininfo-1.1.4.tar.bz2"
-  sha256 "839498aa46b496492a5c65cd42cd2e86e0da88149b0672e90cb91648f8cd5b01"
+  url "https://www.x.org/pub/individual/app/xwininfo-1.1.5.tar.bz2"
+  sha256 "7a405441dfc476666c744f5fcd1bc8a75abf8b5b1d85db7b88b370982365080e"
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
