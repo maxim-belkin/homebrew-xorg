@@ -2,11 +2,8 @@ class Encodings < Formula
   desc "X.Org Fonts: encodings"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/encodings-1.0.4.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/encodings-1.0.4.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/encodings-1.0.4.tar.bz2"
-  sha256 "ced6312988a45d23812c2ac708b4595f63fd7a49c4dcd9f66bdcd50d1057d539"
-  revision 1
+  url "https://www.x.org/pub/individual/font/encodings-1.0.5.tar.bz2"
+  sha256 "bd96e16143a044b19e87f217cf6a3763a70c561d1076aad6f6d862ec41774a31"
   # tag "linuxbrew"
 
   bottle do
