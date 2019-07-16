@@ -1,8 +1,8 @@
 class Libxcursor < Formula
   desc "X.Org Libraries: libXcursor"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXcursor-1.1.15.tar.bz2"
-  sha256 "294e670dd37cd23995e69aae626629d4a2dfe5708851bbc13d032401b7a3df6b"
+  url "https://ftp.x.org/pub/individual/lib/libXcursor-1.2.0.tar.bz2"
+  sha256 "3ad3e9f8251094af6fe8cb4afcf63e28df504d46bfa5a5529db74a505d628782"
   # tag "linuxbrew"
 
   bottle do
