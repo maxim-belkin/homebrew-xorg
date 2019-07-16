@@ -1,8 +1,8 @@
 class Libxcomposite < Formula
   desc "X.Org Libraries: libXcomposite"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXcomposite-0.4.4.tar.bz2"
-  sha256 "ede250cd207d8bee4a338265c3007d7a68d5aca791b6ac41af18e9a2aeb34178"
+  url "https://ftp.x.org/pub/individual/lib/libXcomposite-0.4.5.tar.bz2"
+  sha256 "b3218a2c15bab8035d16810df5b8251ffc7132ff3aa70651a1fba0bfe9634e8f"
   # tag "linuxbrew"
 
   bottle do
