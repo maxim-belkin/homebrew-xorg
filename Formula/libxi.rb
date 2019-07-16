@@ -1,8 +1,8 @@
 class Libxi < Formula
   desc "X.Org Libraries: libXi"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXi-1.7.9.tar.bz2"
-  sha256 "c2e6b8ff84f9448386c1b5510a5cf5a16d788f76db018194dacdc200180faf45"
+  url "https://ftp.x.org/pub/individual/lib/libXi-1.7.10.tar.bz2"
+  sha256 "36a30d8f6383a72e7ce060298b4b181fd298bc3a135c8e201b7ca847f5f81061"
   # tag "linuxbrew"
 
   bottle do
