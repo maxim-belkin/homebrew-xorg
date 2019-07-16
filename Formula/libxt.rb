@@ -1,8 +1,8 @@
 class Libxt < Formula
   desc "X.Org Libraries: libXt"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXt-1.1.5.tar.bz2"
-  sha256 "46eeb6be780211fdd98c5109286618f6707712235fdd19df4ce1e6954f349f1a"
+  url "https://ftp.x.org/pub/individual/lib/libXt-1.2.0.tar.bz2"
+  sha256 "b31df531dabed9f4611fc8980bc51d7782967e2aff44c4105251a1acb5a77831"
   # tag "linuxbrew"
 
   bottle do
