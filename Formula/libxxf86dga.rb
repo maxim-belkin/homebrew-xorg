@@ -1,8 +1,8 @@
 class Libxxf86dga < Formula
   desc "X.Org Libraries: libXxf86dga"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXxf86dga-1.1.4.tar.bz2"
-  sha256 "8eecd4b6c1df9a3704c04733c2f4fa93ef469b55028af5510b25818e2456c77e"
+  url "https://ftp.x.org/pub/individual/lib/libXxf86dga-1.1.5.tar.bz2"
+  sha256 "2b98bc5f506c6140d4eddd3990842d30f5dae733b64f198a504f07461bdb7203"
   # tag "linuxbrew"
 
   bottle do
