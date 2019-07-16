@@ -1,8 +1,8 @@
 class Libdrm < Formula
   desc "Library for accessing the direct rendering manager"
   homepage "https://dri.freedesktop.org"
-  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.97.tar.bz2"
-  sha256 "77d0ccda3e10d6593398edb70b1566bfe1a23a39bd3da98ace2147692eadd123"
+  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.99.tar.bz2"
+  sha256 "4dbf539c7ed25dbb2055090b77ab87508fc46be39a9379d15fed4b5517e1da5e"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
