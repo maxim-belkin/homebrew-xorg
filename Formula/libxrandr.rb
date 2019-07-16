@@ -1,8 +1,8 @@
 class Libxrandr < Formula
   desc "X.Org Libraries: libXrandr"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXrandr-1.5.1.tar.bz2"
-  sha256 "1ff9e7fa0e4adea912b16a5f0cfa7c1d35b0dcda0e216831f7715c8a3abcf51a"
+  url "https://ftp.x.org/pub/individual/lib/libXrandr-1.5.2.tar.bz2"
+  sha256 "8aea0ebe403d62330bb741ed595b53741acf45033d3bda1792f1d4cc3daee023"
   # tag "linuxbrew"
 
   bottle do
