@@ -2,9 +2,8 @@ class X11perf < Formula
   desc "X.Org Applications: x11perf"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/x11perf-1.6.0.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/x11perf-1.6.0.tar.bz2"
-  sha256 "e87098dec1947572d70c62697a7b70bde1ab5668237d4660080eade6bc096751"
+  url "https://www.x.org/pub/individual/app/x11perf-1.6.1.tar.bz2"
+  sha256 "1c7e0b8ffc2794b4ccf11e04d551823abe0ea47b4f7db0637390db6fbe817c34"
   # tag "linuxbrew"
 
   bottle do
