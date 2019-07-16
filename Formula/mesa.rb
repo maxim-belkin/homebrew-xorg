@@ -1,8 +1,8 @@
 class Mesa < Formula
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/mesa-19.0.6.tar.xz"
-  sha256 "2db2f2fcaa4048b16e066fad76b8a93944f7d06d329972b0f5fd5ce692ce3d24"
+  url "https://mesa.freedesktop.org/archive/mesa-19.1.2.tar.xz"
+  sha256 "813a144ea8ebefb7b48b6733f3f603855b0f61268d86cc1cc26a6b4be908fcfd"
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
