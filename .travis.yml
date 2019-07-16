@@ -1,6 +1,9 @@
 language: minimal
 sudo: required
 dist: trusty
+cache:
+  directories:
+    /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/bundle
 
 before_install:
   - sudo apt-get -qq update
