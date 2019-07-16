@@ -2,9 +2,8 @@ class Xbacklight < Formula
   desc "X.Org Applications: xbacklight"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xbacklight-1.2.2.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xbacklight-1.2.2.tar.bz2"
-  sha256 "615a1d13e429ed5a0300b2f4508bc199d7cf21b6b9f088a9d8188d3bc957bf5e"
+  url "https://www.x.org/pub/individual/app/xbacklight-1.2.3.tar.bz2"
+  sha256 "3a27f324777ae99fee476cfb2f064576fb8cba4eb77f97cda37adda1c1d39ade"
   # tag "linuxbrew"
 
   bottle do
