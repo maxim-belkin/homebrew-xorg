@@ -1,4 +1,5 @@
 class Mesa < Formula
+  include Language::Python::Virtualenv
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/mesa-19.1.2.tar.xz"
@@ -13,31 +14,32 @@ class Mesa < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "bison" => :build
-  depends_on "flex" => :build
-  depends_on "libtool" => :build
-  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
-  depends_on "linuxbrew/xorg/libvdpau" => :build
-  depends_on "linuxbrew/xorg/libxrandr" => :build
-  depends_on "linuxbrew/xorg/wayland-protocols" => [:recommended, :build]
-  depends_on "linuxbrew/xorg/xorgproto" => :build
-  depends_on "llvm@7" => :build
+  depends_on "meson-internal" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@2" => :build
+  depends_on "python" => :build
+  depends_on "bison" => :build # see docs/install.html
+  depends_on "flex" => :build # see docs/install.html
+  depends_on "llvm@7" => :build
+  depends_on "linuxbrew/xorg/libomxil-bellagio"
+  depends_on "gettext" => :build
+  depends_on "libtool" => :build
+  # depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  # depends_on "linuxbrew/xorg/libvdpau" => :build
+  depends_on "linuxbrew/xorg/libxrandr" => :build
+  depends_on "linuxbrew/xorg/wayland-protocols" => :build
+  # depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "libelf"
   depends_on "linuxbrew/xorg/libdrm"
-  depends_on "linuxbrew/xorg/libomxil-bellagio"
   depends_on "linuxbrew/xorg/libxdamage"
   depends_on "linuxbrew/xorg/libxshmfence"
-  depends_on "linuxbrew/xorg/libxv"
-  depends_on "linuxbrew/xorg/libxvmc"
+  # depends_on "linuxbrew/xorg/libxv"
+  # depends_on "linuxbrew/xorg/libxvmc"
   depends_on "linuxbrew/xorg/libxxf86vm"
-  depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
-  depends_on "linuxbrew/xorg/libva" => :recommended
-  depends_on "valgrind" => :recommended
-  depends_on "linuxbrew/xorg/libglvnd" => :optional
+  # depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
+  # depends_on "linuxbrew/xorg/libva"
+  # depends_on "valgrind" => :recommended
+  # depends_on "linuxbrew/xorg/libglvnd" => :optional
 
   #
   # There is a circular dependency between Mesa and libva:
@@ -47,29 +49,36 @@ class Mesa < Formula
   #
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/f9/93/63f78c552e4397549499169198698de23b559b52e57f27d967690811d16d/Mako-1.0.10.tar.gz"
-    sha256 "7165919e78e1feb68b4dbe829871ea9941398178fa58e6beedb9ba14acf63965"
+    url "https://files.pythonhosted.org/packages/fa/29/8016763284d8fab844224f7cc5675cb4a388ebda0eb5a403260187e48435/Mako-1.0.13.tar.gz"
+    sha256 "95ee720cc3453063788515d55bd7ce4a2a77b7b209e4ac70ec5c86091eb02541"
+  end
+
+  resource "gears.c" do
+    url "https://www.opengl.org/archives/resources/code/samples/glut_examples/mesademos/gears.c"
+    sha256 "7df9d8cda1af9d0a1f64cc028df7556705d98471fdf3d0830282d4dcfb7a78cc"
   end
 
   resource "libva" do
-    url "https://github.com/intel/libva/releases/download/2.4.0/libva-2.4.0.tar.bz2"
-    sha256 "99263056c21593a26f2ece812aee6fe60142b49e6cd46cb33c8dddf18fc19391"
+    url "https://github.com/intel/libva/releases/download/2.5.0/libva-2.5.0.tar.bz2"
+    sha256 "3aa89cd369a506ac4dbe5de7c0ef5da4f3d220bf986403f02fa1f6f702af6878"
   end
 
-  patch :p1 do
-    url "https://gist.githubusercontent.com/rwhogg/088a3e771be0f0556d2286c034544d18/raw/efd587120964745a61a2571a431ffc38341dc37c/mesa-patch-from-linux-from-scratch.patch"
-    sha256 "53492ca476e3df2de210f749983e17de4bec026a904db826acbcbd1ef83e71cd"
-  end
+  # patch :p1 do
+  #   url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-19.1.2-add_xdemos-1.patch"
+  #   sha256 "ffa885d37557feaacabd5852d5aa8d17e15eb6a41456bb6f9525d52a96e86601"
+  # end
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
     ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
 
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python3.7/site-packages"
 
     resource("mako").stage do
-      system "python", *Language::Python.setup_install_args(libexec/"vendor")
+      system "python3", *Language::Python.setup_install_args(libexec/"vendor")
     end
+
+    # resource("gears.c").stage(pkgshare.to_s) 
 
     gpu = build.with?("gpu") ? "yes" : "no"
     nogpu = build.with?("gpu") ? "no" : "yes"
@@ -130,14 +139,25 @@ class Mesa < Formula
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
     args << "--enable-libglvnd" if build.with? "libglvnd"
 
-    inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
+    # inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
 
-    system "./autogen.sh", *args
-    system "make"
-    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}" if build.with? "gpu"
-    system "make", "check" if build.with?("test")
-    system "make", "install"
-    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install" if build.with? "gpu"
+    ENV["PKG_CONFIG_PATH"] = Formula["pkg-config"].opt_prefix/"bin/pkg-config"
+    mkdir "build" do
+      system "meson",
+        "--prefix=#{prefix}",
+        "-Dshared-llvm=false",
+        "-Dc_link_args='-Wl,-rpath,#{HOMEBREW_PREFIX.to_s}/lib'"
+      #, "-D buildtype=plain", "-D b_ndebug=true", ".."
+      system "ninja"
+      system "ninja", "install"
+    end
+
+    # system "./autogen.sh", *args
+    # system "make"
+    # system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}" if build.with? "gpu"
+    # system "make", "check" if build.with?("test")
+    # system "make", "install"
+    # system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install" if build.with? "gpu"
 
     if build.with? "libva"
       resource("libva").stage do
