@@ -1,8 +1,8 @@
 class WaylandProtocols < Formula
   desc "Additional Wayland protocols"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.17.tar.xz"
-  sha256 "df1319cf9705643aea9fd16f9056f4e5b2471bd10c0cc3713d4a4cdc23d6812f"
+  url "https://wayland.freedesktop.org/releases/wayland-protocols-1.18.tar.xz"
+  sha256 "3d73b7e7661763dc09d7d9107678400101ecff2b5b1e531674abfa81e04874b3"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
