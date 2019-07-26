@@ -17,10 +17,10 @@ class Libgudev < Formula
   depends_on "systemd"
 
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=880332
+  # The patch has been merged upstream. It should not be necessary in the next release
   patch :DATA
 
   def install
-    ENV.deparallelize
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     args = %W[
       --prefix=#{prefix}
