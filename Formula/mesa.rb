@@ -29,6 +29,7 @@ class Mesa < Formula
   # depends_on "linuxbrew/xorg/libvdpau" => :build
   depends_on "linuxbrew/xorg/libxrandr" => :build
   depends_on "linuxbrew/xorg/wayland-protocols" => :build
+  depends_on "linuxbrew/xorg/wayland"
   # depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "libelf"
   depends_on "linuxbrew/xorg/libdrm"
