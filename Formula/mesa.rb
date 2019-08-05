@@ -14,30 +14,36 @@ class Mesa < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
+  depends_on "bison" => :build
+  depends_on "flex" => :build
+  depends_on "gettext" => :build
+  depends_on "libtool" => :build
+  depends_on "linuxbrew/xorg/libxrandr" => :build
+  depends_on "linuxbrew/xorg/wayland-protocols" => :build
+  depends_on "llvm@7" => :build
   depends_on "meson-internal" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
-  depends_on "bison" => :build # see docs/install.html
-  depends_on "expat" => :build
-  depends_on "flex" => :build # see docs/install.html
-  depends_on "llvm@7" => :build
-  depends_on "linuxbrew/xorg/libomxil-bellagio"
-  depends_on "gettext" => :build
-  depends_on "libtool" => :build
-  # depends_on "linuxbrew/xorg/libpthread-stubs" => :build
-  # depends_on "linuxbrew/xorg/libvdpau" => :build
-  depends_on "linuxbrew/xorg/libxrandr" => :build
-  depends_on "linuxbrew/xorg/wayland-protocols" => :build
-  depends_on "linuxbrew/xorg/wayland"
-  # depends_on "linuxbrew/xorg/xorgproto" => :build
+  depends_on "python" => :build # see docs/install.html
+  depends_on "expat" # see docs/install.html
   depends_on "libelf"
   depends_on "linuxbrew/xorg/libdrm"
+  depends_on "linuxbrew/xorg/libomxil-bellagio"
+  # depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  # depends_on "linuxbrew/xorg/libvdpau" => :build
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxcb"
   depends_on "linuxbrew/xorg/libxdamage"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxfixes"
   depends_on "linuxbrew/xorg/libxshmfence"
-  # depends_on "linuxbrew/xorg/libxv"
-  # depends_on "linuxbrew/xorg/libxvmc"
   depends_on "linuxbrew/xorg/libxxf86vm"
+  depends_on "linuxbrew/xorg/wayland"
+  # depends_on "linuxbrew/xorg/xorgproto" => :build
+  # depends_on "linuxbrew/xorg/libxv"
+  # depends_on "linuxbrew/xorg/libxvmc" # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage
+  depends_on "ncurses" # b.c. reported by linkage
+  depends_on "zlib" # b.c. reported by linkage
   # depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
   # depends_on "linuxbrew/xorg/libva"
   # depends_on "valgrind" => :recommended
