@@ -19,6 +19,7 @@ class Mesa < Formula
   depends_on "pkg-config" => :build
   depends_on "python" => :build
   depends_on "bison" => :build # see docs/install.html
+  depends_on "expat" => :build
   depends_on "flex" => :build # see docs/install.html
   depends_on "llvm@7" => :build
   depends_on "linuxbrew/xorg/libomxil-bellagio"
