@@ -86,7 +86,7 @@ class Mesa < Formula
       system "python3", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
-    # resource("gears.c").stage(pkgshare.to_s) 
+    # resource("gears.c").stage(pkgshare.to_s)
 
     gpu = build.with?("gpu") ? "yes" : "no"
     nogpu = build.with?("gpu") ? "no" : "yes"
@@ -154,8 +154,8 @@ class Mesa < Formula
       system "meson",
         "--prefix=#{prefix}",
         "-Dshared-llvm=false",
-        "-Dc_link_args='-Wl,-rpath,#{HOMEBREW_PREFIX.to_s}/lib'"
-      #, "-D buildtype=plain", "-D b_ndebug=true", ".."
+        "-Dc_link_args='-Wl,-rpath,#{HOMEBREW_PREFIX}/lib'"
+      # , "-D buildtype=plain", "-D b_ndebug=true", ".."
       system "ninja"
       system "ninja", "install"
     end
