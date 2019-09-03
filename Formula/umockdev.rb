@@ -1,8 +1,8 @@
 class Umockdev < Formula
   desc "Mock devices for integration tests for hardware-related libraries"
   homepage "https://launchpad.net/umockdev"
-  url "https://github.com/martinpitt/umockdev/releases/download/0.13.1/umockdev-0.13.1.tar.xz"
-  sha256 "8ad2509ad0a80577e0214eb4c4fd53a674468648d6a5364e7d39c61a9309eaa4"
+  url "https://github.com/martinpitt/umockdev/releases/download/0.13.2/umockdev-0.13.2.tar.xz"
+  sha256 "e43c8208de67a35333e344408462d3bf55464df004a8a7092a3a88c1961abb24"
 
   bottle do
     cellar :any_skip_relocation
