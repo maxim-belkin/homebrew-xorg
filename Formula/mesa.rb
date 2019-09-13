@@ -29,8 +29,8 @@ class Mesa < Formula
   depends_on "libelf" # Indirect dependencies with linkage
   depends_on "linuxbrew/xorg/libdrm" # meson: Message: libdrm 2.4.97 needed because amdgpu has the highest requirement
 #   depends_on "linuxbrew/xorg/libomxil-bellagio"
-  depends_on "linuxbrew/xorg/libpthread-stubs" => :build # DELETEME
-#   # depends_on "linuxbrew/xorg/libvdpau" => :build
+#   depends_on "linuxbrew/xorg/libpthread-stubs" => :build # DELETEME
+  depends_on "linuxbrew/xorg/libvdpau" => :build # not mandatory
   depends_on "linuxbrew/xorg/libx11" # meson.build:1420:4: ERROR:  Native dependency 'x11' not found
   depends_on "linuxbrew/xorg/libxcb" # Indirect dependencies with linkage
   depends_on "linuxbrew/xorg/libxdamage" # meson.build:1422:4: ERROR:  Native dependency 'xdamage' not found
@@ -40,12 +40,12 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/libxxf86vm" # meson.build:1454:6: ERROR:  Native dependency 'xxf86vm' not found
   depends_on "linuxbrew/xorg/wayland" # meson.build:1373:2: ERROR:  Native dependency 'wayland-scanner' not found
 #   # depends_on "linuxbrew/xorg/xorgproto" => :build
-#   # depends_on "linuxbrew/xorg/libxv"
-#   # depends_on "linuxbrew/xorg/libxvmc" # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage
+  depends_on "linuxbrew/xorg/libxv" # brought in by libxvmc | Indirect dependencies with linkage
+  depends_on "linuxbrew/xorg/libxvmc" # not mandatory. Dependency xvmc found: NO
   depends_on "ncurses" # Indirect dependencies with linkage
   depends_on "zlib" # Indirect dependencies with linkage
 #   # depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
-#   # depends_on "linuxbrew/xorg/libva"
+  depends_on "linuxbrew/xorg/libva-internal" => :build # not mandatory. Dependency libva found: NO
 #   # depends_on "valgrind" => :recommended
 #   # depends_on "linuxbrew/xorg/libglvnd" => :optional
 
@@ -149,7 +149,9 @@ class Mesa < Formula
 
     # inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
 
-    ENV["PKG_CONFIG_PATH"] = Formula["pkg-config"].opt_prefix/"bin/pkg-config"
+    # ENV.append "PKG_CONFIG_PATH", Formula["pkg-config"].opt_bin/"pkg-config"
+    ENV.append "PKG_CONFIG_PATH", Formula["libva-internal"].opt_lib/"pkgconfig"
+
     mkdir "build" do
       system "meson",
         "--prefix=#{prefix}",
