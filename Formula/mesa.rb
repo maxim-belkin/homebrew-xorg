@@ -2,8 +2,8 @@ class Mesa < Formula
   include Language::Python::Virtualenv
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/mesa-19.1.2.tar.xz"
-  sha256 "813a144ea8ebefb7b48b6733f3f603855b0f61268d86cc1cc26a6b4be908fcfd"
+  url "https://mesa.freedesktop.org/archive/mesa-19.1.6.tar.xz"
+  sha256 "2a369b7b48545c6486e7e44913ad022daca097c8bd937bf30dcf3f17a94d3496"
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
@@ -14,40 +14,40 @@ class Mesa < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
-  depends_on "bison" => :build
-  depends_on "flex" => :build
-  depends_on "gettext" => :build
-  depends_on "libtool" => :build
-  depends_on "linuxbrew/xorg/libxrandr" => :build
-  depends_on "linuxbrew/xorg/wayland-protocols" => :build
-  depends_on "llvm@7" => :build
+  depends_on "bison" => :build  # meson.build:1332:0: ERROR:  Program(s) ['bison'] not found or not executable
+  depends_on "flex" => :build  # meson.build:1333:0: ERROR:  Program(s) ['flex'] not found or not executable
+  depends_on "gettext" => :build # src/util/xmlpool/meson.build:40:5: ERROR:  Can not do gettext because xgettext is not installed
+#   depends_on "libtool" => :build
+  depends_on "linuxbrew/xorg/libxrandr" => :build # meson.build:1464:4: ERROR:  Native dependency 'xrandr' not found
+  depends_on "linuxbrew/xorg/wayland-protocols" => :build # meson.build:1380:2: ERROR:  Native dependency 'wayland-protocols' not found
+  depends_on "llvm@7" => :build  # meson.build:1267:2: ERROR:  Dependency LLVM not found
   depends_on "meson-internal" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
-  depends_on "python" => :build # see docs/install.html
-  depends_on "expat" # see docs/install.html
-  depends_on "libelf"
-  depends_on "linuxbrew/xorg/libdrm"
-  depends_on "linuxbrew/xorg/libomxil-bellagio"
-  # depends_on "linuxbrew/xorg/libpthread-stubs" => :build
-  # depends_on "linuxbrew/xorg/libvdpau" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxcb"
-  depends_on "linuxbrew/xorg/libxdamage"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libxfixes"
-  depends_on "linuxbrew/xorg/libxshmfence"
-  depends_on "linuxbrew/xorg/libxxf86vm"
-  depends_on "linuxbrew/xorg/wayland"
-  # depends_on "linuxbrew/xorg/xorgproto" => :build
-  # depends_on "linuxbrew/xorg/libxv"
-  # depends_on "linuxbrew/xorg/libxvmc" # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage
-  depends_on "ncurses" # b.c. reported by linkage
-  depends_on "zlib" # b.c. reported by linkage
-  # depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
-  # depends_on "linuxbrew/xorg/libva"
-  # depends_on "valgrind" => :recommended
-  # depends_on "linuxbrew/xorg/libglvnd" => :optional
+  depends_on "pkg-config" => :build # meson: Program pkg-config found: NO
+  depends_on "python" => :build # see docs/install.html # ImportError: No module named 'setuptools'
+  depends_on "expat" # see docs/install.html | Indirect dependencies with linkage
+  depends_on "libelf" # Indirect dependencies with linkage
+  depends_on "linuxbrew/xorg/libdrm" # meson: Message: libdrm 2.4.97 needed because amdgpu has the highest requirement
+#   depends_on "linuxbrew/xorg/libomxil-bellagio"
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build # DELETEME
+#   # depends_on "linuxbrew/xorg/libvdpau" => :build
+  depends_on "linuxbrew/xorg/libx11" # meson.build:1420:4: ERROR:  Native dependency 'x11' not found
+  depends_on "linuxbrew/xorg/libxcb" # Indirect dependencies with linkage
+  depends_on "linuxbrew/xorg/libxdamage" # meson.build:1422:4: ERROR:  Native dependency 'xdamage' not found
+  depends_on "linuxbrew/xorg/libxext" # meson.build:1421:4: ERROR:  Native dependency 'xext' not found
+  depends_on "linuxbrew/xorg/libxfixes" # Indirect dependencies with linkage
+  depends_on "linuxbrew/xorg/libxshmfence" # meson.build:1445:6: ERROR:  Native dependency 'xshmfence' not found
+  depends_on "linuxbrew/xorg/libxxf86vm" # meson.build:1454:6: ERROR:  Native dependency 'xxf86vm' not found
+  depends_on "linuxbrew/xorg/wayland" # meson.build:1373:2: ERROR:  Native dependency 'wayland-scanner' not found
+#   # depends_on "linuxbrew/xorg/xorgproto" => :build
+#   # depends_on "linuxbrew/xorg/libxv"
+#   # depends_on "linuxbrew/xorg/libxvmc" # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage # b.c. reported by linkage
+  depends_on "ncurses" # Indirect dependencies with linkage
+  depends_on "zlib" # Indirect dependencies with linkage
+#   # depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
+#   # depends_on "linuxbrew/xorg/libva"
+#   # depends_on "valgrind" => :recommended
+#   # depends_on "linuxbrew/xorg/libglvnd" => :optional
 
   #
   # There is a circular dependency between Mesa and libva:
