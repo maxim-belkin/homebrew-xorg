@@ -14,56 +14,46 @@ class Mesa < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
-  depends_on "bison" => :build  # meson.build:1332:0: ERROR:  Program(s) ['bison'] not found or not executable
-  depends_on "flex" => :build  # meson.build:1333:0: ERROR:  Program(s) ['flex'] not found or not executable
-  depends_on "gettext" => :build # src/util/xmlpool/meson.build:40:5: ERROR:  Can not do gettext because xgettext is not installed
-#   depends_on "libtool" => :build
-  depends_on "linuxbrew/xorg/libxrandr" => :build # meson.build:1464:4: ERROR:  Native dependency 'xrandr' not found
-  depends_on "linuxbrew/xorg/wayland-protocols" => :build # meson.build:1380:2: ERROR:  Native dependency 'wayland-protocols' not found
-  depends_on "llvm@7" => :build  # meson.build:1267:2: ERROR:  Dependency LLVM not found
+  # Build-time dependencies
+  depends_on "bison" => :build
+  depends_on "flex" => :build
+  depends_on "gettext" => :build
+  depends_on "llvm@7" => :build
   depends_on "meson-internal" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build # meson: Program pkg-config found: NO
-  depends_on "python" => :build # see docs/install.html # ImportError: No module named 'setuptools'
-  depends_on "expat" # see docs/install.html | Indirect dependencies with linkage
-  depends_on "libelf" # Indirect dependencies with linkage
-  depends_on "linuxbrew/xorg/libdrm" # meson: Message: libdrm 2.4.97 needed because amdgpu has the highest requirement
-#   depends_on "linuxbrew/xorg/libomxil-bellagio"
-#   depends_on "linuxbrew/xorg/libpthread-stubs" => :build # DELETEME
-  depends_on "linuxbrew/xorg/libvdpau" => :build # not mandatory
-  depends_on "linuxbrew/xorg/libx11" # meson.build:1420:4: ERROR:  Native dependency 'x11' not found
-  depends_on "linuxbrew/xorg/libxcb" # Indirect dependencies with linkage
-  depends_on "linuxbrew/xorg/libxdamage" # meson.build:1422:4: ERROR:  Native dependency 'xdamage' not found
-  depends_on "linuxbrew/xorg/libxext" # meson.build:1421:4: ERROR:  Native dependency 'xext' not found
-  depends_on "linuxbrew/xorg/libxfixes" # Indirect dependencies with linkage
-  depends_on "linuxbrew/xorg/libxshmfence" # meson.build:1445:6: ERROR:  Native dependency 'xshmfence' not found
-  depends_on "linuxbrew/xorg/libxxf86vm" # meson.build:1454:6: ERROR:  Native dependency 'xxf86vm' not found
-  depends_on "linuxbrew/xorg/wayland" # meson.build:1373:2: ERROR:  Native dependency 'wayland-scanner' not found
-#   # depends_on "linuxbrew/xorg/xorgproto" => :build
-  depends_on "linuxbrew/xorg/libxv" # brought in by libxvmc | Indirect dependencies with linkage
-  depends_on "linuxbrew/xorg/libxvmc" # not mandatory. Dependency xvmc found: NO
-  depends_on "ncurses" # Indirect dependencies with linkage
-  depends_on "zlib" # Indirect dependencies with linkage
-#   # depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
-  depends_on "linuxbrew/xorg/libva-internal" => :build # not mandatory. Dependency libva found: NO
-#   # depends_on "valgrind" => :recommended
-#   # depends_on "linuxbrew/xorg/libglvnd" => :optional
+  depends_on "pkg-config" => :build
+  depends_on "python" => :build
 
-  #
-  # There is a circular dependency between Mesa and libva:
-  # libva should be installed:
-  #  1. before Mesa with "disable-egl" and "disable-egl" options  [libva formula]
-  #  2. after  Mesa without the above two options                 [this formula]
-  #
+  # Dependencies from linuxbrew/core
+  depends_on "expat" # Indirect linkage
+  depends_on "libelf" # Indirect linkage
+  depends_on "lm-sensors" # Optional
+  depends_on "ncurses" # Indirect linkage
+  depends_on "zlib" # Indirect linkage
 
+  # Dependencies from linuxbrew/xorg
+  depends_on "linuxbrew/xorg/libomxil-bellagio" # Optional
+  depends_on "linuxbrew/xorg/libva-internal" # Optional
+  depends_on "linuxbrew/xorg/libvdpau" # Optional. No linkage
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxcb" # Indirect linkage
+  depends_on "linuxbrew/xorg/libxdamage"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxfixes" # Indirect linkage
+  depends_on "linuxbrew/xorg/libxrandr" # No linkage
+  depends_on "linuxbrew/xorg/libxshmfence"
+  depends_on "linuxbrew/xorg/libxv" # Indirect linkage
+  depends_on "linuxbrew/xorg/libxvmc" # Optional
+  depends_on "linuxbrew/xorg/libxxf86vm"
+  depends_on "linuxbrew/xorg/wayland"
+  depends_on "linuxbrew/xorg/wayland-protocols" # No linkage
+
+  # depends_on "linuxbrew/xorg/libunwind" # Optiona. Breaks linkage (09/18/19).
+  # depends_on "systemd" # provides libudev which is needed by "gbm"
+  
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/fa/29/8016763284d8fab844224f7cc5675cb4a388ebda0eb5a403260187e48435/Mako-1.0.13.tar.gz"
-    sha256 "95ee720cc3453063788515d55bd7ce4a2a77b7b209e4ac70ec5c86091eb02541"
-  end
-
-  resource "gears.c" do
-    url "https://www.opengl.org/archives/resources/code/samples/glut_examples/mesademos/gears.c"
-    sha256 "7df9d8cda1af9d0a1f64cc028df7556705d98471fdf3d0830282d4dcfb7a78cc"
+    url "https://files.pythonhosted.org/packages/b0/3c/8dcd6883d009f7cae0f3157fb53e9afb05a0d3d33b3db1268ec2e6f4a56b/Mako-1.1.0.tar.gz"
+    sha256 "a36919599a9b7dc5d86a7a8988f23a9a3a3d083070023bab23d64f7f1d1e0a4b"
   end
 
   resource "libva" do
@@ -71,10 +61,10 @@ class Mesa < Formula
     sha256 "3aa89cd369a506ac4dbe5de7c0ef5da4f3d220bf986403f02fa1f6f702af6878"
   end
 
-  # patch :p1 do
-  #   url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-19.1.2-add_xdemos-1.patch"
-  #   sha256 "ffa885d37557feaacabd5852d5aa8d17e15eb6a41456bb6f9525d52a96e86601"
-  # end
+  patch :p1 do
+    url "www.linuxfromscratch.org/patches/blfs/svn/mesa-19.1.6-add_xdemos-1.patch"
+    sha256 "ffa885d37557feaacabd5852d5aa8d17e15eb6a41456bb6f9525d52a96e86601"
+  end
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
@@ -86,20 +76,10 @@ class Mesa < Formula
       system "python3", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
-    # resource("gears.c").stage(pkgshare.to_s)
-
     gpu = build.with?("gpu") ? "yes" : "no"
     nogpu = build.with?("gpu") ? "no" : "yes"
 
     args = %W[
-      CFLAGS=#{ENV.cflags}
-      CXXFLAGS=#{ENV.cflags}
-      --enable-autotools
-      --disable-silent-rules
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --sysconfdir=#{etc}
-      --localstatedir=#{var}
       --enable-opengl
       --enable-llvm
       --disable-llvm-shared-libs
@@ -138,74 +118,19 @@ class Mesa < Formula
       ]
     end
 
-    # Possible gallium drivers:
-    # ddebug,etnaviv,freedreno,i915,imx,llvmpipe,noop,nouveau,pl111,r300,r600,radeon,radeonsi,rbug,softpipe,svga,swr,trace,vc4,virgl
 
-    # enable-opencl => needs libclc
-    # enable-gallium-osmesa => mutually exclusive with enable-osmesa
-
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-libglvnd" if build.with? "libglvnd"
-
-    # inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
-
-    # ENV.append "PKG_CONFIG_PATH", Formula["pkg-config"].opt_bin/"pkg-config"
     ENV.append "PKG_CONFIG_PATH", Formula["libva-internal"].opt_lib/"pkgconfig"
 
     mkdir "build" do
       system "meson",
-        "--prefix=#{prefix}",
-        "-Dshared-llvm=false",
-        "-Dc_link_args='-Wl,-rpath,#{HOMEBREW_PREFIX}/lib'"
-      # , "-D buildtype=plain", "-D b_ndebug=true", ".."
+        "-Dprefix=#{prefix}",
+        "-Dsysconfdir=#{etc}",
+        "-Dlocalstatedir=#{var}",
+        "-Dshared-llvm=false"
+        #"-Dglvnd=true" # fails to build (after some time)
+        # "-Dvulkan-overlay-layer=true" # fails to build (quickly)
       system "ninja"
       system "ninja", "install"
-    end
-
-    # system "./autogen.sh", *args
-    # system "make"
-    # system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}" if build.with? "gpu"
-    # system "make", "check" if build.with?("test")
-    # system "make", "install"
-    # system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install" if build.with? "gpu"
-
-    if build.with? "libva"
-      resource("libva").stage do
-        libvaargs = %W[
-          --prefix=#{Formula["libva"].opt_prefix}
-          --sysconfdir=#{Formula["libva"].opt_prefix}/etc
-          --localstatedir=#{Formula["libva"].opt_prefix}/var
-          --disable-dependency-tracking
-          --disable-silent-rules
-          --enable-static=#{build.with?("static") ? "yes" : "no"}
-        ]
-
-        ### Set environment flags:
-        # $ pkg-config --cflags egl | tr ' ' '\n'
-        # $ pkg-config --cflags gl  | tr ' ' '\n'
-        ENV["EGL_CFLAGS"] = "-I#{include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].opt_include}/libdrm"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libx11"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxau"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxcb"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdamage"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdmcp"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxext"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxfixes"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxxf86vm"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["xorgproto"].opt_include}"
-
-        ENV["GLX_CFLAGS"] = ENV["EGL_CFLAGS"]
-
-        ENV["EGL_LIBS"] = "-L#{lib} -lEGL"
-        ENV["GLX_LIBS"] = "-L#{lib} -lGL"
-
-        system "autoreconf", "-fi" if build.without? "wayland" # needed only if Wayland is not installed
-        system "./configure", *libvaargs
-        system "make"
-        system "make", "install"
-      end
     end
   end
 
