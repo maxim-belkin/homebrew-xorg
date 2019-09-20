@@ -10,11 +10,8 @@ class Mesa < Formula
     sha256 "36731aa03379dd53735bdd58bd5c53e1f1fbec26b4f020f215bf8a4ec0428507" => :x86_64_linux
   end
 
-  option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
-  # Build-time dependencies
   depends_on "bison" => :build
   depends_on "flex" => :build
   depends_on "gettext" => :build
@@ -24,14 +21,9 @@ class Mesa < Formula
   depends_on "pkg-config" => :build
   depends_on "python" => :build
 
-  # Dependencies from linuxbrew/core
   depends_on "expat" # Indirect linkage
   depends_on "libelf" # Indirect linkage
-  depends_on "lm-sensors" # Optional
-  depends_on "ncurses" # Indirect linkage
-  depends_on "zlib" # Indirect linkage
-
-  # Dependencies from linuxbrew/xorg
+  depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/libomxil-bellagio" # Optional
   depends_on "linuxbrew/xorg/libva-internal" # Optional
   depends_on "linuxbrew/xorg/libvdpau" # Optional. No linkage
@@ -47,10 +39,10 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/libxxf86vm"
   depends_on "linuxbrew/xorg/wayland"
   depends_on "linuxbrew/xorg/wayland-protocols" # No linkage
+  depends_on "lm-sensors" # Optional
+  depends_on "ncurses" # Indirect linkage
+  depends_on "zlib" # Indirect linkage
 
-  # depends_on "linuxbrew/xorg/libunwind" # Optiona. Breaks linkage (09/18/19).
-  # depends_on "systemd" # provides libudev which is needed by "gbm"
-  
   resource "mako" do
     url "https://files.pythonhosted.org/packages/b0/3c/8dcd6883d009f7cae0f3157fb53e9afb05a0d3d33b3db1268ec2e6f4a56b/Mako-1.1.0.tar.gz"
     sha256 "a36919599a9b7dc5d86a7a8988f23a9a3a3d083070023bab23d64f7f1d1e0a4b"
@@ -76,59 +68,47 @@ class Mesa < Formula
       system "python3", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
-    gpu = build.with?("gpu") ? "yes" : "no"
-    nogpu = build.with?("gpu") ? "no" : "yes"
-
-    args = %W[
-      --enable-opengl
-      --enable-llvm
-      --disable-llvm-shared-libs
-      --enable-shared-glapi
-      --with-llvm-prefix=#{Formula["llvm@7"].opt_prefix}
-      --enable-dri3=#{gpu}
-      --enable-dri=#{gpu}
-      --enable-egl=#{gpu}
-      --enable-gallium-osmesa=#{nogpu}
-      --enable-gallium-tests=#{gpu}
-      --enable-gbm=#{gpu}
-      --enable-gles1=#{gpu}
-      --enable-gles2=#{gpu}
-      --enable-glx-tls=#{gpu}
-      --enable-glx=#{gpu}
-      --enable-osmesa=#{gpu}
-      --enable-sysfs=#{gpu}
-      --enable-texture-float=#{gpu}
-      --enable-va=#{gpu}
-      --enable-vdpau=#{gpu}
-      --enable-xa=#{gpu}
-      --enable-xvmc=#{gpu}
-    ]
-
-    if build.with? "gpu"
-      args += %W[
-        --with-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
-        --with-gallium-drivers=i915,nouveau,r300,r600,radeonsi,svga,swrast,swr
-        --with-dri-drivers=i965,nouveau,radeon,r200,swrast
-      ]
+    if build.with?("gpu")
+      gpu = "true"
+      platforms = %w[x11 wayland drm surfaceless].join(",")
+      dri_drivers = "auto"
+      gallium_drivers = "auto"
+      glx="auto"
     else
-      args += %w[
-        --with-platforms=
-        --with-gallium-drivers=swrast,swr
-        --with-dri-drivers=
-      ]
+      gpu = "false"
+      platforms = ""
+      dri_drivers = ""
+      gallium_drivers = ""
+      glx="disabled"
     end
 
+    args = %W[
+      -Dprefix=#{prefix}
+      -Dsysconfdir=#{etc}
+      -Dlocalstatedir=#{var}
+      -Dllvm=true
+      -Dshared-llvm=false
+      -Dplatforms=#{platforms}
+      -Ddri3=#{gpu}
+      -Ddri-drivers=#{dri_drivers}
+      -Dgallium-drivers=#{gallium_drivers}
+      -Degl=#{gpu}
+      -Dosmesa=none
+      -Dgbm=#{gpu}
+      -Dopengl=#{gpu}
+      -Dgles1=#{gpu}
+      -Dgles2=#{gpu}
+      -Dglx=#{glx}
+      -Dxvmc=#{gpu}
+      -Dtools=all
+    ]
+    # -Dglvnd=true # fails to build (after some time)
+    # -Dvulkan-overlay-layer=true # fails to build (quickly)
 
     ENV.append "PKG_CONFIG_PATH", Formula["libva-internal"].opt_lib/"pkgconfig"
 
     mkdir "build" do
-      system "meson",
-        "-Dprefix=#{prefix}",
-        "-Dsysconfdir=#{etc}",
-        "-Dlocalstatedir=#{var}",
-        "-Dshared-llvm=false"
-        #"-Dglvnd=true" # fails to build (after some time)
-        # "-Dvulkan-overlay-layer=true" # fails to build (quickly)
+      system "meson", *args
       system "ninja"
       system "ninja", "install"
     end
