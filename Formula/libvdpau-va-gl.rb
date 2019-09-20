@@ -1,8 +1,8 @@
 class LibvdpauVaGl < Formula
   desc "VDPAU driver for hardware that supports VAAPI"
   homepage "https://www.freedesktop.org/wiki/Software/VDPAU/"
-  url "https://github.com/i-rinat/libvdpau-va-gl/releases/download/v0.3.6/libvdpau-va-gl-0.3.6.tar.gz"
-  sha256 "35fa95359ca79e15079e3b1ada089db799c7d789a99b5f497e28ca1d85dd91c4"
+  url "https://github.com/i-rinat/libvdpau-va-gl/releases/download/v0.4.2/libvdpau-va-gl-0.4.2.tar.gz"
+  sha256 "7d9121540658eb0244859e63da171ca3869e784afbeaf202f44471275c784af4"
 
   # option "without-test", "Skip compile-time tests"
 
