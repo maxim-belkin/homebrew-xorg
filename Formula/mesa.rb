@@ -2,8 +2,8 @@ class Mesa < Formula
   include Language::Python::Virtualenv
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/mesa-19.1.6.tar.xz"
-  sha256 "2a369b7b48545c6486e7e44913ad022daca097c8bd937bf30dcf3f17a94d3496"
+  url "https://mesa.freedesktop.org/archive/mesa-19.1.7.tar.xz"
+  sha256 "e287920fdb38712a9fed448dc90b3ca95048c7face5db52e58361f8b6e0f3cd5"
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
