@@ -14,9 +14,9 @@ class LibvdpauVaGl < Formula
 
   # Required
   depends_on "linuxbrew/xorg/glu"
+  depends_on "linuxbrew/xorg/libice"
   depends_on "linuxbrew/xorg/libva"
   depends_on "linuxbrew/xorg/libvdpau"
-  depends_on "linuxbrew/xorg/libice"
 
   def install
     args = std_cmake_args
