@@ -1,8 +1,8 @@
 class Libglvnd < Formula
   desc "GL Vendor-Neutral Dispatch library"
   homepage "https://github.com/NVIDIA/libglvnd"
-  url "https://github.com/NVIDIA/libglvnd/releases/download/v1.1.1/libglvnd-1.1.1.tar.gz"
-  sha256 "71918ed1261e4eece18c0b74b50dc62c0237b8d526e83277ef078554544720b9"
+  url "https://github.com/NVIDIA/libglvnd/releases/download/v1.2.0/libglvnd-1.2.0.tar.gz"
+  sha256 "2dacbcfa47b7ffb722cbddc0a4f1bc3ecd71d2d7bb461bceb8e396dc6b81dc6d"
   head "https://github.com/NVIDIA/libglvnd.git"
 
   bottle do
