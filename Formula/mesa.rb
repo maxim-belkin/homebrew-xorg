@@ -2,8 +2,8 @@ class Mesa < Formula
   include Language::Python::Virtualenv
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/mesa-19.1.7.tar.xz"
-  sha256 "e287920fdb38712a9fed448dc90b3ca95048c7face5db52e58361f8b6e0f3cd5"
+  url "https://mesa.freedesktop.org/archive/mesa-19.2.0.tar.xz"
+  sha256 "b060caa2a00f856431160ff7377d0e8f58f2aa48c16ee5a9e265ebdccb10852a"
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
@@ -11,6 +11,17 @@ class Mesa < Formula
   end
 
   option "without-gpu", "Build without graphics hardware"
+  option "without-gl", "Don't build EGL, GL, and GLES libs"
+
+  unless build.without? "gl"
+    conflicts_with "linuxbrew/xorg/libglvnd",
+      :because => <<~EOS
+        both install EGL, GL, and GLES libraries.
+        You can either
+         - unlink or uninstall libglvnd, or
+         - build linuxbrew/xorg/mesa with '--without-gl' option
+      EOS
+  end
 
   depends_on "bison" => :build
   depends_on "flex" => :build
@@ -54,8 +65,8 @@ class Mesa < Formula
   end
 
   patch :p1 do
-    url "www.linuxfromscratch.org/patches/blfs/svn/mesa-19.1.6-add_xdemos-1.patch"
-    sha256 "ffa885d37557feaacabd5852d5aa8d17e15eb6a41456bb6f9525d52a96e86601"
+    url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-19.2.0-add_xdemos-1.patch"
+    sha256 "f7fcde1ca64e5be6a1abc73851e0d156cc227328c58cd9cbac47963e5b9631ad"
   end
 
   def install
@@ -70,16 +81,21 @@ class Mesa < Formula
 
     if build.with?("gpu")
       gpu = "true"
+      gl = build.with?("gl") ? "true" : "false"
       platforms = %w[x11 wayland drm surfaceless].join(",")
-      dri_drivers = "auto"
+      dri_drivers = build.with?("gl") ? "auto" : ""
       gallium_drivers = "auto"
-      glx="auto"
+      glx = build.with?("gl") ? "auto" : "disabled"
+      tools = "drm-shim,etnaviv,freedreno,glsl,nir,nouveau,xvmc,lima"
+      # 'intel' tool requires libepoxy, which depends on mesa. circular dependency.
     else
       gpu = "false"
+      gl = "false"
       platforms = ""
       dri_drivers = ""
       gallium_drivers = ""
-      glx="disabled"
+      glx = "disabled"
+      tools = ""
     end
 
     args = %W[
@@ -92,15 +108,15 @@ class Mesa < Formula
       -Ddri3=#{gpu}
       -Ddri-drivers=#{dri_drivers}
       -Dgallium-drivers=#{gallium_drivers}
-      -Degl=#{gpu}
+      -Degl=#{gl}
       -Dosmesa=none
       -Dgbm=#{gpu}
-      -Dopengl=#{gpu}
-      -Dgles1=#{gpu}
-      -Dgles2=#{gpu}
+      -Dopengl=#{gl}
+      -Dgles1=#{gl}
+      -Dgles2=#{gl}
       -Dglx=#{glx}
       -Dxvmc=#{gpu}
-      -Dtools=all
+      -Dtools=#{tools}
     ]
     # -Dglvnd=true # fails to build (after some time)
     # -Dvulkan-overlay-layer=true # fails to build (quickly)
