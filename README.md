@@ -32,6 +32,41 @@ You _can_ build static libraries using `--with-static` flag, though this is neit
 ```sh
 brew install linuxbrew/xorg/xorg --with-static
 ```
+### Provided formulae
+
+    * bdftopcf                     * encodings                    * glu                          * iceauth
+    * intel-gmmlib                 * intel-media-driver           * libdmx                       * libdrm
+    * libevdev                     * libfontenc                   * libfs                        * libglvnd
+    * libgudev                     * libice                       * libomxil-bellagio            * libpciaccess
+    * libpthread-stubs             * libsha1                      * libsm                        * libva-intel-driver
+    * libva                        * libva-utils                  * libva                        * libvdpau-va-gl
+    * libvdpau                     * libwacom                     * libx11                       * libxau
+    * libxaw                       * libxaw3d                     * libxcb                       * libxcomposite
+    * libxcursor                   * libxdamage                   * libxdmcp                     * libxext
+    * libxfixes                    * libxfont                     * libxfont2                    * libxfontcache
+    * libxft                       * libxi                        * libxinerama                  * libxkbfile
+    * libxmu                       * libxpm                       * libxrandr                    * libxrender
+    * libxres                      * libxscrnsaver                * libxshmfence                 * libxt
+    * libxtst                      * libxv                        * libxvmc                      * libxxf86dga
+    * libxxf86misc                 * libxxf86vm                   * luit                         * mesa
+    * mkfontscale                  * mtdev                        * pciutils                     * sessreg
+    * setxkbmap                    * smproxy                      * umockdev                     * util-macros
+    * wayland-protocols            * wayland                      * x11perf                      * xauth
+    * xbacklight                   * xbitmaps                     * xcb-proto                    * xcb-util-cursor
+    * xcb-util-image               * xcb-util-keysyms             * xcb-util-renderutil          * xcb-util-wm
+    * xcb-util                     * xcmsdb                       * xcursor-themes               * xcursorgen
+    * xdpyinfo                     * xdriinfo                     * xev                          * xgamma
+    * xhost                        * xinput                       * xkbcomp                      * xkbevd
+    * xkbutils                     * xkeyboardconfig              * xkill                        * xlsatoms
+    * xlsclients                   * xmessage                     * xmodmap                      * xorg-cf-files
+    * xorg-docs                    * xorg-sgml-doctools           * xorg                         * xorgproto
+    * xpr                          * xprop                        * xrandr                       * xrdb
+    * xrefresh                     * xset                         * xsetroot                     * xtrans
+    * xvinfo                       * xwd                          * xwininfo                     * xwud
+
+And a number of font formulae.
+
+
 
 ## How to contribute
 
