@@ -11,7 +11,7 @@ class Libdrm < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "cairo" => :build if build.with? "test"
+  depends_on "cairo"
   depends_on "cunit" => :build if build.with? "test"
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
