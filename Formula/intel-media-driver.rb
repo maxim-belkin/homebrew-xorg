@@ -1,8 +1,8 @@
 class IntelMediaDriver < Formula
   desc "Intel media driver for VAAPI"
   homepage "https://github.com/intel/media-driver"
-  url "https://github.com/intel/media-driver/archive/intel-media-19.2.1.tar.gz"
-  sha256 "79279c991d918deaa52239dac55787b9c7562e520cd58744171b468d28b8af40"
+  url "https://github.com/intel/media-driver/archive/intel-media-19.3.0.tar.gz"
+  sha256 "7e523224867c9b0ebdaf944c0c7915d298562775bea9deddb94121148ad9b88b"
 
   bottle do
     cellar :any_skip_relocation
@@ -15,8 +15,16 @@ class IntelMediaDriver < Formula
   depends_on "linuxbrew/xorg/libva"
 
   def install
+    # Reduce memory usage below 4 GB for Circle CI.
+    ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
+
+    args = std_cmake_args + %w[
+      -DBUILD_TYPE=Release
+      -DUFO_MARCH=x86_64
+    ]
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *args
       system "make"
       system "make", "install"
     end
