@@ -8,6 +8,7 @@ class XcbUtilKeysyms < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Regenerate documentation (requires doxygen)"
 
+  depends_on "binutils" => :build
   depends_on "doxygen" => :build if build.with? "docs"
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
