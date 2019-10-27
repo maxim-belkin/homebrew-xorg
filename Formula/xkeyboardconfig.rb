@@ -1,8 +1,8 @@
 class Xkeyboardconfig < Formula
   desc "Keyboard configuration database for the X Window System"
   homepage "https://xorg.freedesktop.org"
-  url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.27.tar.bz2"
-  sha256 "690daec8fea63526c07620c90e6f3f10aae34e94b6db6e30906173480721901f"
+  url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.28.tar.bz2"
+  sha256 "69adb25b0fc64e4075f8ec0eab8d869892419f474f91fb69db1713de2062bdce"
 
   bottle do
     cellar :any_skip_relocation
