@@ -1,8 +1,8 @@
 class Libxvmc < Formula
   desc "X.Org Libraries: libXvMC"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXvMC-1.0.11.tar.bz2"
-  sha256 "4a2e34d444a683a7c010b01b23cefe2b8043a063ce4dc6a9b855836b5262622d"
+  url "https://ftp.x.org/pub/individual/lib/libXvMC-1.0.12.tar.bz2"
+  sha256 "6b3da7977b3f7eaf4f0ac6470ab1e562298d82c4e79077765787963ab7966dcd"
   # tag "linuxbrew"
 
   bottle do
