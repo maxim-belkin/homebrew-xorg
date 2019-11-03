@@ -1,57 +1,57 @@
-name: Build Bottles for Linuxbrew/Xorg
+name: Build and upload bottles
 
 on:
-  push:
-    branches:
-      - gh-actions
-      - 'build-bottle/**'
+  pull_request:
     paths:
       - 'Formula/*.rb'
 
 jobs:
-  main:
-    name: Build a Bottle
-
+  build-bottle:
+    name: Build a bottle
     runs-on: ubuntu-latest
-
     container:
       image: homebrew/brew
-
-      env:
-        HOMEBREW_DEVELOPER: 1
-        HOMEBREW_NO_ANALYTICS: 1
-        HOMEBREW_NO_AUTO_UPDATE: 1
-        HOMEBREW_VERBOSE: 1
-
+    env:
+      HOMEBREW_VERBOSE: 1
+      HOMEBREW_CACHE: /home/linuxbrew/.cache/Homebrew
+      HOMEBREW_TEMP: /tmp
     steps:
-      - name: Install minimal python for libxcb
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends python2.7-minimal
-
-      - name: Set up Git
-        run: |
-          git config --global user.name LinuxbrewTestBot
-          git config --global user.email testbot@linuxbrew.sh
+      - name: Checkout tap
+        uses: actions/checkout@v1
 
       - name: Update-reset Homebrew
         run: brew update-reset
 
-      - name: Tap Linuxbrew/xorg
-        run: brew tap linuxbrew/xorg
-
-      - name: Configure Linuxbrew/xorg 
+      - name: Setup tap
         run: |
-          git fetch origin
-          git checkout ${{ github.sha }} 
-        working-directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
+          mkdir -p $(dirname $(brew --repo linuxbrew/xorg))
+          ln -s "$PWD" /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
 
       - name: Install patchelf
         run: brew install patchelf
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: 1
 
       - name: Main test (test-bot)
-        run: brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --skip-recursive-dependents --ci-upload
-        env:
-          HOMEBREW_BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
-          HOMEBREW_BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}
+        run: |
+          mkdir /bottles
+          cd /bottles
+          brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --skip-recursive-dependents
+          mv /bottles $GITHUB_WORKSPACE
         continue-on-error: true
+
+      - name: Update-reset Homebrew again
+        run: brew update-reset
+
+      - name: Upload bottles
+        working-directory: /bottles
+        run: brew test-bot --bintray-org=linuxbrew --ci-upload
+        env:
+          HOMEBREW_BINTRAY_USER: ${{secrets.BINTRAY_USER}}
+          HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
+
+      - name: Push changes to GitHub
+        working-directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
+        run: |
+          git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git \
+            HEAD:pr-${{github.event.pull_request.number}}
