@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'Formula/*.rb'
+      - 'Patches/*'
       - '.github/workflows/*.yml'
 
 jobs:
@@ -40,30 +41,71 @@ jobs:
           brew audit --fix --except-cops='FormulaAuditStrict/Test' Formula/*.rb
           if [[ -n $(git diff --name-only) ]]
           then
+              echo "This PR failed audit checks."
+              echo "Submitting fixes back to the PR and exiting."
               git add -u
-              git commit -m "Fix Homebrew coding style violations (${{github.event.pull_request.number}})"
+              git commit -m "Fix Homebrew coding style violations (#${{github.event.pull_request.number}})"
+              git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git \
+              HEAD:${{github.event.pull_request.head.ref}}
+              exit 1
+          else
+              echo "This PR has successfully passed audit checks."
           fi
 
       - name: Main test (test-bot)
+        id: main_test
+        shell: bash
         run: |
           mkdir /bottles
           cd /bottles
           brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --skip-recursive-dependents
-          mv /bottles $GITHUB_WORKSPACE
+
+          if [[ $? -eq 0 ]]
+          then
+              echo ::set-output name=status::success
+          else
+              echo ::set-output name=status::failure
+          fi
+
+          echo ::set-output name=nbottles::$(shopt -s nullglob; set -- ./*x86_64_linux.bottle*tar.gz ; echo $#)
+
+          cd $GITHUB_WORKSPACE
+          mv /bottles .
         continue-on-error: true
 
-      - name: Update-reset Homebrew (again)
-        run: brew update-reset
-
-      - name: Upload bottles to Bintray
+      - name: Upload bottles
+        id: upload_bottles
+        if: steps.main_test.outputs.nbottles > 0
         shell: bash
         run: |
-          if stat --printf='' *x86_64_linux.bottle*tar.gz 2>/dev/null
+          cd $GITHUB_WORKSPACE/bottles
+          brew test-bot --bintray-org=linuxbrew --ci-upload
+          if [[ $? -eq 0 ]]
           then
-              brew test-bot --bintray-org=linuxbrew --ci-upload
+              echo ::set-output name=status::success
           else
-              echo "No bottles found!"
+              echo ::set-output name=status::failure
           fi
         env:
           HOMEBREW_BINTRAY_USER: ${{secrets.BINTRAY_USER}}
           HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
+
+      - name: Report back to the PR
+        shell: bash
+        run: |
+          MESSAGE="\
+          **Main test status:** ${{ steps.main_test.outputs.status }}
+          **Created bottles:** ${{ steps.main_test.outputs.nbottles }}"
+
+          if [[ "${{ steps.main_test.outputs.nbottles }}" -gt 0 ]]
+          then
+              MESSAGE="$MESSAGE
+              **Upload status:** ${{ steps.upload_bottles.outputs.status }}"
+          fi
+
+          # Replace new line characters ($'\n') with literal '\n'
+          MESSAGE="${MESSAGE//$'\n'/'\n'}"
+
+          curl --user $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }} \
+               --data '{"body": "'"$MESSAGE"'"}' \
+               https://api.github.com/repos/$GITHUB_REPOSITORY/issues/${{github.event.pull_request.number}}/comments
