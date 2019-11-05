@@ -12,9 +12,11 @@ jobs:
     container:
       image: homebrew/brew
     env:
-      HOMEBREW_VERBOSE: 1
       HOMEBREW_CACHE: /home/linuxbrew/.cache/Homebrew
       HOMEBREW_TEMP: /tmp
+      HOMEBREW_NO_ANALYTICS: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_VERBOSE: 1
     steps:
       - name: Checkout tap
         uses: actions/checkout@v1
@@ -29,8 +31,16 @@ jobs:
 
       - name: Install patchelf
         run: brew install patchelf
-        env:
-          HOMEBREW_NO_AUTO_UPDATE: 1
+
+      - name: Fix audit errors
+        working-directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
+        run: |
+          brew audit --fix --except-cops='FormulaAuditStrict/Test' Formula/*.rb
+          if [[ -n $(git diff --name-only) ]]
+          then
+            git add -u
+            git commit -m "Fix Homebrew coding style violations (${{github.event.pull_request.number}})"
+          fi
 
       - name: Main test (test-bot)
         run: |
@@ -40,7 +50,7 @@ jobs:
           mv /bottles $GITHUB_WORKSPACE
         continue-on-error: true
 
-      - name: Update-reset Homebrew again
+      - name: Update-reset Homebrew (again)
         run: brew update-reset
 
       - name: Upload bottles
