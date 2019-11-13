@@ -20,6 +20,13 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_VERBOSE: 1
     steps:
+      - name: Set up SSH keys and basic Git information
+        uses: Homebrew/actions/git-ssh@master
+        with:
+          git_user: LinuxbrewTestBot
+          git_email: testbot@linuxbrew.sh
+          key: ${{ secrets.SSH_KEY }}
+
       - name: Checkout tap
         uses: actions/checkout@v1
 
@@ -77,13 +84,13 @@ jobs:
         shell: bash
         run: |
           cd $GITHUB_WORKSPACE/bottles
-          brew test-bot --bintray-org=linuxbrew --ci-upload
-          if [[ $? -eq 0 ]]
-          then
-              echo ::set-output name=status::success
-          else
-              echo ::set-output name=status::failure
-          fi
+          brew test-bot \
+              --bintray-org=linuxbrew \
+              --git-name=LinuxbrewTestBot \
+              --git-email=testbot@linuxbrew.sh \
+              --ci-upload \
+          && echo ::set-output name=status::success \
+          || echo ::set-output name=status::failure
         env:
           HOMEBREW_BINTRAY_USER: ${{secrets.BINTRAY_USER}}
           HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
