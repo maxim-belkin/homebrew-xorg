@@ -98,8 +98,9 @@ jobs:
           HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
           UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
 
-      - name: Check tag in LinuxbrewTestBot
+      - name: Check this PR's tag in LinuxbrewTestBot
         id: check_testbot
+        if: steps.main_test.outputs.nbottles > 0
         shell: bash
         run: |
           curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
@@ -109,18 +110,20 @@ jobs:
           && echo ::set-output name=status::yes \
           || echo ::set-output name=status::no
 
-      - name: Report back to the PR
+      - name: Report results back to the PR
         shell: bash
         run: |
           MESSAGE="\
-          **Main test status:** ${{ steps.main_test.outputs.status }}
-          **Created bottles:** ${{ steps.main_test.outputs.nbottles }}"
+          | Check | Status |
+          | ----- | ------ |
+          | **Main test** | ${{ steps.main_test.outputs.status }} |
+          | **Created bottles** | ${{ steps.main_test.outputs.nbottles }} |"
 
-          if [[ "${{ steps.main_test.outputs.nbottles }}" -gt 0 ]]
+          if [[ ${{ steps.main_test.outputs.nbottles }} -gt 0 ]]
           then
               MESSAGE="$MESSAGE
-              **Upload status:** ${{ steps.upload_bottles.outputs.status }}
-              **Tag pushed to LinuxbrewTestBot:** ${{ steps.check_testbot.outputs.status }}"
+              | **Upload status** | ${{ steps.upload_bottles.outputs.status }} |
+              | **Tag pushed to LinuxbrewTestBot** | ${{ steps.check_testbot.outputs.status }} |"
           fi
 
           # Replace new line characters ($'\n') with literal '\n'
