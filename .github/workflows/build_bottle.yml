@@ -98,6 +98,17 @@ jobs:
           HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
           UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
 
+      - name: Check tag in LinuxbrewTestBot
+        id: check_testbot
+        shell: bash
+        run: |
+          curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+               --get --fail \
+               https://api.github.com/repos/$GITHUB_REPOSITORY/git/ref/tags/pr-${{github.event.pull_request.number}} \
+               &>/dev/null \
+          && echo ::set-output name=status::yes \
+          || echo ::set-output name=status::no
+
       - name: Report back to the PR
         shell: bash
         run: |
@@ -108,12 +119,13 @@ jobs:
           if [[ "${{ steps.main_test.outputs.nbottles }}" -gt 0 ]]
           then
               MESSAGE="$MESSAGE
-              **Upload status:** ${{ steps.upload_bottles.outputs.status }}"
+              **Upload status:** ${{ steps.upload_bottles.outputs.status }}
+              **Tag pushed to LinuxbrewTestBot:** ${{ steps.check_testbot.outputs.status }}"
           fi
 
           # Replace new line characters ($'\n') with literal '\n'
           MESSAGE="${MESSAGE//$'\n'/'\n'}"
 
-          curl --user $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }} \
+          curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
                --data '{"body": "'"$MESSAGE"'"}' \
                https://api.github.com/repos/$GITHUB_REPOSITORY/issues/${{github.event.pull_request.number}}/comments
