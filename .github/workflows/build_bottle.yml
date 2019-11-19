@@ -115,7 +115,7 @@ jobs:
         run: |
           MESSAGE="\
           | Check | Status |
-          | ----- | ------ |
+          | ----- | :----: |
           | **Main test** | ${{ steps.main_test.outputs.status }} |
           | **Created bottles** | ${{ steps.main_test.outputs.nbottles }} |"
 
