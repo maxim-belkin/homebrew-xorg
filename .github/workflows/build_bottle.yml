@@ -116,13 +116,13 @@ jobs:
           MESSAGE="\
           | Report | Status |
           | :---- | :----: |
-          | **Main test (`test-bot`)** | ${{ steps.main_test.outputs.status }} |
+          | **Main test (\`test-bot\`)** | ${{ steps.main_test.outputs.status }} |
           | **Bottles built** | ${{ steps.main_test.outputs.nbottles }} |"
 
           if [[ ${{ steps.main_test.outputs.nbottles }} -gt 0 ]]
           then
               MESSAGE="$MESSAGE
-              | **Bottle upload status (`test-bot --ci-upload`)** | ${{ steps.upload_bottles.outputs.status }} |
+              | **Bottle upload status (\`test-bot --ci-upload\`)** | ${{ steps.upload_bottles.outputs.status }} |
               | **Tag pushed to LinuxbrewTestBot** | ${{ steps.check_testbot.outputs.status }} |"
           fi
 
