@@ -117,12 +117,12 @@ jobs:
           | Check | Status |
           | ----- | :----: |
           | **Main test** | ${{ steps.main_test.outputs.status }} |
-          | **Created bottles** | ${{ steps.main_test.outputs.nbottles }} |"
+          | **Bottles built** | ${{ steps.main_test.outputs.nbottles }} |"
 
           if [[ ${{ steps.main_test.outputs.nbottles }} -gt 0 ]]
           then
               MESSAGE="$MESSAGE
-              | **Upload status** | ${{ steps.upload_bottles.outputs.status }} |
+              | **Bottle upload status** | ${{ steps.upload_bottles.outputs.status }} |
               | **Tag pushed to LinuxbrewTestBot** | ${{ steps.check_testbot.outputs.status }} |"
           fi
 
