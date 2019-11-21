@@ -97,13 +97,14 @@ jobs:
           HOMEBREW_BINTRAY_USER: ${{secrets.BINTRAY_USER}}
           HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
           UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
+          HOMEBREW_CURL: /usr/bin/curl
 
       - name: Check this PR's tag in LinuxbrewTestBot
         id: check_testbot
         if: steps.main_test.outputs.nbottles > 0
         shell: bash
         run: |
-          curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+          /usr/bin/curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
                --get --fail \
                https://api.github.com/repos/$GITHUB_REPOSITORY/git/ref/tags/pr-${{github.event.pull_request.number}} \
                &>/dev/null \
@@ -129,6 +130,6 @@ jobs:
           # Replace new line characters ($'\n') with literal '\n'
           MESSAGE="${MESSAGE//$'\n'/'\n'}"
 
-          curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+          /usr/bin/curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
                --data '{"body": "'"$MESSAGE"'"}' \
                https://api.github.com/repos/$GITHUB_REPOSITORY/issues/${{github.event.pull_request.number}}/comments
