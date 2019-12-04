@@ -123,9 +123,9 @@ jobs:
 
           if [[ ${{ steps.main_test.outputs.nbottles }} -gt 0 ]]
           then
-              MESSAGE="$MESSAGE
-              | **Bottle upload status (\`test-bot --ci-upload\`)** | ${{ steps.upload_bottles.outputs.status }} |
-              | **Tag pushed to LinuxbrewTestBot** | ${{ steps.check_testbot.outputs.status }} |"
+          MESSAGE="$MESSAGE
+          | **Bottle upload status (\`test-bot --ci-upload\`)** | ${{ steps.upload_bottles.outputs.status }} |
+          | **Tag pushed to LinuxbrewTestBot** | ${{ steps.check_testbot.outputs.status }} |"
           fi
 
           # Replace new line characters ($'\n') with literal '\n'
