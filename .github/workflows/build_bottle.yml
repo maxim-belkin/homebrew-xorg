@@ -87,6 +87,7 @@ jobs:
         shell: bash
         run: |
           cd $GITHUB_WORKSPACE/bottles
+          brew update # `test-bot` fails without it
           brew test-bot \
               --bintray-org=linuxbrew \
               --git-name=LinuxbrewTestBot \
