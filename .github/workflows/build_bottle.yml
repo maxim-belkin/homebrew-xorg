@@ -47,6 +47,7 @@ jobs:
         working-directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
         shell: bash
         run: |
+          git log --oneline -10
           brew audit --fix --except-cops='FormulaAuditStrict/Test' Formula/*.rb
           if [[ -n $(git diff --name-only) ]]
           then
