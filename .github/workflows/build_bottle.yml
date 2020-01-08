@@ -29,16 +29,17 @@ jobs:
           git_email: testbot@linuxbrew.sh
           key: ${{ secrets.SSH_KEY }}
 
-      - name: Checkout tap
-        uses: actions/checkout@v1
-
       - name: Update-reset Homebrew
         run: brew update-reset
 
+      # PWD: /__w/homebrew-xorg/homebrew-xorg
+      - name: Checkout tap
+        uses: actions/checkout@master
+
       - name: Setup tap
         run: |
-          mkdir -p $(dirname $(brew --repo linuxbrew/xorg))
-          ln -s "$PWD" /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
+          mkdir -p $(dirname $(brew --repo ${{github.repository}}))
+          cp -a "$PWD" "$(brew --repo ${{github.repository}})"
 
       - name: Install patchelf
         run: brew install patchelf
@@ -47,7 +48,10 @@ jobs:
         working-directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
         shell: bash
         run: |
-          brew audit --fix --except-cops='FormulaAuditStrict/Test' Formula/*.rb
+          /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby/current/bin/bundle config --global silence_root_warning 1
+
+          brew audit --fix --except-cops='FormulaAuditStrict/Test' Formula/*.rb || true
+
           if [[ -n $(git diff --name-only) ]]
           then
               echo "This PR failed audit checks."
@@ -57,8 +61,6 @@ jobs:
               git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git \
               HEAD:${{github.event.pull_request.head.ref}}
               exit 1
-          else
-              echo "This PR has successfully passed audit checks."
           fi
 
       - name: Main test (test-bot)
@@ -84,9 +86,9 @@ jobs:
         id: upload_bottles
         if: steps.main_test.outputs.nbottles > 0
         shell: bash
+        working-directory: ${{github.workspace}}/bottles
         run: |
-          cd $GITHUB_WORKSPACE/bottles
-          brew update # `test-bot` fails without it
+          brew update-reset # `test-bot` fails without it
           brew test-bot \
               --bintray-org=linuxbrew \
               --git-name=LinuxbrewTestBot \
@@ -100,14 +102,14 @@ jobs:
           UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
           HOMEBREW_CURL: /usr/bin/curl
 
-      - name: Check this PR's tag in LinuxbrewTestBot
+      - name: Check that corresponding tag has been pushed to LinuxbrewTestBot
         id: check_testbot
         if: steps.main_test.outputs.nbottles > 0
         shell: bash
         run: |
           /usr/bin/curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
                --get --fail \
-               https://api.github.com/repos/$GITHUB_REPOSITORY/git/ref/tags/pr-${{github.event.pull_request.number}} \
+               https://api.github.com/repos/LinuxbrewTestBot/homebrew-xorg/git/ref/tags/pr-${{github.event.pull_request.number}} \
                &>/dev/null \
           && echo ::set-output name=status::yes \
           || echo ::set-output name=status::no
