@@ -1,8 +1,8 @@
 class IntelGmmlib < Formula
   desc "Intel Graphics Memory Management Library"
   homepage "https://github.com/intel/gmmlib"
-  url "https://github.com/intel/gmmlib/archive/intel-gmmlib-19.3.4.tar.gz"
-  sha256 "5f08e36892db6bff8284913d9ab784f693d50e4ea1eb2ea6d2545e3dc6876b71"
+  url "https://github.com/intel/gmmlib/archive/intel-gmmlib-19.4.1.tar.gz"
+  sha256 "bb874b41c499abb8f6253b1834e93a02ed9744de71f2503ee9cd4100af7c1860"
 
   bottle do
     cellar :any_skip_relocation
