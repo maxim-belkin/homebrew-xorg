@@ -35,6 +35,9 @@ jobs:
       # PWD: /__w/homebrew-xorg/homebrew-xorg
       - name: Checkout tap
         uses: actions/checkout@master
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
 
       - name: Setup tap
         run: |
@@ -44,20 +47,19 @@ jobs:
       - name: Install patchelf
         run: brew install patchelf
 
+      - name: Configure Bundle
+        run: /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby/current/bin/bundle config --global silence_root_warning 1
+
       - name: Fix audit errors
         working-directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
         shell: bash
         run: |
-          /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby/current/bin/bundle config --global silence_root_warning 1
-
           brew audit --fix --except-cops='FormulaAuditStrict/Test' Formula/*.rb || true
 
           if [[ -n $(git diff --name-only) ]]
           then
-              echo "This PR failed audit checks."
-              echo "Submitting fixes back to the PR and exiting."
-              git add -u
-              git commit -m "Fix Homebrew coding style violations (#${{github.event.pull_request.number}})"
+              git add -u Formula/
+              git commit -m "Fix Homebrew coding style violations."
               git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git \
               HEAD:${{github.event.pull_request.head.ref}}
               exit 1
