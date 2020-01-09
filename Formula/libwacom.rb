@@ -1,8 +1,8 @@
 class Libwacom < Formula
   desc "Library to identify wacom tablets and their model-specific features"
   homepage "https://github.com/linuxwacom/libwacom"
-  url "https://github.com/linuxwacom/libwacom/releases/download/libwacom-1.1/libwacom-1.1.tar.bz2"
-  sha256 "8cb483593676332e92d3fe1fe816350f136bb906fcee329579d6cb9802d99e02"
+  url "https://github.com/linuxwacom/libwacom/releases/download/libwacom-1.2/libwacom-1.2.tar.bz2"
+  sha256 "c204cfdee2159d124a4f5ecc8970bbd72f9adf5ad7fd94b66798f93db1f863c3"
 
   bottle do
     sha256 "42c7f80415dcbd089c7b112a68790d54f135ed336222e58d73a2a0b321dc587e" => :x86_64_linux
