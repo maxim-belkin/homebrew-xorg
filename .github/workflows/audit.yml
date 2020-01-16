@@ -1,6 +1,7 @@
 name: Audit
 
 on:
+  pull_request:
   push:
     branches:
       - master
@@ -12,4 +13,6 @@ jobs:
       image: homebrew/brew
     steps:
       - uses: actions/checkout@master
+      - run: pwd
+      - run: ls
       - run: brew audit ./homebrew-xorg/homebrew-xorg/Formula/*.rb
