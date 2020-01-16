@@ -1,5 +1,7 @@
 # Linuxbrew Xorg
 
+[![Actions Status](https://github.com/Linuxbrew/homebrew-xorg/workflows/Audit/badge.svg)](https://github.com/Linuxbrew/homebrew-xorg/actions)
+
 
 [Xorg libraries][xorg-libs] for Homebrew on Linux.
 

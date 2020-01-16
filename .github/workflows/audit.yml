@@ -1,0 +1,15 @@
+name: Audit
+
+on:
+  push:
+    branches:
+      - master
+  
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/brew
+    steps:
+      - uses: actions/checkout@master
+      - run: brew audit homebrew-xorg/homebrew-xorg/Formula/*.rb
