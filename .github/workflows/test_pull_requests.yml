@@ -1,0 +1,96 @@
+name: CI for PRs
+
+on:
+  pull_request:
+    paths:
+      - 'Formula/*.rb'
+      - 'Patches/*'
+      - '.github/workflows/*.yml'
+
+jobs:
+  audit:
+    name: Audit
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/brew
+      env:
+        HOMEBREW_NO_ANALYTICS: 1
+        HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - uses: actions/checkout@master
+      - run: brew audit Formula/*.rb
+
+  build-bottles:
+    name: Build bottles
+    needs: audit
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/brew
+      env:
+        HOMEBREW_NO_ANALYTICS: 1
+        HOMEBREW_NO_AUTO_UPDATE: 1
+        HOMEBREW_TEMP: /tmp
+        HOMEBREW_VERBOSE: 1
+    steps:
+      - uses: actions/checkout@master
+      - name: Build bottles
+        run: |
+          mkdir -p $(dirname $(brew --repo ${{github.repository}}))
+          cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
+          mkdir ~/bottles
+          cd ~/bottles
+          brew test-bot \
+              --tap=linuxbrew/xorg \
+              --bintray-org=linuxbrew \
+              --skip-recursive-dependents
+          cp -a ~/bottles $RUNNER_TEMP/
+      - name: Store artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: bottles
+          path: ${{runner.temp}}/bottles
+
+  upload-bottles:
+    name: Upload bottles to Bintray
+    needs: build-bottles
+    runs-on: ubuntu-latest
+    container: 
+      image: homebrew/brew
+      env:
+        HOMEBREW_NO_ANALYTICS: 1
+        HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - name: Retrieve artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: bottles
+      - name: Set up SSH keys and basic Git information
+        uses: Homebrew/actions/git-ssh@master
+        with:
+          git_user: LinuxbrewTestBot
+          git_email: testbot@linuxbrew.sh
+          key: ${{secrets.SSH_KEY}}
+      - name: Upload bottles
+        env:
+          HOMEBREW_BINTRAY_USER: ${{secrets.BINTRAY_USER}}
+          HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
+          UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
+        run: |
+          cd bottles
+          brew update-reset
+          brew test-bot \
+              --bintray-org=linuxbrew \
+              --git-name=LinuxbrewTestBot \
+              --git-email=testbot@linuxbrew.sh \
+              --ci-upload
+
+  check-tag:
+    name: Check tag in LinuxbrewTestBot
+    needs: upload-bottles
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl --header 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+               --get --fail \
+               https://api.github.com/repos/LinuxbrewTestBot/homebrew-xorg/git/ref/tags/pr-${{github.event.pull_request.number}} \
+               &>/dev/null
