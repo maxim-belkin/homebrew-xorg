@@ -1,8 +1,8 @@
 class Wayland < Formula
   desc "Protocol for a compositor to talk to its clients"
   homepage "https://wayland.freedesktop.org"
-  url "https://wayland.freedesktop.org/releases/wayland-1.17.91.tar.xz"
-  sha256 "7dea2177db78954dc65f34952a899ec4db5e62bebdeb97d6ae3b8d2b1344a844"
+  url "https://wayland.freedesktop.org/releases/wayland-1.17.92.tar.xz"
+  sha256 "a927d13564440354e8fadbe2c7fce2afa6fda12783ef408d892fadbf23be34fa"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
