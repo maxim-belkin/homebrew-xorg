@@ -1,8 +1,8 @@
 class LibvaInternal < Formula
   desc "Hardware accelerated video processing library"
   homepage "https://github.com/01org/libva"
-  url "https://github.com/intel/libva/releases/download/2.6.0/libva-2.6.0.tar.bz2"
-  sha256 "486bb6b5761db6e5a9f4475bd187e0bfa7309944cfc9734d496d41930353d6c5"
+  url "https://github.com/intel/libva/releases/download/2.6.1/libva-2.6.1.tar.bz2"
+  sha256 "6c57eb642d828af2411aa38f55dc10111e8c98976dbab8fd62e48629401eaea5"
 
   bottle do
     cellar :any_skip_relocation
