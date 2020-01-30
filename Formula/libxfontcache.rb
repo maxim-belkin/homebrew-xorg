@@ -1,3 +1,4 @@
+# libxfontcache: Build a bottle for Linux
 class Libxfontcache < Formula
   desc "X.Org Libraries: libXfontCache"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
