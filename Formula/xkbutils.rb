@@ -1,3 +1,4 @@
+# xkbutils: Build a bottle for Linux
 class Xkbutils < Formula
   desc "X.Org Applications: xkbutils"
   homepage "https://www.x.org/"
