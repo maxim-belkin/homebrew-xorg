@@ -1,3 +1,4 @@
+# xcb-util-keysyms: Build a bottle for Linux
 class XcbUtilKeysyms < Formula
   desc "Additional extensions to the XCB library"
   homepage "https://xcb.freedesktop.org"
