@@ -3,7 +3,7 @@ class Libevdev < Formula
   homepage "https://www.freedesktop.org/wiki/Software/libevdev/"
   url "https://www.freedesktop.org/software/libevdev/libevdev-1.8.0.tar.xz"
   sha256 "20d3cae4efd277f485abdf8f2a7c46588e539998b5a08c2c4d368218379d4211"
-  # tag "linuxbrew"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
@@ -11,12 +11,10 @@ class Libevdev < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-python@2", "Build with Python 2"
 
   depends_on "check" => :build if build.with? "test"
   depends_on "pkg-config" => :build
-  depends_on "python" => :build if build.without? "python@2"
-  depends_on "python@2" => [:build, :optional]
+  depends_on "python" => :build
 
   def install
     args = %W[
