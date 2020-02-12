@@ -3,7 +3,7 @@ class XcbProto < Formula
   homepage "https://www.x.org/"
   url "https://xcb.freedesktop.org/dist/xcb-proto-1.13.tar.bz2"
   sha256 "7b98721e669be80284e9bbfeab02d2d0d54cd11172b72271e47a2fe875e2bde1"
-  # tag "linuxbrew"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
@@ -12,12 +12,10 @@ class XcbProto < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-python@2", "Build with Python 2"
 
   depends_on "libxml2" => :build if build.with? "test"
   depends_on "pkg-config" => :build
-  depends_on "python" => :build if build.without? "python@2"
-  depends_on "python@2" => [:build, :optional]
+  depends_on "python" => :build
 
   def install
     args = %W[
