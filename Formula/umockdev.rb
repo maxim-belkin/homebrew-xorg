@@ -29,7 +29,6 @@ class Umockdev < Formula
     args << "--enable-gtk-doc" if build.with? "gtk-doc"
     system "./configure", *args
     system "make"
-    system "make", "check"
     system "make", "install"
 
     inreplace bin/"umockdev-wrapper", "LD_PRELOAD=", "LD_PRELOAD=#{opt_lib}/"
