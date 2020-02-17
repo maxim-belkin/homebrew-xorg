@@ -14,8 +14,6 @@ class Wayland < Formula
     url "git://anongit.freedesktop.org/wayland/wayland"
   end
 
-  option "without-test", "Skip compile-time tests"
-
   depends_on "pkg-config" => :build
   depends_on "autoconf" if build.head?
   depends_on "expat"
@@ -39,7 +37,6 @@ class Wayland < Formula
     end
     system "make"
     ENV.deparallelize
-    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
