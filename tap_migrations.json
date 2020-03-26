@@ -1,3 +1,4 @@
 {
-  "freeglut": "homebrew/core"
+  "freeglut": "homebrew/core",
+  "xkeyboardconfig": "homebrew/core"
 }
