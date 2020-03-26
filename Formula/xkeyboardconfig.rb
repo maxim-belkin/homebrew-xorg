@@ -3,7 +3,6 @@ class Xkeyboardconfig < Formula
   homepage "https://www.freedesktop.org/wiki/Software/XKeyboardConfig/"
   url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.28.tar.bz2"
   sha256 "69adb25b0fc64e4075f8ec0eab8d869892419f474f91fb69db1713de2062bdce"
-  revision 1
 
   bottle do
     cellar :any_skip_relocation
