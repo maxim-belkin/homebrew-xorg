@@ -1,8 +1,9 @@
 class Xkeyboardconfig < Formula
   desc "Keyboard configuration database for the X Window System"
   homepage "https://www.freedesktop.org/wiki/Software/XKeyboardConfig/"
-  url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.29.tar.bz2"
-  sha256 "1d4175278bf06000683656763a8b1d3282c61a314b6db41260c8efe92d621802"
+  url "https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.28.tar.bz2"
+  sha256 "69adb25b0fc64e4075f8ec0eab8d869892419f474f91fb69db1713de2062bdce"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
@@ -21,10 +22,6 @@ class Xkeyboardconfig < Formula
   def install
     # Needed by intltool (xml::parser)
     ENV.prepend_path "PERL5LIB", "#{Formula["intltool"].libexec}/lib/perl5"
-
-    # Fixed in the next release:
-    # https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/commit/c847c834
-    inreplace "rules/compat/map-variants.py", /match\[[12]\]/, 'match.group(\1)'
 
     args = %W[
       --prefix=#{prefix}
