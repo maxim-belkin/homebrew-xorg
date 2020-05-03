@@ -41,10 +41,12 @@ class Umockdev < Formula
     chdir prefix do
       system "#{bin}/umockdev-wrapper", "./tests/test-umockdev-run"
       system "#{bin}/umockdev-wrapper", "./tests/test-ioctl-tree"
-      assert_match "I \u2665 Homebrew".encode("utf-8"), shell_output('printf "%s\n" Homebrew rocks! | ./tests/chatter /dev/stdin')
+      chatter_output = shell_output('printf "%s\n" Homebrew rocks! | ./tests/chatter /dev/stdin')
+      assert_match "I \u2665 Homebrew".encode("utf-8"), chatter_output
       system "#{bin}/umockdev-wrapper", "./tests/readbyte", "./NEWS", "open"
       system "#{bin}/umockdev-wrapper", "./tests/readbyte", "./NEWS", "fopen"
-      assert_equal "processor	: 0", shell_output("#{bin}/umockdev-wrapper #{bin}/umockdev-run -- head -n 1 /proc/cpuinfo").strip
+      wrapper_output = shell_output("#{bin}/umockdev-wrapper #{bin}/umockdev-run -- head -n 1 /proc/cpuinfo").strip
+      assert_equal "processor	: 0", wrapper_output
       cmd = <<~EOS
         #{bin}/umockdev-wrapper #{bin}/umockdev-run -- sh -c 'mkdir $UMOCKDEV_DIR/proc;
         echo HOMEBREW > $UMOCKDEV_DIR/proc/cpuinfo;
