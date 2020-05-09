@@ -3,7 +3,7 @@ class Xdpyinfo < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xdpyinfo-1.3.2.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xdpyinfo-1.3.2.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xdpyinfo-1.3.2.tar.bz2"
   sha256 "30238ed915619e06ceb41721e5f747d67320555cc38d459e954839c189ccaf51"
   # tag "linuxbrew"
 
