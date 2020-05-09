@@ -3,7 +3,7 @@ class Xwud < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xwud-1.0.5.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xwud-1.0.5.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xwud-1.0.5.tar.bz2"
   sha256 "99997051f8a892313f22edf41dab45864e86e7062ee9012d5dbb6a40fc6b10a9"
   # tag "linuxbrew"
 
