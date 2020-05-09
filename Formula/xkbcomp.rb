@@ -3,7 +3,7 @@ class Xkbcomp < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xkbcomp-1.4.2.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xkbcomp-1.4.2.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xkbcomp-1.4.2.tar.bz2"
   sha256 "6dd8bcb9be7e85bd7294abe261b8c7b0539d2fc93e41b80fb8bd013767ce8424"
   # tag "linuxbrew"
 
