@@ -3,7 +3,7 @@ class Xkill < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
   sha256 "c5f0bb6a95e1ac7c4def8a657496d5d2f21ccd41eb47ef2c9ccb03fb6d6aff6b"
   # tag "linuxbrew"
 
