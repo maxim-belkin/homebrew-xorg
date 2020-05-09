@@ -3,7 +3,7 @@ class Xwd < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xwd-1.0.7.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xwd-1.0.7.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xwd-1.0.7.tar.bz2"
   sha256 "cd6815b8b9e0b98e284d3d732fb12162159cb9dcee4f45a7d4c0bd8b308a6794"
   # tag "linuxbrew"
 
