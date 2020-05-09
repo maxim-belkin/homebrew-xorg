@@ -3,7 +3,7 @@ class Luit < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/luit-1.1.1.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/luit-1.1.1.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/luit-1.1.1.tar.bz2"
   sha256 "30b0e787cb07a0f504b70f1d6123930522111ce9d4276f6683a69b322b49c636"
   # tag "linuxbrew"
 
