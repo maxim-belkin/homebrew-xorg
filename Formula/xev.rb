@@ -3,7 +3,7 @@ class Xev < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xev-1.2.3.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xev-1.2.3.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xev-1.2.3.tar.bz2"
   sha256 "66bc4f1cfa1946d62612737815c34164e4ce40fcebd2c9e1d7e7a1117ad3ad09"
   # tag "linuxbrew"
 
