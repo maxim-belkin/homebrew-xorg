@@ -3,7 +3,7 @@ class Xset < Formula
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
+  mirror "https://ftp.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
   sha256 "e4fd95280df52a88e9b0abc1fee11dcf0f34fc24041b9f45a247e52df941c957"
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
