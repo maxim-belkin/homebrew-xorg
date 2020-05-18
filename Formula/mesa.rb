@@ -4,11 +4,11 @@ class Mesa < Formula
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/mesa-19.3.3.tar.xz"
   sha256 "81ce4810bb25d61300f8104856461f4d49cf7cb794aa70cb572312e370c39f09"
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "0b73130db92d6c6fd66a8151a3d1c897fda0b033c491785394775c040e4ba4c5" => :x86_64_linux
   end
 
   option "without-gpu", "Build without graphics hardware"
@@ -27,11 +27,11 @@ class Mesa < Formula
   depends_on "bison" => :build
   depends_on "flex" => :build
   depends_on "gettext" => :build
-  depends_on "llvm" => :build
+  depends_on "llvm@8" => :build
   depends_on "meson-internal" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@3.8" => :build
 
   depends_on "expat" # Indirect linkage
   depends_on "libelf" # Indirect linkage
@@ -52,12 +52,13 @@ class Mesa < Formula
   depends_on "linuxbrew/xorg/wayland"
   depends_on "linuxbrew/xorg/wayland-protocols" # No linkage
   depends_on "lm-sensors" # Optional
-  depends_on "ncurses" # Indirect linkage
-  depends_on "zlib" # Indirect linkage
+
+  uses_from_macos "ncurses" # Indirect linkage
+  uses_from_macos "zlib" # Indirect linkage
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/28/03/329b21f00243fc2d3815399413845dbbfb0745cff38a29d3597e97f8be58/Mako-1.1.1.tar.gz"
-    sha256 "2984a6733e1d472796ceef37ad48c26f4a984bb18119bb2dbc37a44d8f6e75a4"
+    url "https://files.pythonhosted.org/packages/42/64/fc7c506d14d8b6ed363e7798ffec2dfe4ba21e14dda4cfab99f4430cba3a/Mako-1.1.2.tar.gz"
+    sha256 "3139c5d64aa5d175dbafb95027057128b5fbd05a40c53999f3905ceb53366d9d"
   end
 
   resource "libva" do
@@ -74,10 +75,12 @@ class Mesa < Formula
     # Reduce memory usage below 4 GB for Circle CI.
     ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
 
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python3.7/site-packages"
+    xy = Language::Python.major_minor_version Formula["python@3.8"].opt_bin/"python3"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
 
     resource("mako").stage do
-      system "python3", *Language::Python.setup_install_args(libexec/"vendor")
+      system Formula["python@3.8"].opt_bin/"python3",
+             *Language::Python.setup_install_args(libexec/"vendor")
     end
 
     if build.with?("gpu")
@@ -129,6 +132,12 @@ class Mesa < Formula
       system "ninja"
       system "ninja", "install"
     end
+
+    # Strip executables/libraries/object files to reduce their size
+    system("strip", "--strip-unneeded", "--preserve-dates", *(Dir[bin/"**/*", lib/"**/*"]).select do |f|
+      f = Pathname.new(f)
+      f.file? && (f.elf? || f.extname == ".a")
+    end)
   end
 
   test do
