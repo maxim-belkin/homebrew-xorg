@@ -3,12 +3,11 @@ class Wayland < Formula
   homepage "https://wayland.freedesktop.org"
   url "https://wayland.freedesktop.org/releases/wayland-1.18.0.tar.xz"
   sha256 "4675a79f091020817a98fd0484e7208c8762242266967f55a67776936c2e294d"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "55f60c243712629cadae34a4271eccb07c3b252e34c6da96fc36bf34c5585580" => :x86_64_linux
   end
 
   head do
