@@ -49,7 +49,6 @@ jobs:
           brew test-bot \
             --tap=linuxbrew/xorg \
             --only-formulae \
-            --keep-old \
             --bintray-org=linuxbrew \
             --skip-recursive-dependents
 
