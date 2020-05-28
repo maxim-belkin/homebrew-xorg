@@ -6,6 +6,9 @@ jobs:
   tap_syntax:
     runs-on: ubuntu-latest
     steps:
+      - name: Update homebrew
+        uses: brew update-reset
+
       - name: Check out tap
         uses: actions/checkout@v2
 
