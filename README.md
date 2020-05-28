@@ -22,7 +22,7 @@ brew install linuxbrew/xorg/xorg
 or install individual libraries, for example:
 
 ```sh
-brew install linuxbrew/xorg/libx11 linuxbrew/xorg/mesa
+brew install linuxbrew/xorg/libx11 linuxbrew/xorg/libxcb
 ```
 
 ## About this tap
