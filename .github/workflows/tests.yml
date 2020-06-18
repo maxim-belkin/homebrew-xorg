@@ -31,6 +31,11 @@ jobs:
     container:
       image: homebrew/ubuntu16.04:master
     steps:
+      - name: Install xvfb
+        run: |
+          apt-get update
+          apt-get install --no-install-recommends -y xvfb
+
       - name: Update homebrew
         run: brew update-reset
 
@@ -46,7 +51,12 @@ jobs:
         run: brew test-bot --only-setup
 
       - name: Run brew test-bot --only-formulae
+        env:
+          DISPLAY: ":0"
         run: |
+          Xvfb &
+          touch ~/.Xauthority
+          xauth generate :0 . trusted
           mkdir ~/bottles
           cd ~/bottles
           brew test-bot \
