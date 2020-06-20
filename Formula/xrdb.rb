@@ -14,6 +14,7 @@ class Xrdb < Formula
 
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
+  depends_on "gcc"
   depends_on "linuxbrew/xorg/libxmu"
 
   def install
@@ -23,11 +24,19 @@ class Xrdb < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-cpp=#{Formula["gcc"].opt_bin}/cpp
     ]
-    # --with-cpp=path  # comma-separated list of paths to cpp command for xrdb to use at runtime
 
     system "./configure", *args
     system "make"
     system "make", "install"
+  end
+
+  test do
+    (testpath/"xversion").write <<~EOF
+      Version: VERSION
+    EOF
+    cmd = "xrdb -global -n xversion"
+    assert_match "Version:\t12", shell_output(cmd).chomp
   end
 end
