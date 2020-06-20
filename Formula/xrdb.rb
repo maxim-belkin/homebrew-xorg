@@ -37,6 +37,6 @@ class Xrdb < Formula
       Version: VERSION
     EOF
     cmd = "xrdb -global -n xversion"
-    assert_match "Version:\t12", shell_output(cmd).chomp
+    assert_match "Version:\t11", shell_output(cmd).chomp
   end
 end
