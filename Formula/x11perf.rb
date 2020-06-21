@@ -1,5 +1,5 @@
 class X11perf < Formula
-  desc "X11 server performance testing tool"
+  desc "X server performance testing tool"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/x11perf-1.6.1.tar.bz2"
