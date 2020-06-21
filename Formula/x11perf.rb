@@ -1,5 +1,5 @@
 class X11perf < Formula
-  desc "X.Org Applications: x11perf"
+  desc "X11 server performance testing tool"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/x11perf-1.6.1.tar.bz2"
@@ -31,5 +31,10 @@ class X11perf < Formula
     system "./configure", *args
     system "make"
     system "make", "install"
+  end
+
+  test do
+    cmd = "x11perf -repeat 1 -time 1 -rect1"
+    assert_match /Sync time adjustment is \d\.\d{4} msecs\./, shell_output(cmd).chomp
   end
 end
