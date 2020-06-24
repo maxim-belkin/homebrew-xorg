@@ -47,4 +47,52 @@ class Libsm < Formula
     system "make", "check" if build.with? "test"
     system "make", "install"
   end
+
+  test do
+    (testpath/"test.c").write <<~EOS
+      #include <dlfcn.h>
+      #include <stdio.h>
+      #include <assert.h>
+      #include "X11/SM/SMlib.h"
+
+      int main(int argc, char* argv[]) {
+        // Make sure we can load the library
+        void *handle;
+        handle = dlopen("#{lib}/libSM.so", RTLD_LAZY);
+        if (!handle) {
+          fputs(dlerror(), stderr);
+          return 1;
+        }
+
+        // Function pointer
+        static int (*lib_func) () = NULL;
+
+        // Make sure 'SmsInitialize' symbol exists in the library
+        lib_func = dlsym(handle, "SmsInitialize");
+        char *error;
+        if ((error = dlerror()) != NULL) {
+          fputs(error, stderr);
+          return 1;
+        }
+
+        // Prepare some variables
+        SmsNewClientProc newClientProc;
+        IceHostBasedAuthProc hostBasedAuthProc;
+        SmPointer managerData;
+        int errorLength;
+        char * err;
+
+        // Call 'SmsInitialize' using the extracted symbol and directly
+        int status1 = lib_func("vendor", "release", newClientProc, managerData, hostBasedAuthProc, errorLength, err);
+        int status2 = SmsInitialize("vendor", "release", newClientProc, managerData, hostBasedAuthProc, errorLength, err);
+
+        assert(status1==status2);
+
+        return 0;
+      }
+    EOS
+    system ENV.cc, "test.c", "-o", "test", "-ldl", "-I#{include}", "-L#{lib}", "-lSM"
+    system "./test"
+    assert_equal 0, $CHILD_STATUS.exitstatus
+  end
 end
