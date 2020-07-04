@@ -5,6 +5,11 @@ class Libxaw < Formula
   sha256 "8ef8067312571292ccc2bbe94c41109dcf022ea5a4ec71656a83d8cce9edb0cd"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXaw-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     sha256 "427db63fe8e595a92a5a2de288137a57d7eff69aeb2764f41b758aab2f6bb305" => :x86_64_linux
   end
