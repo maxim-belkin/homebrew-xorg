@@ -5,6 +5,11 @@ class Libxvmc < Formula
   sha256 "6b3da7977b3f7eaf4f0ac6470ab1e562298d82c4e79077765787963ab7966dcd"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXvMC-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "923a37dabf7caa36ec003d5679669eb5ed89e64312411005dfe2e6c38652f4fe" => :x86_64_linux
