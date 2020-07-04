@@ -5,6 +5,11 @@ class Libxdmcp < Formula
   sha256 "20523b44aaa513e17c009e873ad7bbc301507a3224c232610ce2e099011c6529"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXdmcp-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "f8d257f11b6b31026b006a1a5fcc577a9fe0def4e73e9657d377a4e431ee6706" => :x86_64_linux
