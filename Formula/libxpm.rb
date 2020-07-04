@@ -5,6 +5,11 @@ class Libxpm < Formula
   sha256 "fd6a6de3da48de8d1bb738ab6be4ad67f7cb0986c39bd3f7d51dd24f7854bdec"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXpm-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     sha256 "8c41260ec185a5a4ae26c6e3b173f7fcdd46d26b1807f2b749595eac1c344d9e" => :x86_64_linux
   end
