@@ -5,6 +5,11 @@ class Libxv < Formula
   sha256 "d26c13eac99ac4504c532e8e76a1c8e4bd526471eb8a0a4ff2a88db60cb0b088"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXv-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "ae94f4a82954b7d96b43b21a302c78411da9e5fc9074b35976a53c24fcd02c71" => :x86_64_linux
