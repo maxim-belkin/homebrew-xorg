@@ -5,6 +5,11 @@ class Libxi < Formula
   sha256 "36a30d8f6383a72e7ce060298b4b181fd298bc3a135c8e201b7ca847f5f81061"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXi-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "945af08c6e1d961e3f06fe14d735208ed2979a84bc62315b057bfeb61bff8bae" => :x86_64_linux
