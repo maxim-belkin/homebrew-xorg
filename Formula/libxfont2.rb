@@ -5,6 +5,11 @@ class Libxfont2 < Formula
   sha256 "6d151b3368e5035efede4b6264c0fdc6662c1c99dbc2de425e3480cababc69e6"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXfont2-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "a97247cb6e4d50a2e74cbaf071fb7b4dfc09271380089bc7887d4720645a4d39" => :x86_64_linux
