@@ -5,6 +5,11 @@ class Libxmu < Formula
   sha256 "9c343225e7c3dc0904f2122b562278da5fed639b1b5e880d25111561bac5b731"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXmu-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "16e19650d21bde3a7e74ec780c36632337fd931e1c9bbd01f40506508bf0de31" => :x86_64_linux
