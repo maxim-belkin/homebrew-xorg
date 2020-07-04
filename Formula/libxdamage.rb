@@ -5,6 +5,11 @@ class Libxdamage < Formula
   sha256 "b734068643cac3b5f3d2c8279dd366b5bf28c7219d9e9d8717e1383995e0ea45"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXdamage-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "d9c30c357ddba1b40626b060e1687f647c33bd2ea3add5a64d5fb22157553324" => :x86_64_linux
