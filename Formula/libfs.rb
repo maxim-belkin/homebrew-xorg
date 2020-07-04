@@ -5,6 +5,11 @@ class Libfs < Formula
   sha256 "c8e13727149b2ddfe40912027459b2522042e3844c5cd228c3300fe5eef6bd0f"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libFS-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "c34c9e927c96b690e558126c1df486650c8154984f5ad5582e8f2a6c0cfb17ec" => :x86_64_linux
