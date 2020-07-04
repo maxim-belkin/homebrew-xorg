@@ -5,6 +5,11 @@ class Libxcursor < Formula
   sha256 "3ad3e9f8251094af6fe8cb4afcf63e28df504d46bfa5a5529db74a505d628782"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXcursor-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "2a49eacd71d2b4032ecc40ddb6d2f8f4ce8d1e4af7ba12fe7d64543e4997f2b4" => :x86_64_linux
