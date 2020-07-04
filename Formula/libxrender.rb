@@ -5,6 +5,11 @@ class Libxrender < Formula
   sha256 "c06d5979f86e64cabbde57c223938db0b939dff49fdb5a793a1d3d0396650949"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXrender-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "f97a8833f5bcaabd12e10bac82a644e18f8c39dc4b637b2afaf4227122ce907c" => :x86_64_linux
