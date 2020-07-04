@@ -5,6 +5,11 @@ class Libxt < Formula
   sha256 "b31df531dabed9f4611fc8980bc51d7782967e2aff44c4105251a1acb5a77831"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXt-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "ca44976ced1812ee671599b1476f2579bd55790a771b66ef6a2c1ef3fe07c3b8" => :x86_64_linux
