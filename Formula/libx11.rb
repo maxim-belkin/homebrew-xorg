@@ -5,6 +5,11 @@ class Libx11 < Formula
   sha256 "9cc7e8d000d6193fa5af580d50d689380b8287052270f5bb26a5fb6b58b2bed1"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libX11-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     sha256 "761a6d9d3974cab7b5aedeaec8bc4c037318f6eed8aee00bcb8e01dde15d9a59" => :x86_64_linux
   end
