@@ -2,8 +2,7 @@
 
 module LivecheckStrategy
   class Xorg
-    NICE_NAME = "Xorg"
-    NAME = NICE_NAME.downcase
+    NAME = name.demodulize
 
     def self.match?(url)
       /(...\.x\.org|freedesktop\.org)/.match?(url)
