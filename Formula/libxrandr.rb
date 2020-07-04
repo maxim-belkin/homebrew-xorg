@@ -5,6 +5,11 @@ class Libxrandr < Formula
   sha256 "8aea0ebe403d62330bb741ed595b53741acf45033d3bda1792f1d4cc3daee023"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXrandr-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "3ee2eb9da710235f373e0f88ed3880570121a380ce4dbd09a921f2061c9fa18f" => :x86_64_linux
