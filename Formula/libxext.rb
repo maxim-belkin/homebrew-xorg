@@ -5,6 +5,11 @@ class Libxext < Formula
   sha256 "59ad6fcce98deaecc14d39a672cf218ca37aba617c9a0f691cac3bcd28edf82b"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXext-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "e3af172c81646ce9bc6b40c5d28a294d5493286ff80fdddbf53a07a0f43642f2" => :x86_64_linux
