@@ -4,6 +4,11 @@ class LibvdpauVaGl < Formula
   url "https://github.com/i-rinat/libvdpau-va-gl/releases/download/v0.4.2/libvdpau-va-gl-0.4.2.tar.gz"
   sha256 "7d9121540658eb0244859e63da171ca3869e784afbeaf202f44471275c784af4"
 
+  livecheck do
+    url "https://github.com/i-rinat/libvdpau-va-gl/releases"
+    regex(%r{Latest.*?href="/i-rinat/libvdpau-va-gl/tree/v?([a-z0-9.]+)}m)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "f9dd19e3c9891c6bf27f5a742f717d985e4aafdbcadf9b40d49f70d3a4038c7e" => :x86_64_linux
