@@ -5,6 +5,11 @@ class Libxshmfence < Formula
   sha256 "b884300d26a14961a076fbebc762a39831cb75f92bed5ccf9836345b459220c7"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libxshmfence-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
