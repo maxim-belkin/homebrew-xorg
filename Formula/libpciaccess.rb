@@ -5,6 +5,11 @@ class Libpciaccess < Formula
   sha256 "214c9d0d884fdd7375ec8da8dcb91a8d3169f263294c9a90c575bf1938b9f489"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libpciaccess-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "5c6a257b582d4556203bc73fa9bdc525194896459ed88a8b07af0d83154ab656" => :x86_64_linux
