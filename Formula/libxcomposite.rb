@@ -5,6 +5,11 @@ class Libxcomposite < Formula
   sha256 "b3218a2c15bab8035d16810df5b8251ffc7132ff3aa70651a1fba0bfe9634e8f"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXcomposite-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "5cf6cc0b18a15c3fdb80b0010a474d932ef8e4f25d537ce3f2cada9939a0f385" => :x86_64_linux
