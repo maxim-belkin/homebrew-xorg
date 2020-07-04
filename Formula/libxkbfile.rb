@@ -5,6 +5,11 @@ class Libxkbfile < Formula
   sha256 "758dbdaa20add2db4902df0b1b7c936564b7376c02a0acd1f2a331bd334b38c7"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libxkbfile-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any
     sha256 "1e943ae60d762337e4b9f2b989e58bed91856640f5b2facbb31b5e9560f59b1d" => :x86_64_linux
