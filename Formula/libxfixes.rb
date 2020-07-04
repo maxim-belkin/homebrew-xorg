@@ -5,6 +5,11 @@ class Libxfixes < Formula
   sha256 "de1cd33aff226e08cefd0e6759341c2c8e8c9faf8ce9ac6ec38d43e287b22ad6"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXfixes-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "de00528cfeec544e7e0a6dea7be947dc098440268002f68f215587a10e692ce9" => :x86_64_linux
