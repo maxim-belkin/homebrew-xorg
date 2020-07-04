@@ -4,6 +4,11 @@ class Libwacom < Formula
   url "https://github.com/linuxwacom/libwacom/releases/download/libwacom-1.2/libwacom-1.2.tar.bz2"
   sha256 "c204cfdee2159d124a4f5ecc8970bbd72f9adf5ad7fd94b66798f93db1f863c3"
 
+  livecheck do
+    url "https://github.com/linuxwacom/libwacom/releases"
+    regex(/libwacom-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     sha256 "3327d3c856f9df270c886a98f1af90b1ead38659f9ca39d91fa84336c1441954" => :x86_64_linux
   end
