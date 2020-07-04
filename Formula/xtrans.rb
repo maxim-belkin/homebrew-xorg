@@ -5,6 +5,11 @@ class Xtrans < Formula
   sha256 "377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/xtrans-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "71a00abeb9be73954af2152826a58370a9aada5a4eb02f3db480c0df5153cdb7" => :x86_64_linux
