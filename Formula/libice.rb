@@ -5,6 +5,11 @@ class Libice < Formula
   sha256 "6f86dce12cf4bcaf5c37dddd8b1b64ed2ddf1ef7b218f22b9942595fb747c348"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libICE-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "23a15495adac70a5fb0fbdcbf2edf956ef4178d1859d5d78ec83cdeaf9ac3669" => :x86_64_linux
