@@ -5,6 +5,11 @@ class Libxft < Formula
   sha256 "225c68e616dd29dbb27809e45e9eadf18e4d74c50be43020ef20015274529216"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libXft-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     cellar :any_skip_relocation
     sha256 "5d6f440da2a9fc76383bdf7c8157ae6d253fca26773abc5bf341eb30ab3aa3ac" => :x86_64_linux
