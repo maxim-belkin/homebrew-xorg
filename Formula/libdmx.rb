@@ -5,6 +5,11 @@ class Libdmx < Formula
   sha256 "253f90005d134fa7a209fbcbc5a3024335367c930adf0f3203e754cf32747243"
   # tag "linuxbrew"
 
+  livecheck do
+    url "https://ftp.x.org/archive/individual/lib/"
+    regex(/libdmx-([0-9.]+)\.tar.bz2/)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
