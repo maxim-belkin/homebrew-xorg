@@ -4,6 +4,11 @@ class Libva < Formula
   url "https://github.com/intel/libva/releases/download/2.6.1/libva-2.6.1.tar.bz2"
   sha256 "6c57eb642d828af2411aa38f55dc10111e8c98976dbab8fd62e48629401eaea5"
 
+  livecheck do
+    url "https://github.com/intel/libva/releases"
+    regex(%r{Latest.*?href="/intel/libva/tree/v?([a-z0-9.]+)}m)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
