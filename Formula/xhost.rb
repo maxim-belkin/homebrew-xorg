@@ -36,4 +36,8 @@ class Xhost < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_match /access control (enabled|disabled)/, shell_output("xhost")
+  end
 end
