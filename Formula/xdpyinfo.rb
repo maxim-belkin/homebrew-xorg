@@ -26,13 +26,12 @@ class Xdpyinfo < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-    #  --without-dga           Disable dga support.
-    #  --without-xf86misc      Disable xf86misc support.
-    #  --without-xinerama      Disable xinerama support.
-    #  --without-dmx           Disable dmx support.
-
     system "./configure", *args
     system "make"
     system "make", "install"
+  end
+
+  test do
+    assert_match /version number:\s+11.0/, shell_output("xdpyinfo")
   end
 end
