@@ -65,46 +65,40 @@ class Libxcb < Formula
     (testpath/"test.c").write <<~EOS
       #include <stdio.h>
       #include <stdlib.h>
-      #include <string.h>
       #include "xcb/xcb.h"
 
       int main() {
-        xcb_connection_t *connection;
-        xcb_atom_t *atoms;
-        xcb_intern_atom_cookie_t *cookies;
-        int count, i;
-        char **names;
-        char buf[100];
+        xcb_connection_t    *c;
+        xcb_screen_t        *screen;
+        const xcb_setup_t   *setup;
+        int                  screen_nbr;
+        xcb_window_t         win;
 
-        count = 200;
+        /* Open the connection to the X server */
+        c = xcb_connect (NULL, &screen_nbr);
+        int err = xcb_connection_has_error(c);
+        if (err > 0)
+          return 1;
+        /* Get the first screen */
+        setup = xcb_get_setup(c);
+        screen = xcb_setup_roots_iterator(setup).data;
+        /* Request an ID for our window */
+        win = xcb_generate_id (c);
+        /* Create the window */
+        xcb_create_window (c, XCB_COPY_FROM_PARENT, win, screen->root, 0, 0,
+                           150, 150, 10, XCB_WINDOW_CLASS_INPUT_OUTPUT,
+                           screen->root_visual, 0, NULL);
+        /* Map the window onto the screen */
+        xcb_map_window (c, win);
+        /* Show the window */
+        xcb_flush (c);
+        // Print basic information about the screen
+        printf ("Screen %u:\\n", screen_nbr);
+        printf ("  width:   %d\\n", screen->width_in_pixels);
+        printf ("  height:  %d\\n", screen->height_in_pixels);
 
-        connection = xcb_connect(NULL, NULL);
-        atoms = (xcb_atom_t *) malloc(count * sizeof(atoms));
-        names = (char **) malloc(count * sizeof(char *));
+        xcb_disconnect (c);
 
-        for (i = 0; i < count; ++i) {
-          sprintf(buf, "NAME%d", i);
-          names[i] = strdup(buf);
-          memset(buf, 0, sizeof(buf));
-        }
-
-        cookies = (xcb_intern_atom_cookie_t *) malloc(count * sizeof(xcb_intern_atom_cookie_t));
-
-        for(i = 0; i < count; ++i) {
-          cookies[i] = xcb_intern_atom(connection, 0, strlen(names[i]), names[i]);
-        }
-
-        for(i = 0; i < count; ++i) {
-          xcb_intern_atom_reply_t *r;
-          r = xcb_intern_atom_reply(connection, cookies[i], 0);
-          if(r)
-            atoms[i] = r->atom;
-          free(r);
-        }
-
-        free(atoms);
-        free(cookies);
-        xcb_disconnect(connection);
         return 0;
       }
     EOS
