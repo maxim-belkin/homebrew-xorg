@@ -12,15 +12,15 @@ class Libxaw3d < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "without-multiplane-bitmaps", "Build without multiplane bitmaps"
+  deprecated_option "without-multiplane-bitmaps" => "without-libxpm"
 
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxmu"
-  depends_on "linuxbrew/xorg/libxpm" if build.with? "multiplane-bitmaps"
   depends_on "linuxbrew/xorg/libxt"
+  depends_on "linuxbrew/xorg/libxpm" => :recommended
 
   def install
     args = %W[
@@ -32,7 +32,7 @@ class Libxaw3d < Formula
       --enable-gray-stipples
       --enable-arrow-scrollbars
     ]
-    args << "--enable-multiplane-bitmaps" if build.with? "multiplane-bitmaps"
+    args << "--enable-multiplane-bitmaps" if build.with? "libxpm"
 
     system "./configure", *args
     system "make"
