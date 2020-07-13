@@ -8,7 +8,7 @@ class XcbProto < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "fc7341431d7326dcd9b09f2539f497a70ce720b531e7ae4bb5cb233e994235f3" => :x86_64_linux
+    sha256 "fa7cc6cc3a57e41ce388e0326969f91a4ccf7da19dea778652d4b25ec809ea60" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
