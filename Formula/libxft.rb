@@ -16,15 +16,14 @@ class Libxft < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-brewed-bzip2", "Use brewed bzip2"
-  option "with-brewed-zlib", "Use brewed zlib"
+  deprecated_option "with-brewed-bzip2" => "with-bzip2"
+  deprecated_option "with-brewed-zlib" => "with-zlib"
 
   depends_on "pkg-config" => :build
-
-  depends_on "bzip2" if build.with? "brewed-bzip2"
   depends_on "fontconfig"
   depends_on "linuxbrew/xorg/libxrender"
-  depends_on "zlib" if build.with? "brewed-zlib"
+  depends_on "bzip2" => :optional
+  depends_on "zlib" => :optional
 
   def install
     args = %W[
