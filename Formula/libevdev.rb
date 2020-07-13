@@ -8,7 +8,8 @@ class Libevdev < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "8abd44da45643c87e55d16293c3cb62d4257a87a7fc7d48fb03c77eaefd9e948" => :x86_64_linux
+    rebuild 1
+    sha256 "8ff50a765f65bb5d1fcd504ac98a53d99e90e04cec50979bb6292b14825ea56c" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
