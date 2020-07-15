@@ -1,5 +1,5 @@
 class Xhost < Formula
-  desc "X.Org Applications: xhost"
+  desc "X server access control tool"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xhost-1.0.8.tar.bz2"
