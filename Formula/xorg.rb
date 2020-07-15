@@ -8,6 +8,10 @@ class Xorg < Formula
   revision 1
   # tag "linuxbrew"
 
+  livecheck do
+    skip "Formula only installs other formulae"
+  end
+
   bottle :unneeded
 
   option "with-docs", "Build documentation and specifications (where applicable)"
