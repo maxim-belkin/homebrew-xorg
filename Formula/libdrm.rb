@@ -4,6 +4,11 @@ class Libdrm < Formula
   url "https://dri.freedesktop.org/libdrm/libdrm-2.4.100.tar.bz2"
   sha256 "c77cc828186c9ceec3e56ae202b43ee99eb932b4a87255038a80e8a1060d0a5d"
 
+  livecheck do
+    url "https://dri.freedesktop.org/libdrm/"
+    regex(/href=.*?libdrm[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 "3bdefcc3770ecdede8364dffb38a5d64f1f3dbb0c862d5a5ec08208b3609d8f6" => :x86_64_linux
   end
