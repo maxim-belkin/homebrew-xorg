@@ -4,6 +4,11 @@ class Libgudev < Formula
   url "https://download.gnome.org/sources/libgudev/233/libgudev-233.tar.xz"
   sha256 "587c4970eb23f4e2deee2cb1fb7838c94a78c578f41ce12cac0a3f4a80dabb03"
 
+  livecheck do
+    url :stable
+    regex(/libgudev[._-]v?(\d+(?:\.?\d+)+)\.t/)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
