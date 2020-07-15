@@ -1,8 +1,8 @@
 class LibvaIntelDriver < Formula
   desc "Libva Intel driver"
   homepage "https://github.com/intel/intel-vaapi-driver"
-  url "https://github.com/intel/intel-vaapi-driver/releases/download/2.4.0/intel-vaapi-driver-2.4.0.tar.bz2"
-  sha256 "71e2ddd985af6b221389db1018c4e8ca27a7f939fb51dcdf49d0efcb5ff3d089"
+  url "https://github.com/intel/intel-vaapi-driver/releases/download/2.4.1/intel-vaapi-driver-2.4.1.tar.bz2"
+  sha256 "0081fce08eb3a83f7d99c3b853c8fdfa0af437b8f5b0fb7c66faeb83bcbe0c19"
 
   livecheck do
     url "https://github.com/intel/intel-vaapi-driver/releases"
