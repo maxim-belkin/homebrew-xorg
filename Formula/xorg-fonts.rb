@@ -7,6 +7,10 @@ class XorgFonts < Formula
   sha256   "3baf64afb29129ea9f74d5ae5a223b072d0911d96283f834e37d8f65d751c5d7"
   # tag "linuxbrew"
 
+  livecheck do
+    skip "Formula only installs other formulae"
+  end
+
   bottle :unneeded
 
   depends_on "linuxbrew/xorg/encodings"

@@ -7,6 +7,10 @@ class XorgApps < Formula
   sha256   "d6f8969d76bd3236c40e57fc3f498c43341f3f1e9ae01c4c2bca11876f07adc6"
   # tag "linuxbrew"
 
+  livecheck do
+    skip "Formula only installs other formulae"
+  end
+
   bottle :unneeded
 
   depends_on "linuxbrew/xorg/bdftopcf"
