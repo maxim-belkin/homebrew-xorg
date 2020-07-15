@@ -6,11 +6,6 @@ class Libxcb < Formula
   revision 1
   # tag "linuxbrew"
 
-  livecheck do
-    url "https://ftp.x.org/archive/individual/lib/"
-    regex(/libxcb-([0-9.]+)\.tar.gz/)
-  end
-
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
