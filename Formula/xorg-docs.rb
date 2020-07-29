@@ -20,7 +20,7 @@ class XorgDocs < Formula
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "fop" => :build
-  depends_on :java => :build
+  depends_on java: :build
   depends_on "libxslt" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
