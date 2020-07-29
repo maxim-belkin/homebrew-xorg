@@ -11,8 +11,6 @@ class Xset < Formula
     sha256 "09a4180771bd7661f2f97fefe6150712049aa8c7b2745fd84d97decaffa1c407" => :x86_64_linux
   end
 
-  # tag "linuxbrew"
-
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxfontcache"
@@ -27,8 +25,6 @@ class Xset < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-    #   --without-xf86misc      Disable xf86misc support.
-    #   --without-fontcache     Disable fontcache support
 
     system "./configure", *args
     system "make"
