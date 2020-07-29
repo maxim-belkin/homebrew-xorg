@@ -23,7 +23,7 @@ class Libxfont2 < Formula
   depends_on "zlib"
 
   if build.with? "devel-docs"
-    depends_on :java => :build
+    depends_on java: :build
     depends_on "docbook" => :build
     depends_on "docbook-xsl" => :build
     depends_on "libxslt" => :build
