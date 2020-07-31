@@ -1,27 +1,29 @@
 name: GitHub Actions CI
 
-on: pull_request
+on:
+  push:
+    branches: master
+  pull_request: []
 
 jobs:
   tap_syntax:
     runs-on: ubuntu-latest
-    env:
-      HOMEBREW_NO_ANALYTICS: 1
-      HOMEBREW_NO_AUTO_UPDATE: 1
+    container:
+      image: homebrew/ubuntu16.04:master
+      env:
+        HOMEBREW_NO_ANALYTICS: 1
+        HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
-      - name: Update homebrew
-        run: brew update-reset
+      - name: Update Homebrew/brew
+        run: brew update-reset $(brew --repo)
 
-      - name: Check out our tap
+      - name: Checkout tap
         uses: actions/checkout@v2
 
-      - name: Set up our tap
+      - name: Setup tap
         run: |
-          mkdir -p $(dirname $(brew --repository ${{github.repository}}))
-          ln -s $GITHUB_WORKSPACE $(brew --repository ${{github.repository}})
-
-      - name: Install homebrew/test-bot tap
-        run: brew tap homebrew/test-bot
+          mkdir -p $(dirname $(brew --repo $GITHUB_REPOSITORY))
+          ln -s $GITHUB_WORKSPACE $(brew --repo $GITHUB_REPOSITORY)
 
       - name: Check tap syntax
         run: brew test-bot --only-tap-syntax
@@ -41,18 +43,18 @@ jobs:
           apt-get update
           apt-get install --no-install-recommends -y xvfb
 
-      - name: Update homebrew
-        run: brew update-reset
+      - name: Update Homebrew/brew
+        run: brew update-reset $(brew --repo)
 
-      - name: Check out tap
+      - name: Checkout tap
         uses: actions/checkout@v2
 
-      - name: Set up tap
+      - name: Setup tap
         run: |
-          mkdir -p $(dirname $(brew --repository ${{github.repository}}))
-          ln -s $GITHUB_WORKSPACE $(brew --repository ${{github.repository}})
+          mkdir -p $(dirname $(brew --repo $GITHUB_REPOSITORY))
+          ln -s $GITHUB_WORKSPACE $(brew --repo $GITHUB_REPOSITORY)
 
-      - name: Run brew test-bot --only-setup
+      - name: Perform local system setup check
         run: brew test-bot --only-setup
 
       - name: Run brew test-bot --only-formulae
@@ -63,8 +65,8 @@ jobs:
           cd ~/bottles
           xvfb-run -s "-ac" \
           brew test-bot \
-            --tap=linuxbrew/xorg \
             --only-formulae \
+            --tap=linuxbrew/xorg \
             --bintray-org=linuxbrew \
             --skip-recursive-dependents
 
