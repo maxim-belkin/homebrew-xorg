@@ -9,7 +9,6 @@ class XcursorThemes < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "aff195169736624a1f847c7689323a09d71e9ab9d491c8c88e449a78df6101dc" => :x86_64_linux
   end

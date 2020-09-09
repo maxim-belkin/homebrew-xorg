@@ -7,7 +7,6 @@ class Libglvnd < Formula
   head "https://gitlab.freedesktop.org/glvnd/libglvnd.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "0a23a0224a74e409d5ed4ed556a26a20f28db30afef4b8340feaa957a91e2ec3" => :x86_64_linux
   end

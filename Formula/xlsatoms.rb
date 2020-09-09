@@ -8,7 +8,6 @@ class Xlsatoms < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "18c4544e73b69d0afd29698a0c7f5df76666d5c4750f9ea57142e6c9363771bd" => :x86_64_linux
   end

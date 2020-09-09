@@ -7,7 +7,6 @@ class UtilMacros < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "02b0459adfed7cedc617f47c9e28f507169a1965643ff58a816ba8625d0feaa0" => :x86_64_linux
   end

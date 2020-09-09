@@ -6,7 +6,6 @@ class Libxscrnsaver < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "201bfe6a40c71968795a354c8ea51703cff91483a3ec9bbc271e967f8b5e2205" => :x86_64_linux
   end

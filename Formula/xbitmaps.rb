@@ -5,7 +5,6 @@ class Xbitmaps < Formula
   sha256 "b9f0c71563125937776c8f1f25174ae9685314cbd130fb4c2efce811981e07ee"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "0bdbe7764069c18309ee18f7b8b9d5ad6b69e8ad49c7af376350f184dc7ecfac" => :x86_64_linux
   end

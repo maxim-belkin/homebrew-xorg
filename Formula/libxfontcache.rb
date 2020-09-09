@@ -6,7 +6,6 @@ class Libxfontcache < Formula
   sha256 "fdba75307a0983d2566554e0e9effa7079551f1b7b46e8de642d067998619659"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "3b8897ea5bd5244076f029fe03c6bd60795e18c032a3c5aa739d053ed63eddc4" => :x86_64_linux
   end

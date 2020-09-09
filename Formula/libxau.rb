@@ -6,7 +6,6 @@ class Libxau < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "bd260bed706b2492da210eaab8fcd2192baf3c24403267967a28e9ae35d6f518" => :x86_64_linux
   end

@@ -6,7 +6,6 @@ class Libevdev < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     rebuild 1
     sha256 "8ff50a765f65bb5d1fcd504ac98a53d99e90e04cec50979bb6292b14825ea56c" => :x86_64_linux

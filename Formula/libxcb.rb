@@ -7,7 +7,6 @@ class Libxcb < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "71e21416bda37d0b5468451eb73b65abf3edce3ced56f12c4da45412ce2c5f36" => :x86_64_linux
   end

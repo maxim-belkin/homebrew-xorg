@@ -8,7 +8,6 @@ class Bdftopcf < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "5053b8540a1a6a17e82d2636e8228fd0c2863f1d75a55c82c8c0bdd28ac1bf87" => :x86_64_linux
   end

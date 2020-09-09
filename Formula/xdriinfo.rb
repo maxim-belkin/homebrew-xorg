@@ -8,7 +8,6 @@ class Xdriinfo < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "d2a11d9cb644ccd419b865e5deabdc0e8250d101a2656311accd0233ba82084e" => :x86_64_linux
   end

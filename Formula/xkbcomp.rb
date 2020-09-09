@@ -8,7 +8,6 @@ class Xkbcomp < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     sha256 "3956c51a54082f8be79ddce4eeddcef9b9e98f15a75ad880fb767ad0a6dbf68f" => :x86_64_linux
   end
 
