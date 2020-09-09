@@ -8,7 +8,6 @@ class Xvinfo < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "e21a8eb9d99bb15080de0cfa8490050a38b3e61204d4de7f8cfd6ce14b1b5609" => :x86_64_linux
   end

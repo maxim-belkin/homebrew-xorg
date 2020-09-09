@@ -8,7 +8,6 @@ class Xrefresh < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "789bb485320ea97f938405701558d1547fcd5b8269e8e50040ab59031d71b3b5" => :x86_64_linux
   end

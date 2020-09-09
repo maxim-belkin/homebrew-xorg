@@ -6,7 +6,6 @@ class Libxaw3d < Formula
   sha256 "2dba993f04429ec3d7e99341e91bf46be265cc482df25963058c15f1901ec544"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "b16f1cb6c8c7a86c998e3a0b5b8d42827755a755411632dc005d82d2eb612d3f" => :x86_64_linux
   end

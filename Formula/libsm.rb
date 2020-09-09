@@ -6,7 +6,6 @@ class Libsm < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "c545076505335487a8e96a628c41fa57674135b321eee6aadb7fcf564d649fb8" => :x86_64_linux
   end

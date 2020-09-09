@@ -6,7 +6,6 @@ class Libfontenc < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "1c05a169250850d29a8dd10a4ccb56aa085be780971ad7c2ad8a1eb80fa6875d" => :x86_64_linux
   end

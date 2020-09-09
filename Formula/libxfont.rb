@@ -6,7 +6,6 @@ class Libxfont < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "1c35567f2f949d001eaa8391f2633d44d5f7173213506ede9d72606200a44aae" => :x86_64_linux
   end

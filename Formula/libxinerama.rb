@@ -6,7 +6,6 @@ class Libxinerama < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "ddf87c09432fe14d066753d83aece10e0597b19afa7d334543b59adad4efc20c" => :x86_64_linux
   end

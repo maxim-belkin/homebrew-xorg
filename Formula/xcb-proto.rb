@@ -6,7 +6,6 @@ class XcbProto < Formula
   revision 2
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "fa7cc6cc3a57e41ce388e0326969f91a4ccf7da19dea778652d4b25ec809ea60" => :x86_64_linux
   end

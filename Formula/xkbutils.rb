@@ -7,7 +7,6 @@ class Xkbutils < Formula
   mirror "https://ftp.x.org/pub/individual/app/xkbutils-1.0.4.tar.bz2"
   sha256 "d2a18ab90275e8bca028773c44264d2266dab70853db4321bdbc18da75148130"
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "951a9f5e210d501b0d0b69764b0cbf01acc7a082c0a76ca27ef06e77f949b8e9" => :x86_64_linux
   end

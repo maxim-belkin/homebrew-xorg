@@ -8,7 +8,6 @@ class Xmodmap < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "e0c1fcabb2f971799f2002735df6bed6fc8bd79717a7a65cac29f5b6319861f0" => :x86_64_linux
   end

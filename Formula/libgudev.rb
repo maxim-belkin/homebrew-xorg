@@ -10,7 +10,6 @@ class Libgudev < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "f11f69ae79e8d89a5d579e64c8ec196c3f5dd0b6bb8bef3435cd8b69db167240" => :x86_64_linux
   end

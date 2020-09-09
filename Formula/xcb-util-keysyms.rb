@@ -5,7 +5,6 @@ class XcbUtilKeysyms < Formula
   sha256 "0ef8490ff1dede52b7de533158547f8b454b241aa3e4dcca369507f66f216dd9"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "154c7d7141aa13ada667a9cf683fa2e4b898de7a4c37a18e3463c3bb5c6f727b" => :x86_64_linux
   end

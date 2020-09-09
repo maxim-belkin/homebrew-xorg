@@ -8,7 +8,6 @@ class Xcursorgen < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "8a65d22d2314fd076f0bcbb637a3bfce31b60a3ec14bd6b6cfd2173ea574e0c8" => :x86_64_linux
   end

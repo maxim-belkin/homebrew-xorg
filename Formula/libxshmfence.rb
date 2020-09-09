@@ -6,7 +6,6 @@ class Libxshmfence < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "23008fee00e43a497d1344ac7d675ee6116137ba409fa1d4d4c05333fb6a6d78" => :x86_64_linux
   end

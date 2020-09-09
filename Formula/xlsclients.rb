@@ -8,7 +8,6 @@ class Xlsclients < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "f301335cfcf4353ad6580271b7645737abe3b971cbb0f4426582e3377edd8a8a" => :x86_64_linux
   end

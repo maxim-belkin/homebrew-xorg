@@ -6,7 +6,6 @@ class LibpthreadStubs < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "b5075aa908c76b2ff95b14c0ece59a99caa84875c5c889e6d12a1b7153cd79a8" => :x86_64_linux
   end

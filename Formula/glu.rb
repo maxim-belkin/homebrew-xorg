@@ -11,7 +11,6 @@ class Glu < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
     sha256 "41b97b80a25d2ccd426ffbde60021eee2743540ee532b10bb6d521af63ff7cb5" => :x86_64_linux
   end
