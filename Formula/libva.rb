@@ -6,7 +6,7 @@ class Libva < Formula
 
   livecheck do
     url "https://github.com/intel/libva/releases"
-    regex(%r{Latest.*?href="/intel/libva/tree/v?([a-z0-9.]+)}m)
+    regex(%r{latest.*?href="/intel/libva/tree/v?([a-z0-9.]+)}mi)
   end
 
   bottle do

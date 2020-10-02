@@ -6,7 +6,7 @@ class LibvdpauVaGl < Formula
 
   livecheck do
     url "https://github.com/i-rinat/libvdpau-va-gl/releases"
-    regex(%r{Latest.*?href="/i-rinat/libvdpau-va-gl/tree/v?([a-z0-9.]+)}m)
+    regex(%r{latest.*?href="/i-rinat/libvdpau-va-gl/tree/v?([a-z0-9.]+)}mi)
   end
 
   bottle do
