@@ -1,8 +1,8 @@
 class Libdrm < Formula
   desc "Library for accessing the direct rendering manager"
   homepage "https://dri.freedesktop.org"
-  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.100.tar.bz2"
-  sha256 "c77cc828186c9ceec3e56ae202b43ee99eb932b4a87255038a80e8a1060d0a5d"
+  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.102.tar.xz"
+  sha256 "8bcbf9336c28e393d76c1f16d7e79e394a7fce8a2e929d52d3ad7ad8525ba05b"
 
   livecheck do
     url "https://dri.freedesktop.org/libdrm/"
@@ -10,39 +10,23 @@ class Libdrm < Formula
   end
 
   bottle do
-    sha256 "3bdefcc3770ecdede8364dffb38a5d64f1f3dbb0c862d5a5ec08208b3609d8f6" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
 
-  depends_on "cairo" => :build if build.with? "test"
-  depends_on "cunit" => :build if build.with? "test"
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "libxslt" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "valgrind" => [:build, :optional]
   depends_on "linuxbrew/xorg/libpciaccess"
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --sysconfdir=#{etc}
-      --localstatedir=#{var}
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --enable-udev
-      --enable-cairo-tests
-      --enable-manpages
-      --enable-valgrind=#{build.with?("valgrind") ? "yes" : "no"}
-    ]
-
-    # ensure we can find the docbook XML tags
-    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-
-    system "./configure", *args
-    system "make"
-    system "make", "check" if build.with? "test"
-    system "make", "install"
+    mkdir "build" do
+      system "meson", *std_meson_args, ".."
+      system "ninja"
+      system "ninja", "install"
+    end
   end
 end
