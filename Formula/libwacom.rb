@@ -6,7 +6,7 @@ class Libwacom < Formula
 
   livecheck do
     url "https://github.com/linuxwacom/libwacom/releases"
-    regex(/libwacom-([0-9.]+)\.tar.bz2/)
+    regex(/libwacom-([0-9.]+)\.tar.bz2/i)
   end
 
   bottle do
