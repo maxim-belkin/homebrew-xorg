@@ -6,19 +6,18 @@ class FontAdobe75dpi < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-75dpi-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-adobe-75dpi-1.0.3.tar.bz2"
   sha256 "c6024a1e4a1e65f413f994dd08b734efd393ce0a502eb465deb77b9a36db4d09"
-  revision 1
+  revision 2
   # tag "linuxbrew"
 
   bottle do
-    sha256 "5fb855142edaad70987a116a51fa8bc7e07c1b1044e9c3906e0784a123de0e05" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
 
   depends_on "bzip2" => [:build, :recommended]
+  depends_on "font-util" => :build
   depends_on "fontconfig" => :build
   depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/font-util" => :build
   depends_on "linuxbrew/xorg/mkfontscale" => :build
   depends_on "pkg-config" => :build
 

@@ -3,11 +3,11 @@ class XorgDocs < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.1.tar.bz2"
   sha256 "24b8677c3462c10465cf50d40576d76682acd5835526093a575865b2aa242c4b"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e5240c5104e2585df365cf6a6873d6d1e208b01cffa2ff9654c251c65de61784" => :x86_64_linux
   end
 
   # unlike other packages, this one is all about documentation
@@ -21,10 +21,10 @@ class XorgDocs < Formula
   depends_on "fop" => :build
   depends_on java: :build
   depends_on "libxslt" => :build
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
   depends_on "lynx" => :build
   depends_on "pkg-config" => :build # required for xmlto to work correctly
+  depends_on "util-macros" => :build
   depends_on "xmlto" => :build
 
   # Patch for xmlto

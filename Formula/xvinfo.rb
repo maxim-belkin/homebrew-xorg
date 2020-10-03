@@ -5,17 +5,17 @@ class Xvinfo < Formula
   url "https://www.x.org/pub/individual/app/xvinfo-1.1.4.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xvinfo-1.1.4.tar.bz2"
   sha256 "0353220d6606077ba42363db65f50410759f9815352f77adc799e2adfa76e73f"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e21a8eb9d99bb15080de0cfa8490050a38b3e61204d4de7f8cfd6ce14b1b5609" => :x86_64_linux
   end
 
-  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxv"
+  depends_on "xorgproto" => :build
+  depends_on "libx11"
+  depends_on "libxv"
 
   def install
     args = %W[

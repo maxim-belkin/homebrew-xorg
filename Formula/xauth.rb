@@ -4,16 +4,16 @@ class Xauth < Formula
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/xauth-1.1.tar.bz2"
   sha256 "6d1dd1b79dd185107c5b0fdd22d1d791ad749ad6e288d0cdf80964c4ffa7530c"
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "301ed18d9ec3593f9e231faa78d67b47b101126832199f64a1e0f487de8f5323" => :x86_64_linux
-  end
-
+  revision 1
   # tag "linuxbrew"
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
+  bottle do
+    cellar :any_skip_relocation
+  end
+
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxmu" # brings in libxext, libx11, libxau
+  depends_on "util-macros" => :build
+  depends_on "libxmu" # brings in libxext, libx11, libxau
 
   def install
     args = %W[

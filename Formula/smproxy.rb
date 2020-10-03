@@ -5,19 +5,19 @@ class Smproxy < Formula
   url "https://www.x.org/pub/individual/app/smproxy-1.0.6.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/smproxy-1.0.6.tar.bz2"
   sha256 "6cf19155a2752237f36dbf8bc4184465ea190d2652f887faccb4e2a6ebf77266"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "0c02e96efa8483785b137dcae94a9e76f7f2a42a51263a464d5e42aea83a9b11" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libice"
-  depends_on "linuxbrew/xorg/libsm"
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxmu"
-  depends_on "linuxbrew/xorg/libxt"
+  depends_on "libice"
+  depends_on "libsm"
+  depends_on "libx11"
+  depends_on "libxmu"
+  depends_on "libxt"
 
   def install
     args = %W[

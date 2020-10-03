@@ -3,17 +3,17 @@ class Libpciaccess < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://www.x.org/pub/individual/lib/libpciaccess-0.16.tar.bz2"
   sha256 "214c9d0d884fdd7375ec8da8dcb91a8d3169f263294c9a90c575bf1938b9f489"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "5c6a257b582d4556203bc73fa9bdc525194896459ed88a8b07af0d83154ab656" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
+  depends_on "util-macros" => :build
 
   def install
     args = %W[

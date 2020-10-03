@@ -3,23 +3,23 @@ class Libxfont2 < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://ftp.x.org/pub/individual/lib/libXfont2-2.0.4.tar.bz2"
   sha256 "6d151b3368e5035efede4b6264c0fdc6662c1c99dbc2de425e3480cababc69e6"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "a97247cb6e4d50a2e74cbaf071fb7b4dfc09271380089bc7887d4720645a4d39" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
   option "with-devel-docs", "Build developer documentation"
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/xtrans" => :build
   depends_on "pkg-config" => :build
+  depends_on "util-macros" => :build
+  depends_on "xtrans" => :build
   depends_on "bzip2"
   depends_on "freetype"
-  depends_on "linuxbrew/xorg/libfontenc"
-  depends_on "linuxbrew/xorg/xorgproto"
+  depends_on "libfontenc"
+  depends_on "xorgproto"
   depends_on "zlib"
 
   if build.with? "devel-docs"

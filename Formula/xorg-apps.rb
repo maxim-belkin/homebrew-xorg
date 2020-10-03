@@ -5,6 +5,7 @@ class XorgApps < Formula
   url "https://gist.githubusercontent.com/maxim-belkin/6916a35b777799d4e71b213eaae8a980/raw/974f263825c96a43310fca7a8106d0c7c015b681/README.md"
   version  "20160522"
   sha256   "d6f8969d76bd3236c40e57fc3f498c43341f3f1e9ae01c4c2bca11876f07adc6"
+  revision 1
   # tag "linuxbrew"
 
   livecheck do
@@ -25,7 +26,6 @@ class XorgApps < Formula
   depends_on "linuxbrew/xorg/xbacklight"
   depends_on "linuxbrew/xorg/xcmsdb"
   depends_on "linuxbrew/xorg/xcursorgen"
-  depends_on "linuxbrew/xorg/xdpyinfo"
   depends_on "linuxbrew/xorg/xdriinfo"
   depends_on "linuxbrew/xorg/xev"
   depends_on "linuxbrew/xorg/xgamma"
@@ -50,6 +50,7 @@ class XorgApps < Formula
   depends_on "linuxbrew/xorg/xwd"
   depends_on "linuxbrew/xorg/xwininfo"
   depends_on "linuxbrew/xorg/xwud"
+  depends_on "xdpyinfo"
 
   def install
     ohai "Xorg Applications have been installed!"

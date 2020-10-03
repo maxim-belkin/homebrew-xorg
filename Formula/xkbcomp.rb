@@ -5,15 +5,15 @@ class Xkbcomp < Formula
   url "https://www.x.org/pub/individual/app/xkbcomp-1.4.2.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xkbcomp-1.4.2.tar.bz2"
   sha256 "6dd8bcb9be7e85bd7294abe261b8c7b0539d2fc93e41b80fb8bd013767ce8424"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
-    sha256 "3956c51a54082f8be79ddce4eeddcef9b9e98f15a75ad880fb767ad0a6dbf68f" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxkbfile"
+  depends_on "libx11"
+  depends_on "libxkbfile"
 
   def install
     args = %W[

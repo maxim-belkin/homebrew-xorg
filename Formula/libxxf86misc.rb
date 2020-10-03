@@ -3,20 +3,20 @@ class Libxxf86misc < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://www.x.org/archive/individual/lib/libXxf86misc-1.0.4.tar.gz"
   sha256 "63a68b2fafd03236f9b0135de21976e9194d6d811ca2fd774c13a6b4be576676"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "58d5350b99200b7f6675fecc4e92252f45ae9c4488173dae86889976b1922c42" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/xorgproto"
+  depends_on "util-macros" => :build
+  depends_on "libx11"
+  depends_on "libxext"
+  depends_on "xorgproto"
 
   def install
     args = %W[

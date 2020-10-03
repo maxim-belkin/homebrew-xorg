@@ -6,19 +6,18 @@ class FontSchumacherMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-schumacher-misc-1.1.2.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-schumacher-misc-1.1.2.tar.bz2"
   sha256 "e444028656e0767e2eddc6d9aca462b16a2be75a47244dbc199b2c44eca87e5a"
-  revision 1
+  revision 2
   # tag "linuxbrew"
 
   bottle do
-    sha256 "557113547fe9582e11ffa7c55275ea79ef2e764cd9e7502f208c3c30ff8543d2" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
 
   depends_on "bzip2" => [:build, :recommended]
+  depends_on "font-util" => :build
   depends_on "fontconfig" => :build
   depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/font-util" => :build
   depends_on "linuxbrew/xorg/mkfontscale" => :build
   depends_on "pkg-config" => :build
 

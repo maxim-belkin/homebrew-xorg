@@ -3,23 +3,23 @@ class Xinput < Formula
   homepage "https://gitlab.freedesktop.org/xorg/app/xinput"
   url "https://www.x.org/pub/individual/app/xinput-1.6.3.tar.bz2"
   sha256 "35a281dd3b9b22ea85e39869bb7670ba78955d5fec17c6ef7165d61e5aeb66ed"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "390c65597d14a0cb98df011aeeaaf494ccabfb6eadda0047cc0aec6d27f20cc8" => :x86_64_linux
   end
 
   head do
     url "https://gitlab.freedesktop.org/xorg/app/xinput.git"
   end
 
-  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libxi"
-  depends_on "linuxbrew/xorg/libxinerama"
-  depends_on "linuxbrew/xorg/libxrandr"
+  depends_on "xorgproto" => :build
+  depends_on "libx11"
+  depends_on "libxext"
+  depends_on "libxi"
+  depends_on "libxinerama"
+  depends_on "libxrandr"
 
   def install
     args = %W[

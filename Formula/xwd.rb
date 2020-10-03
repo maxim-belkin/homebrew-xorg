@@ -5,16 +5,16 @@ class Xwd < Formula
   url "https://www.x.org/pub/individual/app/xwd-1.0.7.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xwd-1.0.7.tar.bz2"
   sha256 "cd6815b8b9e0b98e284d3d732fb12162159cb9dcee4f45a7d4c0bd8b308a6794"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "e9359e31e67cf18bb3e2be287c77298f59d34ef597600513501a65097e3b0037" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxkbfile"
+  depends_on "libx11"
+  depends_on "libxkbfile"
 
   def install
     args = %W[

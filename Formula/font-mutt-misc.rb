@@ -6,19 +6,18 @@ class FontMuttMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   sha256 "bd5f7adb34367c197773a9801df5bce7b019664941900b2a31fbfe1ff2830f8f"
-  revision 1
+  revision 2
   # tag "linuxbrew"
 
   bottle do
-    sha256 "6375fb662f3f8892cceb5e82779a74038479816fce9fd44920c72804248a366c" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
 
   depends_on "bzip2" => [:build, :recommended]
+  depends_on "font-util" => :build
   depends_on "fontconfig" => :build
   depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/font-util" => :build
   depends_on "linuxbrew/xorg/mkfontscale" => :build
   depends_on "pkg-config" => :build
 

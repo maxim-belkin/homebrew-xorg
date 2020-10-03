@@ -4,16 +4,16 @@ class Encodings < Formula
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url "https://www.x.org/pub/individual/font/encodings-1.0.5.tar.bz2"
   sha256 "bd96e16143a044b19e87f217cf6a3763a70c561d1076aad6f6d862ec41774a31"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "f5ca6c1bf0a950767738f094978f74ea39690fb773ff612acdec7aade8ee2b73" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
 
-  depends_on "linuxbrew/xorg/font-util" => :build
+  depends_on "font-util" => :build
   depends_on "linuxbrew/xorg/mkfontscale" => :build
   depends_on "pkg-config" => :build
 

@@ -3,6 +3,7 @@ class Libva < Formula
   homepage "https://github.com/01org/libva"
   url "https://github.com/intel/libva/releases/download/2.6.1/libva-2.6.1.tar.bz2"
   sha256 "6c57eb642d828af2411aa38f55dc10111e8c98976dbab8fd62e48629401eaea5"
+  revision 1
 
   livecheck do
     url "https://github.com/intel/libva/releases"
@@ -11,7 +12,6 @@ class Libva < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "32da96f256bd627e69dee7a0bc1e572af08c0b9c6ba6a8c71ad178f8beb6bc40" => :x86_64_linux
   end
 
   option "with-docs", "Build documentation"
@@ -24,10 +24,10 @@ class Libva < Formula
   # Step #2 can be invoked manually here by specifying `with-eglx`
 
   depends_on "pkg-config" => :build
+  depends_on "libx11"
+  depends_on "libxext"
+  depends_on "libxfixes"
   depends_on "linuxbrew/xorg/libdrm"
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libxfixes"
   depends_on "linuxbrew/xorg/wayland"
 
   def install
