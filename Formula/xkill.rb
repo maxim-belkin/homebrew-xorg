@@ -5,16 +5,16 @@ class Xkill < Formula
   url "https://www.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
   sha256 "c5f0bb6a95e1ac7c4def8a657496d5d2f21ccd41eb47ef2c9ccb03fb6d6aff6b"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1d8111e12d4d90df8f9a32011ac8a0dcf8f272686f2a7029ce6f09095d3a0de5" => :x86_64_linux
   end
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxmu" # brings in libx11
+  depends_on "util-macros" => :build
+  depends_on "libxmu" # brings in libx11
 
   def install
     args = %W[

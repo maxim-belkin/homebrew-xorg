@@ -6,18 +6,17 @@ class FontBitstreamType1 < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bitstream-type1-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bitstream-type1-1.0.3.tar.bz2"
   sha256 "c6ea0569adad2c577f140328dc3302e729cb1b1ea90cd0025caf380625f8a688"
-  revision 2
+  revision 3
   # tag "linuxbrew"
 
   bottle do
-    sha256 "dba686a6a51936e06bcb7de93d3f2f2d6f3b1b7bfe52c7eb0c75758d8a41c84a" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
 
+  depends_on "font-util" => :build
   depends_on "fontconfig" => :build
   depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/font-util" => :build
   depends_on "linuxbrew/xorg/mkfontscale" => :build
   depends_on "pkg-config" => :build
 

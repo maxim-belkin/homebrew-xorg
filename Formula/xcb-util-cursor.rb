@@ -3,17 +3,17 @@ class XcbUtilCursor < Formula
   homepage "https://xcb.freedesktop.org"
   url "https://xcb.freedesktop.org/dist/xcb-util-cursor-0.1.3.tar.bz2"
   sha256 "05a10a0706a1a789a078be297b5fb663f66a71fb7f7f1b99658264c35926394f"
+  revision 1
 
   bottle do
-    sha256 "f0251ad8e00a8cd1d05d6a8e06cb46ee52b799b4f9e0fffa91e4a23a7d351a94" => :x86_64_linux
   end
 
   option "with-docs", "Regenerate documentation (requires doxygen)"
 
   depends_on "doxygen" => :build if build.with? "docs"
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxcb"
+  depends_on "util-macros" => :build
+  depends_on "libxcb"
   depends_on "linuxbrew/xorg/xcb-util-image"
   depends_on "linuxbrew/xorg/xcb-util-renderutil"
 

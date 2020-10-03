@@ -1,4 +1,3 @@
-# xkbutils: Build a bottle for Linux
 class Xkbutils < Formula
   desc "X.Org Applications: xkbutils"
   homepage "https://www.x.org/"
@@ -6,18 +5,18 @@ class Xkbutils < Formula
   url "https://www.x.org/pub/individual/app/xkbutils-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xkbutils-1.0.4.tar.bz2"
   sha256 "d2a18ab90275e8bca028773c44264d2266dab70853db4321bdbc18da75148130"
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "951a9f5e210d501b0d0b69764b0cbf01acc7a082c0a76ca27ef06e77f949b8e9" => :x86_64_linux
-  end
-
+  revision 1
   # tag "linuxbrew"
 
-  depends_on "linuxbrew/xorg/xorgproto" => :build
+  bottle do
+    cellar :any_skip_relocation
+  end
+
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxaw"
-  depends_on "linuxbrew/xorg/libxt"
+  depends_on "xorgproto" => :build
+  depends_on "libx11"
+  depends_on "libxaw"
+  depends_on "libxt"
 
   def install
     args = %W[

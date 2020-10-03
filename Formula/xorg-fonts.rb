@@ -5,6 +5,7 @@ class XorgFonts < Formula
   url "https://gist.githubusercontent.com/maxim-belkin/6fd6422cbe4da6ea0555d7a8d9911bc2/raw/c38d109967382d35f9f8a89542c18abbfb27cf88/README.md"
   version  "20160522"
   sha256   "3baf64afb29129ea9f74d5ae5a223b072d0911d96283f834e37d8f65d751c5d7"
+  revision 1
   # tag "linuxbrew"
 
   livecheck do
@@ -13,6 +14,7 @@ class XorgFonts < Formula
 
   bottle :unneeded
 
+  depends_on "font-util" => :build
   depends_on "linuxbrew/xorg/encodings"
   depends_on "linuxbrew/xorg/font-adobe-100dpi"
   depends_on "linuxbrew/xorg/font-adobe-75dpi"
@@ -47,7 +49,6 @@ class XorgFonts < Formula
   depends_on "linuxbrew/xorg/font-screen-cyrillic"
   depends_on "linuxbrew/xorg/font-sony-misc"
   depends_on "linuxbrew/xorg/font-sun-misc"
-  depends_on "linuxbrew/xorg/font-util"
   depends_on "linuxbrew/xorg/font-winitzki-cyrillic"
   depends_on "linuxbrew/xorg/font-xfree86-type1"
 

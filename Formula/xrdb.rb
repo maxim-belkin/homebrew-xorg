@@ -5,16 +5,16 @@ class Xrdb < Formula
   url "https://www.x.org/pub/individual/app/xrdb-1.2.0.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xrdb-1.2.0.tar.bz2"
   sha256 "f23a65cfa1f7126040d68b6cf1e4567523edac10f8dc06f23d840d330c7c6946"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
-    sha256 "a4fdfc3af56a2d0ba90dc60458de4fe296dc296ec000214165203d41990dad4a" => :x86_64_linux
   end
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
+  depends_on "util-macros" => :build
   depends_on "gcc"
-  depends_on "linuxbrew/xorg/libxmu"
+  depends_on "libxmu"
 
   def install
     args = %W[

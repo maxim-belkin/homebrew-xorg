@@ -3,6 +3,7 @@ class LibvaInternal < Formula
   homepage "https://github.com/01org/libva"
   url "https://github.com/intel/libva/releases/download/2.6.1/libva-2.6.1.tar.bz2"
   sha256 "6c57eb642d828af2411aa38f55dc10111e8c98976dbab8fd62e48629401eaea5"
+  revision 1
 
   livecheck do
     url "https://github.com/intel/libva/releases"
@@ -11,7 +12,6 @@ class LibvaInternal < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "18fcda223fafca140f308c5e7131e9a89c16dee3a0311f7f71b2e325af5c7862" => :x86_64_linux
   end
 
   keg_only <<~EOS
@@ -22,10 +22,10 @@ class LibvaInternal < Formula
   EOS
 
   depends_on "pkg-config" => :build
+  depends_on "libx11"
+  depends_on "libxext"
+  depends_on "libxfixes"
   depends_on "linuxbrew/xorg/libdrm"
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libxfixes"
   depends_on "linuxbrew/xorg/wayland"
 
   def install

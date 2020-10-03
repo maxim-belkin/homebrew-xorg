@@ -5,16 +5,16 @@ class Xmessage < Formula
   url "https://www.x.org/pub/individual/app/xmessage-1.0.5.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xmessage-1.0.5.tar.bz2"
   sha256 "373dfb81e7a6f06d3d22485a12fcde6e255d58c6dee1bbaeb00c7d0caa9b2029"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "241ed2043ecd1ada147c20b545fb643e335eb5e0aef1ede78a3ca6e705c4fdd1" => :x86_64_linux
   end
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxaw"
+  depends_on "util-macros" => :build
+  depends_on "libxaw"
 
   def install
     args = %W[

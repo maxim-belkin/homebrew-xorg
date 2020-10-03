@@ -5,15 +5,16 @@ class Xset < Formula
   url "https://www.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
   sha256 "e4fd95280df52a88e9b0abc1fee11dcf0f34fc24041b9f45a247e52df941c957"
+  revision 1
+
   bottle do
     cellar :any_skip_relocation
-    sha256 "09a4180771bd7661f2f97fefe6150712049aa8c7b2745fd84d97decaffa1c407" => :x86_64_linux
   end
 
-  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
+  depends_on "util-macros" => :build
+  depends_on "libxmu" # brings in dep on libxext and libx11
   depends_on "linuxbrew/xorg/libxfontcache"
-  depends_on "linuxbrew/xorg/libxmu" # brings in dep on libxext and libx11
   depends_on "linuxbrew/xorg/libxxf86misc"
 
   def install

@@ -6,7 +6,7 @@ class FontBh75dpi < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-75dpi-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bh-75dpi-1.0.3.tar.bz2"
   sha256 "3486aa51ac92c646a448fe899c5c3dae0024b1fef724d5100d52640d1cac721c"
-  revision 1
+  revision 2
   # tag "linuxbrew"
 
   bottle do
@@ -16,9 +16,9 @@ class FontBh75dpi < Formula
   keg_only "part of Xorg-fonts package"
 
   depends_on "bzip2" => [:build, :recommended]
+  depends_on "font-util" => :build
   depends_on "fontconfig" => :build
   depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/font-util" => :build
   depends_on "linuxbrew/xorg/mkfontscale" => :build
   depends_on "pkg-config" => :build
 
