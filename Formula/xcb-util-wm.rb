@@ -13,6 +13,7 @@ class XcbUtilWm < Formula
   option "with-docs", "Regenerate documentation (requires doxygen)"
 
   depends_on "doxygen" => :build if build.with? "docs"
+  depends_on "m4" => :build
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libxcb"
