@@ -9,7 +9,9 @@ class Xkill < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "bf3e746d7b941f8e300439bcfe31b082ecbd1bec2eaaae175a3035f20efd8fc9" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
