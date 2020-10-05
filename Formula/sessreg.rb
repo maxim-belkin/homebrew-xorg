@@ -11,8 +11,8 @@ class Sessreg < Formula
     sha256 "317fee80371ba91a2fc2c9b42922c717a9ffc6bed04f3fcf6210cd8ff83b28a3" => :x86_64_linux
   end
 
-  depends_on "linuxbrew/xorg/xorgproto" => :build
   depends_on "pkg-config" => :build
+  depends_on "xorgproto" => :build
 
   def install
     args = %W[
