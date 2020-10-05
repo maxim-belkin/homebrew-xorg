@@ -9,7 +9,9 @@ class Xkbutils < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "f7eea4644fbd505790481fefab873d63b2771f7c1772558d0478090a5b0681f9" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
