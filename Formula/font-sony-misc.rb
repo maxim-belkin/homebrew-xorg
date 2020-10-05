@@ -10,6 +10,8 @@ class FontSonyMisc < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "2c8bc42becd8e7efa7becdcb3c712fa6b6ba009a8d0c41b6202aea232902506e" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
