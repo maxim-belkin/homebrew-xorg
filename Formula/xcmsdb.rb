@@ -9,7 +9,9 @@ class Xcmsdb < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "c82ab67d6693968a113ef2befca3c83fcaf782bb43525c9ec60c317de612dcb3" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
