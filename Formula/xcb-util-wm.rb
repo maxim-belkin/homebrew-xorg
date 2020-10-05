@@ -6,7 +6,9 @@ class XcbUtilWm < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "387b8481253e96bb4d1a8ab3b2208ed653788b6199d3c094ddfbffaec808412e" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
