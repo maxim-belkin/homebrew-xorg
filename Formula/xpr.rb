@@ -9,7 +9,9 @@ class Xpr < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "06dcc8d2607f2e5da1ebf0ed9aefc8cff336aad844320024b5cd0b16e1628ebf" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
