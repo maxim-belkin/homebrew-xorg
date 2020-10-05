@@ -35,7 +35,7 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
           HOMEBREW_BINTRAY_USER: linuxbrewtestbot
           HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
-        run: brew pr-pull --bintray-org=linuxbrew --keep-old --debug ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
+        run: brew pr-pull --tap=linuxbrew/xorg --bintray-org=linuxbrew --keep-old --debug ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
