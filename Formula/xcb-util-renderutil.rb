@@ -6,7 +6,9 @@ class XcbUtilRenderutil < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "8f42904278a505cd6b809dfdb82ed4d1dce22895d6942a2e94c3f8948619a7af" => :x86_64_linux
   end
 
   option "with-docs", "Regenerate documentation (requires doxygen)"
