@@ -9,6 +9,9 @@ class Xkbevd < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    cellar :any_skip_relocation
+    sha256 "4febc11252df6432058f86a612b700bfca42465170f1fa972e5488977f509387" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
