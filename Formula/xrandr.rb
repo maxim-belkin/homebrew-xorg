@@ -7,7 +7,9 @@ class Xrandr < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "3fdd8ad40af36679848845b5ecfdbab0f577b08157f8fbc63470cb27d38b8fce" => :x86_64_linux
   end
 
   option "without-xkeystone", "Delete (broken) xkeystone script"
