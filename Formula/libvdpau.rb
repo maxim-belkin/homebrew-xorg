@@ -11,6 +11,8 @@ class Libvdpau < Formula
   end
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "ddd54cbccd06b904f1af92a47f796a2c5e6854abbd8f344d1278a4c14a089b86" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
