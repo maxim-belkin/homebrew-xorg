@@ -7,7 +7,9 @@ class XorgDocs < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "2d4721a756ab3843b5f49a61eb262e07e28a68a63cf3b9a325443652dc5c3c1e" => :x86_64_linux
   end
 
   # unlike other packages, this one is all about documentation
