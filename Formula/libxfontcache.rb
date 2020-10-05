@@ -7,7 +7,9 @@ class Libxfontcache < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "afb0f2e1c3b3206b09d50a528a6f0ccde8e70edc5944a35d28c06cbd1d62f753" => :x86_64_linux
   end
 
   # tag "linuxbrew"
