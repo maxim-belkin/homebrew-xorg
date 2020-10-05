@@ -6,7 +6,9 @@ class LibvaUtils < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "8295cd0ba2445ec42702e9600c951ae52552431f11ee9936e8077a3c51177475" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
