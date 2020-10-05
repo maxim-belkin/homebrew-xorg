@@ -10,6 +10,8 @@ class FontAdobeUtopia75dpi < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "6c7f87758cd0ca6c36c74cec3d2c3ecf9eff4ab90096b33c93f03fbc867c4583" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
