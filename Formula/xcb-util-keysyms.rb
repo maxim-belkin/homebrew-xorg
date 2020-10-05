@@ -7,7 +7,6 @@ class XcbUtilKeysyms < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "154c7d7141aa13ada667a9cf683fa2e4b898de7a4c37a18e3463c3bb5c6f727b" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
