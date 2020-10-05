@@ -6,7 +6,9 @@ class XcbUtilImage < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "63fdb8e147481e5d40f57a515526294ab2dff701c98db22650e516f9025acd77" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
