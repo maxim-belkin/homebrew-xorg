@@ -10,6 +10,8 @@ class FontIbmType1 < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "c60c7688f98e7905f2e3a0eb14ee43e7b710ccca5dd821871514cdf7eef5f432" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
