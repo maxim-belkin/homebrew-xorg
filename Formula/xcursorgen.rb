@@ -9,7 +9,9 @@ class Xcursorgen < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "01ed4b194da50aadaeb52a4778ecf1035ecb04ac40fc8d4db891f75f04635d13" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
