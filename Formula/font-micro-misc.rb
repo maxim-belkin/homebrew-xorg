@@ -10,6 +10,8 @@ class FontMicroMisc < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "8d8180148f8e5afc60c4acb48bad85e0c179a9af3bae1484f4bbff2aa72aff6f" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
