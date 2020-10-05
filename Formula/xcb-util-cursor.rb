@@ -6,6 +6,9 @@ class XcbUtilCursor < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    cellar :any_skip_relocation
+    sha256 "5783dc42becf80a55702f12171bc0125d4fbf72380355b3d373c15b90ee568f8" => :x86_64_linux
   end
 
   option "with-docs", "Regenerate documentation (requires doxygen)"
