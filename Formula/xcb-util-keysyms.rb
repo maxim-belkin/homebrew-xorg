@@ -6,7 +6,10 @@ class XcbUtilKeysyms < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    rebuild 1
+    sha256 "830170254a7a8fb2e185f0e720fa5834fb63542de6d0201888118c2f228d463d" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
