@@ -8,7 +8,9 @@ class Xauth < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "e392a23071f2e070b40a7945520f926b46aa66b7be761cb4d44937f3c65c09cd" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
