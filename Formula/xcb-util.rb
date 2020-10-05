@@ -6,7 +6,9 @@ class XcbUtil < Formula
   revision 1
 
   bottle do
-    cellar :any
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    cellar :any_skip_relocation
+    sha256 "11fc8a7905dafedeacb33855e484a80997bac1cb8d6f0191ebfe12060e41510f" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
