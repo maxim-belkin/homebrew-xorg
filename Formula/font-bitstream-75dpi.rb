@@ -10,6 +10,8 @@ class FontBitstream75dpi < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "5946a64133c72265e96fdf0529e2ca7568ba3f6809ad349f7a9632364d4ab015" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
