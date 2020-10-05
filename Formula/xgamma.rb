@@ -9,7 +9,9 @@ class Xgamma < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "1afa4d7d867977f2744195d708b87463c17c6d9c4f6959a6aec726827f42a73d" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
