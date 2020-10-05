@@ -10,6 +10,8 @@ class FontCursorMisc < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "de0f977e9ca43b831f8d93b177a4bbec4ebd71b0ec7db9cb4a289a3dad30e0af" => :x86_64_linux
   end
 
   keg_only "part of Xorg-fonts package"
