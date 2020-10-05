@@ -7,7 +7,9 @@ class Libglvnd < Formula
   head "https://gitlab.freedesktop.org/glvnd/libglvnd.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "2876ec1c1bf9d51670bdf7f00d8052fadc328bc3e5c3df77a380fd5c3bd058a9" => :x86_64_linux
   end
 
   depends_on "libpthread-stubs" => :build
