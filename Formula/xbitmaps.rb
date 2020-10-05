@@ -6,7 +6,9 @@ class Xbitmaps < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "8967e9c961afa04dfe212b05fd82b6a369388c7676b1993b72471b9a57eb9c35" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
