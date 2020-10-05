@@ -9,7 +9,9 @@ class Xev < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "38027eb7f1843e3e92eda32531326fede27050b2e24995ad0ea441bebc9c5d1d" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
