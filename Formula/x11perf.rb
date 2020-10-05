@@ -8,7 +8,9 @@ class X11perf < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "f1c1269dba8fda2ef1cfe2424627cbebda28a0485d48501205f677324b5f18bb" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
