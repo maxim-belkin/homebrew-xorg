@@ -9,7 +9,9 @@ class Xwd < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "16af978d892789d0a3fe568034f8740a7113ac8a1270d9df19ecdd9c5e1679aa" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
