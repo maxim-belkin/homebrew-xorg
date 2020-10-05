@@ -8,7 +8,9 @@ class Xbacklight < Formula
   # tag "linuxbrew"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "cd98154f2ecbbe0bb11d633d8749160a187225e916e9366abc6e169f7018182c" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
