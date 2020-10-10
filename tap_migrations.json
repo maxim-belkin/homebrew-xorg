@@ -6,6 +6,7 @@
   "libfontenc": "homebrew/core",
   "libfs": "homebrew/core",
   "libice": "homebrew/core",
+  "libpciaccess": "homebrew/core",
   "libpthread-stubs": "homebrew/core",
   "libsm": "homebrew/core",
   "libx11": "homebrew/core",
