@@ -12,6 +12,7 @@ class Libdrm < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "c2cdf69f01a268aa36805716e040a8e4da529ae2b90cf29c1b26253d13fb38e5" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
