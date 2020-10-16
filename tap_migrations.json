@@ -1,6 +1,7 @@
 {
   "freeglut": "homebrew/core",
   "font-util": "homebrew/core",
+  "libdrm": "homebrew/core",
   "libdmx": "homebrew/core",
   "libfontenc": "homebrew/core",
   "libfs": "homebrew/core",
