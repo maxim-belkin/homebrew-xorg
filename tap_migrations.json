@@ -38,6 +38,7 @@
   "libxxf86dga ": "homebrew/core",
   "libxxf86vm": "homebrew/core",
   "util-macros": "homebrew/core",
+  "xbitmaps": "homebrew/core",
   "xcb-proto": "homebrew/core",
   "xdpyinfo": "homebrew/core",
   "xorgproto": "homebrew/core",
