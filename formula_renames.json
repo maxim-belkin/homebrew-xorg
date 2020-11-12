@@ -8,6 +8,7 @@
   "fixesproto": "xorgproto",
   "fontsproto": "xorgproto",
   "glproto": "xorgproto",
+  "glu": "mesa-glu",
   "inputproto": "xorgproto",
   "kbproto": "xorgproto",
   "mkfontdir": "mkfontscale",
