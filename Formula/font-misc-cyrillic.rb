@@ -9,9 +9,6 @@ class FontMiscCyrillic < Formula
   revision 2
   # tag "linuxbrew"
 
-  bottle do
-  end
-
   keg_only "part of Xorg-fonts package"
 
   depends_on "bzip2" => [:build, :recommended]
