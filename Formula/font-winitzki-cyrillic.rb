@@ -9,9 +9,6 @@ class FontWinitzkiCyrillic < Formula
   revision 2
   # tag "linuxbrew"
 
-  bottle do
-  end
-
   depends_on "bzip2" => [:build, :recommended]
   depends_on "font-util" => :build
   depends_on "fontconfig" => :build
