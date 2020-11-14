@@ -41,6 +41,7 @@
   "util-macros": "homebrew/core",
   "xbitmaps": "homebrew/core",
   "xcb-proto": "homebrew/core",
+  "xcb-util": "homebrew/core",
   "xdpyinfo": "homebrew/core",
   "xorgproto": "homebrew/core",
   "xtrans": "homebrew/core"
