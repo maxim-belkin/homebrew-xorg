@@ -8,9 +8,6 @@ class Luit < Formula
   revision 1
   # tag "linuxbrew"
 
-  bottle do
-  end
-
   depends_on "libx11" => :build
   depends_on "pkg-config" => :build
   depends_on "libfontenc"
