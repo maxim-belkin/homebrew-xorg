@@ -24,7 +24,7 @@ class LibvdpauVaGl < Formula
 
   # Required
   depends_on "libice"
-  depends_on "linuxbrew/xorg/glu"
+  depends_on "mesa-glu"
   depends_on "linuxbrew/xorg/libva"
   depends_on "linuxbrew/xorg/libvdpau"
 
