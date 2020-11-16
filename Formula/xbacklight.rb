@@ -15,7 +15,7 @@ class Xbacklight < Formula
 
   depends_on "pkg-config" => :build
   depends_on "libxcb"
-  depends_on "linuxbrew/xorg/xcb-util"
+  depends_on "xcb-util"
 
   def install
     args = %W[
