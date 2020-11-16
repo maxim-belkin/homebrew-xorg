@@ -15,9 +15,9 @@ class Xsetroot < Formula
   end
 
   # xmuu x11 xbitmaps xcursor xorgproto
-  depends_on "linuxbrew/xorg/xbitmaps" => :build
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
+  depends_on "xbitmaps" => :build
   depends_on "libxcursor"
   depends_on "libxmu"
 
