@@ -43,6 +43,7 @@
   "xcb-proto": "homebrew/core",
   "xcb-util": "homebrew/core",
   "xdpyinfo": "homebrew/core",
+  "xinput": "homebrew/core",
   "xkeyboardconfig": "homebrew/core",
   "xorgproto": "homebrew/core",
   "xtrans": "homebrew/core"
