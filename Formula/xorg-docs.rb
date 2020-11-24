@@ -21,10 +21,10 @@ class XorgDocs < Formula
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "fop" => :build
-  depends_on java: :build
   depends_on "libxslt" => :build
   depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
   depends_on "lynx" => :build
+  depends_on "openjdk" => :build
   depends_on "pkg-config" => :build # required for xmlto to work correctly
   depends_on "util-macros" => :build
   depends_on "xmlto" => :build
