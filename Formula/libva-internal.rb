@@ -3,7 +3,7 @@ class LibvaInternal < Formula
   homepage "https://github.com/01org/libva"
   url "https://github.com/intel/libva/releases/download/2.6.1/libva-2.6.1.tar.bz2"
   sha256 "6c57eb642d828af2411aa38f55dc10111e8c98976dbab8fd62e48629401eaea5"
-  revision 2
+  revision 3
 
   livecheck do
     url "https://github.com/intel/libva/releases"
@@ -13,7 +13,6 @@ class LibvaInternal < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "413fb28d0c4f929ed15de325173edac4530e8fbd481ae1b19cffa2be7952eb01" => :x86_64_linux
   end
 
   keg_only <<~EOS
@@ -28,7 +27,7 @@ class LibvaInternal < Formula
   depends_on "libx11"
   depends_on "libxext"
   depends_on "libxfixes"
-  depends_on "linuxbrew/xorg/wayland"
+  depends_on "wayland"
 
   def install
     args = %W[
