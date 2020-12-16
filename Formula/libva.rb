@@ -13,6 +13,7 @@ class Libva < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "19743ec07946a219c7f96bc132cbb608f2f4c35e61cae819caccf883a6d555a0" => :x86_64_linux
   end
 
   option "with-docs", "Build documentation"
