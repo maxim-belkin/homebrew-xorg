@@ -6,7 +6,9 @@ class WaylandProtocols < Formula
   revision 1
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "fbb7d013e996d8331ee949a66d73bfcfa80aca0812fdfeeeb92f23ed6a5427ca" => :x86_64_linux
   end
 
   head do
