@@ -13,6 +13,7 @@ class LibvaInternal < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "5bfb7121be31c551fd04c16719d66dea0e8ac2f9ca4145b654b8a0ab24bd05d1" => :x86_64_linux
   end
 
   keg_only <<~EOS
