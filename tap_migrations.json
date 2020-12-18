@@ -47,5 +47,6 @@
   "xkeyboardconfig": "homebrew/core",
   "xorgproto": "homebrew/core",
   "xtrans": "homebrew/core",
-  "wayland": "homebrew/core"
+  "wayland": "homebrew/core",
+  "wayland-protocols": "homebrew/core"
 }
