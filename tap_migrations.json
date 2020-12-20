@@ -42,6 +42,7 @@
   "xbitmaps": "homebrew/core",
   "xcb-proto": "homebrew/core",
   "xcb-util": "homebrew/core",
+  "xcb-util-keysyms": "homebrew/core",
   "xdpyinfo": "homebrew/core",
   "xinput": "homebrew/core",
   "xkeyboardconfig": "homebrew/core",
