@@ -10,6 +10,7 @@ class Xwininfo < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "0284db072c27f2511421defa2c24dbbfb5e4be0f7524c90b446b4cb901eac762" => :x86_64_linux
   end
 
   depends_on "pkg-config" => :build
