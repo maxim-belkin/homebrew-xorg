@@ -5,8 +5,9 @@ class IntelMediaDriver < Formula
   sha256 "a03bd75eefe9cb0245e3aab2723b3fef555d9f180a180b2c29d7b12d483d9ec2"
 
   livecheck do
-    url "https://github.com/intel/media-driver/releases"
-    regex(%r{latest.*?href="/intel/media-driver/archive/intel-media-?([a-z0-9.]+)\.t}mi)
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/intel-media[._-]v?([^"' >]+)["' >]}i)
   end
 
   bottle do
