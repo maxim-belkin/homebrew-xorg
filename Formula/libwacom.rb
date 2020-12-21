@@ -5,8 +5,9 @@ class Libwacom < Formula
   sha256 "c204cfdee2159d124a4f5ecc8970bbd72f9adf5ad7fd94b66798f93db1f863c3"
 
   livecheck do
-    url "https://github.com/linuxwacom/libwacom/releases"
-    regex(/libwacom-([0-9.]+)\.tar.bz2/i)
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/(?:libwacom[._-])?v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
   bottle do
