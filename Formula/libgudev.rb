@@ -6,7 +6,7 @@ class Libgudev < Formula
 
   livecheck do
     url :stable
-    regex(/libgudev[._-]v?(\d+(?:\.?\d+)+)\.t/i)
+    regex(/libgudev[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
   bottle do
