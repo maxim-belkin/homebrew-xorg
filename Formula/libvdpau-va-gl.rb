@@ -6,8 +6,8 @@ class LibvdpauVaGl < Formula
   revision 1
 
   livecheck do
-    url "https://github.com/i-rinat/libvdpau-va-gl/releases"
-    regex(%r{latest.*?href="/i-rinat/libvdpau-va-gl/tree/v?([a-z0-9.]+)}mi)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
