@@ -3,6 +3,7 @@ class IntelMediaDriver < Formula
   homepage "https://github.com/intel/media-driver"
   url "https://github.com/intel/media-driver/archive/intel-media-19.4.0r.tar.gz"
   sha256 "a03bd75eefe9cb0245e3aab2723b3fef555d9f180a180b2c29d7b12d483d9ec2"
+  revision 1
 
   livecheck do
     url :stable
@@ -18,7 +19,7 @@ class IntelMediaDriver < Formula
   depends_on "cmake" => :build
   depends_on "linuxbrew/xorg/intel-gmmlib" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libva"
+  depends_on "libva"
 
   def install
     args = std_cmake_args + %w[
