@@ -2,94 +2,66 @@
 
 [![Actions Status](https://github.com/Linuxbrew/homebrew-xorg/workflows/Audit/badge.svg)](https://github.com/Linuxbrew/homebrew-xorg/actions)
 
-
-[Xorg libraries][xorg-libs] for Homebrew on Linux.
+Additional [Xorg libraries][xorg-libs] for Homebrew on Linux.
 
 ## How to use
 
-First, you need to "tap" this repository with
+[Tap](https://docs.brew.sh/Taps#the-brew-tap-command) this repository:
 
 ```sh
 brew tap linuxbrew/xorg
 ```
 
-and then you can either install the entire suite of libraries (not recommended) with:
+and install any library you want, for example:
 
 ```sh
-brew install linuxbrew/xorg/xorg
+brew install linuxbrew/xorg/xrandr
 ```
 
-or install individual libraries, for example:
+## Provided formulae
 
-```sh
-brew install linuxbrew/xorg/libx11 linuxbrew/xorg/libxcb
-```
+Most popular Xorg formulae have been migrated to [Homebrew/linuxbrew-core](https://github.com/Homebrew/linuxbrew-core).
+This tap now provides the following formulae:
+<!-- 
+( cd $(brew --repo linuxbrew/xorg)/Formula; ls *.rb ) | sed 's/\([^.]\+\).rb/* \1/;' | sed 's|^|    |' | column -x -c 120 | expand
+-->
 
-## About this tap
+    * bdftopcf                              * encodings                             * font-adobe-100dpi
+    * font-adobe-75dpi                      * font-adobe-utopia-100dpi              * font-adobe-utopia-75dpi
+    * font-adobe-utopia-type1               * font-alias                            * font-arabic-misc
+    * font-bh-100dpi                        * font-bh-75dpi                         * font-bh-lucidatypewriter-100dpi
+    * font-bh-lucidatypewriter-75dpi        * font-bh-ttf                           * font-bh-type1
+    * font-bitstream-100dpi                 * font-bitstream-75dpi                  * font-bitstream-type1
+    * font-cronyx-cyrillic                  * font-cursor-misc                      * font-daewoo-misc
+    * font-dec-misc                         * font-ibm-type1                        * font-isas-misc
+    * font-jis-misc                         * font-micro-misc                       * font-misc-cyrillic
+    * font-misc-ethiopic                    * font-misc-meltho                      * font-misc-misc
+    * font-mutt-misc                        * font-schumacher-misc                  * font-screen-cyrillic
+    * font-sony-misc                        * font-sun-misc                         * font-winitzki-cyrillic
+    * font-xfree86-type1                    * fontcacheproto                        * iceauth
+    * intel-gmmlib                          * intel-media-driver                    * libevdev
+    * libglvnd                              * libgudev                              * libomxil-bellagio
+    * libsha1                               * libva-intel-driver                    * libva-utils
+    * libvdpau-va-gl                        * libwacom                              * libxfont2
+    * libxfontcache                         * libxxf86misc                          * luit
+    * mkfontscale                           * mtdev                                 * pciutils
+    * sessreg                               * setxkbmap                             * smproxy
+    * umockdev                              * x11perf                               * xauth
+    * xbacklight                            * xcmsdb                                * xcursor-themes
+    * xcursorgen                            * xdriinfo                              * xev
+    * xgamma                                * xhost                                 * xkbcomp
+    * xkbevd                                * xkbutils                              * xkill
+    * xlsatoms                              * xlsclients                            * xmessage
+    * xmodmap                               * xorg-apps                             * xorg-cf-files
+    * xorg-docs                             * xorg-fonts                            * xorg-sgml-doctools
+    * xpr                                   * xprop                                 * xrandr
+    * xrdb                                  * xrefresh                              * xset
+    * xsetroot                              * xvinfo                                * xwd
+    * xwininfo                              * xwud
 
-Installation proceeds according to the instructions from [Linux From Scratch][lfs].
-
-### Provided formulae
-
-    * bdftopcf                     * encodings                    * glu                          * iceauth
-    * intel-gmmlib                 * intel-media-driver           * libdmx                       * libdrm
-    * libevdev                     * libfontenc                   * libfs                        * libglvnd
-    * libgudev                     * libice                       * libomxil-bellagio            * libpciaccess
-    * libpthread-stubs             * libsha1                      * libsm                        * libva
-    * libva-intel-driver           * libva-utils                  * libvdpau                     * libvdpau-va-gl
-    * libwacom                     * libx11                       * libxau                       * libxaw
-    * libxaw3d                     * libxcb                       * libxcomposite                * libxcursor
-    * libxdamage                   * libxdmcp                     * libxext                      * libxfixes
-    * libxfont                     * libxfont2                    * libxfontcache                * libxft
-    * libxi                        * libxinerama                  * libxkbfile                   * libxmu
-    * libxpm                       * libxrandr                    * libxrender                   * libxres
-    * libxscrnsaver                * libxshmfence                 * libxt                        * libxtst
-    * libxv                        * libxvmc                      * libxxf86dga                  * libxxf86misc
-    * libxxf86vm                   * luit                         * mesa                         * mkfontscale
-    * mtdev                        * pciutils                     * sessreg                      * setxkbmap
-    * smproxy                      * umockdev                     * util-macros                  * wayland
-    * wayland-protocols            * x11perf                      * xauth                        * xbacklight
-    * xbitmaps                     * xcb-proto                    * xcb-util                     * xcb-util-cursor
-    * xcb-util-image               * xcb-util-keysyms             * xcb-util-renderutil          * xcb-util-wm
-    * xcmsdb                       * xcursor-themes               * xcursorgen                   * xdpyinfo
-    * xdriinfo                     * xev                          * xgamma                       * xhost
-    * xinput                       * xkbcomp                      * xkbevd                       * xkbutils
-    * xkeyboardconfig              * xkill                        * xlsatoms                     * xlsclients
-    * xmessage                     * xmodmap                      * xorg                         * xorg-cf-files
-    * xorg-docs                    * xorg-sgml-doctools           * xorgproto                    * xpr
-    * xprop                        * xrandr                       * xrdb                         * xrefresh
-    * xset                         * xsetroot                     * xtrans                       * xvinfo
-    * xwd                          * xwininfo                     * xwud
-
-And a number of font formulae.
 
 ## How to contribute
 
-### Out-of-date formula
+We accept all sorts of contributions -- bug fixes, new formulae, formulae updates, etc.
 
-Submit a Pull Request!
-
-If you have `hub` installed (`brew install hub` if you don't) and set up,
-you can do this in one step:
-
-```sh
-brew bump-formula-pr --url=NEW-URL linuxbrew/xorg/FORMULA
-```
-
-### No formula
-
-Submit a Pull Request!
-
-Please feel free to submit pull requests to add new formulae to this tap.
-The goal of this repo is to be a one-stop shop for all X11-related needs of Homebrew on Linux.
-
-### Incomplete Documentation
-
-Submit a Pull Request!
-
-### Something else
-
-Please report any issues using... well, GitHub Issues!
-
-[lfs]: http://www.linuxfromscratch.org/blfs/view/stable/x/x7lib.html
 [xorg-libs]: http://www.x.org/wiki/guide/client-ecosystem
