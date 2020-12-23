@@ -12,6 +12,7 @@ class LibvaIntelDriver < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "26cb4759be9e7f9483f4b761e15b9328b0dd91be10318919f80d3f0292d8d2b6" => :x86_64_linux
   end
 
   depends_on "libva" => :build
