@@ -22,7 +22,7 @@ brew install linuxbrew/xorg/xorg
 or install individual libraries, for example:
 
 ```sh
-brew install linuxbrew/xorg/libx11 linuxbrew/xorg/libxcb
+brew install linuxbrew/xorg/xrandr linuxbrew/xorg/xvinfo
 ```
 
 ## About this tap
@@ -31,37 +31,32 @@ Installation proceeds according to the instructions from [Linux From Scratch][lf
 
 ### Provided formulae
 
-    * bdftopcf                     * encodings                    * glu                          * iceauth
-    * intel-gmmlib                 * intel-media-driver           * libdmx                       * libdrm
-    * libevdev                     * libfontenc                   * libfs                        * libglvnd
-    * libgudev                     * libice                       * libomxil-bellagio            * libpciaccess
-    * libpthread-stubs             * libsha1                      * libsm                        * libva
-    * libva-intel-driver           * libva-utils                  * libvdpau                     * libvdpau-va-gl
-    * libwacom                     * libx11                       * libxau                       * libxaw
-    * libxaw3d                     * libxcb                       * libxcomposite                * libxcursor
-    * libxdamage                   * libxdmcp                     * libxext                      * libxfixes
-    * libxfont                     * libxfont2                    * libxfontcache                * libxft
-    * libxi                        * libxinerama                  * libxkbfile                   * libxmu
-    * libxpm                       * libxrandr                    * libxrender                   * libxres
-    * libxscrnsaver                * libxshmfence                 * libxt                        * libxtst
-    * libxv                        * libxvmc                      * libxxf86dga                  * libxxf86misc
-    * libxxf86vm                   * luit                         * mesa                         * mkfontscale
-    * mtdev                        * pciutils                     * sessreg                      * setxkbmap
-    * smproxy                      * umockdev                     * util-macros                  * wayland
-    * wayland-protocols            * x11perf                      * xauth                        * xbacklight
-    * xbitmaps                     * xcb-proto                    * xcb-util                     * xcb-util-cursor
-    * xcb-util-image               * xcb-util-keysyms             * xcb-util-renderutil          * xcb-util-wm
-    * xcmsdb                       * xcursor-themes               * xcursorgen                   * xdpyinfo
-    * xdriinfo                     * xev                          * xgamma                       * xhost
-    * xinput                       * xkbcomp                      * xkbevd                       * xkbutils
-    * xkeyboardconfig              * xkill                        * xlsatoms                     * xlsclients
-    * xmessage                     * xmodmap                      * xorg                         * xorg-cf-files
-    * xorg-docs                    * xorg-sgml-doctools           * xorgproto                    * xpr
-    * xprop                        * xrandr                       * xrdb                         * xrefresh
-    * xset                         * xsetroot                     * xtrans                       * xvinfo
-    * xwd                          * xwininfo                     * xwud
+Most of the main xorg formulae are provided by homebrew-core. This tap provides the following ones:
 
-And a number of font formulae.
+    * bdftopcf                       * encodings                * font-adobe-100dpi        * font-adobe-75dpi
+    * font-adobe-utopia-100dpi       * font-adobe-utopia-75dpi  * font-adobe-utopia-type1  * font-alias
+    * font-arabic-misc               * font-bh-100dpi           * font-bh-75dpi            * font-bh-lucidatypewriter-100dpi
+    * font-bh-lucidatypewriter-75dpi * font-bh-ttf              * font-bh-type1            * font-bitstream-100dpi
+    * font-bitstream-75dpi           * font-bitstream-type1     * font-cronyx-cyrillic     * font-cursor-misc
+    * font-daewoo-misc               * font-dec-misc            * font-ibm-type1           * font-isas-misc
+    * font-jis-misc                  * font-micro-misc          * font-misc-cyrillic       * font-misc-ethiopic
+    * font-misc-meltho               * font-misc-misc           * font-mutt-misc           * font-schumacher-misc
+    * font-screen-cyrillic           * font-sony-misc           * font-sun-misc            * font-winitzki-cyrillic
+    * font-xfree86-type1             * fontcacheproto           * iceauth                  * intel-gmmlib
+    * intel-media-driver             * libevdev                 * libglvnd                 * libgudev
+    * libomxil-bellagio              * libsha1                  * libva-intel-driver       * libva-utils
+    * libvdpau-va-gl                 * libwacom                 * libxfont2                * libxfontcache
+    * libxxf86misc                   * luit                     * mkfontscale              * mtdev
+    * pciutils                       * sessreg                  * setxkbmap                * smproxy
+    * umockdev                       * x11perf                  * xauth                    * xbacklight
+    * xcmsdb                         * xcursor-themes           * xcursorgen               * xdriinfo
+    * xev                            * xgamma                   * xhost                    * xkbcomp
+    * xkbevd                         * xkbutils                 * xkill                    * xlsatoms
+    * xlsclients                     * xmessage                 * xmodmap                  * xorg-apps
+    * xorg-cf-files                  * xorg-docs                * xorg-fonts               * xorg-sgml-doctools
+    * xpr                            * xprop                    * xrandr                   * xrdb
+    * xrefresh                       * xset                     * xsetroot                 * xvinfo
+    * xwd                            * xwininfo                 * xwud
 
 ## How to contribute
 
