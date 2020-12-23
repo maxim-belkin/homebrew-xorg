@@ -12,7 +12,9 @@ class IntelMediaDriver < Formula
   end
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
+    sha256 "dd8ac08582837225827f555656505dd49321ec20c6b43b2a984e8e362d8a745a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
