@@ -10,6 +10,8 @@
   "libpciaccess": "homebrew/core",
   "libpthread-stubs": "homebrew/core",
   "libsm": "homebrew/core",
+  "libva": "homebrew/core",
+  "libvdpau": "homebrew/core",
   "libx11": "homebrew/core",
   "libxau": "homebrew/core",
   "libxaw3d ": "homebrew/core",
