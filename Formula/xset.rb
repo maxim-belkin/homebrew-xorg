@@ -7,10 +7,6 @@ class Xset < Formula
   sha256 "e4fd95280df52a88e9b0abc1fee11dcf0f34fc24041b9f45a247e52df941c957"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-  end
-
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libxmu" # brings in dep on libxext and libx11
