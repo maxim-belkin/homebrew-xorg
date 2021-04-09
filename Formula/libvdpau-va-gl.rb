@@ -10,10 +10,6 @@ class LibvdpauVaGl < Formula
     strategy :github_latest
   end
 
-  bottle do
-    cellar :any_skip_relocation
-  end
-
   # option "without-test", "Skip compile-time tests"
 
   # Build-time
