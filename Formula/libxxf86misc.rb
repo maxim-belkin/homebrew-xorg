@@ -6,10 +6,6 @@ class Libxxf86misc < Formula
   revision 1
   # tag "linuxbrew"
 
-  bottle do
-    cellar :any_skip_relocation
-  end
-
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config" => :build
