@@ -8,8 +8,7 @@ class Fontcacheproto < Formula
   # tag "linuxbrew"
 
   bottle do
-    cellar :any
-    sha256 "9651b2ef34a2415b3c851959ec2a66d05c06aafad108bea465f996a9f8ad90c2" => :x86_64_linux
+    sha256 cellar: :any, x86_64_linux: "9651b2ef34a2415b3c851959ec2a66d05c06aafad108bea465f996a9f8ad90c2"
   end
 
   depends_on "pkg-config" => :build

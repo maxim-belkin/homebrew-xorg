@@ -11,7 +11,7 @@ class FontMuttMisc < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "b07c83e61f1f4e5966e148aac74b9e6ed8d0d2ddafb65882aca5015daab32451" => :x86_64_linux
+    sha256 x86_64_linux: "b07c83e61f1f4e5966e148aac74b9e6ed8d0d2ddafb65882aca5015daab32451"
   end
 
   keg_only "part of Xorg-fonts package"

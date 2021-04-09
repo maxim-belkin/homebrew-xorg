@@ -10,8 +10,7 @@ class Smproxy < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "641cfafcf9d11c558039a4f482719a839d78e466431b7d6650d7588fb27784a2" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "641cfafcf9d11c558039a4f482719a839d78e466431b7d6650d7588fb27784a2"
   end
 
   depends_on "pkg-config" => :build

@@ -10,8 +10,7 @@ class Libgudev < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "f11f69ae79e8d89a5d579e64c8ec196c3f5dd0b6bb8bef3435cd8b69db167240" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f11f69ae79e8d89a5d579e64c8ec196c3f5dd0b6bb8bef3435cd8b69db167240"
   end
 
   depends_on "gobject-introspection" => [:recommended, :build]

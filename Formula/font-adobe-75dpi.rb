@@ -11,7 +11,7 @@ class FontAdobe75dpi < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "448fbcf2dd37b83aa4f96f5fd7690c0228f3d28d258148764eaf3def5f3d3297" => :x86_64_linux
+    sha256 x86_64_linux: "448fbcf2dd37b83aa4f96f5fd7690c0228f3d28d258148764eaf3def5f3d3297"
   end
 
   keg_only "part of Xorg-fonts package"

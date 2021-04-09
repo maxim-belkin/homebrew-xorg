@@ -11,8 +11,7 @@ class Mtdev < Formula
   end
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "32778f8b518f949bd06e4ec20c3d9d0915febaedfb01011c7ab936076d88cd51" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "32778f8b518f949bd06e4ec20c3d9d0915febaedfb01011c7ab936076d88cd51"
   end
 
   depends_on "pkg-config" => :build

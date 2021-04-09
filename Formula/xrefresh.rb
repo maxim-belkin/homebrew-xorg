@@ -10,8 +10,7 @@ class Xrefresh < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "2cb433c5d406bd915fa0020fbe6c577f77fc7fd4e3b64a0b562953043fe74113" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2cb433c5d406bd915fa0020fbe6c577f77fc7fd4e3b64a0b562953043fe74113"
   end
 
   depends_on "pkg-config" => :build

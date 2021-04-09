@@ -7,8 +7,7 @@ class Sessreg < Formula
   # tag "linuxbrew"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "317fee80371ba91a2fc2c9b42922c717a9ffc6bed04f3fcf6210cd8ff83b28a3" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "317fee80371ba91a2fc2c9b42922c717a9ffc6bed04f3fcf6210cd8ff83b28a3"
   end
 
   depends_on "pkg-config" => :build

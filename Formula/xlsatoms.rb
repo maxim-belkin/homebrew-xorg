@@ -10,8 +10,7 @@ class Xlsatoms < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "3a65ab7571ad039464f9fd843347ae51fe0c210ce5c6d6f6f9b14fac357ceff4" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3a65ab7571ad039464f9fd843347ae51fe0c210ce5c6d6f6f9b14fac357ceff4"
   end
 
   depends_on "pkg-config" => :build

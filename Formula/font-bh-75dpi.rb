@@ -12,7 +12,7 @@ class FontBh75dpi < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     rebuild 1
-    sha256 "aea2db2b6e43df2e6c6364d89b6ccec6e55c0b0f146ef2101e84418fc1889b01" => :x86_64_linux
+    sha256 x86_64_linux: "aea2db2b6e43df2e6c6364d89b6ccec6e55c0b0f146ef2101e84418fc1889b01"
   end
 
   keg_only "part of Xorg-fonts package"

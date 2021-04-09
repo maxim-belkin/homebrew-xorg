@@ -10,8 +10,7 @@ class Xkbcomp < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "b6fe122901d039129ed994361c3f767aa4fd30614daf64689b13d040a4bb3b38" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b6fe122901d039129ed994361c3f767aa4fd30614daf64689b13d040a4bb3b38"
   end
 
   depends_on "pkg-config" => :build

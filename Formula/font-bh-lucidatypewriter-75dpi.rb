@@ -11,7 +11,7 @@ class FontBhLucidatypewriter75dpi < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "7bb716361324d09b149c45df9844b2c9a53e4c5835fa5af417ea63c6cebaeb91" => :x86_64_linux
+    sha256 x86_64_linux: "7bb716361324d09b149c45df9844b2c9a53e4c5835fa5af417ea63c6cebaeb91"
   end
 
   keg_only "part of Xorg-fonts package"

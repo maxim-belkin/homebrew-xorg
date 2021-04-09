@@ -11,7 +11,7 @@ class FontDecMisc < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "f175af12ffa53c6257c4257054392032bbc833ef1bd30badf6b1f538e9246918" => :x86_64_linux
+    sha256 x86_64_linux: "f175af12ffa53c6257c4257054392032bbc833ef1bd30badf6b1f538e9246918"
   end
 
   keg_only "part of Xorg-fonts package"

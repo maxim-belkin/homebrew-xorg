@@ -11,7 +11,7 @@ class FontBhTtf < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "f8804a8c3334e568ee1c7abc5fd1687bc97d973c581b452d5021f274f1de52d6" => :x86_64_linux
+    sha256 x86_64_linux: "f8804a8c3334e568ee1c7abc5fd1687bc97d973c581b452d5021f274f1de52d6"
   end
 
   keg_only "part of Xorg-fonts package"

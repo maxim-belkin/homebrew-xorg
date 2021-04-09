@@ -12,7 +12,7 @@ class FontBitstream100dpi < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     rebuild 1
-    sha256 "e41a5038508649b3b194a54b8c1c6a2f7275ba6730f0415047834e670b6a654e" => :x86_64_linux
+    sha256 x86_64_linux: "e41a5038508649b3b194a54b8c1c6a2f7275ba6730f0415047834e670b6a654e"
   end
 
   keg_only "part of Xorg-fonts package"

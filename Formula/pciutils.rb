@@ -11,7 +11,7 @@ class Pciutils < Formula
   end
 
   bottle do
-    sha256 "a824aca17f0b34dcc21ea46674213d0a71d213e2bb69e7314f8d8113468cb649" => :x86_64_linux
+    sha256 x86_64_linux: "a824aca17f0b34dcc21ea46674213d0a71d213e2bb69e7314f8d8113468cb649"
   end
 
   depends_on "pkg-config" => :build

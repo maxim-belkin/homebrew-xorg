@@ -6,9 +6,8 @@ class Libevdev < Formula
   revision 1
 
   bottle do
-    cellar :any_skip_relocation
     rebuild 1
-    sha256 "8ff50a765f65bb5d1fcd504ac98a53d99e90e04cec50979bb6292b14825ea56c" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8ff50a765f65bb5d1fcd504ac98a53d99e90e04cec50979bb6292b14825ea56c"
   end
 
   option "without-test", "Skip compile-time tests"

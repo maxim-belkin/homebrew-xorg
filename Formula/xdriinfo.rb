@@ -10,8 +10,7 @@ class Xdriinfo < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "e9228986d445c101ed059803c2923fb4e52413b23854755001c6efeaa0a7bc3f" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e9228986d445c101ed059803c2923fb4e52413b23854755001c6efeaa0a7bc3f"
   end
 
   depends_on "pkg-config" => :build

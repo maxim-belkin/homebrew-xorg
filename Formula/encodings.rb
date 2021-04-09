@@ -9,8 +9,7 @@ class Encodings < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "246fd72f00ab94a29b21a9ba800550d6644a54060700f7d1eb6de5ec436f339a" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "246fd72f00ab94a29b21a9ba800550d6644a54060700f7d1eb6de5ec436f339a"
   end
 
   keg_only "part of Xorg-fonts package"

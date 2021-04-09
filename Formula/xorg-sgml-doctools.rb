@@ -8,8 +8,7 @@ class XorgSgmlDoctools < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "9ee67d30d91f5bb5bd26fbec461ec6e6898f4f9b395391720c50bebd6be98e48" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9ee67d30d91f5bb5bd26fbec461ec6e6898f4f9b395391720c50bebd6be98e48"
   end
 
   depends_on "pkg-config" => :build

@@ -5,8 +5,7 @@ class Umockdev < Formula
   sha256 "ffb6134667f510a146b533076eb1a316392c7902a4ec593080de9fb53393e8bc"
 
   bottle do
-    cellar :any_skip_relocation
-    sha256 "ef755d8926a10f616e2b5095bf6bf7f47421843846468d2ca736ddcdd767fe5d" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ef755d8926a10f616e2b5095bf6bf7f47421843846468d2ca736ddcdd767fe5d"
   end
 
   depends_on "gobject-introspection" => [:recommended, :build]

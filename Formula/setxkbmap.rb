@@ -9,8 +9,7 @@ class Setxkbmap < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "462f1003cf2dbc40527f9a19441cdb478be2dd005477ace1747e85e4de79d681" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "462f1003cf2dbc40527f9a19441cdb478be2dd005477ace1747e85e4de79d681"
   end
 
   depends_on "pkg-config" => :build

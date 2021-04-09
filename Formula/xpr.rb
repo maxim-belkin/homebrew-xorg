@@ -10,8 +10,7 @@ class Xpr < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "06dcc8d2607f2e5da1ebf0ed9aefc8cff336aad844320024b5cd0b16e1628ebf" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "06dcc8d2607f2e5da1ebf0ed9aefc8cff336aad844320024b5cd0b16e1628ebf"
   end
 
   depends_on "pkg-config" => :build

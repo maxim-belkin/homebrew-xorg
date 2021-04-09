@@ -9,8 +9,7 @@ class FontAlias < Formula
   # tag "linuxbrew"
 
   bottle do
-    cellar :any
-    sha256 "1486363066ac2288cb10218c7fd9b1672f56e42e79f5853df122068bef063db8" => :x86_64_linux
+    sha256 cellar: :any, x86_64_linux: "1486363066ac2288cb10218c7fd9b1672f56e42e79f5853df122068bef063db8"
   end
 
   depends_on "pkg-config" => :build

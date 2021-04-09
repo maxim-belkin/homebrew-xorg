@@ -10,8 +10,7 @@ class Xhost < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "f60c702bd307830555a49f430e77ec7ed7146315694fc3ac70fca6f9d861180d" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f60c702bd307830555a49f430e77ec7ed7146315694fc3ac70fca6f9d861180d"
   end
 
   depends_on "pkg-config" => :build
@@ -39,6 +38,6 @@ class Xhost < Formula
   end
 
   test do
-    assert_match /access control (enabled|disabled)/, shell_output("xhost")
+    assert_match(/access control (enabled|disabled)/, shell_output("xhost"))
   end
 end

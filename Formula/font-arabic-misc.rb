@@ -11,7 +11,7 @@ class FontArabicMisc < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "454bf2de5aac3e472ca56b0391390c9f40b28780442c800a8ffbf498e95a48a0" => :x86_64_linux
+    sha256 x86_64_linux: "454bf2de5aac3e472ca56b0391390c9f40b28780442c800a8ffbf498e95a48a0"
   end
 
   depends_on "bzip2" => [:build, :recommended]

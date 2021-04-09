@@ -10,8 +10,7 @@ class Bdftopcf < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "98cae531a07e4c3655895d68ff3e2af01a9a63af9de6e9605b7b1fa3fd542c8d" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "98cae531a07e4c3655895d68ff3e2af01a9a63af9de6e9605b7b1fa3fd542c8d"
   end
 
   depends_on "pkg-config" => :build

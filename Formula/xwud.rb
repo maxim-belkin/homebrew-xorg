@@ -10,8 +10,7 @@ class Xwud < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "eca8d94ef7d15ba331735b772c9ae2efc287260f0cd1423c02da8c6e6e33145f" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "eca8d94ef7d15ba331735b772c9ae2efc287260f0cd1423c02da8c6e6e33145f"
   end
 
   depends_on "pkg-config" => :build

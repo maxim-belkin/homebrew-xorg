@@ -5,8 +5,7 @@ class Libsha1 < Formula
   version "0.3"
 
   bottle do
-    cellar :any
-    sha256 "3ff1d504fc8fd266bf7d7e4c67c2afd0bb56e8e2525507d9e2a69a6e76e8c714" => :x86_64_linux
+    sha256 cellar: :any, x86_64_linux: "3ff1d504fc8fd266bf7d7e4c67c2afd0bb56e8e2525507d9e2a69a6e76e8c714"
   end
 
   depends_on "autoconf" => :build

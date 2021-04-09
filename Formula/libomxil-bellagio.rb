@@ -6,7 +6,7 @@ class LibomxilBellagio < Formula
   revision 1
 
   bottle do
-    sha256 "8f405db484d10304e0d5db1d7096b5f1ad672910ddb6b5a36ad5ee0219a11a1b" => :x86_64_linux
+    sha256 x86_64_linux: "8f405db484d10304e0d5db1d7096b5f1ad672910ddb6b5a36ad5ee0219a11a1b"
   end
 
   option "without-test", "Skip compile-time tests"
@@ -36,8 +36,8 @@ class LibomxilBellagio < Formula
     if build.with? "test"
       ["audio_effects", "resource_manager"].each do |f|
         inreplace "test/components/#{f}/Makefile" do |s|
-          s.gsub! /^bellagio_LDADD = -lomxil-bellagio$/,
-            "bellagio_LDADD = -L$(top_srcdir)/src/.libs -lomxil-bellagio"
+          s.gsub!(/^bellagio_LDADD = -lomxil-bellagio$/,
+            "bellagio_LDADD = -L$(top_srcdir)/src/.libs -lomxil-bellagio")
         end
       end
       system "make", "check"

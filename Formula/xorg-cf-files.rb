@@ -11,8 +11,7 @@ class XorgCfFiles < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "e72d52ca71ed83adc8ba5e5140fe5ffcb74486a899e1486aa13bdc5eced8c2d9" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e72d52ca71ed83adc8ba5e5140fe5ffcb74486a899e1486aa13bdc5eced8c2d9"
   end
 
   depends_on "font-util" => :build

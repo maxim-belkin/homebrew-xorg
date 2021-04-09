@@ -9,8 +9,7 @@ class X11perf < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "f1c1269dba8fda2ef1cfe2424627cbebda28a0485d48501205f677324b5f18bb" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f1c1269dba8fda2ef1cfe2424627cbebda28a0485d48501205f677324b5f18bb"
   end
 
   depends_on "pkg-config" => :build
@@ -37,6 +36,6 @@ class X11perf < Formula
 
   test do
     cmd = "x11perf -repeat 1 -time 1 -rect1"
-    assert_match /Sync time adjustment is \d\.\d{4} msecs\./, shell_output(cmd).chomp
+    assert_match(/Sync time adjustment is \d\.\d{4} msecs\./, shell_output(cmd).chomp)
   end
 end

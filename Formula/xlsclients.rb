@@ -10,8 +10,7 @@ class Xlsclients < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "5f492f6aca3337a62a5e78c809244c50fe7c3dfb617c40b0c34e86a0f3b43c87" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5f492f6aca3337a62a5e78c809244c50fe7c3dfb617c40b0c34e86a0f3b43c87"
   end
 
   depends_on "pkg-config" => :build

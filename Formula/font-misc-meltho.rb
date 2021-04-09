@@ -11,7 +11,7 @@ class FontMiscMeltho < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "209f4a6865d133d2ee5812705792f75fecfb2d099ae3a4a01c7057e27d6cb02a" => :x86_64_linux
+    sha256 x86_64_linux: "209f4a6865d133d2ee5812705792f75fecfb2d099ae3a4a01c7057e27d6cb02a"
   end
 
   keg_only "part of Xorg-fonts package"

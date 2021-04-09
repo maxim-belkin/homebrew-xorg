@@ -10,8 +10,7 @@ class Xkbevd < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    cellar :any_skip_relocation
-    sha256 "4febc11252df6432058f86a612b700bfca42465170f1fa972e5488977f509387" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4febc11252df6432058f86a612b700bfca42465170f1fa972e5488977f509387"
   end
 
   depends_on "pkg-config" => :build
