@@ -8,7 +8,7 @@ class IntelMediaDriver < Formula
   livecheck do
     url :stable
     strategy :github_latest
-    regex(%r{href=.*?/tag/intel-media[._-]v?([^"' >]+)["' >]}i)
+    regex(%r{href=.*?/tag/intel-media[._-]v?([^"' >&]+)["' >]}i)
   end
 
   bottle do
