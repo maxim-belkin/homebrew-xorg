@@ -12,8 +12,6 @@ class XorgFonts < Formula
     skip "Formula only installs other formulae"
   end
 
-  bottle :unneeded
-
   depends_on "font-util" => :build
   depends_on "linuxbrew/xorg/encodings"
   depends_on "linuxbrew/xorg/font-adobe-100dpi"
