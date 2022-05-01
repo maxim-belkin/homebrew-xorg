@@ -12,8 +12,6 @@ class XorgApps < Formula
     skip "Formula only installs other formulae"
   end
 
-  bottle :unneeded
-
   depends_on "linuxbrew/xorg/bdftopcf"
   depends_on "linuxbrew/xorg/iceauth"
   depends_on "linuxbrew/xorg/luit"
