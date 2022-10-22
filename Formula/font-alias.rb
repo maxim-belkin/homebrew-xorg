@@ -6,11 +6,6 @@ class FontAlias < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-alias-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-alias-1.0.3.tar.bz2"
   sha256 "8b453b2aae1cfa8090009ca037037b8c5e333550651d5a158b7264ce1d472c9a"
-  # tag "linuxbrew"
-
-  bottle do
-    sha256 cellar: :any, x86_64_linux: "1486363066ac2288cb10218c7fd9b1672f56e42e79f5853df122068bef063db8"
-  end
 
   depends_on "pkg-config" => :build
 
