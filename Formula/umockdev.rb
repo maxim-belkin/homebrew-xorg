@@ -4,10 +4,6 @@ class Umockdev < Formula
   url "https://github.com/martinpitt/umockdev/releases/download/0.14.1/umockdev-0.14.1.tar.xz"
   sha256 "ffb6134667f510a146b533076eb1a316392c7902a4ec593080de9fb53393e8bc"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ef755d8926a10f616e2b5095bf6bf7f47421843846468d2ca736ddcdd767fe5d"
-  end
-
   depends_on "gobject-introspection" => [:recommended, :build]
   depends_on "gphoto2" => [:recommended, :build]
   depends_on "gtk-doc" => [:recommended, :build]
