@@ -7,12 +7,6 @@ class XorgCfFiles < Formula
   mirror "https://ftp.x.org/pub/individual/util/xorg-cf-files-1.0.6.tar.bz2"
   sha256 "4dcf5a9dbe3c6ecb9d2dd05e629b3d373eae9ba12d13942df87107fdc1b3934d"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e72d52ca71ed83adc8ba5e5140fe5ffcb74486a899e1486aa13bdc5eced8c2d9"
-  end
 
   depends_on "font-util" => :build
   depends_on "pkg-config" => :build
