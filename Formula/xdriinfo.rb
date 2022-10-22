@@ -6,12 +6,6 @@ class Xdriinfo < Formula
   mirror "https://ftp.x.org/pub/individual/app/xdriinfo-1.0.6.tar.bz2"
   sha256 "d9ccd2c3e87899417acc9ea1f3e319a4198112babe1dc711273584f607449d51"
   revision 2
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e9228986d445c101ed059803c2923fb4e52413b23854755001c6efeaa0a7bc3f"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
