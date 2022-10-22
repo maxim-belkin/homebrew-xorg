@@ -5,12 +5,6 @@ class X11perf < Formula
   url "https://www.x.org/pub/individual/app/x11perf-1.6.1.tar.bz2"
   sha256 "1c7e0b8ffc2794b4ccf11e04d551823abe0ea47b4f7db0637390db6fbe817c34"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f1c1269dba8fda2ef1cfe2424627cbebda28a0485d48501205f677324b5f18bb"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
