@@ -6,12 +6,6 @@ class Xkill < Formula
   mirror "https://ftp.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
   sha256 "c5f0bb6a95e1ac7c4def8a657496d5d2f21ccd41eb47ef2c9ccb03fb6d6aff6b"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf3e746d7b941f8e300439bcfe31b082ecbd1bec2eaaae175a3035f20efd8fc9"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
