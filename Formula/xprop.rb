@@ -5,12 +5,6 @@ class Xprop < Formula
   url "https://www.x.org/pub/individual/app/xprop-1.2.4.tar.bz2"
   sha256 "8c77fb096e46c60032b7e2bde9492c3ffcc18734f50b395085a5f10bfd3cf753"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6dc7ffafb8275e2b6ec4a7100d2d7632218b75c1374dee90171f56ca0a09ec2f"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
