@@ -6,11 +6,6 @@ class Xrandr < Formula
   sha256 "7bc76daf9d72f8aff885efad04ce06b90488a1a169d118dea8a2b661832e8762"
   revision 1
 
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3fdd8ad40af36679848845b5ecfdbab0f577b08157f8fbc63470cb27d38b8fce"
-  end
-
   option "without-xkeystone", "Delete (broken) xkeystone script"
 
   depends_on "pkg-config" => :build
