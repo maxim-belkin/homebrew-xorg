@@ -10,16 +10,12 @@ class Libwacom < Formula
     regex(%r{href=.*?/tag/(?:libwacom[._-])?v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
-  bottle do
-    sha256 x86_64_linux: "3327d3c856f9df270c886a98f1af90b1ead38659f9ca39d91fa84336c1441954"
-  end
-
   depends_on "libxml2" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "gtk+"
   depends_on "librsvg"
-  depends_on "linuxbrew/xorg/libgudev"
+  depends_on "maxim-belkin/xorg/libgudev"
 
   def install
     system "./configure",
