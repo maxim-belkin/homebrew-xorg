@@ -9,15 +9,11 @@ class Libgudev < Formula
     regex(/libgudev[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f11f69ae79e8d89a5d579e64c8ec196c3f5dd0b6bb8bef3435cd8b69db167240"
-  end
-
   depends_on "gobject-introspection" => [:recommended, :build]
   depends_on "gtk-doc" => [:recommended, :build]
   depends_on "pkg-config" => :build
   depends_on "glib"
-  depends_on "linuxbrew/xorg/umockdev"
+  depends_on "maxim-belkin/xorg/umockdev"
   depends_on "systemd"
 
   def install
@@ -33,7 +29,7 @@ class Libgudev < Formula
     system "./configure", *args
     inreplace "tests/Makefile",
       "env LD_PRELOAD=libumockdev-preload.so.0: gtester",
-      "env LD_PRELOAD=#{Formula["linuxbrew/xorg/umockdev"].opt_lib}/libumockdev-preload.so.0 gtester"
+      "env LD_PRELOAD=#{Formula["maxim-belkin/xorg/umockdev"].opt_lib}/libumockdev-preload.so.0 gtester"
     system "make"
     system "make", "check"
     chmod 0644, "./docs/html/style.css"
