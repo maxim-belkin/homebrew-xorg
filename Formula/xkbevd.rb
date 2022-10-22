@@ -6,12 +6,6 @@ class Xkbevd < Formula
   mirror "https://ftp.x.org/pub/individual/app/xkbevd-1.1.4.tar.bz2"
   sha256 "2430a2e5302a4cb4a5530c1df8cb3721a149bbf8eb377a2898921a145197f96a"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4febc11252df6432058f86a612b700bfca42465170f1fa972e5488977f509387"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "libx11"
