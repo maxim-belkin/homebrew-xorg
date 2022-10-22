@@ -6,12 +6,6 @@ class Smproxy < Formula
   mirror "https://ftp.x.org/pub/individual/app/smproxy-1.0.6.tar.bz2"
   sha256 "6cf19155a2752237f36dbf8bc4184465ea190d2652f887faccb4e2a6ebf77266"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "641cfafcf9d11c558039a4f482719a839d78e466431b7d6650d7588fb27784a2"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "libice"
