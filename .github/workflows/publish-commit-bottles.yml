@@ -13,7 +13,7 @@ jobs:
         uses: Homebrew/actions/post-comment@master
         with:
           token: ${{ github.token }}
-          issue: ${{ github.event.inputs.pull_request }}
+          issue: ${{ github.event.pull_request.number }}
           body: ':shipit: @${{github.actor}} has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot_body: ':robot: A scheduled task has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
@@ -45,7 +45,7 @@ jobs:
         uses: Homebrew/actions/post-comment@master
         with:
           token: ${{ github.token }}
-          issue: ${{ github.event.inputs.pull_request }}
+          issue: ${{ github.event.pull_request.number }}
           body: ':warning: @${{github.actor}} bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot_body: ':warning: Bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
