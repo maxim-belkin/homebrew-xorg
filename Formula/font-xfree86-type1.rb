@@ -7,19 +7,13 @@ class FontXfree86Type1 < Formula
   mirror "https://ftp.x.org/archive/individual/font/font-xfree86-type1-1.0.4.tar.bz2"
   sha256 "caebf42aec7be7f3bd40e0f232d6f34881b853dc84acfcdf7458358701fbe34a"
   revision 2
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 x86_64_linux: "b9ec9c17f5a97755e5bfeb0ae8b440dc19a3b9aa814ef4a741beef4541682a00"
-  end
 
   keg_only "part of Xorg-fonts package"
 
+  depends_on "bdftopcf" => :build
   depends_on "font-util" => :build
   depends_on "fontconfig" => :build
-  depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/mkfontscale" => :build
+  depends_on "mkfontscale" => :build
   depends_on "pkg-config" => :build
 
   def install
