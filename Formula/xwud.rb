@@ -2,16 +2,9 @@ class Xwud < Formula
   desc "X.Org Applications: xwud"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xwud-1.0.5.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xwud-1.0.5.tar.bz2"
-  sha256 "99997051f8a892313f22edf41dab45864e86e7062ee9012d5dbb6a40fc6b10a9"
-  revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "eca8d94ef7d15ba331735b772c9ae2efc287260f0cd1423c02da8c6e6e33145f"
-  end
+  url "https://www.x.org/pub/individual/app/xwud-1.0.6.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/xwud-1.0.6.tar.gz"
+  sha256 "262171b0c434966ddbbe8a54afb9615567ad74d4cc2e823e14e51e099ec3ab0d"
 
   depends_on "pkg-config" => :build
   depends_on "libx11"
