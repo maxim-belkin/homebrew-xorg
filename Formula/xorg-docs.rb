@@ -4,12 +4,6 @@ class XorgDocs < Formula
   url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.1.tar.bz2"
   sha256 "24b8677c3462c10465cf50d40576d76682acd5835526093a575865b2aa242c4b"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2d4721a756ab3843b5f49a61eb262e07e28a68a63cf3b9a325443652dc5c3c1e"
-  end
 
   # unlike other packages, this one is all about documentation
   # so we build docs + specs unless requested otherwise
@@ -21,8 +15,8 @@ class XorgDocs < Formula
   depends_on "docbook-xsl" => :build
   depends_on "fop" => :build
   depends_on "libxslt" => :build
-  depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
   depends_on "lynx" => :build
+  depends_on "maxim-belkin/xorg/xorg-sgml-doctools" => :build
   depends_on "openjdk" => :build
   depends_on "pkg-config" => :build # required for xmlto to work correctly
   depends_on "util-macros" => :build
