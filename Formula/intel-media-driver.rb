@@ -11,13 +11,8 @@ class IntelMediaDriver < Formula
     regex(%r{href=.*?/tag/intel-media[._-]v?([^"' >&]+)["' >]}i)
   end
 
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dd8ac08582837225827f555656505dd49321ec20c6b43b2a984e8e362d8a745a"
-  end
-
   depends_on "cmake" => :build
-  depends_on "linuxbrew/xorg/intel-gmmlib" => :build
+  depends_on "maxim-belkin/xorg/intel-gmmlib" => :build
   depends_on "pkg-config" => :build
   depends_on "libva"
 
