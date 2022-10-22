@@ -5,12 +5,6 @@ class Setxkbmap < Formula
   url "https://www.x.org/pub/individual/app/setxkbmap-1.3.2.tar.bz2"
   sha256 "8ff27486442725e50b02d7049152f51d125ecad71b7ce503cfa09d5d8ceeb9f5"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "462f1003cf2dbc40527f9a19441cdb478be2dd005477ace1747e85e4de79d681"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "libx11"
