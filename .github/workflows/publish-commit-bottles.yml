@@ -38,7 +38,7 @@ jobs:
         uses: Homebrew/actions/git-try-push@master
         with:
           token: ${{ github.token }}
-          branch: master
+          branch: main
 
       - name: Post comment on failure
         if: ${{!success()}}
@@ -55,9 +55,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.removeLabels({
+            github.rest.issues.removeLabel({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['CI-merge']
+              name: 'CI-merge'
             })
