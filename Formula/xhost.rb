@@ -6,12 +6,6 @@ class Xhost < Formula
   mirror "https://ftp.x.org/pub/individual/app/xhost-1.0.8.tar.bz2"
   sha256 "a2dc3c579e13674947395ef8ccc1b3763f89012a216c2cc6277096489aadc396"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f60c702bd307830555a49f430e77ec7ed7146315694fc3ac70fca6f9d861180d"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
