@@ -5,11 +5,6 @@ class Libevdev < Formula
   sha256 "20d3cae4efd277f485abdf8f2a7c46588e539998b5a08c2c4d368218379d4211"
   revision 1
 
-  bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8ff50a765f65bb5d1fcd504ac98a53d99e90e04cec50979bb6292b14825ea56c"
-  end
-
   option "without-test", "Skip compile-time tests"
 
   depends_on "check" => :build if build.with? "test"
