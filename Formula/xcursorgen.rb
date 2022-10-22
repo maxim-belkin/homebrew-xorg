@@ -6,12 +6,6 @@ class Xcursorgen < Formula
   mirror "https://ftp.x.org/pub/individual/app/xcursorgen-1.0.7.tar.bz2"
   sha256 "35b6f844b24f1776e9006c880a745728800764dbe3b327a128772b4610d8eb3d"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01ed4b194da50aadaeb52a4778ecf1035ecb04ac40fc8d4db891f75f04635d13"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
