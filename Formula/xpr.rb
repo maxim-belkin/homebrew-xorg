@@ -6,12 +6,6 @@ class Xpr < Formula
   mirror "https://ftp.x.org/pub/individual/app/xpr-1.0.5.tar.bz2"
   sha256 "b936e0f1f8d63f5ad097a0bbdce2e67c34f5d49b7263f32a832ff62d394d1e1f"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "06dcc8d2607f2e5da1ebf0ed9aefc8cff336aad844320024b5cd0b16e1628ebf"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
