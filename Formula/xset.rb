@@ -10,8 +10,8 @@ class Xset < Formula
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libxmu" # brings in dep on libxext and libx11
-  depends_on "linuxbrew/xorg/libxfontcache"
-  depends_on "linuxbrew/xorg/libxxf86misc"
+  depends_on "maxim-belkin/xorg/libxfontcache"
+  depends_on "maxim-belkin/xorg/libxxf86misc"
 
   def install
     args = %W[
