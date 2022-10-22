@@ -6,11 +6,6 @@ class Libglvnd < Formula
   revision 2
   head "https://gitlab.freedesktop.org/glvnd/libglvnd.git"
 
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2876ec1c1bf9d51670bdf7f00d8052fadc328bc3e5c3df77a380fd5c3bd058a9"
-  end
-
   depends_on "libpthread-stubs" => :build
   depends_on "libxext" => :build
   depends_on "meson" => :build
