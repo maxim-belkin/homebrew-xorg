@@ -5,11 +5,6 @@ class Fontcacheproto < Formula
   url "https://www.x.org/pub/individual/proto/fontcacheproto-0.1.3.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/proto/fontcacheproto-0.1.3.tar.bz2"
   sha256 "1dcaa659d416272ff68e567d1910ccc1e369768f13b983cffcccd6c563dbe3cb"
-  # tag "linuxbrew"
-
-  bottle do
-    sha256 cellar: :any, x86_64_linux: "9651b2ef34a2415b3c851959ec2a66d05c06aafad108bea465f996a9f8ad90c2"
-  end
 
   depends_on "pkg-config" => :build
 
