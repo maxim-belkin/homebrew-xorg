@@ -5,12 +5,6 @@ class Xbacklight < Formula
   url "https://www.x.org/pub/individual/app/xbacklight-1.2.3.tar.bz2"
   sha256 "3a27f324777ae99fee476cfb2f064576fb8cba4eb77f97cda37adda1c1d39ade"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cd98154f2ecbbe0bb11d633d8749160a187225e916e9366abc6e169f7018182c"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "libxcb"
