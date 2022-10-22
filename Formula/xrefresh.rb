@@ -6,12 +6,6 @@ class Xrefresh < Formula
   mirror "https://ftp.x.org/pub/individual/app/xrefresh-1.0.6.tar.bz2"
   sha256 "287dfb9bb7e8d780d07e672e3252150850869cb550958ed5f8401f0835cd6353"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2cb433c5d406bd915fa0020fbe6c577f77fc7fd4e3b64a0b562953043fe74113"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "libx11"
