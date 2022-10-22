@@ -6,12 +6,6 @@ class Xvinfo < Formula
   mirror "https://ftp.x.org/pub/individual/app/xvinfo-1.1.4.tar.bz2"
   sha256 "0353220d6606077ba42363db65f50410759f9815352f77adc799e2adfa76e73f"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8d35266edc8d974d060f0d8473a22787f547a882efeb1d7036874cf92e9ff994"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
