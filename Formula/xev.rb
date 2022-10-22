@@ -6,12 +6,6 @@ class Xev < Formula
   mirror "https://ftp.x.org/pub/individual/app/xev-1.2.3.tar.bz2"
   sha256 "66bc4f1cfa1946d62612737815c34164e4ce40fcebd2c9e1d7e7a1117ad3ad09"
   revision 2
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "38027eb7f1843e3e92eda32531326fede27050b2e24995ad0ea441bebc9c5d1d"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
