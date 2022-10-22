@@ -6,12 +6,6 @@ class Xmessage < Formula
   mirror "https://ftp.x.org/pub/individual/app/xmessage-1.0.5.tar.bz2"
   sha256 "373dfb81e7a6f06d3d22485a12fcde6e255d58c6dee1bbaeb00c7d0caa9b2029"
   revision 1
-  # tag "linuxbrew"
-
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "de593a600bb7f579c5f01029d971803a0dba7a88bf98e017a3aa55d22c481dcc"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
