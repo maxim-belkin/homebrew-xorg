@@ -32,7 +32,7 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
           PULL_REQUEST: ${{ github.event.pull_request.number }}
         run: |
-          brew pr-pull --debug --autosquash --tap=$GITHUB_REPOSITORY --root-url="https://ghcr.io/v2/maxim-belkin/xorg" $PULL_REQUEST
+          brew pr-pull --debug --tap=$GITHUB_REPOSITORY --root-url="https://ghcr.io/v2/maxim-belkin/xorg" $PULL_REQUEST
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
