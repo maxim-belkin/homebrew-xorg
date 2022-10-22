@@ -1,61 +1,63 @@
 name: Publish and commit bottles
 
 on:
-  workflow_dispatch:
-    inputs:
-      pull_request:
-        description: Pull request number
-        required: true
-      args:
-        description: 'Extra arguments to `brew pr-pull`'
-        default: ''
-
+  pull_request_target:
+    types:
+      - labeled
 jobs:
-  upload:
+  pr-pull:
+    if: contains(github.event.pull_request.labels.*.name, 'CI-merge')
     runs-on: ubuntu-latest
     steps:
       - name: Post comment once started
         uses: Homebrew/actions/post-comment@master
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          issue: ${{github.event.inputs.pull_request}}
+          token: ${{ github.token }}
+          issue: ${{ github.event.inputs.pull_request }}
           body: ':shipit: @${{github.actor}} has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot_body: ':robot: A scheduled task has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
 
       - name: Set up Homebrew
-        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Configure Git user
+      - name: Set up git
         uses: Homebrew/actions/git-user-config@master
 
       - name: Pull bottles
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          HOMEBREW_BINTRAY_USER: ${{secrets.BINTRAY_USER}}
-          HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
-        run: brew pr-pull --tap=linuxbrew/xorg --bintray-org=linuxbrew --keep-old --debug ${{github.event.inputs.args}} ${{github.event.inputs.pull_request}}
+          HOMEBREW_NO_AUTO_UPDATE: 1
+          HOMEBREW_GITHUB_PACKAGES_USER: maxim-belkin
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ github.token }}
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+          PULL_REQUEST: ${{ github.event.pull_request.number }}
+        run: |
+          brew pr-pull --debug --autosquash --tap=$GITHUB_REPOSITORY --root-url="https://ghcr.io/v2/maxim-belkin/xorg" $PULL_REQUEST
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+          token: ${{ github.token }}
+          branch: master
 
       - name: Post comment on failure
         if: ${{!success()}}
         uses: Homebrew/actions/post-comment@master
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          issue: ${{github.event.inputs.pull_request}}
+          token: ${{ github.token }}
+          issue: ${{ github.event.inputs.pull_request }}
           body: ':warning: @${{github.actor}} bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot_body: ':warning: Bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}).'
           bot: BrewTestBot
 
-      - name: Dismiss approvals on failure
-        if: ${{!success()}}
-        uses: Homebrew/actions/dismiss-approvals@master
+      - name: Remove label
+        if: always()
+      - uses: actions/github-script@v6
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          pr: ${{github.event.inputs.pull_request}}
-          message: 'bottle publish failed'
+          script: |
+            github.rest.issues.removeLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['CI-merge']
+            })
