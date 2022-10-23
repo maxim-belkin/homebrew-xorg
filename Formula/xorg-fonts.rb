@@ -12,7 +12,7 @@ class XorgFonts < Formula
   end
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xorg-fonts-20160522_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3a2c3a2f61a41b0a1f8216295b9383c20f186eb1dd2424d7f1f8741d0816f32a"
   end
