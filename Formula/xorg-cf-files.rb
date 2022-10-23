@@ -8,6 +8,12 @@ class XorgCfFiles < Formula
   sha256 "4dcf5a9dbe3c6ecb9d2dd05e629b3d373eae9ba12d13942df87107fdc1b3934d"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xorg-cf-files-1.0.6_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "01642694c74d05f6fa5109980ebd84154cfdb9ff8d2a10ef69a980de022ef441"
+  end
+
   depends_on "font-util" => :build
   depends_on "pkg-config" => :build
 
