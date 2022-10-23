@@ -7,6 +7,12 @@ class Xmessage < Formula
   sha256 "373dfb81e7a6f06d3d22485a12fcde6e255d58c6dee1bbaeb00c7d0caa9b2029"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xmessage-1.0.5_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "812ad59c57ab09bdb7cbde8618dd338b56bc9ee90b20a8f5b5dfc8395e4af465"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libxaw"
