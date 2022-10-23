@@ -8,6 +8,12 @@ class FontMiscCyrillic < Formula
   sha256 "e40fe3e3323c62b738550795457ad555c70c008aa91b5912dfd46f8e745f5e60"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-misc-cyrillic-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b7b7402b43ee1acaab934d4703de5a461acc8850453f6ae155f3f1af794075a"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
