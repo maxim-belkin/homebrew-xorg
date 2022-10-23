@@ -9,7 +9,7 @@ class FontSunMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-sun-misc-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "42bb4cf1af51020be7e445935c7b343c261ee27c2fea5d2cece5373fc2613356"
   end
