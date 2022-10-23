@@ -7,6 +7,12 @@ class Xkbevd < Formula
   sha256 "2430a2e5302a4cb4a5530c1df8cb3721a149bbf8eb377a2898921a145197f96a"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xkbevd-1.1.4_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5a3827ce8309fac294c3b2934d46d81d8a9a1c052042d631df48e646a4b4214"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libx11"
   depends_on "libxkbfile"
