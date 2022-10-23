@@ -9,7 +9,7 @@ class FontBhTtf < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-ttf-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c1217b5b4cf4167e8a605d51d3b9e1510e50783f4db15990ed09af57ccddde51"
   end
