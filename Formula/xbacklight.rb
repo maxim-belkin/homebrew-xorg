@@ -7,7 +7,7 @@ class Xbacklight < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xbacklight-1.2.3_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b851e7beb3d4eac3d2f2197c18bb8227dff8f3b3d1249e95b89044d08211369b"
   end
