@@ -7,7 +7,7 @@ class X11perf < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/x11perf-1.6.1_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2c1c41ce4c090d00a8b2c71ddb29c8fb9f93ccc29912432587b87498a99fb204"
   end
