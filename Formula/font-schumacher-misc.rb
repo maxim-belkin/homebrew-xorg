@@ -9,7 +9,7 @@ class FontSchumacherMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-schumacher-misc-1.1.2_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e8b4d5eb28f30602454092ec6d01a00b5a2612b0aefeb7078f09a41287921926"
   end
