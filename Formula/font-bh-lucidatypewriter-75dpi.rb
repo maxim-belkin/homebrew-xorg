@@ -9,7 +9,7 @@ class FontBhLucidatypewriter75dpi < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-lucidatypewriter-75dpi-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a5ad57f624ac06cdb959550b4631908841c8bf4b0ecd717339b7eb608ad2c9a4"
   end
