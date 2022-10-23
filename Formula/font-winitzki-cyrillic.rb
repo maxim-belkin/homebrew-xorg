@@ -8,6 +8,12 @@ class FontWinitzkiCyrillic < Formula
   sha256 "abd13b63d02fcaec488686c23683e5cf640b43bd32f8ca22eeae6f84df0a36a0"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-winitzki-cyrillic-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f55accd3fa5e0aeeb9802137f63bff5c75b7519b4d925c727bf6d9d4c2a12c13"
+  end
+
   depends_on "bdftopcf" => :build
   depends_on "bzip2" => [:build, :recommended]
   depends_on "font-util" => :build
