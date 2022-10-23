@@ -9,7 +9,7 @@ class FontWinitzkiCyrillic < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-winitzki-cyrillic-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f55accd3fa5e0aeeb9802137f63bff5c75b7519b4d925c727bf6d9d4c2a12c13"
   end
