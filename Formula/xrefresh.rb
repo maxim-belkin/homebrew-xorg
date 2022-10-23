@@ -7,6 +7,12 @@ class Xrefresh < Formula
   sha256 "287dfb9bb7e8d780d07e672e3252150850869cb550958ed5f8401f0835cd6353"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xrefresh-1.0.6_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e1ca38f4323c89b59672723ff4e423deb0379446c4bd928fbca3efc50f02fe1"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libx11"
 
