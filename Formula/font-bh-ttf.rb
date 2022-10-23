@@ -8,6 +8,12 @@ class FontBhTtf < Formula
   sha256 "1b4bea63271b4db0726b5b52c97994c3313b6023510349226908090501abd25f"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-ttf-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1217b5b4cf4167e8a605d51d3b9e1510e50783f4db15990ed09af57ccddde51"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
