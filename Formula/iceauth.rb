@@ -7,6 +7,12 @@ class Iceauth < Formula
   sha256 "e6ee213a217265cc76050e4293ea70b98c32dce6505c6421227efbda62ab60c6"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/iceauth-1.0.8_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2d2f9f95d07b558f7174b1650396711c07ddbb08dfc1ef3d46afe7bea82add98"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "splint" => [:build, :optional]
   depends_on "xorgproto" => :build
