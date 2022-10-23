@@ -8,7 +8,7 @@ class Xsetroot < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xsetroot-1.1.2_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "49dd8369981daee461dfa43992f524523ab8cc206d540a4c0b2e4baae3d6288c"
   end
