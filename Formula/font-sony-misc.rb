@@ -9,7 +9,7 @@ class FontSonyMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-sony-misc-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8ee2b4c2c286cc439e198e3ded3490ebeada1734b3110f98d072e0cbb2092121"
   end
