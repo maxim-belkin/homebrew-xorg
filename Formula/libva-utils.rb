@@ -10,6 +10,12 @@ class LibvaUtils < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/libva-utils-2.6.0_3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "76728a4a482149f83290faca314e4a4a3b84b79afb60313baabf0fd9be23e2b9"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libva"
   depends_on "libx11"
