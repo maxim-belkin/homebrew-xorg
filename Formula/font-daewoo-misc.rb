@@ -9,7 +9,7 @@ class FontDaewooMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-daewoo-misc-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0ac5ae39f4e2833f3d72c45347fcd3bd22681f6d8488a4064529e9d1d53e2ff1"
   end
