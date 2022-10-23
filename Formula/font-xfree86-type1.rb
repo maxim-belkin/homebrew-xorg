@@ -9,7 +9,7 @@ class FontXfree86Type1 < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-xfree86-type1-1.0.4_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "daba648256c7d627900eaaa337b1a8344bfcdac00ec5271d97ee30ee43b74751"
   end
