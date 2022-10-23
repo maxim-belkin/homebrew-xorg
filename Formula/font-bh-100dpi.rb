@@ -9,7 +9,7 @@ class FontBh100dpi < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-100dpi-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b9b94e838ce0a3476d4ee21b1a673949d6297592d2c2cb2e1b02e48a20b343f5"
   end
