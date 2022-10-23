@@ -5,7 +5,7 @@ class Libsha1 < Formula
   version "0.3"
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/libsha1-0.3"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "01c0e0a3640ef85162c893460bb55e04a60a26367a2a3ac814bf005768f20b36"
   end
