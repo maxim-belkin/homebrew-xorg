@@ -11,6 +11,12 @@ class IntelMediaDriver < Formula
     regex(%r{href=.*?/tag/intel-media[._-]v?([^"' >&]+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/intel-media-driver-19.4.0r_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fd27df68c74430855e469fb6f6c4bf9fe74ea2dd9fc0b615806497607b0151c8"
+  end
+
   depends_on "cmake" => :build
   depends_on "maxim-belkin/xorg/intel-gmmlib" => :build
   depends_on "pkg-config" => :build
