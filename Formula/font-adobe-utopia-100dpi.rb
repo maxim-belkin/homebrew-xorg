@@ -9,7 +9,7 @@ class FontAdobeUtopia100dpi < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-adobe-utopia-100dpi-1.0.4_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ef1fbd17df638c2a815dc961f97685f49ba55acb97c36dee2534fdd17b57356c"
   end
