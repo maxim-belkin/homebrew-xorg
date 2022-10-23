@@ -9,7 +9,7 @@ class XcursorThemes < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xcursor-themes-1.0.6_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c2b0ea73e77ddf952f5cb64ef4f9f0e4e9d7c3fb709c577ce2d3b4ded6fed855"
   end
