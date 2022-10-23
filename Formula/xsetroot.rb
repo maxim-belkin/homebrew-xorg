@@ -7,6 +7,12 @@ class Xsetroot < Formula
   sha256 "10c442ba23591fb5470cea477a0aa5f679371f4f879c8387a1d9d05637ae417c"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xsetroot-1.1.2_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "49dd8369981daee461dfa43992f524523ab8cc206d540a4c0b2e4baae3d6288c"
+  end
+
   # xmuu x11 xbitmaps xcursor xorgproto
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
