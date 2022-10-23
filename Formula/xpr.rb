@@ -7,6 +7,12 @@ class Xpr < Formula
   sha256 "b936e0f1f8d63f5ad097a0bbdce2e67c34f5d49b7263f32a832ff62d394d1e1f"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xpr-1.0.5_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ace19c090c7ec6ed472d3b9786496b545e8853ec66c25dcaa16a3edfb489b6e3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libxmu"
