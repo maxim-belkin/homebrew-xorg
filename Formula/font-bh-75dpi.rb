@@ -9,7 +9,7 @@ class FontBh75dpi < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-75dpi-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 2
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ee6b5b585ed36ea1e84ef4955d327b77856756420fc511a625a187b6ca0159e9"
   end
