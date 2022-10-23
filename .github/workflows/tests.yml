@@ -67,6 +67,7 @@ jobs:
           brew test-bot \
             --only-formulae \
             --tap=maxim-belkin/xorg \
+            --root-url="https://ghcr.io/v2/maxim-belkin/xorg" \
             --skip-recursive-dependents
 
       - name: Failures summary for brew test-bot --only-formulae
