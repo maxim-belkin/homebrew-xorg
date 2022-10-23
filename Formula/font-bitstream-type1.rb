@@ -9,7 +9,7 @@ class FontBitstreamType1 < Formula
   revision 3
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bitstream-type1-1.0.3_3"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "48ced8c22807f5f64dc1bf49a5b4e3d1682127a6d269895b2fdf5ebc68172c2a"
   end
