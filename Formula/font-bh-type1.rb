@@ -9,7 +9,7 @@ class FontBhType1 < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-type1-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8cfd9359d7e886ddc37a8d831b843078fbc91f4b1634e82dd95ebd91800aca25"
   end
