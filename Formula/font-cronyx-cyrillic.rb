@@ -9,7 +9,7 @@ class FontCronyxCyrillic < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-cronyx-cyrillic-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4096708596d5c80e39f6ba0235b726053ba5d531fa4bcabd4685cd556f4dc92d"
   end
