@@ -7,6 +7,12 @@ class Xmodmap < Formula
   sha256 "473f0941d7439d501bb895ff358832b936ec34c749b9704c37a15e11c318487c"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xmodmap-1.0.10_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "acbcd9a7e03a79ed0c9705a7bc3109f2e44f9d5570340e45394070e15a6c7b64"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
