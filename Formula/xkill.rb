@@ -8,7 +8,7 @@ class Xkill < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xkill-1.0.5_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "46692b5338539999a985895ef2ced0becdd35a99fa704158d6aa29f3a6659a09"
   end
