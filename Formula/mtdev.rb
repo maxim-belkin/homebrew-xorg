@@ -9,6 +9,12 @@ class Mtdev < Formula
     regex(/href=.*?mtdev[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/mtdev-1.1.5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec9d690f978f0974f2d01c23117add4a73804bc646ec5ea78bc39d8ac99cc039"
+  end
+
   depends_on "pkg-config" => :build
 
   def install
