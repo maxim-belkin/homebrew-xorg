@@ -8,7 +8,7 @@ class Xpr < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xpr-1.0.5_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ace19c090c7ec6ed472d3b9786496b545e8853ec66c25dcaa16a3edfb489b6e3"
   end
