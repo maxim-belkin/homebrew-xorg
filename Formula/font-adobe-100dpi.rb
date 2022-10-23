@@ -9,7 +9,7 @@ class FontAdobe100dpi < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-adobe-100dpi-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3c3668bc212d6a116d7f8640b9c8f8ec251ccd46c90a07b0849c8f45011bc451"
   end
