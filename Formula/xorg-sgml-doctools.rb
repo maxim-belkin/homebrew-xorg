@@ -1,9 +1,8 @@
 class XorgSgmlDoctools < Formula
   desc "X.Org SGML DocTools"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/doc/xorg-sgml-doctools-1.11.tar.gz"
-  sha256 "986326d7b4dd2ad298f61d8d41fe3929ac6191c6000d6d7e47a8ffc0c34e7426"
-  revision 1
+  url "https://www.x.org/archive/individual/doc/xorg-sgml-doctools-1.12.tar.gz"
+  sha256 "985a0329e6a6dadd6ad517f8d54f8766ab4b52bb8da7b07d02ec466bec444bdb"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
