@@ -9,6 +9,12 @@ class Pciutils < Formula
     regex(/href=.*?pciutils[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/pciutils-3.5.1"
+    rebuild 1
+    sha256 x86_64_linux: "1444ddc54af53c94e681594d3a48a3da485443a80168c48d75e93272cf5deac7"
+  end
+
   depends_on "pkg-config" => :build
 
   def install
