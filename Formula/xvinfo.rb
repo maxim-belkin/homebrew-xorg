@@ -7,6 +7,12 @@ class Xvinfo < Formula
   sha256 "0353220d6606077ba42363db65f50410759f9815352f77adc799e2adfa76e73f"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xvinfo-1.1.4_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "afa010fe6d73f6dbfa115cd99102631d3473ee03e588b53ff845cdcfccae97cb"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
