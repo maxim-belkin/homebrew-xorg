@@ -8,6 +8,12 @@ class FontSunMisc < Formula
   sha256 "481f4fcbbf7005658b080b3cf342c8c76de752e77f47958b2b383de73266d2e0"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-sun-misc-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "42bb4cf1af51020be7e445935c7b343c261ee27c2fea5d2cece5373fc2613356"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
