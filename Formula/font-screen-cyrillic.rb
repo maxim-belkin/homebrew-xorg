@@ -8,6 +8,12 @@ class FontScreenCyrillic < Formula
   sha256 "824231e8dffe15299454e47259f29d98001c9cf8ad3d6b5171399e4d71705e79"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-screen-cyrillic-1.0.4_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c983146864430e9f82a2c5833ee5eb296cd931c71f8b5513714a4c8357e2fbc9"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
