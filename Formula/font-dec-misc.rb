@@ -9,7 +9,7 @@ class FontDecMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-dec-misc-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5a98c6539eebd694e77aee27e4c25083bed207135a45116f0fa9deae362e55d2"
   end
