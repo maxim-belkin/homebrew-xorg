@@ -8,6 +8,12 @@ class FontBitstreamType1 < Formula
   sha256 "c6ea0569adad2c577f140328dc3302e729cb1b1ea90cd0025caf380625f8a688"
   revision 3
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bitstream-type1-1.0.3_3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48ced8c22807f5f64dc1bf49a5b4e3d1682127a6d269895b2fdf5ebc68172c2a"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
