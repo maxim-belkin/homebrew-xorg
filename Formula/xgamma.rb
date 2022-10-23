@@ -8,7 +8,7 @@ class Xgamma < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xgamma-1.0.6_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "84071f66535c5ae388c1c7b3a975014d3bf4d449dc62beca39ab1ebaef671436"
   end
