@@ -8,7 +8,7 @@ class Xcursorgen < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xcursorgen-1.0.7_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "93a0614cc8c8542e2bfe7aacf101de393c9e9cf040bbd905b61e82c48c448c89"
   end
