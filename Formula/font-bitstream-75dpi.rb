@@ -9,7 +9,7 @@ class FontBitstream75dpi < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bitstream-75dpi-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "865dffc18f5a0734da05f51b8b60a4d8440df773d0e3f203e5e11230cc986bee"
   end
