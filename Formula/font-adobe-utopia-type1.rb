@@ -9,7 +9,7 @@ class FontAdobeUtopiaType1 < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-adobe-utopia-type1-1.0.4_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 2
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ee4f1d3395926f20de4ff1947c531ec8c8e5e69bda80b3c22a4a4538fabafa7a"
   end
