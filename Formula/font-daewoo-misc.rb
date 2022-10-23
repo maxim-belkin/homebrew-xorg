@@ -8,6 +8,12 @@ class FontDaewooMisc < Formula
   sha256 "bc65de70bee12698caa95b523d3b652c056347e17b68cc8b5d6bbdff235c4be8"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-daewoo-misc-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0ac5ae39f4e2833f3d72c45347fcd3bd22681f6d8488a4064529e9d1d53e2ff1"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
