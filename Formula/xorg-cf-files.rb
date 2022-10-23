@@ -9,7 +9,7 @@ class XorgCfFiles < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xorg-cf-files-1.0.6_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "01642694c74d05f6fa5109980ebd84154cfdb9ff8d2a10ef69a980de022ef441"
   end
