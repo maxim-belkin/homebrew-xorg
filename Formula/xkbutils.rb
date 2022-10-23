@@ -7,6 +7,12 @@ class Xkbutils < Formula
   sha256 "d2a18ab90275e8bca028773c44264d2266dab70853db4321bdbc18da75148130"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xkbutils-1.0.4_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bea64d932841ed541431ec4a36174c7aefb4bf17f2bb50b40955ce3eacae23f3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
