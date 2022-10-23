@@ -8,6 +8,12 @@ class FontArabicMisc < Formula
   sha256 "505d9b12a7093389e67a925dfda6346bde26d114c67f0cdca7aeda6e5d3344f4"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-arabic-misc-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b221b971a678244c70c241dfc344a81dafb26900f7bd4c5821aff0e35668e037"
+  end
+
   depends_on "bdftopcf" => :build
   depends_on "bzip2" => [:build, :recommended]
   depends_on "font-util" => :build
