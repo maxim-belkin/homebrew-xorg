@@ -8,7 +8,7 @@ class Xwd < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xwd-1.0.7_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c49945f046db8b9ab5568c6f3a7d72e29dbb84125b4743f26de233902f69709b"
   end
