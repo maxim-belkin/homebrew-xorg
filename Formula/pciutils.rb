@@ -10,7 +10,7 @@ class Pciutils < Formula
   end
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/pciutils-3.5.1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 x86_64_linux: "1444ddc54af53c94e681594d3a48a3da485443a80168c48d75e93272cf5deac7"
   end
