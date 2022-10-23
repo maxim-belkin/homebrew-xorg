@@ -6,7 +6,7 @@ class XorgDocs < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xorg-docs-1.7.1_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ad77d434dd3785c9f2763bf18a4c6ded0b22a4c64c701570e70aff3d92faae35"
   end
