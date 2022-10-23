@@ -9,7 +9,7 @@ class FontMiscCyrillic < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-misc-cyrillic-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0b7b7402b43ee1acaab934d4703de5a461acc8850453f6ae155f3f1af794075a"
   end
