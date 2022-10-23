@@ -7,7 +7,7 @@ class Fontcacheproto < Formula
   sha256 "1dcaa659d416272ff68e567d1910ccc1e369768f13b983cffcccd6c563dbe3cb"
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/fontcacheproto-0.1.3"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ce9b29742ba8cb25b7dffe44796bbc8388fa8060967d892346a106d818c84e86"
   end
