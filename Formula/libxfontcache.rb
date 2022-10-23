@@ -6,7 +6,7 @@ class Libxfontcache < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/libxfontcache-1.0.5_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "631c84fccc8734f5e1a2cedc5fe97e5291c13db61ff58b6668915e515de8478a"
   end
