@@ -11,7 +11,7 @@ class LibvaUtils < Formula
   end
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/libva-utils-2.6.0_3"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "76728a4a482149f83290faca314e4a4a3b84b79afb60313baabf0fd9be23e2b9"
   end
