@@ -6,6 +6,12 @@ class Setxkbmap < Formula
   sha256 "8ff27486442725e50b02d7049152f51d125ecad71b7ce503cfa09d5d8ceeb9f5"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/setxkbmap-1.3.2_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "506decbfda894d2cc0bf45257c8daf5be6979d97fb07385f760743e6d651d983"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libx11"
   depends_on "libxkbfile"
