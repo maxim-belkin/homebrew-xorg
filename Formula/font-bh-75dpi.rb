@@ -8,6 +8,12 @@ class FontBh75dpi < Formula
   sha256 "3486aa51ac92c646a448fe899c5c3dae0024b1fef724d5100d52640d1cac721c"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-75dpi-1.0.3_2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ee6b5b585ed36ea1e84ef4955d327b77856756420fc511a625a187b6ca0159e9"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
