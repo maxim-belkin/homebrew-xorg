@@ -9,7 +9,7 @@ class FontArabicMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-arabic-misc-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b221b971a678244c70c241dfc344a81dafb26900f7bd4c5821aff0e35668e037"
   end
