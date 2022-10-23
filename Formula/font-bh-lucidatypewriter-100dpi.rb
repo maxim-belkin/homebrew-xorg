@@ -8,6 +8,12 @@ class FontBhLucidatypewriter100dpi < Formula
   sha256 "62a83363c2536095fda49d260d21e0847675676e4e3415054064cbdffa641fbb"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bh-lucidatypewriter-100dpi-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b678930a864d1c8bbb24c66f4fc0e20e1b5375272d9a1b3a1962e5d1213d1405"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
