@@ -8,6 +8,12 @@ class FontBitstream75dpi < Formula
   sha256 "ba3f5e4610c07bd5859881660753ec6d75d179f26fc967aa776dbb3d5d5cf48e"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-bitstream-75dpi-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "865dffc18f5a0734da05f51b8b60a4d8440df773d0e3f203e5e11230cc986bee"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
