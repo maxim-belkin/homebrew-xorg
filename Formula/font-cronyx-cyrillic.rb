@@ -8,6 +8,12 @@ class FontCronyxCyrillic < Formula
   sha256 "6e8631936157677c77ba032b5c7b1fb3cb2ee872dbcea0444f12cd602cd9212a"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-cronyx-cyrillic-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4096708596d5c80e39f6ba0235b726053ba5d531fa4bcabd4685cd556f4dc92d"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
