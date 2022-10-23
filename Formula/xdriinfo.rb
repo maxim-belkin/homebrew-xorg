@@ -8,7 +8,7 @@ class Xdriinfo < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xdriinfo-1.0.6_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "92b47c8ba8e32bc9fbfd27be6a355ebe7d5872a04028150bc79ad7e353db21ba"
   end
