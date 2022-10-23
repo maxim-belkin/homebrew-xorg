@@ -6,7 +6,7 @@ class Libevdev < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/libevdev-1.8.0_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 2
     sha256 cellar: :any_skip_relocation, x86_64_linux: "aca0db31732d4993eeb9054b420ccd4e664ea7977ad4cc044be2f1c66c72b44a"
   end
