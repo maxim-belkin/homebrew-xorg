@@ -7,6 +7,12 @@ class Smproxy < Formula
   sha256 "6cf19155a2752237f36dbf8bc4184465ea190d2652f887faccb4e2a6ebf77266"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/smproxy-1.0.6_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "235be368d169100f76fa3148b8e78a173a61522fb14af9b58dc74cc988417152"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libice"
   depends_on "libsm"
