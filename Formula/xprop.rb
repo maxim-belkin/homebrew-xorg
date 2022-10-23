@@ -7,7 +7,7 @@ class Xprop < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xprop-1.2.4_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "30e349abc9bd5a8720025a762d2f7703812602a13aef09d8cbbc845b1fbca273"
   end
