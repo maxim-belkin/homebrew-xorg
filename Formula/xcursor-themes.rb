@@ -8,6 +8,12 @@ class XcursorThemes < Formula
   sha256 "ee1ec574741293abcf66ac14ce7e74add7ac6be7deb8b38179ef010d22354999"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xcursor-themes-1.0.6_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c2b0ea73e77ddf952f5cb64ef4f9f0e4e9d7c3fb709c577ce2d3b4ded6fed855"
+  end
+
   depends_on "maxim-belkin/xorg/xcursorgen" => :build
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
