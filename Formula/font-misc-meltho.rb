@@ -9,7 +9,7 @@ class FontMiscMeltho < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-misc-meltho-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "01c561a754cda92bb144119c6e4d872266283fc8c7d65de372817fa6ab59ccda"
   end
