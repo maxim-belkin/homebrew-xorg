@@ -6,8 +6,7 @@ class XorgSgmlDoctools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0565182114010a16c12ea163f76b4abfd7e120abd9283b27b32e2be7c568e01c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ab49e295c61e8fba0188e6b42dd35494363e9b81f834d75e669da9eb93a491e8"
   end
 
   depends_on "pkg-config" => :build
