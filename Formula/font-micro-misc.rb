@@ -9,7 +9,7 @@ class FontMicroMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-micro-misc-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "52518d32d2630779973277322854625c347a16c27e4cf76433640286aa3c64a7"
   end
