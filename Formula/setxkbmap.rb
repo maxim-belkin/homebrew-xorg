@@ -7,7 +7,7 @@ class Setxkbmap < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/setxkbmap-1.3.2_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "506decbfda894d2cc0bf45257c8daf5be6979d97fb07385f760743e6d651d983"
   end
