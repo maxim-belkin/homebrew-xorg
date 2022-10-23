@@ -8,6 +8,12 @@ class FontMiscMeltho < Formula
   sha256 "3721323f13855cf7ca609115a1f7b182491e9b2b9c6e01eb1a2c7f8edd480791"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-misc-meltho-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "01c561a754cda92bb144119c6e4d872266283fc8c7d65de372817fa6ab59ccda"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
