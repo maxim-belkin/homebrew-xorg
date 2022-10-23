@@ -2,9 +2,8 @@ class Encodings < Formula
   desc "X.Org Fonts: encodings"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/encodings-1.0.5.tar.bz2"
-  sha256 "bd96e16143a044b19e87f217cf6a3763a70c561d1076aad6f6d862ec41774a31"
-  revision 1
+  url "https://www.x.org/pub/individual/font/encodings-1.0.6.tar.gz"
+  sha256 "c89c0636cda8f34eb28304263fc9a5441635ac3cb9da23efefe8f584174cba29"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
