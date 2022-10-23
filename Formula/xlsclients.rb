@@ -8,7 +8,7 @@ class Xlsclients < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xlsclients-1.1.4_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "76cafc4d5e68d68d8a78422886813083e1a3188617942aab13a760a77efb1fb8"
   end
