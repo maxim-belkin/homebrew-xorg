@@ -8,6 +8,12 @@ class FontIsasMisc < Formula
   sha256 "5824ab4b485951107dd245b8f7717d2822f1a6dbf6cea98f1ac7f49905c0a867"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-isas-misc-1.0.3_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb5c6b42b0266b86f3a9fd1f2e86deaecaa99d1638bd65aa9c8a8c02e0787a6e"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
