@@ -6,6 +6,12 @@ class Xrandr < Formula
   sha256 "7bc76daf9d72f8aff885efad04ce06b90488a1a169d118dea8a2b661832e8762"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xrandr-1.5.1_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d022f150cdcc54ece1aeacbe86cd90411ae8cfda0b20862faa995d49dd167fb9"
+  end
+
   option "without-xkeystone", "Delete (broken) xkeystone script"
 
   depends_on "pkg-config" => :build
