@@ -5,6 +5,12 @@ class XorgDocs < Formula
   sha256 "24b8677c3462c10465cf50d40576d76682acd5835526093a575865b2aa242c4b"
   revision 1
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xorg-docs-1.7.1_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ad77d434dd3785c9f2763bf18a4c6ded0b22a4c64c701570e70aff3d92faae35"
+  end
+
   # unlike other packages, this one is all about documentation
   # so we build docs + specs unless requested otherwise
   option "without-docs", "Do not build documentation"
