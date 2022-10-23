@@ -8,6 +8,12 @@ class FontAdobeUtopia75dpi < Formula
   sha256 "8732719c61f3661c8bad63804ebfd54fc7de21ab848e9a26a19b1778ef8b5c94"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-adobe-utopia-75dpi-1.0.4_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fc7deae1db59092751bf7c8e621b778abe95b48c239a1cb14c644448412d9d75"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
