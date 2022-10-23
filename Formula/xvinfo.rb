@@ -8,7 +8,7 @@ class Xvinfo < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xvinfo-1.1.4_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "afa010fe6d73f6dbfa115cd99102631d3473ee03e588b53ff845cdcfccae97cb"
   end
