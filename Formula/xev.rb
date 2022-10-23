@@ -8,7 +8,7 @@ class Xev < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xev-1.2.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "829dfdda2ec6a0b8256d68f00aa730f45052364a8c989c4641e77e7e59fb8e0e"
   end
