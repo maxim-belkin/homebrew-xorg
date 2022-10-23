@@ -9,7 +9,7 @@ class FontMuttMisc < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-mutt-misc-1.0.3_2"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "310dce4d476d022dc179ddb642a264a107cfa19aebbf2e03f5556db4560e5ef3"
   end
