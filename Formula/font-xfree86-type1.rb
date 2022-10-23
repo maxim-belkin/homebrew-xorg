@@ -8,6 +8,12 @@ class FontXfree86Type1 < Formula
   sha256 "caebf42aec7be7f3bd40e0f232d6f34881b853dc84acfcdf7458358701fbe34a"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-xfree86-type1-1.0.4_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "daba648256c7d627900eaaa337b1a8344bfcdac00ec5271d97ee30ee43b74751"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
