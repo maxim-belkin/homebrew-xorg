@@ -7,7 +7,7 @@ class Xwud < Formula
   sha256 "262171b0c434966ddbbe8a54afb9615567ad74d4cc2e823e14e51e099ec3ab0d"
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xwud-1.0.6"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "04b6f1fbba9d3544cff6170f17942ffb66556d805f2b9ed7c19ecc6326a608a8"
   end
 
