@@ -8,7 +8,7 @@ class Xmodmap < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xmodmap-1.0.10_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "acbcd9a7e03a79ed0c9705a7bc3109f2e44f9d5570340e45394070e15a6c7b64"
   end
