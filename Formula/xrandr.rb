@@ -7,7 +7,7 @@ class Xrandr < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xrandr-1.5.1_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d022f150cdcc54ece1aeacbe86cd90411ae8cfda0b20862faa995d49dd167fb9"
   end
