@@ -8,7 +8,7 @@ class Xmessage < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/xmessage-1.0.5_1"
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "812ad59c57ab09bdb7cbde8618dd338b56bc9ee90b20a8f5b5dfc8395e4af465"
   end
