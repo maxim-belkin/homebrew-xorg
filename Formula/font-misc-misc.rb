@@ -8,6 +8,12 @@ class FontMiscMisc < Formula
   sha256 "b8e77940e4e1769dc47ef1805918d8c9be37c708735832a07204258bacc11794"
   revision 2
 
+  bottle do
+    root_url "https://github.com/maxim-belkin/homebrew-xorg/releases/download/font-misc-misc-1.1.2_2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5f99b09154e0eb31e4e128893dbb6d3df4906cba16e41c508bb261d683aadf0a"
+  end
+
   keg_only "part of Xorg-fonts package"
 
   depends_on "bdftopcf" => :build
