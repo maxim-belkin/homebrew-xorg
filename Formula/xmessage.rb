@@ -8,8 +8,7 @@ class Xmessage < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "812ad59c57ab09bdb7cbde8618dd338b56bc9ee90b20a8f5b5dfc8395e4af465"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8d848812fb900a888b2cc00b999e71179be4ad55ab2db59c0a82b58c5c447bc6"
   end
 
   depends_on "pkg-config" => :build
