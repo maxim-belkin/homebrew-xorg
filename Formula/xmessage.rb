@@ -2,10 +2,9 @@ class Xmessage < Formula
   desc "X.Org Applications: xmessage"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xmessage-1.0.5.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xmessage-1.0.5.tar.bz2"
-  sha256 "373dfb81e7a6f06d3d22485a12fcde6e255d58c6dee1bbaeb00c7d0caa9b2029"
-  revision 1
+  url "https://www.x.org/pub/individual/app/xmessage-1.0.6.tar.xz"
+  mirror "https://ftp.x.org/pub/individual/app/xmessage-1.0.6.tar.xz"
+  sha256 "d2eac545f137156b960877e052fcc8e29795ed735c02f7690fd7b439e6846a12"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
