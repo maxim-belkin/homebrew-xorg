@@ -9,6 +9,11 @@ class LibvaIntelDriver < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 x86_64_linux: "1f96bb2b1e101308d4a8f6276956bb23639b4e83a4a3a3d7226d5c0c5712d72a"
+  end
+
   depends_on "libva" => :build
   depends_on "pkg-config" => :build
   depends_on "libdrm"
