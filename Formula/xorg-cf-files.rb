@@ -9,8 +9,7 @@ class XorgCfFiles < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01642694c74d05f6fa5109980ebd84154cfdb9ff8d2a10ef69a980de022ef441"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe2e51ade9b853be3527f250f2d331b5c158d585ff9c7eb8cee81d9bc50fcd8a"
   end
 
   depends_on "font-util" => :build
