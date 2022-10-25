@@ -8,8 +8,7 @@ class Xrefresh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e1ca38f4323c89b59672723ff4e423deb0379446c4bd928fbca3efc50f02fe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d3bdd51230a2632903c4dfd139c02e7e230ce6967901f2a7a6f77ecfff8e6e4e"
   end
 
   depends_on "pkg-config" => :build
