@@ -6,8 +6,7 @@ class XorgDocs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ad77d434dd3785c9f2763bf18a4c6ded0b22a4c64c701570e70aff3d92faae35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "58452a7b0914fd3c8b5c7f660b1f6b145f62453184aac810fecb67884ea3186d"
   end
 
   # unlike other packages, this one is all about documentation
