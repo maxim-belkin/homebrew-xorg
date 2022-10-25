@@ -1,9 +1,8 @@
 class XorgDocs < Formula
   desc "X.Org ocumentation that is not part of other Xorg packages"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.1.tar.bz2"
-  sha256 "24b8677c3462c10465cf50d40576d76682acd5835526093a575865b2aa242c4b"
-  revision 1
+  url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.2.tar.bz2"
+  sha256 "2391b8af472626c12d3c3814b5e7a0ea43c3a96eda94255b7ed8bdff0fbf08e3"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
