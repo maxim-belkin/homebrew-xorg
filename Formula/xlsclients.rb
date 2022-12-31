@@ -8,8 +8,7 @@ class Xlsclients < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "76cafc4d5e68d68d8a78422886813083e1a3188617942aab13a760a77efb1fb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f9a57af35274b6fdb699f7dd3a0fe8a4eeaaf0122d40c6436da7d39da4f2bdfe"
   end
 
   depends_on "pkg-config" => :build
