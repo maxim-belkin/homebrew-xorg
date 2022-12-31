@@ -7,8 +7,7 @@ class Xrandr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d022f150cdcc54ece1aeacbe86cd90411ae8cfda0b20862faa995d49dd167fb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f6182c72da214ac032c65c8180921d86eab4612ced8363c2d5d01783404dd86"
   end
 
   option "without-xkeystone", "Delete (broken) xkeystone script"
