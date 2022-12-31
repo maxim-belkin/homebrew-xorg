@@ -2,10 +2,9 @@ class Xpr < Formula
   desc "X.Org Applications: xpr"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xpr-1.0.5.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xpr-1.0.5.tar.bz2"
-  sha256 "b936e0f1f8d63f5ad097a0bbdce2e67c34f5d49b7263f32a832ff62d394d1e1f"
-  revision 1
+  url "https://www.x.org/pub/individual/app/xpr-1.1.0.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/xpr-1.1.0.tar.gz"
+  sha256 "fabd02fb1a52358d521f1be7422738bc8c9b511a8d82a163888f628db6f6cb18"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
