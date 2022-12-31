@@ -11,8 +11,7 @@ class Mtdev < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec9d690f978f0974f2d01c23117add4a73804bc646ec5ea78bc39d8ac99cc039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8b79166172eee8100a20e0b4a704e44622bc06783db6c17ebaf5dcccce5ab759"
   end
 
   depends_on "pkg-config" => :build
