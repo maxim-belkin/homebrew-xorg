@@ -1,9 +1,8 @@
 class LibvaUtils < Formula
   desc "Collection of utilities and examples to exercise VA-API"
   homepage "https://github.com/01org/libva-utils"
-  url "https://github.com/intel/libva-utils/releases/download/2.6.0/libva-utils-2.6.0.tar.bz2"
-  sha256 "2249b5d08bffc3862bbdcc9a6a4827afd504330b8d101564d39fe1a1e7adc426"
-  revision 3
+  url "https://github.com/intel/libva-utils/releases/download/2.16.0/libva-utils-2.16.0.tar.bz2"
+  sha256 "0e83badff4d675fe619cccb6ad4dca7a048eafe4aabe3bbb2aeb1a91529e4666"
 
   livecheck do
     url :stable
