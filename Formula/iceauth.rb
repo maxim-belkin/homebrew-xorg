@@ -2,10 +2,9 @@ class Iceauth < Formula
   desc "X.Org Applications: iceauth"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/iceauth-1.0.8.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/iceauth-1.0.8.tar.bz2"
-  sha256 "e6ee213a217265cc76050e4293ea70b98c32dce6505c6421227efbda62ab60c6"
-  revision 1
+  url "https://www.x.org/pub/individual/app/iceauth-1.0.9.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/iceauth-1.0.8.tar.gz"
+  sha256 "5ca274cf210453e7d7cf5c827a2fbc92149df83824f99a27cde17e1f20324dc6"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
