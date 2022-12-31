@@ -2,10 +2,9 @@ class Xlsclients < Formula
   desc "X.Org Applications: xlsclients"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xlsclients-1.1.4.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xlsclients-1.1.4.tar.bz2"
-  sha256 "773f2af49c7ea2c44fba4213bee64325875c1b3c9bc4bbcd8dac9261751809c1"
-  revision 1
+  url "https://www.x.org/pub/individual/app/xlsclients-1.1.5.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/xlsclients-1.1.5.tar.gz"
+  sha256 "225d75e4c0b0929f16f974e20931ab85204b40098d92a5479b0b9379120637e5"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
