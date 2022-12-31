@@ -1,8 +1,8 @@
 class Pciutils < Formula
   desc "Programs for inspecting and manipulating configuration of PCI devices"
   homepage "https://www.x.org/"
-  url "https://www.kernel.org/pub/software/utils/pciutils/pciutils-3.5.1.tar.xz"
-  sha256 "2bf3a4605a562fb6b8b7673bff85a474a5cf383ed7e4bd8886b4f0939013d42f"
+  url "https://www.kernel.org/pub/software/utils/pciutils/pciutils-3.9.0.tar.xz"
+  sha256 "cdea7ae97239dee23249a09c68a19a287a3f109fbeb2c232ebb616cb38599012"
 
   livecheck do
     url "https://www.kernel.org/pub/software/utils/pciutils/"
