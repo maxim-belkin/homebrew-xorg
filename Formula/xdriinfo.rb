@@ -2,10 +2,9 @@ class Xdriinfo < Formula
   desc "X.Org Applications: xdriinfo"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xdriinfo-1.0.6.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xdriinfo-1.0.6.tar.bz2"
-  sha256 "d9ccd2c3e87899417acc9ea1f3e319a4198112babe1dc711273584f607449d51"
-  revision 2
+  url "https://www.x.org/pub/individual/app/xdriinfo-1.0.7.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/xdriinfo-1.0.7.tar.gz"
+  sha256 "9fab95510b1f67409632fb8af01369b128f4d12763fe1a2662f5666976a7d30c"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
