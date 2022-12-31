@@ -2,10 +2,10 @@ class FontAlias < Formula
   desc "X.Org Fonts: font alias"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-alias-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-alias-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-alias-1.0.3.tar.bz2"
-  sha256 "8b453b2aae1cfa8090009ca037037b8c5e333550651d5a158b7264ce1d472c9a"
+  url "https://www.x.org/pub/individual/font/font-alias-1.0.4.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-alias-1.0.4.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-alias-1.0.4.tar.bz2"
+  sha256 "f3111ae8bf2e980f5f56af400e8eefe5fc9f4207f4a412ea79637fd66c945276"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
