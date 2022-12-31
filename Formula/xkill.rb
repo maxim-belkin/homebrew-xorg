@@ -2,10 +2,9 @@ class Xkill < Formula
   desc "X.Org Applications: xkill"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xkill-1.0.5.tar.bz2"
-  sha256 "c5f0bb6a95e1ac7c4def8a657496d5d2f21ccd41eb47ef2c9ccb03fb6d6aff6b"
-  revision 1
+  url "https://www.x.org/pub/individual/app/xkill-1.0.6.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/xkill-1.0.6.tar.gz"
+  sha256 "3b35a2f4b67dda1e98b6541488cd7f7343eb6e3dbe613aeff3d5a5a4c4c64b58"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
