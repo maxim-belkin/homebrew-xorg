@@ -8,8 +8,7 @@ class Xlsatoms < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "93fa50c8d032a0857abde4cca86b58431f10d19713ae0055d251f8962e753446"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3f42fd83ac033588479d64709c26726d25eea717dbc5dffd9c50bf64cd75f7a6"
   end
 
   depends_on "pkg-config" => :build
