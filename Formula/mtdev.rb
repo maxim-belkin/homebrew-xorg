@@ -1,8 +1,8 @@
 class Mtdev < Formula
   desc "Multitouch Protocol Translation Library"
   homepage "https://bitmath.org"
-  url "https://bitmath.org/code/mtdev/mtdev-1.1.5.tar.bz2"
-  sha256 "6677d5708a7948840de734d8b4675d5980d4561171c5a8e89e54adf7a13eba7f"
+  url "https://bitmath.org/code/mtdev/mtdev-1.1.6.tar.bz2"
+  sha256 "15d7b28da8ac71d8bc8c9287c2045fd174267bc740bec10cfda332dc1204e0e0"
 
   livecheck do
     url "https://bitmath.org/code/mtdev/"
