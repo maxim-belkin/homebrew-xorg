@@ -8,8 +8,7 @@ class Xmodmap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "acbcd9a7e03a79ed0c9705a7bc3109f2e44f9d5570340e45394070e15a6c7b64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "00dafec4b762530f4ed2d297a74113f96c9af5ad159c5ed70f7f9828adab29bf"
   end
 
   depends_on "pkg-config" => :build
