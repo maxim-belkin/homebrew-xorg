@@ -7,8 +7,7 @@ class Sessreg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9a228b4491c2b841281547e5b55015e7f4e2a97890d14a6d6baf58c50e6d65ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d21c2c3eeaeda3db97b1331b5ac6be39e9efe07ed5fe22af474080c58fdab8d"
   end
 
   depends_on "pkg-config" => :build
