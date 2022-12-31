@@ -6,8 +6,7 @@ class Libevdev < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "aca0db31732d4993eeb9054b420ccd4e664ea7977ad4cc044be2f1c66c72b44a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b77d1cae308fb60f8e7d32dd2495d50f5625449ae85a42bb0008ec7843d39ee0"
   end
 
   option "without-test", "Skip compile-time tests"
