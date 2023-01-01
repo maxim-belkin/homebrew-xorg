@@ -2,10 +2,9 @@ class Xset < Formula
   desc "X.Org Applications: xset"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
-  sha256 "e4fd95280df52a88e9b0abc1fee11dcf0f34fc24041b9f45a247e52df941c957"
-  revision 1
+  url "https://www.x.org/pub/individual/app/xset-1.2.5.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/xset-1.2.5.tar.gz"
+  sha256 "2068d1356d80c29ce283f0fff5895667b38f24ea95df363d3dde7b8c8a92fffe"
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
