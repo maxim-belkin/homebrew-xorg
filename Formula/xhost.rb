@@ -7,6 +7,7 @@ class Xhost < Formula
   sha256 "a2dc3c579e13674947395ef8ccc1b3763f89012a216c2cc6277096489aadc396"
   revision 1
 
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
