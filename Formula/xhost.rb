@@ -2,11 +2,11 @@ class Xhost < Formula
   desc "X server access control tool"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xhost-1.0.8.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xhost-1.0.8.tar.bz2"
-  sha256 "a2dc3c579e13674947395ef8ccc1b3763f89012a216c2cc6277096489aadc396"
-  revision 1
+  url "https://www.x.org/pub/individual/app/xhost-1.0.9.tar.gz"
+  mirror "https://ftp.x.org/pub/individual/app/xhost-1.0.9.tar.gz"
+  sha256 "ca850367593fcddc4bff16de7ea1598aa4f6817daf5a803a1258dff5e337f7c3"
 
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
@@ -23,7 +23,6 @@ class Xhost < Formula
       --enable-tcp-transport
       --enable-ipv6
       --enable-local-transport
-      --enable-secure-rpc
     ]
 
     system "./configure", *args
