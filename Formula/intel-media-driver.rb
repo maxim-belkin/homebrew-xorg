@@ -1,9 +1,8 @@
 class IntelMediaDriver < Formula
   desc "Media driver for VAAPI"
   homepage "https://github.com/intel/media-driver"
-  url "https://github.com/intel/media-driver/archive/intel-media-19.4.0r.tar.gz"
-  sha256 "a03bd75eefe9cb0245e3aab2723b3fef555d9f180a180b2c29d7b12d483d9ec2"
-  revision 1
+  url "https://github.com/intel/media-driver/archive/intel-media-22.5.4.tar.gz"
+  sha256 "08d8d041f94b094a2dd5c4739c413b75185521c7f788a02411395ff374ee4ead"
 
   livecheck do
     url :stable
