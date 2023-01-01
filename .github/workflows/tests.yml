@@ -2,8 +2,9 @@ name: GitHub Actions CI
 
 on:
   push:
-    branches: main
-  pull_request: []
+    branches:
+      - main
+  pull_request:
 
 env:
   HOMEBREW_DEVELOPER: 1
@@ -75,16 +76,16 @@ jobs:
         if: always()
         uses: Homebrew/actions/failures-summary-and-bottle-result@master
         with:
-          workdir: ${{github.workspace}}
-          result_path: ~/bottles/steps_output.txt
+          workdir: /github/home
+          result_path: bottles/steps_output.txt
           step_name: 'Build summary'
 
       - name: Output brew linkage result
         if: always()
         uses: Homebrew/actions/failures-summary-and-bottle-result@master
         with:
-          workdir: ${{github.workspace}}
-          result_path: ~/bottles/linkage_output.txt
+          workdir: /github/home
+          result_path: bottles/linkage_output.txt
           step_name: '`brew linkage` output'
           collapse: 'true'
 
@@ -92,8 +93,8 @@ jobs:
         if: always()
         uses: Homebrew/actions/failures-summary-and-bottle-result@master
         with:
-          workdir: ${{github.workspace}}
-          result_path: ~/bottles/bottle_output.txt
+          workdir: /github/home
+          result_path: bottles/bottle_output.txt
           step_name: '`brew bottle` output'
           collapse: 'true'
 
@@ -101,8 +102,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@main
         with:
-          name: logs-${{ matrix.runner }}
-          path: ~/bottles/logs
+          name: logs-ubuntu-22.04
+          path: /github/home/.cache/Homebrew/Logs
 
       - name: Delete logs and home
         if: always()
@@ -128,7 +129,7 @@ jobs:
         if: always() && steps.bottles.outputs.failures > 0
         uses: actions/upload-artifact@main
         with:
-          name: bottles-${{ matrix.runner }}
+          name: bottles-ubuntu-22.04
           path: ~/bottles/failed
 
       # Must be run before the `Upload bottles` step so that failed
