@@ -8,8 +8,7 @@ class Xkbevd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5a3827ce8309fac294c3b2934d46d81d8a9a1c052042d631df48e646a4b4214"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "698f291ad964a1babbadb6dda637de2d1f0d4e74001392adb8f125cdfd36eba7"
   end
 
   depends_on "pkg-config" => :build
