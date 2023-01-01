@@ -8,8 +8,7 @@ class Xsetroot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "49dd8369981daee461dfa43992f524523ab8cc206d540a4c0b2e4baae3d6288c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2a643b8f9a996375c0bc74d190eb7432cb72149a80a7a4a2c5951f0d987f3e2f"
   end
 
   # xmuu x11 xbitmaps xcursor xorgproto
