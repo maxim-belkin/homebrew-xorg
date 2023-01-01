@@ -12,8 +12,10 @@ class Setxkbmap < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "util-macros" => :build
   depends_on "libx11"
   depends_on "libxkbfile"
+  depends_on "xrandr"
 
   def install
     args = %W[
