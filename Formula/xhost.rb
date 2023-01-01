@@ -6,6 +6,11 @@ class Xhost < Formula
   mirror "https://ftp.x.org/pub/individual/app/xhost-1.0.9.tar.gz"
   sha256 "ca850367593fcddc4bff16de7ea1598aa4f6817daf5a803a1258dff5e337f7c3"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "418f0edd5aa9654e7de84b67360fde4a294709944e21e9a14d9278c477f8958e"
+  end
+
   depends_on "gettext" => :build
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
