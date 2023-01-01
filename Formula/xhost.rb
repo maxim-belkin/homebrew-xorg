@@ -23,7 +23,6 @@ class Xhost < Formula
       --enable-tcp-transport
       --enable-ipv6
       --enable-local-transport
-      --enable-secure-rpc
     ]
 
     system "./configure", *args
