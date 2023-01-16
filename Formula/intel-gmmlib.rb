@@ -1,8 +1,8 @@
 class IntelGmmlib < Formula
   desc "Intel Graphics Memory Management Library"
   homepage "https://github.com/intel/gmmlib"
-  url "https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.2.tar.gz"
-  sha256 "f725fbb4291ab67bbc7b31e1a268f523df384667360c931b40144db861be53d7"
+  url "https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.3.tar.gz"
+  sha256 "86651bd2803c9f0afd82471bec784e65d2b418dee315a053d22215eb2a679be7"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
