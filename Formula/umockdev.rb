@@ -1,8 +1,8 @@
 class Umockdev < Formula
   desc "Mock devices for integration tests for hardware-related libraries"
   homepage "https://launchpad.net/umockdev"
-  url "https://github.com/martinpitt/umockdev/releases/download/0.14.1/umockdev-0.14.1.tar.xz"
-  sha256 "ffb6134667f510a146b533076eb1a316392c7902a4ec593080de9fb53393e8bc"
+  url "https://github.com/martinpitt/umockdev/releases/download/0.17.15/umockdev-0.17.15.tar.xz"
+  sha256 "ed418ee2bbfb0781f4b24b9729ef270ad83cddccd66a59ff944b059ef1368fef"
 
   depends_on "gobject-introspection" => [:recommended, :build]
   depends_on "gphoto2" => [:recommended, :build]
