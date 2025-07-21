@@ -7,6 +7,7 @@
   "libdrm": "homebrew/core",
   "libfontenc": "homebrew/core",
   "libfs": "homebrew/core",
+  "libgudev": "homebrew/core",
   "libice": "homebrew/core",
   "libpciaccess": "homebrew/core",
   "libpthread-stubs": "homebrew/core",
@@ -44,6 +45,8 @@
   "libxxf86vm": "homebrew/core",
   "luit ": "homebrew/core",
   "mkfontscale": "homebrew/core",
+  "pciutils": "homebrew/core",
+  "umockdev": "homebrew/core",
   "util-macros": "homebrew/core",
   "wayland": "homebrew/core",
   "wayland-protocols": "homebrew/core",
@@ -60,6 +63,11 @@
   "xinput": "homebrew/core",
   "xkbcomp": "homebrew/core",
   "xkeyboardconfig": "homebrew/core",
+  "xlsclients": "homebrew/core",
+  "xmodmap": "homebrew/core",
   "xorgproto": "homebrew/core",
-  "xtrans": "homebrew/core"
+  "xprop": "homebrew/core",
+  "xrdb": "homebrew/core",
+  "xtrans": "homebrew/core",
+  "xwininfo": "homebrew/core"
 }
