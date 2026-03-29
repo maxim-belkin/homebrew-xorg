@@ -22,13 +22,20 @@ class IntelMediaDriver < Formula
   depends_on "libva"
 
   def install
-    # Fix cmake_minimum_required rejected by CMake >= 3.30
-    inreplace "os_release_info.cmake",
-              "cmake_minimum_required(VERSION 2.8.12)",
-              "cmake_minimum_required(VERSION 3.5)"
-    inreplace "cmrtlib/CMakeLists.txt",
-              "cmake_minimum_required(VERSION 2.8)",
-              "cmake_minimum_required(VERSION 3.5)"
+    # Fix cmake_minimum_required(<3.5) rejected by CMake >= 3.30
+    %w[
+      os_release_info.cmake
+      cmrtlib/CMakeLists.txt
+      cmrtlib/linux/CMakeLists.txt
+      Tools/MediaDriverTools/GenDmyHex/CMakeLists.txt
+      Tools/MediaDriverTools/GenKrnBin/CMakeLists.txt
+      Tools/MediaDriverTools/KernelBinToSource/CMakeLists.txt
+      Tools/MediaDriverTools/KrnToHex/CMakeLists.txt
+      Tools/MediaDriverTools/KrnToHex_IGA/CMakeLists.txt
+    ].each do |f|
+      inreplace f, /cmake_minimum_required\s*\(VERSION \d+\.\d+(\.\d+)?\)/,
+                "cmake_minimum_required(VERSION 3.5)"
+    end
 
     args = std_cmake_args + %w[
       -DBUILD_TYPE=Release
