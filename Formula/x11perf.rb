@@ -7,6 +7,11 @@ class X11perf < Formula
   license "MIT"
   revision 2
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "296aeb172aee448fb8921433c9d21e0fef23208e6e9bd15e1cbe9115ed368fd0"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
