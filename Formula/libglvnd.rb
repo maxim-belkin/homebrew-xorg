@@ -16,10 +16,7 @@ class Libglvnd < Formula
   depends_on "libx11"
 
   def install
-    args = %W[
-      -Dprefix=#{prefix}
-      -Dsysconfdir=#{etc}
-      -Dlocalstatedir=#{var}
+    args = std_meson_args + %w[
       -Dasm=enabled
       -Dx11=enabled
       -Dglx=enabled
