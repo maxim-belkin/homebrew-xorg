@@ -2,10 +2,9 @@ class Xbacklight < Formula
   desc "X.Org Applications: xbacklight"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xbacklight-1.2.3.tar.bz2"
-  sha256 "3a27f324777ae99fee476cfb2f064576fb8cba4eb77f97cda37adda1c1d39ade"
+  url "https://www.x.org/pub/individual/app/xbacklight-1.2.4.tar.xz"
+  sha256 "d4c30b0e6f18c82f387585a737ee3b72d468c927892b08a898c41bc12248e8ee"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
