@@ -2,10 +2,8 @@ class FontAlias < Formula
   desc "X.Org Fonts: font alias"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-alias-1.0.4.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-alias-1.0.4.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-alias-1.0.4.tar.bz2"
-  sha256 "f3111ae8bf2e980f5f56af400e8eefe5fc9f4207f4a412ea79637fd66c945276"
+  url "https://www.x.org/pub/individual/font/font-alias-1.0.6.tar.xz"
+  sha256 "f6a5e968b616e728a981fd1fd9ed5fe2ca0fe18fbe072b1888cb3f71b701e4c0"
   license "MIT"
 
   bottle do
