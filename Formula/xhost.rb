@@ -36,6 +36,6 @@ class Xhost < Formula
   end
 
   test do
-    assert_match(/access control (enabled|disabled)/, shell_output("xhost"))
+    assert_match(/access control (enabled|disabled)/, shell_output("#{bin}/xhost"))
   end
 end
