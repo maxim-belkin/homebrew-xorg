@@ -8,8 +8,7 @@ class FontMiscMeltho < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01c561a754cda92bb144119c6e4d872266283fc8c7d65de372817fa6ab59ccda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48419c5f32903a21a469809bdf83b7b814895e66ec50322f8bf051282c22eb7a"
   end
 
   keg_only "part of Xorg-fonts package"
