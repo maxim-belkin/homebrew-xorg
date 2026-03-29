@@ -2,10 +2,8 @@ class FontMiscEthiopic < Formula
   desc "X.Org Fonts: font misc ethiopic"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-misc-ethiopic-1.0.4.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-misc-ethiopic-1.0.4.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-misc-ethiopic-1.0.4.tar.bz2"
-  sha256 "698c0f6ddf9ca482250bdafa08293893148393bb9cb23e0a9ca313c6dbfc4ae0"
+  url "https://www.x.org/pub/individual/font/font-misc-ethiopic-1.0.5.tar.xz"
+  sha256 "4749a7e6e1a1eef6c91fcc9a04e8b1c0ed027d40c1599e5a6c93270d8469b612"
   license "MIT"
 
   bottle do
