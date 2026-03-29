@@ -8,8 +8,7 @@ class FontArabicMisc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b221b971a678244c70c241dfc344a81dafb26900f7bd4c5821aff0e35668e037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "304e45fbe5475fd08028a641cdbd7ba448a805cc42f9aa5a78d5f38254f39e54"
   end
 
   depends_on "bdftopcf" => :build
