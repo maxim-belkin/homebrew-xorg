@@ -11,8 +11,6 @@ class LibvdpauVaGl < Formula
     strategy :github_latest
   end
 
-  # option "without-test", "Skip compile-time tests"
-
   # Build-time
   depends_on "cmake" => :build
   depends_on "ffmpeg" => :build

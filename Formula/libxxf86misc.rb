@@ -6,8 +6,6 @@ class Libxxf86misc < Formula
   revision 1
   license "MIT"
 
-  option "without-test", "Skip compile-time tests"
-
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
@@ -25,7 +23,6 @@ class Libxxf86misc < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end

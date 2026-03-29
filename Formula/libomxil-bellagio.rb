@@ -6,10 +6,6 @@ class LibomxilBellagio < Formula
   revision 1
   license "LGPL-2.1-or-later"
 
-  option "without-test", "Skip compile-time tests"
-  option "with-docs", "Build documentation"
-
-  depends_on "doxygen" => :build if build.with? "docs"
   depends_on "pkg-config" => :build
 
   def install
@@ -18,26 +14,12 @@ class LibomxilBellagio < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --disable-dependency-tracking
-      --enable-doc=#{build.with?("docs") ? "yes" : "no"}
+      --enable-doc=no
     ]
 
     system "./configure", *args
     ENV.deparallelize
     system "make"
-    # system "make", "check" if build.with? "test"
-    # 'make check' Fails with omxvolcontroltest.h:38:22: fatal error: OMX_Core.h: No such file or directory
     system "make", "install"
-    system "make", "installcheck" if build.with? "test"
-    doc.install Dir["doc/libomxil-bellagio/*"] if build.with? "docs"
-
-    if build.with? "test"
-      ["audio_effects", "resource_manager"].each do |f|
-        inreplace "test/components/#{f}/Makefile" do |s|
-          s.gsub!(/^bellagio_LDADD = -lomxil-bellagio$/,
-            "bellagio_LDADD = -L$(top_srcdir)/src/.libs -lomxil-bellagio")
-        end
-      end
-      system "make", "check"
-    end
   end
 end

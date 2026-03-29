@@ -16,7 +16,7 @@ class FontWinitzkiCyrillic < Formula
   end
 
   depends_on "bdftopcf" => :build
-  depends_on "bzip2" => [:build, :recommended]
+  depends_on "bzip2" => :build
   depends_on "font-util" => :build
   depends_on "fontconfig" => :build
   depends_on "mkfontscale" => :build
@@ -29,9 +29,9 @@ class FontWinitzkiCyrillic < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --with-compression=bzip2
       --with-fontrootdir=#{share}/fonts/X11
     ]
-    args << "--with-compression=bzip2" if build.with? "bzip2"
 
     system "./configure", *args
     system "make"

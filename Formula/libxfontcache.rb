@@ -12,8 +12,6 @@ class Libxfontcache < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "631c84fccc8734f5e1a2cedc5fe97e5291c13db61ff58b6668915e515de8478a"
   end
 
-  option "without-test", "Skip compile-time tests"
-
   depends_on "pkg-config" => :build
   depends_on "libx11"
   depends_on "libxext"
@@ -30,7 +28,6 @@ class Libxfontcache < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end

@@ -11,8 +11,6 @@ class Xrandr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9f6182c72da214ac032c65c8180921d86eab4612ced8363c2d5d01783404dd86"
   end
 
-  option "without-xkeystone", "Delete (broken) xkeystone script"
-
   depends_on "pkg-config" => :build
   depends_on "xorgproto" => :build
   depends_on "libx11"
@@ -31,6 +29,6 @@ class Xrandr < Formula
     system "./configure", *args
     system "make"
     system "make", "install"
-    rm bin/"xkeystone" if build.without?("xkeystone")
+    rm bin/"xkeystone"
   end
 end

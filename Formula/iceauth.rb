@@ -13,7 +13,6 @@ class Iceauth < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "splint" => [:build, :optional]
   depends_on "xorgproto" => :build
   depends_on "libice"
 
@@ -24,7 +23,7 @@ class Iceauth < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --with-lint=#{build.with?("splint") ? "yes" : "no"}
+      --with-lint=no
     ]
 
     system "./configure", *args

@@ -10,9 +10,6 @@ class Libevdev < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b77d1cae308fb60f8e7d32dd2495d50f5625449ae85a42bb0008ec7843d39ee0"
   end
 
-  option "without-test", "Skip compile-time tests"
-
-  depends_on "check" => :build if build.with? "test"
   depends_on "pkg-config" => :build
   depends_on "python@3.13" => :build
 
@@ -27,7 +24,6 @@ class Libevdev < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 
