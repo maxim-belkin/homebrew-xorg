@@ -8,8 +8,7 @@ class FontBhTtf < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1217b5b4cf4167e8a605d51d3b9e1510e50783f4db15990ed09af57ccddde51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ccac8fb0ed810ed9e0c4a55a5060be0996f2bd7ea0df24f1fa93d100ad6ada1e"
   end
 
   keg_only "part of Xorg-fonts package"
