@@ -1,8 +1,8 @@
 class XorgDocs < Formula
   desc "X.Org ocumentation that is not part of other Xorg packages"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.2.tar.bz2"
-  sha256 "2391b8af472626c12d3c3814b5e7a0ea43c3a96eda94255b7ed8bdff0fbf08e3"
+  url "https://www.x.org/archive/individual/doc/xorg-docs-1.7.3.tar.xz"
+  sha256 "28a2f2eeb5d9ff58b85961ff3ed7baaaf1ffa132e2a81f8b2bb97cb499bcddef"
   license "MIT"
 
   bottle do
