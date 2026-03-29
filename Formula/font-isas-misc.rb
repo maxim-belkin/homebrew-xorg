@@ -2,12 +2,9 @@ class FontIsasMisc < Formula
   desc "X.Org Fonts: font isas misc"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-isas-misc-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-isas-misc-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-isas-misc-1.0.3.tar.bz2"
-  sha256 "5824ab4b485951107dd245b8f7717d2822f1a6dbf6cea98f1ac7f49905c0a867"
+  url "https://www.x.org/pub/individual/font/font-isas-misc-1.0.4.tar.xz"
+  sha256 "47e595bbe6da444b9f6fcaa26539abc7ba1989e23afa6cdc49e22e484cc438fc"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
