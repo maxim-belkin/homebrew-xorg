@@ -25,17 +25,8 @@ class LibvdpauVaGl < Formula
   depends_on "mesa-glu"
 
   def install
-    args = std_cmake_args
-    args << "-DCMAKE_INSTALL_PREFIX=#{prefix}"
-    args << ".."
-
-    (buildpath/"build").mkpath
-    cd "build" do
-      system "cmake", *args
-      system "make"
-      # system "make", "check" if build.with?("test") ### currently tests fail with:
-      # X11 connection rejected because of wrong authentication
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end

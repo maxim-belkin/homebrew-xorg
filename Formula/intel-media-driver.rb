@@ -26,10 +26,8 @@ class IntelMediaDriver < Formula
       -DUFO_MARCH=x86_64
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end

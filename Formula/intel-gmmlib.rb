@@ -12,10 +12,8 @@ class IntelGmmlib < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DBUILD_TYPE=release"
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_TYPE=release"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 end

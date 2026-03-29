@@ -26,10 +26,8 @@ class Libglvnd < Formula
       -Dtls=enabled
     ]
 
-    mkdir "build" do
-      system "meson", *args
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *args
+    system "meson", "compile", "-C", "build"
+    system "meson", "install", "-C", "build"
   end
 end
