@@ -8,7 +8,7 @@ class Xcursorgen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e012d2c68a06ab5ec6f5020bd7dfbb0eb599617373c5d8ff6e5f69cb41328bf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "41dc238a4f90f9170579e183d429ca2c36773b41587822ad06fc2615090c9e81"
   end
 
   depends_on "pkg-config" => :build
