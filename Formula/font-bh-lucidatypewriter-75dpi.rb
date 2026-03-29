@@ -8,8 +8,7 @@ class FontBhLucidatypewriter75dpi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a5ad57f624ac06cdb959550b4631908841c8bf4b0ecd717339b7eb608ad2c9a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "faacf7f6ffca4e9dc53cdb9d8385cee8cafcbad145e84605823bc8092b182ebd"
   end
 
   keg_only "part of Xorg-fonts package"
