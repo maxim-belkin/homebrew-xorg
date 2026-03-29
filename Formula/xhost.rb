@@ -8,7 +8,7 @@ class Xhost < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "418f0edd5aa9654e7de84b67360fde4a294709944e21e9a14d9278c477f8958e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48b30768a0bff20fc560c0478794f13e55ed1890532582886848f997e3105ff4"
   end
 
   depends_on "gettext" => :build
