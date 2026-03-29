@@ -8,8 +8,7 @@ class FontCronyxCyrillic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4096708596d5c80e39f6ba0235b726053ba5d531fa4bcabd4685cd556f4dc92d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b164bfb69bbcecde1751dad97aa836f67c7bfdb5c819817fb39b9a3b47173b6"
   end
 
   keg_only "part of Xorg-fonts package"
