@@ -26,6 +26,9 @@ class IntelMediaDriver < Formula
     inreplace "os_release_info.cmake",
               "cmake_minimum_required(VERSION 2.8.12)",
               "cmake_minimum_required(VERSION 3.5)"
+    inreplace "cmrtlib/CMakeLists.txt",
+              "cmake_minimum_required(VERSION 2.8)",
+              "cmake_minimum_required(VERSION 3.5)"
 
     args = std_cmake_args + %w[
       -DBUILD_TYPE=Release
