@@ -8,8 +8,7 @@ class FontSchumacherMisc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e8b4d5eb28f30602454092ec6d01a00b5a2612b0aefeb7078f09a41287921926"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d424f0777fce5d936f32ec9bef8c164f5aa799483d3936e4b474121d3c56473"
   end
 
   keg_only "part of Xorg-fonts package"
