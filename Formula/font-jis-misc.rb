@@ -2,12 +2,9 @@ class FontJisMisc < Formula
   desc "X.Org Fonts: font jis misc"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-jis-misc-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-jis-misc-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-jis-misc-1.0.3.tar.bz2"
-  sha256 "2b18ce10b367ebafe95a17de799b6db9a24e2337188d124adaf68af05b1fac65"
+  url "https://www.x.org/pub/individual/font/font-jis-misc-1.0.4.tar.xz"
+  sha256 "78d1eff6c471f7aa6802a26d62cccf51d8e5185586406d9b6e1ee691b0bffad0"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
