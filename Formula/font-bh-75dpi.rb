@@ -2,12 +2,9 @@ class FontBh75dpi < Formula
   desc "X.Org Fonts: font bh 75dpi"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-bh-75dpi-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-75dpi-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-bh-75dpi-1.0.3.tar.bz2"
-  sha256 "3486aa51ac92c646a448fe899c5c3dae0024b1fef724d5100d52640d1cac721c"
+  url "https://www.x.org/pub/individual/font/font-bh-75dpi-1.0.4.tar.xz"
+  sha256 "6026d8c073563dd3cbb4878d0076eed970debabd21423b3b61dd90441b9e7cda"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
