@@ -8,7 +8,7 @@ class Libwacom < Formula
   livecheck do
     url :stable
     strategy :github_latest
-    regex(%r{href=.*?/tag/(?:libwacom[._-])?v?(\d+(?:\.\d+)+)["' >]}i)
+    regex(/^libwacom[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   depends_on "libxml2" => :build
