@@ -8,8 +8,7 @@ class XcursorThemes < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c2b0ea73e77ddf952f5cb64ef4f9f0e4e9d7c3fb709c577ce2d3b4ded6fed855"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1a11cc2cec5964e9e9f8822cb3f2846419f01fa55d66a67504477d6c05b1d40e"
   end
 
   depends_on "maxim-belkin/xorg/xcursorgen" => :build
