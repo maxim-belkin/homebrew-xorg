@@ -2,9 +2,8 @@ class Xkbevd < Formula
   desc "X.Org Applications: xkbevd"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xkbevd-1.1.5.tar.gz"
-  mirror "https://ftp.x.org/pub/individual/app/xkbevd-1.1.5.tar.gz"
-  sha256 "5d6b65a417be57e19a76277601da83271b19de6e71cb0e8821441f6fb9973c47"
+  url "https://www.x.org/pub/individual/app/xkbevd-1.1.6.tar.gz"
+  sha256 "e705872f9948091d934476d56937cfc94f93101d481ac9a556e4a47e8a955c75"
   license "MIT"
 
   bottle do
