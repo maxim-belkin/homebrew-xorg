@@ -2,12 +2,9 @@ class XcursorThemes < Formula
   desc "X.Org: redglass and whiteglass animated cursor themes"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/archive/individual/data/xcursor-themes-1.0.6.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/data/xcursor-themes-1.0.6.tar.bz2"
-  mirror "ftp://ftp.x.org/pub/individual/data/xcursor-themes-1.0.6.tar.bz2"
-  sha256 "ee1ec574741293abcf66ac14ce7e74add7ac6be7deb8b38179ef010d22354999"
+  url "https://www.x.org/archive/individual/data/xcursor-themes-1.0.7.tar.xz"
+  sha256 "95bae8f48823d894a05bf42dfbf453674ab7dbdeb11e2bc079e8525ad47378c8"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
