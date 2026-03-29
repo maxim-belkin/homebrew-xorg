@@ -22,6 +22,11 @@ class IntelMediaDriver < Formula
   depends_on "libva"
 
   def install
+    # Fix cmake_minimum_required rejected by CMake >= 3.30
+    inreplace "os_release_info.cmake",
+              "cmake_minimum_required(VERSION 2.8.12)",
+              "cmake_minimum_required(VERSION 3.5)"
+
     args = std_cmake_args + %w[
       -DBUILD_TYPE=Release
       -DUFO_MARCH=x86_64
