@@ -8,7 +8,7 @@ class Encodings < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ca5f97581abc13c11a3e4e69a520b1eaee0ab678002a20a8548034484d2b1341"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "23f84779e8dd2ce23e873fbe2be45f3b47c53a1eb30c45cf6c8291537170d91a"
   end
 
   keg_only "part of Xorg-fonts package"
