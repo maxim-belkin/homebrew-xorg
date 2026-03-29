@@ -7,7 +7,7 @@ class XorgDocs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "58452a7b0914fd3c8b5c7f660b1f6b145f62453184aac810fecb67884ea3186d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d1b80cea067f100d7eff99fb28cf3b040d078f4d4172b8b7e59f8001da562af3"
   end
 
   depends_on "docbook" => :build
