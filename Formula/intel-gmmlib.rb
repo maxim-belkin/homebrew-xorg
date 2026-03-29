@@ -1,7 +1,7 @@
 class IntelGmmlib < Formula
   desc "Intel Graphics Memory Management Library"
   homepage "https://github.com/intel/gmmlib"
-  url "https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.3.tar.gz"
+  url "https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-22.3.3.tar.gz"
   sha256 "86651bd2803c9f0afd82471bec784e65d2b418dee315a053d22215eb2a679be7"
   license "Apache-2.0"
 
@@ -19,6 +19,6 @@ class IntelGmmlib < Formula
   end
 
   test do
-    assert_predicate lib/"libigdgmm.so", :exist?
+    assert_path_exists lib/"libigdgmm.so"
   end
 end

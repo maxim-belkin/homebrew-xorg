@@ -6,8 +6,8 @@ class FontDaewooMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-daewoo-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-daewoo-misc-1.0.3.tar.bz2"
   sha256 "bc65de70bee12698caa95b523d3b652c056347e17b68cc8b5d6bbdff235c4be8"
-  revision 2
   license "MIT"
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

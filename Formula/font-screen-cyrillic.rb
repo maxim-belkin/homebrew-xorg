@@ -6,8 +6,8 @@ class FontScreenCyrillic < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
   sha256 "824231e8dffe15299454e47259f29d98001c9cf8ad3d6b5171399e4d71705e79"
-  revision 2
   license "MIT"
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

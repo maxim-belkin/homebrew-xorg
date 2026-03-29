@@ -5,8 +5,8 @@ class XorgApps < Formula
   url "https://gist.githubusercontent.com/maxim-belkin/6916a35b777799d4e71b213eaae8a980/raw/974f263825c96a43310fca7a8106d0c7c015b681/README.md"
   version  "20160522"
   sha256   "d6f8969d76bd3236c40e57fc3f498c43341f3f1e9ae01c4c2bca11876f07adc6"
-  revision 2
   license "MIT"
+  revision 2
 
   livecheck do
     skip "Formula only installs other formulae"
@@ -56,6 +56,6 @@ class XorgApps < Formula
   end
 
   test do
-    assert_predicate prefix/"xorg-apps.md", :exist?
+    assert_path_exists prefix/"xorg-apps.md"
   end
 end

@@ -3,8 +3,8 @@ class LibomxilBellagio < Formula
   homepage "https://dri.freedesktop.org"
   url "https://downloads.sourceforge.net/project/omxil/omxil/Bellagio%200.9.3/libomxil-bellagio-0.9.3.tar.gz"
   sha256 "593c0729c8ef8c1467b3bfefcf355ec19a46dd92e31bfc280e17d96b0934d74c"
-  revision 1
   license "LGPL-2.1-or-later"
+  revision 1
 
   depends_on "pkg-config" => :build
 
@@ -24,6 +24,6 @@ class LibomxilBellagio < Formula
   end
 
   test do
-    assert_predicate lib/"libomxil-bellagio.so", :exist?
+    assert_path_exists lib/"libomxil-bellagio.so"
   end
 end

@@ -6,8 +6,8 @@ class FontWinitzkiCyrillic < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-winitzki-cyrillic-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-winitzki-cyrillic-1.0.3.tar.bz2"
   sha256 "abd13b63d02fcaec488686c23683e5cf640b43bd32f8ca22eeae6f84df0a36a0"
-  revision 2
   license "MIT"
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

@@ -6,8 +6,8 @@ class FontBitstream100dpi < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-bitstream-100dpi-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-bitstream-100dpi-1.0.3.tar.bz2"
   sha256 "ebe0d7444e3d7c8da7642055ac2206f0190ee060700d99cd876f8fc9964cb6ce"
-  revision 2
   license "MIT"
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

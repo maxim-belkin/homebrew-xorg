@@ -6,8 +6,8 @@ class FontIsasMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-isas-misc-1.0.3.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-isas-misc-1.0.3.tar.bz2"
   sha256 "5824ab4b485951107dd245b8f7717d2822f1a6dbf6cea98f1ac7f49905c0a867"
-  revision 2
   license "MIT"
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

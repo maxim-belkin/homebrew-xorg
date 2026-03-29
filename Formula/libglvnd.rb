@@ -1,11 +1,11 @@
 class Libglvnd < Formula
   desc "GL Vendor-Neutral Dispatch library"
   homepage "https://github.com/NVIDIA/libglvnd"
-  url "https://github.com/NVIDIA/libglvnd/archive/v1.3.0.tar.gz"
+  url "https://github.com/NVIDIA/libglvnd/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "fabf98e72e172a1402617f5daade4dd79c752a77ab1688e0c1a0ffc49605040f"
+  license "MIT"
   revision 2
   head "https://gitlab.freedesktop.org/glvnd/libglvnd.git"
-  license "MIT"
 
   depends_on "libpthread-stubs" => :build
   depends_on "libxext" => :build
@@ -33,6 +33,6 @@ class Libglvnd < Formula
   end
 
   test do
-    assert_predicate lib/"libGLdispatch.so", :exist?
+    assert_path_exists lib/"libGLdispatch.so"
   end
 end

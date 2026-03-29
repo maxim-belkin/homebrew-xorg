@@ -5,8 +5,8 @@ class XorgFonts < Formula
   url "https://gist.githubusercontent.com/maxim-belkin/6fd6422cbe4da6ea0555d7a8d9911bc2/raw/c38d109967382d35f9f8a89542c18abbfb27cf88/README.md"
   version  "20160522"
   sha256   "3baf64afb29129ea9f74d5ae5a223b072d0911d96283f834e37d8f65d751c5d7"
-  revision 1
   license "MIT"
+  revision 1
 
   livecheck do
     skip "Formula only installs other formulae"
@@ -62,6 +62,6 @@ class XorgFonts < Formula
   end
 
   test do
-    assert_predicate prefix/"xorg-fonts.md", :exist?
+    assert_path_exists prefix/"xorg-fonts.md"
   end
 end

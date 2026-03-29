@@ -30,6 +30,6 @@ class Fontcacheproto < Formula
   end
 
   test do
-    assert_predicate lib/"pkgconfig/fontcacheproto.pc", :exist?
+    assert_path_exists lib/"pkgconfig/fontcacheproto.pc"
   end
 end

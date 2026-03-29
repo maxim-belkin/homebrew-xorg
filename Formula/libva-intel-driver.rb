@@ -38,6 +38,6 @@ class LibvaIntelDriver < Formula
   end
 
   test do
-    assert_predicate lib/"dri/i965_drv_video.so", :exist?
+    assert_path_exists lib/"dri/i965_drv_video.so"
   end
 end

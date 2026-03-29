@@ -6,8 +6,8 @@ class FontMiscMisc < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-misc-misc-1.1.2.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-misc-misc-1.1.2.tar.bz2"
   sha256 "b8e77940e4e1769dc47ef1805918d8c9be37c708735832a07204258bacc11794"
-  revision 2
   license "MIT"
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
