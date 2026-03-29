@@ -8,7 +8,7 @@ class Smproxy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c7c2a811fe38535c6e822ded7c80a669d8aa2a7616b144546cac60097bc836d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7752c03c2b19422dca7ae4a5b8a5ad204e1c26583ed7e48bd85a28d8ffc5e95b"
   end
 
   depends_on "pkg-config" => :build
