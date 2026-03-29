@@ -2,9 +2,8 @@ class Xrefresh < Formula
   desc "X.Org Applications: xrefresh"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xrefresh-1.0.7.tar.xz"
-  mirror "https://ftp.x.org/pub/individual/app/xrefresh-1.0.7.tar.xz"
-  sha256 "a9f1d635f2f42283d0174e94d09ab69190c227faa5ab542bfe15ed9607771b1e"
+  url "https://www.x.org/pub/individual/app/xrefresh-1.1.0.tar.xz"
+  sha256 "29ed592d5ece35a3029004d8c46f3002f92970870a96c11e38baf7f1122b8b5f"
   license "MIT"
 
   bottle do
