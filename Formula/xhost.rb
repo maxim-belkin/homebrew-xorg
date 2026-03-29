@@ -2,9 +2,8 @@ class Xhost < Formula
   desc "X server access control tool"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xhost-1.0.9.tar.gz"
-  mirror "https://ftp.x.org/pub/individual/app/xhost-1.0.9.tar.gz"
-  sha256 "ca850367593fcddc4bff16de7ea1598aa4f6817daf5a803a1258dff5e337f7c3"
+  url "https://www.x.org/pub/individual/app/xhost-1.0.10.tar.gz"
+  sha256 "10a157a9c818e6ec17764ba22117e006089107a22aacf58be6de089a76a112f4"
   license "MIT"
 
   bottle do
