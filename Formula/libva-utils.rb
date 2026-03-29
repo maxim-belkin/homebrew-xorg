@@ -16,8 +16,8 @@ class LibvaUtils < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "libva"
   depends_on "libdrm"
+  depends_on "libva"
   depends_on "libx11"
   depends_on "wayland"
 
