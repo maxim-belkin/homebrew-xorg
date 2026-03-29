@@ -6,6 +6,11 @@ class Libsha1 < Formula
   license "MIT"
   revision 1
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8dbf935d10dbdf1bb6bb6a03467b7d27636eebfaa707e05f4c3ec1e16d3acb55"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
