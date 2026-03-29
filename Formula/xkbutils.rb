@@ -2,9 +2,8 @@ class Xkbutils < Formula
   desc "X.Org Applications: xkbutils"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xkbutils-1.0.5.tar.gz"
-  mirror "https://ftp.x.org/pub/individual/app/xkbutils-1.0.5.tar.gz"
-  sha256 "b87072f0d7e75f56ee04455e1feab92bb5847aee4534b18c2e08b926150279ff"
+  url "https://www.x.org/pub/individual/app/xkbutils-1.0.6.tar.gz"
+  sha256 "d747d4ce5c390223e3bfdb13a1f673d3e19ae46ded25838cb8b28b1bafe1b9bd"
   license "MIT"
 
   bottle do
