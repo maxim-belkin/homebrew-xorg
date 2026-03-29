@@ -8,7 +8,7 @@ class Xkill < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "46ac34432421bc00623903c82ac48a3d195d6c338d173535778345f8ed9d8706"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "874800fb935359afb93466118764d5078665726cef1993b5c7ffdc8ae586525c"
   end
 
   depends_on "pkg-config" => :build
