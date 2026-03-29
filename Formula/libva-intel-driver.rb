@@ -3,6 +3,7 @@ class LibvaIntelDriver < Formula
   homepage "https://github.com/intel/intel-vaapi-driver"
   url "https://github.com/intel/intel-vaapi-driver/releases/download/2.4.1/intel-vaapi-driver-2.4.1.tar.bz2"
   sha256 "0081fce08eb3a83f7d99c3b853c8fdfa0af437b8f5b0fb7c66faeb83bcbe0c19"
+  license "MIT"
 
   livecheck do
     url :stable
@@ -12,7 +13,6 @@ class LibvaIntelDriver < Formula
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
     sha256 x86_64_linux: "1f96bb2b1e101308d4a8f6276956bb23639b4e83a4a3a3d7226d5c0c5712d72a"
-  license "MIT"
   end
 
   depends_on "libva" => :build
