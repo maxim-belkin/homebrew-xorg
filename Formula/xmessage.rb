@@ -13,8 +13,8 @@ class Xmessage < Formula
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
-  depends_on "libxaw"
   depends_on "libx11"
+  depends_on "libxaw"
   depends_on "libxt"
 
   def install
