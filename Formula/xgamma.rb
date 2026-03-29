@@ -2,9 +2,8 @@ class Xgamma < Formula
   desc "X.Org Applications: xgamma"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xgamma-1.0.7.tar.gz"
-  mirror "https://ftp.x.org/pub/individual/app/xgamma-1.0.7.tar.gz"
-  sha256 "61f5ef02883d65ab464678ad3d8c5445a0ff727fe6255af90b1b842ddf77370d"
+  url "https://www.x.org/pub/individual/app/xgamma-1.0.8.tar.gz"
+  sha256 "96ab71ea6a6791538324bb4d2014627816d83178a0ac79335d8c9ef25ce59f1d"
   license "MIT"
 
   bottle do
