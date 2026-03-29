@@ -2,12 +2,9 @@ class FontAdobeUtopiaType1 < Formula
   desc "X.Org Fonts: font adobe utopia type1"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
-  sha256 "979435105f897a70f8993fa02c8362160b0513366c2ab896965416f96dbb8077"
+  url "https://www.x.org/pub/individual/font/font-adobe-utopia-type1-1.0.5.tar.xz"
+  sha256 "4cb280bc47693b07c5e00fd0e5ad5721aabebc0548c3f06774e5cc3cbcf75697"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
