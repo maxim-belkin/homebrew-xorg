@@ -4,12 +4,7 @@ class Libsha1 < Formula
   url "https://github.com/dottedmag/libsha1.git"
   version "0.3"
   license "MIT"
-
-  bottle do
-    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01c0e0a3640ef85162c893460bb55e04a60a26367a2a3ac814bf005768f20b36"
-  end
+  revision 1
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

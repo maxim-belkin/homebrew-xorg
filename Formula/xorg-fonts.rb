@@ -6,16 +6,10 @@ class XorgFonts < Formula
   version  "20160522"
   sha256   "3baf64afb29129ea9f74d5ae5a223b072d0911d96283f834e37d8f65d751c5d7"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     skip "Formula only installs other formulae"
-  end
-
-  bottle do
-    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3a2c3a2f61a41b0a1f8216295b9383c20f186eb1dd2424d7f1f8741d0816f32a"
   end
 
   depends_on "font-util" => :build
