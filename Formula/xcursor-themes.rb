@@ -14,8 +14,8 @@ class XcursorThemes < Formula
 
   depends_on "maxim-belkin/xorg/xcursorgen" => :build
   depends_on "pkg-config" => :build
-  depends_on "libxcursor"
   depends_on "util-macros" => :build
+  depends_on "libxcursor"
 
   def install
     args = %W[
