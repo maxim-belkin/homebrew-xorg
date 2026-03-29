@@ -1,8 +1,8 @@
 class LibvaUtils < Formula
   desc "Collection of utilities and examples to exercise VA-API"
   homepage "https://github.com/01org/libva-utils"
-  url "https://github.com/intel/libva-utils/releases/download/2.16.0/libva-utils-2.16.0.tar.bz2"
-  sha256 "0e83badff4d675fe619cccb6ad4dca7a048eafe4aabe3bbb2aeb1a91529e4666"
+  url "https://github.com/intel/libva-utils/releases/download/2.23.0/libva-utils-2.23.0.tar.bz2"
+  sha256 "cd99604cd8f659d02e725016b26048b25232e2deac9b92117c0b85748ed81f0f"
   license "MIT"
 
   livecheck do
