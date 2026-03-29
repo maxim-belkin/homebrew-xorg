@@ -8,6 +8,11 @@ class Fontcacheproto < Formula
   license "MIT"
   revision 1
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "395922132d1b2fa5896de451f2c89f492a77377cca3a3affd49772dbd61b9fd4"
+  end
+
   depends_on "pkg-config" => :build
 
   def install
