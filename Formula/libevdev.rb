@@ -7,7 +7,7 @@ class Libevdev < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b77d1cae308fb60f8e7d32dd2495d50f5625449ae85a42bb0008ec7843d39ee0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d4dd3ba9a10a5d53ff4ab06a2c9ee1239eea0d3ae24e2fced61e43458976f679"
   end
 
   depends_on "pkg-config" => :build
