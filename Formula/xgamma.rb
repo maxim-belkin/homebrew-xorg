@@ -8,7 +8,7 @@ class Xgamma < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "89efdcfa0c22455dd3a563158308104b237130251a6d5c436898587915d62f00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "626920406e31a85bdf68ffea3b3efffbe2eb1e3aa93680aa8dd3665efae35747"
   end
 
   depends_on "pkg-config" => :build
