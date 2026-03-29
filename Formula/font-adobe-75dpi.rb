@@ -2,12 +2,9 @@ class FontAdobe75dpi < Formula
   desc "X.Org Fonts: font adobe 75dpi"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-adobe-75dpi-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-75dpi-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-adobe-75dpi-1.0.3.tar.bz2"
-  sha256 "c6024a1e4a1e65f413f994dd08b734efd393ce0a502eb465deb77b9a36db4d09"
+  url "https://www.x.org/pub/individual/font/font-adobe-75dpi-1.0.4.tar.xz"
+  sha256 "1281a62dbeded169e495cae1a5b487e1f336f2b4d971d92911c59c103999b911"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
