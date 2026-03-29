@@ -2,9 +2,8 @@ class Xwd < Formula
   desc "X.Org Applications: xwd"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xwd-1.0.8.tar.bz2"
-  mirror "https://ftp.x.org/pub/individual/app/xwd-1.0.8.tar.bz2"
-  sha256 "fbaa2b34163714fe7be22b60920ea4683f63b355babb1781aec2e452a033031b"
+  url "https://www.x.org/pub/individual/app/xwd-1.0.9.tar.xz"
+  sha256 "dc121b84947eb4a3d1131bff1e9844cfa2124d95b47b35f9932340fa931fbd3f"
   license "MIT"
 
   bottle do
