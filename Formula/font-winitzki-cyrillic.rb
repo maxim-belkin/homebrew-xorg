@@ -8,8 +8,7 @@ class FontWinitzkiCyrillic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f55accd3fa5e0aeeb9802137f63bff5c75b7519b4d925c727bf6d9d4c2a12c13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "53a269805ba5b58c86909cb9da12346ba371ebaf61190b645502928ebd33ed9a"
   end
 
   depends_on "bdftopcf" => :build
