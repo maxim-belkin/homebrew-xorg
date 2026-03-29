@@ -6,6 +6,11 @@ class Libxfontcache < Formula
   license "MIT"
   revision 2
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "27770ef1eed689eb45b31a42822d56ff75616a29c2ffdcbe838fc6de2df4f7e9"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libx11"
   depends_on "libxext"
