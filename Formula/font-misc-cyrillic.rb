@@ -8,8 +8,7 @@ class FontMiscCyrillic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b7b7402b43ee1acaab934d4703de5a461acc8850453f6ae155f3f1af794075a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8be426173f2ac3015d607fb2fa82a7ff00780a3f5471ed7cabf61a950edbcbc9"
   end
 
   keg_only "part of Xorg-fonts package"
