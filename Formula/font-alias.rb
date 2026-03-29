@@ -8,7 +8,7 @@ class FontAlias < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "576c970209959d022e064a72baabb5808914867926a96f31fc12561dffe05942"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8e8b736cf0db3fdf51309ed005d7a01dfdaf8068974cc952abd49cd0e8f33940"
   end
 
   depends_on "pkg-config" => :build
