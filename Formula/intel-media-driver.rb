@@ -48,6 +48,6 @@ class IntelMediaDriver < Formula
   end
 
   test do
-    assert_predicate lib/"dri", :directory?
+    assert_predicate lib, :directory?
   end
 end
