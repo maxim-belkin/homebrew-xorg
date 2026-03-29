@@ -30,7 +30,7 @@ class Xmessage < Formula
   end
 
   test do
-    system "xmessage", "-timeout", "1", "Hello Homebrew"
+    system bin/"xmessage", "-timeout", "1", "Hello Homebrew"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end
