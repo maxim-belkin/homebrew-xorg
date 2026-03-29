@@ -13,8 +13,8 @@ class Xpr < Formula
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
-  depends_on "libxmu"
   depends_on "libx11"
+  depends_on "libxmu"
 
   def install
     args = %W[
