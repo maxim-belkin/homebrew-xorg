@@ -33,6 +33,6 @@ class XcursorThemes < Formula
   end
 
   test do
-    assert_predicate share/"fonts/X11", :directory?
+    assert_predicate pkgshare/"icons", :directory?
   end
 end
