@@ -8,7 +8,7 @@ class Setxkbmap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "71ce7fcba9efccead7d9e3777eb9b8b4e4f448c8bb01bf6a750d92179cf1b476"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e045200102361b8aef968db707361c59f073704fa22ef211407337d355fd45f"
   end
 
   depends_on "pkg-config" => :build
