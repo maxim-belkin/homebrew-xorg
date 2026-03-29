@@ -2,12 +2,9 @@ class FontBhType1 < Formula
   desc "X.Org Fonts: font bh type1"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-bh-type1-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-type1-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-bh-type1-1.0.3.tar.bz2"
-  sha256 "761455a297486f3927a85d919b5c948d1d324181d4bea6c95d542504b68a63c1"
+  url "https://www.x.org/pub/individual/font/font-bh-type1-1.0.4.tar.xz"
+  sha256 "19dec3ec06abde6bedd10094579e928be0f0fc3bdb4fbe93f4c69cce406d72a6"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
