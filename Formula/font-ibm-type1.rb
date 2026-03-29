@@ -8,8 +8,7 @@ class FontIbmType1 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "62a67aadbc3a616cae67a59101408be7637512fb1ed0961a61f29c4f68ebaf45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a2f4edf5f2e917678bd941c88c622092c7051bc8c3478a3ecb1d081e2c034ea7"
   end
 
   keg_only "part of Xorg-fonts package"
