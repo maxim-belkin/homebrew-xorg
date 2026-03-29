@@ -8,7 +8,7 @@ class Xcmsdb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "efe3110bdd395b06c14ad9cee3b0202a1efa62138f4b9c06cb2372ef32322fb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5d82343261c3c0dab5c38831c9549222832c337a37b0426dc486d9b9c6fbab47"
   end
 
   depends_on "pkg-config" => :build
