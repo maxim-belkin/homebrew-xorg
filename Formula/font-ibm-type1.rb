@@ -2,12 +2,9 @@ class FontIbmType1 < Formula
   desc "X.Org Fonts: font ibm type1"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-ibm-type1-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-ibm-type1-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-ibm-type1-1.0.3.tar.bz2"
-  sha256 "fddb28d3db5a07f4b4ca15388488a9680a10e1367a18f358f903b2a608a5d2df"
+  url "https://www.x.org/pub/individual/font/font-ibm-type1-1.0.4.tar.xz"
+  sha256 "c4395e95ba46d40c4ad1737e91cac20c0ab75411329b60db5d99fed92b60ce7f"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
