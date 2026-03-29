@@ -26,36 +26,33 @@ This tap now provides the following formulae:
 ( cd $(brew --repo maxim-belkin/xorg)/Formula; ls *.rb ) | sed 's/\([^.]\+\).rb/* \1/;' | sed 's|^|    |' | column -x -c 120 | expand
 -->
 
-    * encodings                             * font-adobe-100dpi                     * font-adobe-75dpi
-    * font-adobe-utopia-100dpi              * font-adobe-utopia-75dpi               * font-adobe-utopia-type1
-    * font-alias                            * font-arabic-misc                      * font-bh-100dpi
-    * font-bh-75dpi                         * font-bh-lucidatypewriter-100dpi       * font-bh-lucidatypewriter-75dpi
-    * font-bh-ttf                           * font-bh-type1                         * font-bitstream-100dpi
-    * font-bitstream-75dpi                  * font-bitstream-type1                  * fontcacheproto
-    * font-cronyx-cyrillic                  * font-cursor-misc                      * font-daewoo-misc
-    * font-dec-misc                         * font-ibm-type1                        * font-isas-misc
-    * font-jis-misc                         * font-micro-misc                       * font-misc-cyrillic
-    * font-misc-ethiopic                    * font-misc-meltho                      * font-misc-misc
-    * font-mutt-misc                        * font-schumacher-misc                  * font-screen-cyrillic
-    * font-sony-misc                        * font-sun-misc                         * font-winitzki-cyrillic
-    * font-xfree86-type1                    * iceauth                               * intel-gmmlib
-    * intel-media-driver                    * libevdev                              * libglvnd
-    * libgudev                              * libomxil-bellagio                     * libsha1
-    * libva-intel-driver                    * libva-utils                           * libvdpau-va-gl
-    * libwacom                              * libxfontcache                         * libxxf86misc
-    * mtdev                                 * pciutils                              * sessreg
-    * setxkbmap                             * smproxy                               * umockdev
-    * x11perf                               * xbacklight                            * xcmsdb
-    * xcursorgen                            * xcursor-themes                        * xdriinfo
-    * xev                                   * xgamma                                * xhost
-    * xkbevd                                * xkbutils                              * xkill
-    * xlsatoms                              * xlsclients                            * xmessage
-    * xmodmap                               * xorg-apps                             * xorg-cf-files
-    * xorg-docs                             * xorg-fonts                            * xorg-sgml-doctools
-    * xprop                                 * xpr                                   * xrandr
-    * xrdb                                  * xrefresh                              * xset
-    * xsetroot                              * xvinfo                                * xwd
-    * xwininfo                              * xwud
+    * encodings                             * font-misc-meltho                      * x11perf
+    * font-adobe-100dpi                     * font-misc-misc                        * xbacklight
+    * font-adobe-75dpi                      * font-mutt-misc                        * xcmsdb
+    * font-adobe-utopia-100dpi              * font-schumacher-misc                  * xcursor-themes
+    * font-adobe-utopia-75dpi               * font-screen-cyrillic                  * xcursorgen
+    * font-adobe-utopia-type1               * font-sony-misc                        * xdriinfo
+    * font-alias                            * font-sun-misc                         * xev
+    * font-arabic-misc                      * font-winitzki-cyrillic                * xgamma
+    * font-bh-100dpi                        * font-xfree86-type1                    * xhost
+    * font-bh-75dpi                         * fontcacheproto                        * xkbevd
+    * font-bh-lucidatypewriter-100dpi       * iceauth                               * xkbutils
+    * font-bh-lucidatypewriter-75dpi        * intel-gmmlib                          * xkill
+    * font-bh-ttf                           * intel-media-driver                    * xlsatoms
+    * font-bh-type1                         * libevdev                              * xmessage
+    * font-bitstream-100dpi                 * libglvnd                              * xorg-apps
+    * font-bitstream-75dpi                  * libomxil-bellagio                     * xorg-cf-files
+    * font-bitstream-type1                  * libsha1                               * xorg-docs
+    * font-cronyx-cyrillic                  * libva-intel-driver                    * xorg-fonts
+    * font-cursor-misc                      * libva-utils                           * xorg-sgml-doctools
+    * font-daewoo-misc                      * libvdpau-va-gl                        * xpr
+    * font-dec-misc                         * libwacom                              * xrandr
+    * font-ibm-type1                        * libxfontcache                         * xrefresh
+    * font-isas-misc                        * libxxf86misc                          * xset
+    * font-jis-misc                         * mtdev                                 * xsetroot
+    * font-micro-misc                       * sessreg                               * xvinfo
+    * font-misc-cyrillic                    * setxkbmap                             * xwd
+    * font-misc-ethiopic                    * smproxy                               * xwud
 
 ## How to contribute
 
