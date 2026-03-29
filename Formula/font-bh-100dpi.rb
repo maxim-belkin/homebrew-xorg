@@ -8,8 +8,7 @@ class FontBh100dpi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b9b94e838ce0a3476d4ee21b1a673949d6297592d2c2cb2e1b02e48a20b343f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "910349d8c00de08352c19ecddcdac26d91866b709ae820dea15a7cd221ab9a3e"
   end
 
   keg_only "part of Xorg-fonts package"
