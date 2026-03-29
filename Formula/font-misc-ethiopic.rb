@@ -8,7 +8,7 @@ class FontMiscEthiopic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c6853772aa434cf8d8b333e6e2b297dbd670723636577ccb46aaddb3910103cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "53d9ff1d24b2a700e269aa8a054a549e912cca741b4da617e45086accd37b196"
   end
 
   keg_only "part of Xorg-fonts package"
