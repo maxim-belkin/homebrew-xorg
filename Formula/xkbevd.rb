@@ -5,6 +5,7 @@ class Xkbevd < Formula
   url "https://www.x.org/pub/individual/app/xkbevd-1.1.5.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xkbevd-1.1.5.tar.gz"
   sha256 "5d6b65a417be57e19a76277601da83271b19de6e71cb0e8821441f6fb9973c47"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

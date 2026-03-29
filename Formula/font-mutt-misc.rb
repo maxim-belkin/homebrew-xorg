@@ -7,6 +7,7 @@ class FontMuttMisc < Formula
   mirror "https://ftp.x.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   sha256 "bd5f7adb34367c197773a9801df5bce7b019664941900b2a31fbfe1ff2830f8f"
   revision 2
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

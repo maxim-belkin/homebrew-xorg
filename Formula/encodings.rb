@@ -4,6 +4,7 @@ class Encodings < Formula
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url "https://www.x.org/pub/individual/font/encodings-1.0.6.tar.gz"
   sha256 "c89c0636cda8f34eb28304263fc9a5441635ac3cb9da23efefe8f584174cba29"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

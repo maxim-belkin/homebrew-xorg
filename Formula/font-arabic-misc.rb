@@ -7,6 +7,7 @@ class FontArabicMisc < Formula
   mirror "https://ftp.x.org/archive/individual/font/font-arabic-misc-1.0.3.tar.bz2"
   sha256 "505d9b12a7093389e67a925dfda6346bde26d114c67f0cdca7aeda6e5d3344f4"
   revision 2
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

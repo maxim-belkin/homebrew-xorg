@@ -3,6 +3,7 @@ class IntelMediaDriver < Formula
   homepage "https://github.com/intel/media-driver"
   url "https://github.com/intel/media-driver/archive/intel-media-22.6.6.tar.gz"
   sha256 "b553290e829dfd824eb62295c9f07dbe8062ce7998f7c527cc92856d0792562d"
+  license "Apache-2.0"
 
   livecheck do
     url :stable

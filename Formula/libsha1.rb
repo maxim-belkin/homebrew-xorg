@@ -3,6 +3,7 @@ class Libsha1 < Formula
   homepage "https://raw.githubusercontent.com/dottedmag/libsha1/master/README"
   url "https://github.com/dottedmag/libsha1.git"
   version "0.3"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

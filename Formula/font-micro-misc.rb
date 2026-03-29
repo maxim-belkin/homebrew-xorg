@@ -7,6 +7,7 @@ class FontMicroMisc < Formula
   mirror "https://ftp.x.org/archive/individual/font/font-micro-misc-1.0.3.tar.bz2"
   sha256 "9a3381c10f32d9511f0ad4179df395914c50779103c16cddf7017f5220ed8db6"
   revision 2
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

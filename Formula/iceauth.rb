@@ -5,6 +5,7 @@ class Iceauth < Formula
   url "https://www.x.org/pub/individual/app/iceauth-1.0.9.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/iceauth-1.0.8.tar.gz"
   sha256 "5ca274cf210453e7d7cf5c827a2fbc92149df83824f99a27cde17e1f20324dc6"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

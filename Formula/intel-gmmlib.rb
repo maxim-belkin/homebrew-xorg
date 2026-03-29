@@ -3,6 +3,7 @@ class IntelGmmlib < Formula
   homepage "https://github.com/intel/gmmlib"
   url "https://github.com/intel/gmmlib/archive/intel-gmmlib-22.3.3.tar.gz"
   sha256 "86651bd2803c9f0afd82471bec784e65d2b418dee315a053d22215eb2a679be7"
+  license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

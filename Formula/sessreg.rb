@@ -4,6 +4,7 @@ class Sessreg < Formula
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/sessreg-1.1.3.tar.gz"
   sha256 "6e3e917e881132a7a9ccb181ddd83fe08a99668892455d808c911ad38beea215"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

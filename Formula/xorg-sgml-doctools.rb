@@ -3,6 +3,7 @@ class XorgSgmlDoctools < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://www.x.org/archive/individual/doc/xorg-sgml-doctools-1.12.tar.gz"
   sha256 "985a0329e6a6dadd6ad517f8d54f8766ab4b52bb8da7b07d02ec466bec444bdb"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

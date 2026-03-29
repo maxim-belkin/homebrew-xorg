@@ -7,6 +7,7 @@ class FontIbmType1 < Formula
   mirror "https://ftp.x.org/archive/individual/font/font-ibm-type1-1.0.3.tar.bz2"
   sha256 "fddb28d3db5a07f4b4ca15388488a9680a10e1367a18f358f903b2a608a5d2df"
   revision 2
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

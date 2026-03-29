@@ -5,6 +5,7 @@ class Xbacklight < Formula
   url "https://www.x.org/pub/individual/app/xbacklight-1.2.3.tar.bz2"
   sha256 "3a27f324777ae99fee476cfb2f064576fb8cba4eb77f97cda37adda1c1d39ade"
   revision 1
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

@@ -5,6 +5,7 @@ class Xev < Formula
   url "https://www.x.org/pub/individual/app/xev-1.2.5.tar.xz"
   mirror "https://ftp.x.org/pub/individual/app/xev-1.2.5.tar.xz"
   sha256 "c9461a4389714e0f33974f9e75934bdc38d836a0f059b8dc089c7cbf2ce36ec1"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

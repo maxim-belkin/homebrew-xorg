@@ -6,6 +6,7 @@ class XorgFonts < Formula
   version  "20160522"
   sha256   "3baf64afb29129ea9f74d5ae5a223b072d0911d96283f834e37d8f65d751c5d7"
   revision 1
+  license "MIT"
 
   livecheck do
     skip "Formula only installs other formulae"

@@ -3,6 +3,7 @@ class Mtdev < Formula
   homepage "https://bitmath.org"
   url "https://bitmath.org/code/mtdev/mtdev-1.1.6.tar.bz2"
   sha256 "15d7b28da8ac71d8bc8c9287c2045fd174267bc740bec10cfda332dc1204e0e0"
+  license "MIT"
 
   livecheck do
     url "https://bitmath.org/code/mtdev/"

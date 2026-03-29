@@ -4,6 +4,7 @@ class Setxkbmap < Formula
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
   url "https://www.x.org/pub/individual/app/setxkbmap-1.3.3.tar.gz"
   sha256 "51ba28edf93a464a7444b53b154fd5e93dedd1e9bbcc85b636f4cf56986c4842"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

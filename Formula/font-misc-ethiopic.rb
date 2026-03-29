@@ -6,6 +6,7 @@ class FontMiscEthiopic < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-misc-ethiopic-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-misc-ethiopic-1.0.4.tar.bz2"
   sha256 "698c0f6ddf9ca482250bdafa08293893148393bb9cb23e0a9ca313c6dbfc4ae0"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

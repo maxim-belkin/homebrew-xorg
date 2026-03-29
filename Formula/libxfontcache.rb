@@ -4,6 +4,7 @@ class Libxfontcache < Formula
   url "https://www.x.org/archive/individual/lib/libXfontcache-1.0.5.tar.gz"
   sha256 "fdba75307a0983d2566554e0e9effa7079551f1b7b46e8de642d067998619659"
   revision 1
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

@@ -5,6 +5,7 @@ class Xwud < Formula
   url "https://www.x.org/pub/individual/app/xwud-1.0.6.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xwud-1.0.6.tar.gz"
   sha256 "262171b0c434966ddbbe8a54afb9615567ad74d4cc2e823e14e51e099ec3ab0d"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

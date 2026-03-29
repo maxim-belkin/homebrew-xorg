@@ -5,6 +5,7 @@ class Libglvnd < Formula
   sha256 "fabf98e72e172a1402617f5daade4dd79c752a77ab1688e0c1a0ffc49605040f"
   revision 2
   head "https://gitlab.freedesktop.org/glvnd/libglvnd.git"
+  license "MIT"
 
   depends_on "libpthread-stubs" => :build
   depends_on "libxext" => :build

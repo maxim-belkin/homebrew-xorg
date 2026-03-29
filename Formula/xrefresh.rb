@@ -5,6 +5,7 @@ class Xrefresh < Formula
   url "https://www.x.org/pub/individual/app/xrefresh-1.0.7.tar.xz"
   mirror "https://ftp.x.org/pub/individual/app/xrefresh-1.0.7.tar.xz"
   sha256 "a9f1d635f2f42283d0174e94d09ab69190c227faa5ab542bfe15ed9607771b1e"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

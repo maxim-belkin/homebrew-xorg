@@ -5,6 +5,7 @@ class Smproxy < Formula
   url "https://www.x.org/pub/individual/app/smproxy-1.0.7.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/smproxy-1.0.7.tar.gz"
   sha256 "aabd5e644512442da2bca1ce65ccee403b760a08e354b3474753ed36033e3d21"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

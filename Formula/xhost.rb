@@ -5,6 +5,7 @@ class Xhost < Formula
   url "https://www.x.org/pub/individual/app/xhost-1.0.9.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xhost-1.0.9.tar.gz"
   sha256 "ca850367593fcddc4bff16de7ea1598aa4f6817daf5a803a1258dff5e337f7c3"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

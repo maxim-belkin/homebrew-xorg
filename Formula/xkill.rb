@@ -5,6 +5,7 @@ class Xkill < Formula
   url "https://www.x.org/pub/individual/app/xkill-1.0.6.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xkill-1.0.6.tar.gz"
   sha256 "3b35a2f4b67dda1e98b6541488cd7f7343eb6e3dbe613aeff3d5a5a4c4c64b58"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

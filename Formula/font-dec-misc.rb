@@ -7,6 +7,7 @@ class FontDecMisc < Formula
   mirror "https://ftp.x.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
   sha256 "e19ddf8b5f8de914d81675358fdfe37762e9ce524887cc983adef34f2850ff7b"
   revision 2
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

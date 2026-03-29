@@ -5,6 +5,7 @@ class Xgamma < Formula
   url "https://www.x.org/pub/individual/app/xgamma-1.0.7.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xgamma-1.0.7.tar.gz"
   sha256 "61f5ef02883d65ab464678ad3d8c5445a0ff727fe6255af90b1b842ddf77370d"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

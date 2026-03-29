@@ -5,6 +5,7 @@ class Xpr < Formula
   url "https://www.x.org/pub/individual/app/xpr-1.1.0.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xpr-1.1.0.tar.gz"
   sha256 "fabd02fb1a52358d521f1be7422738bc8c9b511a8d82a163888f628db6f6cb18"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

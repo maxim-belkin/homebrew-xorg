@@ -5,6 +5,7 @@ class Xvinfo < Formula
   url "https://www.x.org/pub/individual/app/xvinfo-1.1.5.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xvinfo-1.1.5.tar.gz"
   sha256 "76fdc89a4e4207d0069ae3e511b4e30a60fcf86b630d01ef56d32ba5856e76c4"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

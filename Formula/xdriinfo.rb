@@ -5,6 +5,7 @@ class Xdriinfo < Formula
   url "https://www.x.org/pub/individual/app/xdriinfo-1.0.7.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xdriinfo-1.0.7.tar.gz"
   sha256 "9fab95510b1f67409632fb8af01369b128f4d12763fe1a2662f5666976a7d30c"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

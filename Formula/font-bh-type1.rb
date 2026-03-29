@@ -7,6 +7,7 @@ class FontBhType1 < Formula
   mirror "https://ftp.x.org/archive/individual/font/font-bh-type1-1.0.3.tar.bz2"
   sha256 "761455a297486f3927a85d919b5c948d1d324181d4bea6c95d542504b68a63c1"
   revision 2
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

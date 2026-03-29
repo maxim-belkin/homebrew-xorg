@@ -3,6 +3,7 @@ class LibvaUtils < Formula
   homepage "https://github.com/01org/libva-utils"
   url "https://github.com/intel/libva-utils/releases/download/2.16.0/libva-utils-2.16.0.tar.bz2"
   sha256 "0e83badff4d675fe619cccb6ad4dca7a048eafe4aabe3bbb2aeb1a91529e4666"
+  license "MIT"
 
   livecheck do
     url :stable

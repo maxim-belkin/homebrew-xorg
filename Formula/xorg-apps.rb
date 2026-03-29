@@ -6,6 +6,7 @@ class XorgApps < Formula
   version  "20160522"
   sha256   "d6f8969d76bd3236c40e57fc3f498c43341f3f1e9ae01c4c2bca11876f07adc6"
   revision 2
+  license "MIT"
 
   livecheck do
     skip "Formula only installs other formulae"

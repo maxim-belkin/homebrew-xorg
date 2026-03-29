@@ -5,6 +5,7 @@ class Xcursorgen < Formula
   url "https://www.x.org/pub/individual/app/xcursorgen-1.0.8.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xcursorgen-1.0.8.tar.gz"
   sha256 "b8bb2756918343b8bc15a4ce875e9efb6c4e7777adba088280e53dd09753b6ac"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

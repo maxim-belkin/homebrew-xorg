@@ -5,6 +5,7 @@ class Xsetroot < Formula
   url "https://www.x.org/pub/individual/app/xsetroot-1.1.3.tar.gz"
   mirror "https://ftp.x.org/pub/individual/app/xsetroot-1.1.3.tar.gz"
   sha256 "80dbb0d02807e89294a042298b8a62f9aa0c3a94d89244ccbc35e4cf80fcaaba"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

@@ -3,6 +3,7 @@ class Libevdev < Formula
   homepage "https://www.freedesktop.org/wiki/Software/libevdev/"
   url "https://www.freedesktop.org/software/libevdev/libevdev-1.13.0.tar.xz"
   sha256 "9edf2006cc86a5055279647c38ec923d11a821ee4dc2c3033e8d20e8ee237cd9"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

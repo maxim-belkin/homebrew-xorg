@@ -6,6 +6,7 @@ class FontAlias < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-alias-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-alias-1.0.4.tar.bz2"
   sha256 "f3111ae8bf2e980f5f56af400e8eefe5fc9f4207f4a412ea79637fd66c945276"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

@@ -3,6 +3,7 @@ class Libwacom < Formula
   homepage "https://github.com/linuxwacom/libwacom"
   url "https://github.com/linuxwacom/libwacom/releases/download/libwacom-1.2/libwacom-1.2.tar.bz2"
   sha256 "c204cfdee2159d124a4f5ecc8970bbd72f9adf5ad7fd94b66798f93db1f863c3"
+  license "MIT"
 
   livecheck do
     url :stable

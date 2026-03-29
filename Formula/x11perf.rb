@@ -5,6 +5,7 @@ class X11perf < Formula
   url "https://www.x.org/pub/individual/app/x11perf-1.6.1.tar.bz2"
   sha256 "1c7e0b8ffc2794b4ccf11e04d551823abe0ea47b4f7db0637390db6fbe817c34"
   revision 1
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

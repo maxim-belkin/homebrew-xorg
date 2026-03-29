@@ -6,6 +6,7 @@ class XorgCfFiles < Formula
   mirror "https://www.x.org/archive/individual/util/xorg-cf-files-1.0.7.tar.bz2"
   mirror "https://ftp.x.org/pub/individual/util/xorg-cf-files-1.0.7.tar.bz2"
   sha256 "74a771d5bb2189020399998dfa2329c3e038aa2e14dd3d4056144ed9a5976308"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

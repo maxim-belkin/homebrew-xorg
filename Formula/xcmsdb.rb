@@ -5,6 +5,7 @@ class Xcmsdb < Formula
   url "https://www.x.org/pub/individual/app/xcmsdb-1.0.6.tar.xz"
   mirror "https://ftp.x.org/pub/individual/app/xcmsdb-1.0.6.tar.xz"
   sha256 "3c77eec4537d5942bb0966973b787bfdaf7121f3125ffa81bb1c9708d4cf4f55"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"

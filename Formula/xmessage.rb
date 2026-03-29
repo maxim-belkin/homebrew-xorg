@@ -5,6 +5,7 @@ class Xmessage < Formula
   url "https://www.x.org/pub/individual/app/xmessage-1.0.6.tar.xz"
   mirror "https://ftp.x.org/pub/individual/app/xmessage-1.0.6.tar.xz"
   sha256 "d2eac545f137156b960877e052fcc8e29795ed735c02f7690fd7b439e6846a12"
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
