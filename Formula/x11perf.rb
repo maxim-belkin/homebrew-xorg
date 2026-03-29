@@ -5,13 +5,7 @@ class X11perf < Formula
   url "https://www.x.org/pub/individual/app/x11perf-1.6.1.tar.bz2"
   sha256 "1c7e0b8ffc2794b4ccf11e04d551823abe0ea47b4f7db0637390db6fbe817c34"
   license "MIT"
-  revision 1
-
-  bottle do
-    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c1c41ce4c090d00a8b2c71ddb29c8fb9f93ccc29912432587b87498a99fb204"
-  end
+  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build

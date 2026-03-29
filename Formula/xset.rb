@@ -6,7 +6,7 @@ class Xset < Formula
   mirror "https://ftp.x.org/pub/individual/app/xset-1.2.4.tar.bz2"
   sha256 "e4fd95280df52a88e9b0abc1fee11dcf0f34fc24041b9f45a247e52df941c957"
   license "MIT"
-  revision 1
+  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build

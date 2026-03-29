@@ -4,7 +4,7 @@ class LibvdpauVaGl < Formula
   url "https://github.com/i-rinat/libvdpau-va-gl/releases/download/v0.4.2/libvdpau-va-gl-0.4.2.tar.gz"
   sha256 "7d9121540658eb0244859e63da171ca3869e784afbeaf202f44471275c784af4"
   license "LGPL-3.0-only"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
