@@ -8,8 +8,7 @@ class FontXfree86Type1 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "daba648256c7d627900eaaa337b1a8344bfcdac00ec5271d97ee30ee43b74751"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "74f93cd2f11ef8a9c063a05f3c0bb847609ce5b66627969998e0e84a5b1f36a4"
   end
 
   keg_only "part of Xorg-fonts package"
