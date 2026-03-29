@@ -2,9 +2,8 @@ class Xcursorgen < Formula
   desc "X.Org Applications: xcursorgen"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xcursorgen-1.0.8.tar.gz"
-  mirror "https://ftp.x.org/pub/individual/app/xcursorgen-1.0.8.tar.gz"
-  sha256 "b8bb2756918343b8bc15a4ce875e9efb6c4e7777adba088280e53dd09753b6ac"
+  url "https://www.x.org/pub/individual/app/xcursorgen-1.0.9.tar.gz"
+  sha256 "21082be975472e469dd79d46166cee3720fda80a54382dc8d03fa7a4cd39837a"
   license "MIT"
 
   bottle do
