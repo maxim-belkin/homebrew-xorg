@@ -2,12 +2,9 @@ class FontMuttMisc < Formula
   desc "X.Org Fonts: font mutt misc"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-mutt-misc-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
-  sha256 "bd5f7adb34367c197773a9801df5bce7b019664941900b2a31fbfe1ff2830f8f"
+  url "https://www.x.org/pub/individual/font/font-mutt-misc-1.0.4.tar.xz"
+  sha256 "b12359f4e12c23bcfcb448b918297e975fa91bef5293d88d3c25343cc768bb24"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
