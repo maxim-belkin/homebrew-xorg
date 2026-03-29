@@ -8,8 +8,7 @@ class FontAdobeUtopia75dpi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fc7deae1db59092751bf7c8e621b778abe95b48c239a1cb14c644448412d9d75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4679976a68eb5c7a192a15bc8820e11468152ff11a04b6f04a8da962b82d3632"
   end
 
   keg_only "part of Xorg-fonts package"
