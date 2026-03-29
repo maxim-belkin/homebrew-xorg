@@ -12,6 +12,11 @@ class XorgFonts < Formula
     skip "Formula only installs other formulae"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c2493f1b2da2b7c0ae8d7b4b210a52b346af4818f36a62e6a89917a1556963ef"
+  end
+
   depends_on "font-util" => :build
   depends_on "maxim-belkin/xorg/encodings"
   depends_on "maxim-belkin/xorg/font-adobe-100dpi"
