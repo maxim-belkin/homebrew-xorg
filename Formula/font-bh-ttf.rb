@@ -2,12 +2,9 @@ class FontBhTtf < Formula
   desc "X.Org Fonts: font bh ttf"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-bh-ttf-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-bh-ttf-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-bh-ttf-1.0.3.tar.bz2"
-  sha256 "1b4bea63271b4db0726b5b52c97994c3313b6023510349226908090501abd25f"
+  url "https://www.x.org/pub/individual/font/font-bh-ttf-1.0.4.tar.xz"
+  sha256 "85a5f90d00c48c2b06fd125ea8adbc8b8ee97429e3075081c8710926efec3a56"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
