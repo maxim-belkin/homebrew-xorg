@@ -32,6 +32,6 @@ class Xkbutils < Formula
   end
 
   test do
-    assert_predicate bin/"xkbutils", :executable?
+    assert_predicate bin/"xkbbell", :executable?
   end
 end
