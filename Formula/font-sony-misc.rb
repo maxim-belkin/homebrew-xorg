@@ -8,8 +8,7 @@ class FontSonyMisc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8ee2b4c2c286cc439e198e3ded3490ebeada1734b3110f98d072e0cbb2092121"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5d0af68662518904c5d74dccb0c337888d4c50975d01e5dd77d693428eb7e641"
   end
 
   keg_only "part of Xorg-fonts package"
