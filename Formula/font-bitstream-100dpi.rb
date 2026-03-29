@@ -8,8 +8,7 @@ class FontBitstream100dpi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7e135db22fc2599f771f1dfbc4f6c68995dfc4e8c898f47d61c5585b711960e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc34599c4f9dc9bbd004d14f16cbf9d6996c6ea25a849c5ff4ed5a6f4358b1a2"
   end
 
   keg_only "part of Xorg-fonts package"
