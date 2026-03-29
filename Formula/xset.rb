@@ -27,4 +27,8 @@ class Xset < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xset", :executable?
+  end
 end

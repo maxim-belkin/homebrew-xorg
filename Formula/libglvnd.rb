@@ -31,4 +31,8 @@ class Libglvnd < Formula
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"
   end
+
+  test do
+    assert_predicate lib/"libGLdispatch.so", :exist?
+  end
 end

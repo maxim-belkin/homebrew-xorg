@@ -22,4 +22,8 @@ class LibomxilBellagio < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate lib/"libomxil-bellagio.so", :exist?
+  end
 end

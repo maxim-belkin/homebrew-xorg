@@ -37,4 +37,8 @@ class FontArabicMisc < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate share/"fonts/X11", :directory?
+  end
 end

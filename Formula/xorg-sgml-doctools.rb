@@ -25,4 +25,8 @@ class XorgSgmlDoctools < Formula
     system "./configure", *args
     system "make", "install"
   end
+
+  test do
+    assert_predicate share/"sgml/X11", :directory?
+  end
 end

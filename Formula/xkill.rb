@@ -29,4 +29,8 @@ class Xkill < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xkill", :executable?
+  end
 end

@@ -29,4 +29,8 @@ class Xkbevd < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xkbevd", :executable?
+  end
 end

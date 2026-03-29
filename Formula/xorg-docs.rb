@@ -45,4 +45,8 @@ class XorgDocs < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate share/"doc/xorg-docs", :directory?
+  end
 end

@@ -29,4 +29,8 @@ class XorgCfFiles < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate lib/"X11/config", :directory?
+  end
 end

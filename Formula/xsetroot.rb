@@ -32,4 +32,8 @@ class Xsetroot < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xsetroot", :executable?
+  end
 end

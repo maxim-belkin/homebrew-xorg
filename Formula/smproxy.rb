@@ -32,4 +32,8 @@ class Smproxy < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"smproxy", :executable?
+  end
 end

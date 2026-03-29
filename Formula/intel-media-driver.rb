@@ -31,4 +31,8 @@ class IntelMediaDriver < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
+
+  test do
+    assert_predicate lib/"dri", :directory?
+  end
 end

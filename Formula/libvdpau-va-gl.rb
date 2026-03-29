@@ -28,4 +28,8 @@ class LibvdpauVaGl < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
+
+  test do
+    assert_predicate lib/"vdpau", :directory?
+  end
 end

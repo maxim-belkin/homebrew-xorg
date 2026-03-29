@@ -30,4 +30,8 @@ class Libxfontcache < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate lib/"libXfontcache.so", :exist?
+  end
 end

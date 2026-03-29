@@ -25,4 +25,8 @@ class Libxxf86misc < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate lib/"libXxf86misc.so", :exist?
+  end
 end

@@ -37,4 +37,8 @@ class LibvaUtils < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"vainfo", :executable?
+  end
 end

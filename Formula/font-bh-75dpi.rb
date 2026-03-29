@@ -39,4 +39,8 @@ class FontBh75dpi < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate share/"fonts/X11", :directory?
+  end
 end

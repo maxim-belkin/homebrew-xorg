@@ -28,4 +28,8 @@ class Xcmsdb < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xcmsdb", :executable?
+  end
 end

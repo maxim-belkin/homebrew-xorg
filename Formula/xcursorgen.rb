@@ -32,4 +32,8 @@ class Xcursorgen < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xcursorgen", :executable?
+  end
 end

@@ -30,4 +30,8 @@ class Iceauth < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"iceauth", :executable?
+  end
 end

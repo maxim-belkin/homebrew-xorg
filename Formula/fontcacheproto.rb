@@ -28,4 +28,8 @@ class Fontcacheproto < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate lib/"pkgconfig/fontcacheproto.pc", :exist?
+  end
 end

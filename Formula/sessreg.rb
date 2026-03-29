@@ -27,4 +27,8 @@ class Sessreg < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"sessreg", :executable?
+  end
 end

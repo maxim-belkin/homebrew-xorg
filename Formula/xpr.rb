@@ -29,4 +29,8 @@ class Xpr < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xpr", :executable?
+  end
 end

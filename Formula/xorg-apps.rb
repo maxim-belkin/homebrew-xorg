@@ -54,4 +54,8 @@ class XorgApps < Formula
     ohai "Xorg Applications have been installed!"
     prefix.install "README.md" => "xorg-apps.md"
   end
+
+  test do
+    assert_predicate prefix/"xorg-apps.md", :exist?
+  end
 end

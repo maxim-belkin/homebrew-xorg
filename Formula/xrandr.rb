@@ -31,4 +31,8 @@ class Xrandr < Formula
     system "make", "install"
     rm bin/"xkeystone"
   end
+
+  test do
+    assert_predicate bin/"xrandr", :executable?
+  end
 end

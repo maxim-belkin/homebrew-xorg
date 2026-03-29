@@ -30,4 +30,8 @@ class Xdriinfo < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xdriinfo", :executable?
+  end
 end

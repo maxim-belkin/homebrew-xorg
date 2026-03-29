@@ -30,4 +30,8 @@ class Xbacklight < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xbacklight", :executable?
+  end
 end

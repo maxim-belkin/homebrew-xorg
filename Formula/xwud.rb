@@ -28,4 +28,8 @@ class Xwud < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xwud", :executable?
+  end
 end

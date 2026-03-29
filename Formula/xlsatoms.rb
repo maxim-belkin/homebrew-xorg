@@ -28,4 +28,8 @@ class Xlsatoms < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"xlsatoms", :executable?
+  end
 end

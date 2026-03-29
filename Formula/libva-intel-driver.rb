@@ -36,4 +36,8 @@ class LibvaIntelDriver < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate lib/"dri/i965_drv_video.so", :exist?
+  end
 end

@@ -31,4 +31,8 @@ class Setxkbmap < Formula
     system "make"
     system "make", "install"
   end
+
+  test do
+    assert_predicate bin/"setxkbmap", :executable?
+  end
 end

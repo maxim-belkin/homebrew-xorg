@@ -17,4 +17,8 @@ class IntelGmmlib < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
+
+  test do
+    assert_predicate lib/"libigdgmm.so", :exist?
+  end
 end

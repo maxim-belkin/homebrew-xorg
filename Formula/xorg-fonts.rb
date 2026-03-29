@@ -60,4 +60,8 @@ class XorgFonts < Formula
     ohai "Xorg Fonts have been installed!"
     prefix.install "README.md" => "xorg-fonts.md"
   end
+
+  test do
+    assert_predicate prefix/"xorg-fonts.md", :exist?
+  end
 end
