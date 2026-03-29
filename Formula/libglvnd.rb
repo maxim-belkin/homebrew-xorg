@@ -1,10 +1,9 @@
 class Libglvnd < Formula
   desc "GL Vendor-Neutral Dispatch library"
   homepage "https://github.com/NVIDIA/libglvnd"
-  url "https://github.com/NVIDIA/libglvnd/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "fabf98e72e172a1402617f5daade4dd79c752a77ab1688e0c1a0ffc49605040f"
+  url "https://github.com/NVIDIA/libglvnd/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "073e7292788d4d3eeb45ea6c7bdcce9bfdb3b3eef8d7dbd47f2f30dce046ef98"
   license "MIT"
-  revision 2
   head "https://gitlab.freedesktop.org/glvnd/libglvnd.git"
 
   depends_on "libpthread-stubs" => :build
