@@ -1,8 +1,8 @@
 class IntelGmmlib < Formula
   desc "Intel Graphics Memory Management Library"
   homepage "https://github.com/intel/gmmlib"
-  url "https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-22.3.3.tar.gz"
-  sha256 "86651bd2803c9f0afd82471bec784e65d2b418dee315a053d22215eb2a679be7"
+  url "https://github.com/intel/gmmlib/archive/refs/tags/intel-gmmlib-22.10.0.tar.gz"
+  sha256 "893e3c5a24b408ac312a0318b70f38f427f297646e323f31e79d3a06a92c1543"
   license "Apache-2.0"
 
   bottle do
