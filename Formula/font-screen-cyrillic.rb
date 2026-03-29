@@ -8,8 +8,7 @@ class FontScreenCyrillic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c983146864430e9f82a2c5833ee5eb296cd931c71f8b5513714a4c8357e2fbc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8a48d7f527e48924f539c20a82dfb3330290207ddb8564c99a983175dbb94972"
   end
 
   keg_only "part of Xorg-fonts package"
