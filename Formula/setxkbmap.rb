@@ -2,8 +2,8 @@ class Setxkbmap < Formula
   desc "X.Org Applications: setxkbmap"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/setxkbmap-1.3.3.tar.gz"
-  sha256 "51ba28edf93a464a7444b53b154fd5e93dedd1e9bbcc85b636f4cf56986c4842"
+  url "https://www.x.org/pub/individual/app/setxkbmap-1.3.5.tar.gz"
+  sha256 "fe5948c40209b2ae35651968566cd09723865bf86a10a27b1e2ce3c6c543dd31"
   license "MIT"
 
   bottle do
