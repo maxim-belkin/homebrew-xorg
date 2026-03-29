@@ -4,7 +4,7 @@ class Libxxf86misc < Formula
   url "https://www.x.org/archive/individual/lib/libXxf86misc-1.0.4.tar.gz"
   sha256 "63a68b2fafd03236f9b0135de21976e9194d6d811ca2fd774c13a6b4be576676"
   license "MIT"
-  revision 1
+  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
