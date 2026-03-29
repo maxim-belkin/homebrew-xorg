@@ -23,7 +23,7 @@ class Libglvnd < Formula
       -Dasm=enabled
       -Dx11=enabled
       -Dglx=enabled
-      -Dtls=enabled
+      -Dtls=true
     ]
 
     system "meson", "setup", "build", *args
