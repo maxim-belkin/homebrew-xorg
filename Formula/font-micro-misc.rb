@@ -2,12 +2,9 @@ class FontMicroMisc < Formula
   desc "X.Org Fonts: font micro misc"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
-  url "https://www.x.org/pub/individual/font/font-micro-misc-1.0.3.tar.bz2"
-  mirror "https://xorg.freedesktop.org/archive/individual/font/font-micro-misc-1.0.3.tar.bz2"
-  mirror "https://ftp.x.org/archive/individual/font/font-micro-misc-1.0.3.tar.bz2"
-  sha256 "9a3381c10f32d9511f0ad4179df395914c50779103c16cddf7017f5220ed8db6"
+  url "https://www.x.org/pub/individual/font/font-micro-misc-1.0.4.tar.xz"
+  sha256 "2ee0b9d6bd7ae849aff1bd82efab44a1b6b368fbb5e11d12ff7f015a3df6f943"
   license "MIT"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
