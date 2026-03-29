@@ -1,8 +1,8 @@
 class XorgSgmlDoctools < Formula
   desc "X.Org SGML DocTools"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://www.x.org/archive/individual/doc/xorg-sgml-doctools-1.12.tar.gz"
-  sha256 "985a0329e6a6dadd6ad517f8d54f8766ab4b52bb8da7b07d02ec466bec444bdb"
+  url "https://www.x.org/archive/individual/doc/xorg-sgml-doctools-1.12.1.tar.gz"
+  sha256 "8de3406f96a02bc3ab51ff47ba1612d9a11fc25d2edcaa06caa2cb2420d7bae0"
   license "MIT"
 
   bottle do
