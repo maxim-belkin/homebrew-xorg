@@ -2,8 +2,8 @@ class Sessreg < Formula
   desc "X.Org Applications: sessreg"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/sessreg-1.1.3.tar.gz"
-  sha256 "6e3e917e881132a7a9ccb181ddd83fe08a99668892455d808c911ad38beea215"
+  url "https://www.x.org/pub/individual/app/sessreg-1.1.4.tar.gz"
+  sha256 "b4ddc9aca858a4a31e871b5e133d4f44317292a0c50683511e6795ecab5561a5"
   license "MIT"
 
   bottle do
