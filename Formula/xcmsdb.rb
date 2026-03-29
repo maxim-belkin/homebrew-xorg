@@ -2,9 +2,8 @@ class Xcmsdb < Formula
   desc "X.Org Applications: xcmsdb"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xcmsdb-1.0.6.tar.xz"
-  mirror "https://ftp.x.org/pub/individual/app/xcmsdb-1.0.6.tar.xz"
-  sha256 "3c77eec4537d5942bb0966973b787bfdaf7121f3125ffa81bb1c9708d4cf4f55"
+  url "https://www.x.org/pub/individual/app/xcmsdb-1.0.7.tar.xz"
+  sha256 "5ec4068e488187b05ea92ee1362c96b78a90f19ccc7a1844c5921d70626bbc38"
   license "MIT"
 
   bottle do
