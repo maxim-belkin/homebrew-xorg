@@ -6,6 +6,11 @@ class Libglvnd < Formula
   license "MIT"
   head "https://gitlab.freedesktop.org/glvnd/libglvnd.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 x86_64_linux: "0be2be6222a45e2779f0874648a244f9b8475f4b037fe3386b2d5cb89e42453b"
+  end
+
   depends_on "libpthread-stubs" => :build
   depends_on "libxext" => :build
   depends_on "meson" => :build
