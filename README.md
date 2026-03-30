@@ -70,19 +70,21 @@ All classic X11 bitmap and outline fonts, plus encodings and the `xorg-fonts` me
     * font-misc-cyrillic
     * font-misc-ethiopic
 
-### X.org Utilities (27)
+### X.org Utilities (31)
 
 Display, keyboard, and window management tools, plus the `xorg-apps` meta-package:
 
-    * iceauth          * xcursorgen        * xkill
-    * sessreg          * xdriinfo          * xlsatoms
-    * setxkbmap        * xev               * xmessage
-    * smproxy          * xgamma            * xorg-apps
-    * x11perf          * xhost             * xpr
-    * xbacklight       * xkbevd            * xrandr
-    * xcmsdb           * xkbutils          * xrefresh
-    * xcursor-themes   * xset              * xvinfo
-    * xsetroot         * xwd               * xwud
+    * iceauth          * xcursorgen        * xkbutils
+    * sessreg          * xdriinfo          * xkill
+    * setxkbmap        * xev               * xlsatoms
+    * smproxy          * xeyes             * xmessage
+    * x11perf          * xgamma            * xorg-apps
+    * xbacklight       * xhost             * xpr
+    * xcalc            * xkbevd            * xrandr
+    * xclipboard       * xrefresh          * xvinfo
+    * xcmsdb           * xset              * xwd
+    * xcompmgr         * xsetroot          * xwud
+    * xcursor-themes
 
 ### Libraries (10)
 
