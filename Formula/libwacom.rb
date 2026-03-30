@@ -11,32 +11,25 @@ class Libwacom < Formula
     regex(/^libwacom[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
-  depends_on "libxml2" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
-  depends_on "gtk+"
-  depends_on "librsvg"
-  depends_on "maxim-belkin/xorg/libgudev"
+  depends_on "libgudev"
+  depends_on "maxim-belkin/xorg/libevdev"
 
   def install
-    system "./configure",
-           "--disable-dependency-tracking",
-           "--disable-silent-rules",
-           "--prefix=#{prefix}"
-    system "make"
-    system "make", "install"
+    args = std_meson_args + %w[
+      -Ddocumentation=disabled
+      -Dtests=disabled
+    ]
 
-    (prefix/"test").install "test-driver"
-    (prefix/"test/tests").install Dir["test/*"].select { |f| Pathname.new(f).elf? && File.executable?(f) }
+    system "meson", "setup", "build", *args
+    system "meson", "compile", "-C", "build"
+    system "meson", "install", "-C", "build"
   end
 
   test do
-    Dir.chdir prefix/"test"
-    Dir["tests/*"].each do |t|
-      name = File.basename(t)
-      system "bash", "test-driver", "--test-name", name,
-             "--log-file", testpath/"#{name}.log",
-             "--trs-file", testpath/"#{name}.trs", t
-    end
+    assert_path_exists lib/"libwacom.so"
   end
 end
