@@ -1,8 +1,18 @@
-# Linuxbrew Xorg
+# Homebrew Xorg
 
 [![Actions Status](https://github.com/maxim-belkin/homebrew-xorg/workflows/Audit/badge.svg)](https://github.com/maxim-belkin/homebrew-xorg/actions)
 
-Additional [Xorg libraries][xorg-libs] for Homebrew on Linux.
+X.org libraries, fonts, and utilities for [Homebrew on Linux](https://docs.brew.sh/Homebrew-on-Linux).
+
+## Why use this tap?
+
+Homebrew/core provides essential X.org libraries (`libx11`, `libxcb`, `libxrandr`, etc.) but not the full X.org ecosystem. This tap fills the gaps:
+
+- **X11 bitmap fonts** -- the complete set of classic X11 fonts (Adobe, Bitstream, BH Lucida, international character sets). Needed by legacy X applications, terminal emulators, and remote X11 sessions that expect these fonts to be available.
+- **X11 utilities** -- tools like `xrandr`, `xev`, `xhost`, `xset`, `xbacklight`, and `setxkbmap` that aren't in homebrew/core. Essential for display configuration, keyboard mapping, and X server debugging.
+- **Intel VAAPI hardware video acceleration** -- `intel-media-driver` and `intel-gmmlib` for GPU-accelerated video encode/decode on Intel hardware.
+- **GL vendor-neutral dispatch** -- `libglvnd` provides the GPU-agnostic OpenGL dispatch layer used by modern Linux graphics stacks.
+- **Input device libraries** -- `libevdev`, `libwacom`, and `mtdev` for evdev input handling, Wacom tablet support, and multitouch protocol translation.
 
 ## How to use
 
@@ -12,50 +22,89 @@ Additional [Xorg libraries][xorg-libs] for Homebrew on Linux.
 brew tap maxim-belkin/xorg
 ```
 
-and install any library you want, for example:
+Install individual formulas:
 
 ```sh
 brew install maxim-belkin/xorg/xrandr
+brew install maxim-belkin/xorg/intel-media-driver
 ```
 
-## Provided formulae
+Or install everything in a category:
 
-Most popular Xorg formulae have been migrated to [Homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core).
-This tap now provides the following formulae:
-<!--
-( cd $(brew --repo maxim-belkin/xorg)/Formula; ls *.rb ) | sed 's/\([^.]\+\).rb/* \1/;' | sed 's|^|    |' | column -x -c 120 | expand
--->
+```sh
+brew install maxim-belkin/xorg/xorg-apps   # all X.org utilities
+brew install maxim-belkin/xorg/xorg-fonts   # all X.org fonts
+```
 
-    * encodings                             * font-misc-meltho                      * x11perf
-    * font-adobe-100dpi                     * font-misc-misc                        * xbacklight
-    * font-adobe-75dpi                      * font-mutt-misc                        * xcmsdb
-    * font-adobe-utopia-100dpi              * font-schumacher-misc                  * xcursor-themes
-    * font-adobe-utopia-75dpi               * font-screen-cyrillic                  * xcursorgen
-    * font-adobe-utopia-type1               * font-sony-misc                        * xdriinfo
-    * font-alias                            * font-sun-misc                         * xev
-    * font-arabic-misc                      * font-winitzki-cyrillic                * xgamma
-    * font-bh-100dpi                        * font-xfree86-type1                    * xhost
-    * font-bh-75dpi                         * fontcacheproto                        * xkbevd
-    * font-bh-lucidatypewriter-100dpi       * iceauth                               * xkbutils
-    * font-bh-lucidatypewriter-75dpi        * intel-gmmlib                          * xkill
-    * font-bh-ttf                           * intel-media-driver                    * xlsatoms
-    * font-bh-type1                         * libevdev                              * xmessage
-    * font-bitstream-100dpi                 * libglvnd                              * xorg-apps
-    * font-bitstream-75dpi                  * libomxil-bellagio                     * xorg-cf-files
-    * font-bitstream-type1                  * libsha1                               * xorg-docs
-    * font-cronyx-cyrillic                  * libva-intel-driver                    * xorg-fonts
-    * font-cursor-misc                      * libva-utils                           * xorg-sgml-doctools
-    * font-daewoo-misc                      * libvdpau-va-gl                        * xpr
-    * font-dec-misc                         * libwacom                              * xrandr
-    * font-ibm-type1                        * libxfontcache                         * xrefresh
-    * font-isas-misc                        * libxxf86misc                          * xset
-    * font-jis-misc                         * mtdev                                 * xsetroot
-    * font-micro-misc                       * sessreg                               * xvinfo
-    * font-misc-cyrillic                    * setxkbmap                             * xwd
-    * font-misc-ethiopic                    * smproxy                               * xwud
+## Provided formulas
+
+### X.org Fonts (36)
+
+All classic X11 bitmap and outline fonts, plus encodings and the `xorg-fonts` meta-package:
+
+    * encodings                             * font-misc-meltho
+    * font-adobe-100dpi                     * font-misc-misc
+    * font-adobe-75dpi                      * font-mutt-misc
+    * font-adobe-utopia-100dpi              * font-schumacher-misc
+    * font-adobe-utopia-75dpi               * font-screen-cyrillic
+    * font-adobe-utopia-type1               * font-sony-misc
+    * font-alias                            * font-sun-misc
+    * font-arabic-misc                      * font-winitzki-cyrillic
+    * font-bh-100dpi                        * font-xfree86-type1
+    * font-bh-75dpi                         * fontcacheproto
+    * font-bh-lucidatypewriter-100dpi       * xorg-fonts
+    * font-bh-lucidatypewriter-75dpi
+    * font-bh-ttf
+    * font-bh-type1
+    * font-bitstream-100dpi
+    * font-bitstream-75dpi
+    * font-bitstream-type1
+    * font-cronyx-cyrillic
+    * font-cursor-misc
+    * font-daewoo-misc
+    * font-dec-misc
+    * font-ibm-type1
+    * font-isas-misc
+    * font-jis-misc
+    * font-micro-misc
+    * font-misc-cyrillic
+    * font-misc-ethiopic
+
+### X.org Utilities (27)
+
+Display, keyboard, and window management tools, plus the `xorg-apps` meta-package:
+
+    * iceauth          * xcursorgen        * xkill
+    * sessreg          * xdriinfo          * xlsatoms
+    * setxkbmap        * xev               * xmessage
+    * smproxy          * xgamma            * xorg-apps
+    * x11perf          * xhost             * xpr
+    * xbacklight       * xkbevd            * xrandr
+    * xcmsdb           * xkbutils          * xrefresh
+    * xcursor-themes   * xset              * xvinfo
+    * xsetroot         * xwd               * xwud
+
+### Libraries (10)
+
+    * libevdev             * libvdpau-va-gl        * libxxf86misc
+    * libglvnd             * libwacom              * mtdev
+    * libomxil-bellagio    * libxfontcache
+    * libsha1              * libva-intel-driver
+
+### Intel GPU / Media (2)
+
+    * intel-gmmlib         * intel-media-driver
+
+### Build & Documentation Tools (3)
+
+    * xorg-cf-files        * xorg-docs             * xorg-sgml-doctools
+
+### Also available in homebrew/core
+
+Many X.org packages have been migrated to [homebrew/core](https://github.com/Homebrew/homebrew-core) and are available directly via `brew install` without this tap. These include: `libx11`, `libxcb`, `libxrandr`, `libxrender`, `libxext`, `libxfixes`, `libxft`, `libxi`, `libxinerama`, `libxmu`, `libxpm`, `libxt`, `libxv`, `xorgproto`, `xcb-proto`, `xcb-util`, `xauth`, `xdpyinfo`, `xinput`, `xkbcomp`, `xmodmap`, `xprop`, `xrdb`, `xwininfo`, `wayland`, and many more.
 
 ## How to contribute
 
-We accept all sorts of contributions -- bug fixes, new formulae, formulae updates, etc.
+Please follow the [general Homebrew contribution guidelines](https://github.com/Homebrew/brew/blob/master/CONTRIBUTING.md).
 
 [xorg-libs]: http://www.x.org/wiki/guide/client-ecosystem
