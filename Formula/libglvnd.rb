@@ -4,7 +4,7 @@ class Libglvnd < Formula
   url "https://github.com/NVIDIA/libglvnd/archive/refs/tags/v1.7.0.tar.gz"
   sha256 "073e7292788d4d3eeb45ea6c7bdcce9bfdb3b3eef8d7dbd47f2f30dce046ef98"
   license "MIT"
-  head "https://gitlab.freedesktop.org/glvnd/libglvnd.git"
+  head "https://gitlab.freedesktop.org/glvnd/libglvnd.git", branch: "master"
 
   depends_on "libpthread-stubs" => :build
   depends_on "libxext" => :build
