@@ -11,6 +11,11 @@ class Libwacom < Formula
     regex(/^libwacom[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 x86_64_linux: "309c17cfb629cd38799f04f96675f0ccb530b2ab90a9a1d5a918b84f618a961c"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
