@@ -5,6 +5,11 @@ class Xcompmgr < Formula
   sha256 "7824f709c4f22432eaea7542ec93384e5dd48f6fcb85c12ff82d721423b0b98f"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "351ebfedb1512f85234543e33b962b2ae16855d5dffbb7b3be5fcaee274030ea"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
