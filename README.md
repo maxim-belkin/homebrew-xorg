@@ -1,6 +1,6 @@
 # Homebrew Xorg
 
-[![Actions Status](https://github.com/maxim-belkin/homebrew-xorg/workflows/Audit/badge.svg)](https://github.com/maxim-belkin/homebrew-xorg/actions)
+[![Actions Status](https://github.com/maxim-belkin/homebrew-xorg/actions/workflows/tests.yml/badge.svg)](https://github.com/maxim-belkin/homebrew-xorg/actions/workflows/tests.yml)
 
 X.org libraries, fonts, and utilities for [Homebrew on Linux](https://docs.brew.sh/Homebrew-on-Linux).
 
