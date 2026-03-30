@@ -5,6 +5,11 @@ class Xcalc < Formula
   sha256 "86e157b6174678675a4a912995dccd0ff4e2ce32b01bdd6f91bfe93333324980"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4f8e0b727d6f74a632486ae9908b716451ea4aada8afbb55b071a45d90104c55"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
