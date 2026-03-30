@@ -5,6 +5,11 @@ class Xclipboard < Formula
   sha256 "8e47a4e18a88d47b14e8eb61a5f298687624a38f9decee9988d8b51a20514c45"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "72046406c67d394fb637ab0da2b319f3e722105f0f3705109e17be9e52cd80c2"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
