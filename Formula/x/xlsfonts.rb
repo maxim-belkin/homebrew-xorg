@@ -6,6 +6,11 @@ class Xlsfonts < Formula
   sha256 "807f909eace684b866fc63b3e962729c120822a6c96e051ff51cf350b3ffb6cd"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b1085126e36a904bc7179216e7f554aad03279d74dd8c4dac2b02894299e7b3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
