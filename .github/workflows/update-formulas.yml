@@ -1,0 +1,160 @@
+name: Check for formula updates
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+env:
+  HOMEBREW_DEVELOPER: 1
+  HOMEBREW_GITHUB_ACTIONS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+
+concurrency:
+  group: "update-formulas"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check-and-bump:
+    if: github.repository == 'maxim-belkin/homebrew-xorg'
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    env:
+      HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.BUMP_GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.BUMP_GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.BUMP_GITHUB_TOKEN }}
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Set up git
+        uses: Homebrew/actions/git-user-config@master
+
+      - name: Run livecheck
+        id: livecheck
+        run: |
+          brew livecheck --tap maxim-belkin/xorg --json --quiet \
+            > livecheck.json 2>livecheck_stderr.txt || true
+          OUTDATED_COUNT=$(jq '[.[] | select(.version.outdated == true)] | length' livecheck.json)
+          TOTAL_COUNT=$(jq 'length' livecheck.json)
+          echo "outdated_count=$OUTDATED_COUNT" >> "$GITHUB_OUTPUT"
+          echo "total_count=$TOTAL_COUNT" >> "$GITHUB_OUTPUT"
+          echo "Checked $TOTAL_COUNT formulas, $OUTDATED_COUNT outdated."
+
+      - name: Bump outdated formulas
+        id: bump
+        if: steps.livecheck.outputs.outdated_count != '0'
+        run: |
+          set -uo pipefail
+
+          OUTDATED=$(jq -r '.[] | select(.version.outdated == true) | .formula' livecheck.json)
+          CREATED_PRS=""
+          FAILED=""
+          SKIPPED=""
+
+          for FORMULA in $OUTDATED; do
+            SHORT_NAME="${FORMULA##*/}"
+            CURRENT_VER=$(jq -r --arg f "$FORMULA" '.[] | select(.formula == $f) | .version.current' livecheck.json)
+            LATEST_VER=$(jq -r --arg f "$FORMULA" '.[] | select(.formula == $f) | .version.latest' livecheck.json)
+
+            echo "::group::$SHORT_NAME ($CURRENT_VER -> $LATEST_VER)"
+
+            # Check for existing open PR
+            EXISTING_PR=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
+              --search "$SHORT_NAME $LATEST_VER in:title" \
+              --json number --jq '.[0].number // empty' 2>/dev/null || true)
+
+            if [ -n "$EXISTING_PR" ]; then
+              echo "PR #$EXISTING_PR already exists, skipping."
+              SKIPPED="$SKIPPED- $SHORT_NAME $CURRENT_VER → $LATEST_VER (PR #$EXISTING_PR exists)\n"
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Get current URL and construct new URL
+            CURRENT_URL=$(brew info --json=v2 "$FORMULA" | jq -r '.formulae[0].urls.stable.url')
+            NEW_URL=$(echo "$CURRENT_URL" | sed "s/$CURRENT_VER/$LATEST_VER/g")
+
+            # Probe for correct archive extension
+            BASE_URL=$(echo "$NEW_URL" | sed 's/\.tar\.\(xz\|bz2\|gz\)$//')
+            RESOLVED_URL=""
+
+            for EXT in tar.xz tar.bz2 tar.gz; do
+              CANDIDATE="${BASE_URL}.${EXT}"
+              HTTP_CODE=$(curl -sIL -o /dev/null -w "%{http_code}" "$CANDIDATE" 2>/dev/null || echo "000")
+              if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "302" ]; then
+                RESOLVED_URL="$CANDIDATE"
+                break
+              fi
+            done
+
+            if [ -z "$RESOLVED_URL" ]; then
+              echo "::warning::No valid download URL found for $SHORT_NAME $LATEST_VER"
+              FAILED="$FAILED- $SHORT_NAME $CURRENT_VER → $LATEST_VER (no valid download URL)\n"
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Download and compute SHA256
+            TMPFILE=$(mktemp)
+            if ! curl -fsSL "$RESOLVED_URL" -o "$TMPFILE"; then
+              echo "::warning::Download failed for $SHORT_NAME"
+              FAILED="$FAILED- $SHORT_NAME $CURRENT_VER → $LATEST_VER (download failed)\n"
+              rm -f "$TMPFILE"
+              echo "::endgroup::"
+              continue
+            fi
+            SHA256=$(sha256sum "$TMPFILE" | awk '{print $1}')
+            rm -f "$TMPFILE"
+
+            echo "URL: $RESOLVED_URL"
+            echo "SHA256: $SHA256"
+
+            # Create PR
+            if brew bump-formula-pr \
+                 --no-browse \
+                 --no-fork \
+                 --url "$RESOLVED_URL" \
+                 --sha256 "$SHA256" \
+                 "$FORMULA" 2>&1; then
+              CREATED_PRS="$CREATED_PRS- $SHORT_NAME $CURRENT_VER → $LATEST_VER\n"
+            else
+              echo "::warning::bump-formula-pr failed for $SHORT_NAME"
+              FAILED="$FAILED- $SHORT_NAME $CURRENT_VER → $LATEST_VER (bump-formula-pr failed)\n"
+            fi
+
+            echo "::endgroup::"
+          done
+
+          # Write summary
+          {
+            echo "## Formula Update Check"
+            echo ""
+            if [ -n "$CREATED_PRS" ]; then
+              echo "### PRs Created"
+              echo -e "$CREATED_PRS"
+            fi
+            if [ -n "$SKIPPED" ]; then
+              echo "### Skipped (PR already exists)"
+              echo -e "$SKIPPED"
+            fi
+            if [ -n "$FAILED" ]; then
+              echo "### Failed"
+              echo -e "$FAILED"
+            fi
+          } > summary.md
+
+      - name: Post summary
+        if: always()
+        run: |
+          if [ -f summary.md ]; then
+            cat summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## Formula Update Check" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Checked ${{ steps.livecheck.outputs.total_count }} formulas. None outdated." >> "$GITHUB_STEP_SUMMARY"
+          fi
