@@ -9,6 +9,7 @@ class Xload < Formula
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
+  depends_on "libx11"
   depends_on "libxaw"
   depends_on "libxext"
   depends_on "libxmu"
