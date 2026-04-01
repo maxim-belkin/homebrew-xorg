@@ -6,6 +6,11 @@ class Xmag < Formula
   sha256 "326d3c583d795bb53ac609d144e7f7fb1499baba7eaec14b8e6cd232ea069532"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4c8437be267cc5bb2931a67474d675aa2d8bf23946614bb62b605800cba0b63"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
