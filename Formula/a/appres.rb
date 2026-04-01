@@ -6,6 +6,11 @@ class Appres < Formula
   sha256 "1114b189239fd87a8d1db433edcb4486346d29912132b91eaeee5667f13b819f"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/maxim-belkin/xorg"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "96d3e57bbdaf20f1691f9c3a9f3b9cbf12b8b11ee25530b48721ca52d7f3aea3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
