@@ -77,10 +77,10 @@ jobs:
 
             # Get current URL and construct new URL
             CURRENT_URL=$(brew info --json=v2 "$FORMULA" | jq -r '.formulae[0].urls.stable.url')
-            NEW_URL=$(echo "$CURRENT_URL" | sed "s/$CURRENT_VER/$LATEST_VER/g")
+            NEW_URL="${CURRENT_URL//$CURRENT_VER/$LATEST_VER}"
 
             # Probe for correct archive extension
-            BASE_URL=$(echo "$NEW_URL" | sed 's/\.tar\.\(xz\|bz2\|gz\)$//')
+            BASE_URL="${NEW_URL%.tar.*}"
             RESOLVED_URL=""
 
             for EXT in tar.xz tar.bz2 tar.gz; do
@@ -150,11 +150,15 @@ jobs:
 
       - name: Post summary
         if: always()
+        env:
+          TOTAL_COUNT: ${{ steps.livecheck.outputs.total_count }}
         run: |
           if [ -f summary.md ]; then
             cat summary.md >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "## Formula Update Check" >> "$GITHUB_STEP_SUMMARY"
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "Checked ${{ steps.livecheck.outputs.total_count }} formulas. None outdated." >> "$GITHUB_STEP_SUMMARY"
+            {
+              echo "## Formula Update Check"
+              echo ""
+              echo "Checked $TOTAL_COUNT formulas. None outdated."
+            } >> "$GITHUB_STEP_SUMMARY"
           fi
