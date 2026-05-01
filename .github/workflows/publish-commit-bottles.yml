@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Post comment once started
-        uses: Homebrew/actions/post-comment@master
+        uses: Homebrew/actions/post-comment@main
         with:
           token: ${{ github.token }}
           issue: ${{ github.event.pull_request.number }}
@@ -19,10 +19,10 @@ jobs:
           bot: BrewTestBot
 
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Set up git
-        uses: Homebrew/actions/git-user-config@master
+        uses: Homebrew/actions/git-user-config@main
 
       - name: Pull bottles
         env:
@@ -35,14 +35,14 @@ jobs:
           brew pr-pull --debug --tap="$GITHUB_REPOSITORY" --root-url="https://ghcr.io/v2/maxim-belkin/xorg" "$PULL_REQUEST"
 
       - name: Push commits
-        uses: Homebrew/actions/git-try-push@master
+        uses: Homebrew/actions/git-try-push@main
         with:
           token: ${{ github.token }}
           branch: main
 
       - name: Post comment on failure
         if: ${{!success()}}
-        uses: Homebrew/actions/post-comment@master
+        uses: Homebrew/actions/post-comment@main
         with:
           token: ${{ github.token }}
           issue: ${{ github.event.pull_request.number }}

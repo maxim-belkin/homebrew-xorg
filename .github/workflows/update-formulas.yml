@@ -32,10 +32,10 @@ jobs:
       GH_TOKEN: ${{ secrets.BUMP_GITHUB_TOKEN }}
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Set up git
-        uses: Homebrew/actions/git-user-config@master
+        uses: Homebrew/actions/git-user-config@main
 
       - name: Run livecheck
         id: livecheck

@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - run: brew test-bot --only-tap-syntax
 
@@ -53,7 +53,7 @@ jobs:
 
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - run: brew test-bot --only-cleanup-before
 
@@ -74,7 +74,7 @@ jobs:
 
       - name: Failures summary for brew test-bot --only-formulae
         if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
+        uses: Homebrew/actions/failures-summary-and-bottle-result@main
         with:
           workdir: /github/home
           result_path: bottles/steps_output.txt
@@ -82,7 +82,7 @@ jobs:
 
       - name: Output brew linkage result
         if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
+        uses: Homebrew/actions/failures-summary-and-bottle-result@main
         with:
           workdir: /github/home
           result_path: bottles/linkage_output.txt
@@ -91,7 +91,7 @@ jobs:
 
       - name: Output brew bottle result
         if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
+        uses: Homebrew/actions/failures-summary-and-bottle-result@main
         with:
           workdir: /github/home
           result_path: bottles/bottle_output.txt
