@@ -13,7 +13,7 @@ class IntelMediaDriver < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dea303e002e6574c15427b239664d206a9c7dc3a6e19864d0e2503bca7d48a81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0053c892de651b9b91dae3a53b69c435a78656e14402449df5939fd73103d92b"
   end
 
   depends_on "cmake" => :build
