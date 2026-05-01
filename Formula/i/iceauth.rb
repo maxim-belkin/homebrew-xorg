@@ -2,8 +2,8 @@ class Iceauth < Formula
   desc "X.Org Applications: iceauth"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/iceauth-1.0.10.tar.gz"
-  sha256 "f17f373c6e7bfef9cfa4c688f165dfebec7642ad7c6304c5bb3c9bc2bfcde747"
+  url "https://www.x.org/pub/individual/app/iceauth-1.0.11.tar.xz"
+  sha256 "9d633cf0d4d1d98e3ef02d18660372958b60a67016e8a72cd04093a8d8f8d4e9"
   license "MIT"
 
   bottle do
