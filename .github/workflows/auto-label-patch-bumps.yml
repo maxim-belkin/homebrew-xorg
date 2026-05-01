@@ -1,0 +1,106 @@
+name: Auto-label patch bumps
+
+on:
+  workflow_run:
+    workflows: ["GitHub Actions CI"]
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+  label:
+    if: |
+      github.repository == 'maxim-belkin/homebrew-xorg' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label patch bumps
+        env:
+          GH_TOKEN: ${{ secrets.BUMP_GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBERS: ${{ toJson(github.event.workflow_run.pull_requests.*.number) }}
+        run: |
+          set -uo pipefail
+
+          PR_LIST=$(echo "$PR_NUMBERS" | jq -r '.[]?')
+          if [ -z "$PR_LIST" ]; then
+            echo "No associated PRs."
+            exit 0
+          fi
+
+          for PR_NUMBER in $PR_LIST; do
+            echo "::group::PR #$PR_NUMBER"
+
+            PR_DATA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json title,baseRefName,labels)
+            PR_TITLE=$(echo "$PR_DATA" | jq -r .title)
+            BASE_REF=$(echo "$PR_DATA" | jq -r .baseRefName)
+            HAS_LABEL=$(echo "$PR_DATA" | jq -r '.labels[] | select(.name == "CI-merge") | .name')
+
+            if [ -n "$HAS_LABEL" ]; then
+              echo "Already has CI-merge label."
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Match bump-formula-pr title pattern: "<name> <version>"
+            if [[ ! "$PR_TITLE" =~ ^([a-z][a-z0-9_-]*)[[:space:]]+([0-9]+(\.[0-9]+)+)$ ]]; then
+              echo "Title '$PR_TITLE' is not a bump-formula-pr pattern, skipping."
+              echo "::endgroup::"
+              continue
+            fi
+
+            NEW_VERSION="${BASH_REMATCH[2]}"
+
+            # Find the changed Formula file
+            FORMULA_FILE=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json files --jq '.files[].path' | grep '^Formula/' | head -1)
+            if [ -z "$FORMULA_FILE" ]; then
+              echo "No Formula file changed, skipping."
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Get old version from the formula on the base branch
+            OLD_CONTENT=$(gh api "repos/$REPO/contents/$FORMULA_FILE?ref=$BASE_REF" --jq .content | base64 -d)
+            OLD_URL=$(echo "$OLD_CONTENT" | grep -oE 'url "[^"]+"' | head -1 | sed 's/url "//; s/"$//')
+            OLD_VERSION=$(echo "$OLD_URL" | grep -oE '[0-9]+(\.[0-9]+)+' | tail -1)
+
+            if [ -z "$OLD_VERSION" ]; then
+              echo "Couldn't determine old version, skipping."
+              echo "::endgroup::"
+              continue
+            fi
+
+            echo "Version change: $OLD_VERSION -> $NEW_VERSION"
+
+            # Check if it's a patch-level bump (all components except last are equal)
+            IFS='.' read -ra OLD_PARTS <<< "$OLD_VERSION"
+            IFS='.' read -ra NEW_PARTS <<< "$NEW_VERSION"
+
+            if [ "${#OLD_PARTS[@]}" -ne "${#NEW_PARTS[@]}" ]; then
+              echo "Different number of version components - not a patch bump."
+              echo "::endgroup::"
+              continue
+            fi
+
+            IS_PATCH=true
+            n=$((${#OLD_PARTS[@]} - 1))
+            for ((i=0; i<n; i++)); do
+              if [ "${OLD_PARTS[$i]}" != "${NEW_PARTS[$i]}" ]; then
+                IS_PATCH=false
+                break
+              fi
+            done
+
+            if [ "$IS_PATCH" = "true" ]; then
+              echo "Patch bump - adding CI-merge label."
+              gh api "repos/$REPO/issues/$PR_NUMBER/labels" \
+                --method POST -f "labels[]=CI-merge" || true
+            else
+              echo "Minor/major bump - leaving for manual review."
+            fi
+
+            echo "::endgroup::"
+          done
