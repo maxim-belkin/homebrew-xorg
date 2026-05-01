@@ -2,8 +2,8 @@ class Xrandr < Formula
   desc "X.Org Applications: xrandr"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xrandr-1.5.3.tar.xz"
-  sha256 "f8dd7566adb74147fab9964680b6bbadee87cf406a7fcff51718a5e6949b841c"
+  url "https://www.x.org/pub/individual/app/xrandr-1.5.4.tar.xz"
+  sha256 "2cafccb2aaf2491a4068676117a0d4f90ab307724b96fffc54cd1da953779400"
   license "MIT"
 
   bottle do
