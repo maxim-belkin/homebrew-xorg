@@ -8,7 +8,7 @@ class Iceauth < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3f97dde8ef84c693a45ba1f1c816f360ed45e039ca2fdfbc6fcc4719e5845022"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3ce76177f8c284fe1143ade0d0dadaf0ae3c65de04daf3bcb8e1aaf3ad4e7da8"
   end
 
   depends_on "pkg-config" => :build
