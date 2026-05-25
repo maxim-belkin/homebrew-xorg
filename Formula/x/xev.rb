@@ -2,8 +2,8 @@ class Xev < Formula
   desc "X.Org Applications: xev"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xev-1.2.6.tar.xz"
-  sha256 "61e1c5e008ac9973aca7cdddf36e9df7410e77083b030eb04f4dc737c51807d7"
+  url "https://www.x.org/pub/individual/app/xev-1.2.7.tar.xz"
+  sha256 "95167895924de58e34b1013b2b0c8476e90d0888c6c39e7ae9bc35e3a19dba04"
   license "MIT"
 
   bottle do
