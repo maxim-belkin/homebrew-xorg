@@ -11,9 +11,9 @@ class XcursorThemes < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1a11cc2cec5964e9e9f8822cb3f2846419f01fa55d66a67504477d6c05b1d40e"
   end
 
-  depends_on "maxim-belkin/xorg/xcursorgen" => :build
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
+  depends_on "xcursorgen" => :build
   depends_on "libxcursor"
 
   def install
