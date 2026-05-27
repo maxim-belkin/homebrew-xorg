@@ -20,8 +20,8 @@ class Libwacom < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
+  depends_on "libevdev"
   depends_on "libgudev"
-  depends_on "maxim-belkin/xorg/libevdev"
 
   def install
     args = std_meson_args + %w[

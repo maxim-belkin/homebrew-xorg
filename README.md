@@ -12,7 +12,7 @@ Homebrew/core provides essential X.org libraries (`libx11`, `libxcb`, `libxrandr
 - **X11 utilities** -- tools like `xrandr`, `xev`, `xhost`, `xset`, `xbacklight`, and `setxkbmap` that aren't in homebrew/core. Essential for display configuration, keyboard mapping, and X server debugging.
 - **Intel VAAPI hardware video acceleration** -- `intel-media-driver` and `intel-gmmlib` for GPU-accelerated video encode/decode on Intel hardware.
 - **GL vendor-neutral dispatch** -- `libglvnd` provides the GPU-agnostic OpenGL dispatch layer used by modern Linux graphics stacks.
-- **Input device libraries** -- `libevdev`, `libwacom`, and `mtdev` for evdev input handling, Wacom tablet support, and multitouch protocol translation.
+- **Input device libraries** -- `libwacom` and `mtdev` for Wacom tablet support and multitouch protocol translation. (`libevdev` for evdev input handling is available from homebrew/core.)
 
 ## How to use
 
@@ -70,28 +70,27 @@ All classic X11 bitmap and outline fonts, plus encodings and the `xorg-fonts` me
     * font-misc-cyrillic
     * font-misc-ethiopic
 
-### X.org Utilities (31)
+### X.org Utilities (29)
 
 Display, keyboard, and window management tools, plus the `xorg-apps` meta-package:
 
-    * iceauth          * xcursorgen        * xkbutils
-    * sessreg          * xdriinfo          * xkill
-    * setxkbmap        * xev               * xlsatoms
-    * smproxy          * xeyes             * xmessage
-    * x11perf          * xgamma            * xorg-apps
-    * xbacklight       * xhost             * xpr
-    * xcalc            * xkbevd            * xrandr
-    * xclipboard       * xrefresh          * xvinfo
-    * xcmsdb           * xset              * xwd
-    * xcompmgr         * xsetroot          * xwud
-    * xcursor-themes
+    * iceauth          * xcursor-themes    * xorg-apps
+    * sessreg          * xdriinfo          * xpr
+    * setxkbmap        * xev               * xrandr
+    * smproxy          * xgamma            * xrefresh
+    * x11perf          * xhost             * xset
+    * xbacklight       * xkbevd            * xsetroot
+    * xcalc            * xkbutils          * xvinfo
+    * xclipboard       * xkill             * xwd
+    * xcmsdb           * xlsatoms          * xwud
+    * xcompmgr         * xmessage
 
-### Libraries (10)
+### Libraries (9)
 
-    * libevdev             * libvdpau-va-gl        * libxxf86misc
-    * libglvnd             * libwacom              * mtdev
-    * libomxil-bellagio    * libxfontcache
-    * libsha1              * libva-intel-driver
+    * libglvnd             * libvdpau-va-gl        * libxxf86misc
+    * libomxil-bellagio    * libwacom              * mtdev
+    * libsha1              * libxfontcache
+    * libva-intel-driver
 
 ### Intel GPU / Media (2)
 
@@ -103,7 +102,16 @@ Display, keyboard, and window management tools, plus the `xorg-apps` meta-packag
 
 ### Also available in homebrew/core
 
-Many X.org packages have been migrated to [homebrew/core](https://github.com/Homebrew/homebrew-core) and are available directly via `brew install` without this tap. These include: `libx11`, `libxcb`, `libxrandr`, `libxrender`, `libxext`, `libxfixes`, `libxft`, `libxi`, `libxinerama`, `libxmu`, `libxpm`, `libxt`, `libxv`, `xorgproto`, `xcb-proto`, `xcb-util`, `xauth`, `xdpyinfo`, `xinput`, `xkbcomp`, `xmodmap`, `xprop`, `xrdb`, `xwininfo`, `wayland`, and many more.
+Many X.org packages have been migrated to [homebrew/core](https://github.com/Homebrew/homebrew-core) and are available directly via `brew install` without this tap. These include: `libevdev`, `libx11`, `libxcb`, `libxrandr`, `libxrender`, `libxext`, `libxfixes`, `libxft`, `libxi`, `libxinerama`, `libxmu`, `libxpm`, `libxt`, `libxv`, `xorgproto`, `xcb-proto`, `xcb-util`, `xauth`, `xcursorgen`, `xdpyinfo`, `xeyes`, `xinput`, `xkbcomp`, `xmodmap`, `xprop`, `xrdb`, `xwininfo`, `wayland`, and many more.
+
+### Migrating from a tap-installed version
+
+`libevdev`, `xcursorgen`, and `xeyes` were previously provided by this tap but are now in homebrew/core. To switch:
+
+```sh
+brew uninstall maxim-belkin/xorg/libevdev maxim-belkin/xorg/xcursorgen maxim-belkin/xorg/xeyes
+brew install libevdev xcursorgen xeyes
+```
 
 ## How to contribute
 
