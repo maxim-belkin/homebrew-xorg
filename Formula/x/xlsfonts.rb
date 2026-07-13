@@ -2,8 +2,8 @@ class Xlsfonts < Formula
   desc "X.Org Applications: xlsfonts"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xlsfonts-1.0.8.tar.xz"
-  sha256 "807f909eace684b866fc63b3e962729c120822a6c96e051ff51cf350b3ffb6cd"
+  url "https://www.x.org/pub/individual/app/xlsfonts-1.0.9.tar.xz"
+  sha256 "a6a2e291801458d92510263b175d16f98024dc3816ebddbde79b5009f6c3b065"
   license "MIT"
 
   bottle do
