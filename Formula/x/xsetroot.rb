@@ -2,9 +2,8 @@ class Xsetroot < Formula
   desc "X.Org Applications: xsetroot"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xsetroot-1.1.3.tar.gz"
-  mirror "https://ftp.x.org/pub/individual/app/xsetroot-1.1.3.tar.gz"
-  sha256 "80dbb0d02807e89294a042298b8a62f9aa0c3a94d89244ccbc35e4cf80fcaaba"
+  url "https://www.x.org/pub/individual/app/xsetroot-1.1.4.tar.xz"
+  sha256 "1315a3f7e9abe06357363b93461e272601f67225ce0bc075c430cce35073362b"
   license "MIT"
 
   bottle do
