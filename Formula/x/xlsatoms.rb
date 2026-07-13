@@ -2,9 +2,8 @@ class Xlsatoms < Formula
   desc "X.Org Applications: xlsatoms"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xlsatoms-1.1.4.tar.gz"
-  mirror "https://ftp.x.org/pub/individual/app/xlsatoms-1.1.4.tar.gz"
-  sha256 "e3b4dce0e6bf3b60bc308ed184d2dc201ea4af6ce03f0126aa303ccd1ccb1237"
+  url "https://www.x.org/pub/individual/app/xlsatoms-1.1.5.tar.xz"
+  sha256 "9ac9400328fbeffe15c9d94a90dedb90d09dcaa9d51482efabc55b33a736e317"
   license "MIT"
 
   bottle do
