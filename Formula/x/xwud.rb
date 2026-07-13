@@ -2,8 +2,8 @@ class Xwud < Formula
   desc "X.Org Applications: xwud"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xwud-1.0.7.tar.gz"
-  sha256 "371df65cea6b0ca281f9944337b82bb3bcee624618548e7b7077c2e32574c3e0"
+  url "https://www.x.org/pub/individual/app/xwud-1.0.8.tar.xz"
+  sha256 "2e282648c34018fd870052b8d814ea4d35ad9fdb9bcfc8bdc5a06822c0f86e99"
   license "MIT"
 
   bottle do
