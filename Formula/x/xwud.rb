@@ -8,7 +8,7 @@ class Xwud < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "58f3018ac08a0d091e12665a5f8ef94ef69c99e27ec6bed69f30290ccbbd85fc"
+    sha256 cellar: :any, x86_64_linux: "612ca191bd521c14315700f27e13e7543283392f922050eeb096eed30c81451b"
   end
 
   depends_on "pkg-config" => :build
