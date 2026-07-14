@@ -8,7 +8,7 @@ class Xvinfo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c51123ebc643db4e1d9c487e34b00e97372ff723d5d4fd6780fd8707090e3f8d"
+    sha256 cellar: :any, x86_64_linux: "c870cbe4109a0385416ccd7f2ed692b6ff1dea48caf80f4d7fd6c18ef2d43b26"
   end
 
   depends_on "pkg-config" => :build
