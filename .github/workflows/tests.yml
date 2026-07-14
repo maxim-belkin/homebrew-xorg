@@ -24,7 +24,7 @@ jobs:
     if: github.repository == 'maxim-belkin/homebrew-xorg'
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/homebrew/ubuntu24.04:master
+      image: ghcr.io/homebrew/ubuntu24.04:latest
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -37,7 +37,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/homebrew/ubuntu24.04:master
+      image: ghcr.io/homebrew/ubuntu24.04:latest
       options: --user=linuxbrew
     defaults:
       run:
