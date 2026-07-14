@@ -8,7 +8,7 @@ class Xlsfonts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b1085126e36a904bc7179216e7f554aad03279d74dd8c4dac2b02894299e7b3"
+    sha256 cellar: :any, x86_64_linux: "df7f87cf4e21e913e174a415cf2356a5af3537ca3226ee893e6471be3d3ceb01"
   end
 
   depends_on "pkg-config" => :build
