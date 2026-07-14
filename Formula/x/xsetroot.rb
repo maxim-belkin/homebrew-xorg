@@ -15,6 +15,7 @@ class Xsetroot < Formula
   depends_on "pkg-config" => :build
   depends_on "util-macros" => :build
   depends_on "xbitmaps" => :build
+  depends_on "libx11"
   depends_on "libxcursor"
   depends_on "libxmu"
 
