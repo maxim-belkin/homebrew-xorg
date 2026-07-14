@@ -8,7 +8,7 @@ class Xkbutils < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "428c85434cd95fa7e63b8bfbc5dae3adcc1691c847d0a3c490b90ec3d04f371a"
+    sha256 cellar: :any, x86_64_linux: "5731818c83394fbb227173ca8215af872bf949e06f33b7718dce33302686b0b9"
   end
 
   depends_on "pkg-config" => :build
