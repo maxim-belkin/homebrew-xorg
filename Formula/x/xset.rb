@@ -8,7 +8,7 @@ class Xset < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "51ce9f57cef64bff437e1a05ca5a316fa62374b4b3c204b5e75835bdf4def914"
+    sha256 cellar: :any, x86_64_linux: "b6c9afe4938e04f0523693756d1b4a89796c9a177a287902ad384693cce0c1f5"
   end
 
   depends_on "pkg-config" => :build
