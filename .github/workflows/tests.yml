@@ -22,9 +22,9 @@ permissions:
 jobs:
   tap_syntax:
     if: github.repository == 'maxim-belkin/homebrew-xorg'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:master
+      image: ghcr.io/homebrew/ubuntu24.04:latest
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -37,7 +37,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:master
+      image: ghcr.io/homebrew/ubuntu24.04:latest
       options: --user=linuxbrew
     defaults:
       run:
@@ -70,8 +70,7 @@ jobs:
           brew test-bot \
             --only-formulae \
             --tap=maxim-belkin/xorg \
-            --root-url="https://ghcr.io/v2/maxim-belkin/xorg" \
-            --skip-recursive-dependents
+            --root-url="https://ghcr.io/v2/maxim-belkin/xorg"
 
       - name: Failures summary for brew test-bot --only-formulae
         if: always()
@@ -103,7 +102,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: logs-ubuntu-22.04
+          name: logs-ubuntu-24.04
           path: /github/home/.cache/Homebrew/Logs
 
       - name: Delete logs and home
@@ -130,7 +129,7 @@ jobs:
         if: always() && steps.bottles.outputs.failures > 0
         uses: actions/upload-artifact@v7
         with:
-          name: bottles-ubuntu-22.04
+          name: bottles-ubuntu-24.04
           path: ~/bottles/failed
 
       # Must be run before the `Upload bottles` step so that failed
