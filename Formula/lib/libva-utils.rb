@@ -12,7 +12,7 @@ class LibvaUtils < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "48ca5de35eb61600992b3a2b3ae393499c9b0975dd4854702a263e977ed2b9b0"
+    sha256 cellar: :any, x86_64_linux: "330ccf409314d3c534a125cadf8d484b5b5dc80b68288f575f2f656e9a50b618"
   end
 
   depends_on "pkg-config" => :build
