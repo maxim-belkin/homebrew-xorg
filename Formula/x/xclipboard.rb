@@ -7,7 +7,7 @@ class Xclipboard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "72046406c67d394fb637ab0da2b319f3e722105f0f3705109e17be9e52cd80c2"
+    sha256 cellar: :any, x86_64_linux: "fea840ffa004da6faf393d7b09efec13987c317c904c24a9d7b1c2b2596a15bd"
   end
 
   depends_on "pkg-config" => :build
