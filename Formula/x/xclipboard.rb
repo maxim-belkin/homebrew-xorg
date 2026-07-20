@@ -1,8 +1,8 @@
 class Xclipboard < Formula
   desc "Clipboard manager for X11"
   homepage "https://www.x.org/"
-  url "https://www.x.org/pub/individual/app/xclipboard-1.1.5.tar.xz"
-  sha256 "8e47a4e18a88d47b14e8eb61a5f298687624a38f9decee9988d8b51a20514c45"
+  url "https://www.x.org/pub/individual/app/xclipboard-1.1.6.tar.xz"
+  sha256 "d7c7a74ed0a4c8983b7dd47301a91c3da48e1027e9338705cad5be8d15c0d1f1"
   license "MIT"
 
   bottle do
