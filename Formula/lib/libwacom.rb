@@ -13,7 +13,7 @@ class Libwacom < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 x86_64_linux: "78f16c5d1f9d5dffa5cf54abbd40999143502154531439c687e7fa898c8505f9"
+    sha256 x86_64_linux: "e7b94d9373fae7c7f6bd8ac14e13089dd05312a6c67b8e2b4c6882229e0a4eef"
   end
 
   depends_on "meson" => :build
