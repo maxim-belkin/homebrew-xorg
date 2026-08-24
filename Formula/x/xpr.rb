@@ -2,8 +2,8 @@ class Xpr < Formula
   desc "X.Org Applications: xpr"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xpr-1.2.0.tar.gz"
-  sha256 "4c37dd062c8f61618ed5fad7be907d7f9b219c2c91aa9a312f4ff4cc3494c476"
+  url "https://www.x.org/pub/individual/app/xpr-1.2.1.tar.xz"
+  sha256 "0a5b947cd5e3990c9fcd04fdf92603241de4a55a29b89d4e8a0e473320b778ba"
   license "MIT"
 
   bottle do
