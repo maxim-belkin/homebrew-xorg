@@ -8,7 +8,7 @@ class Xpr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6d2b4ee2167876910540ac3cbcf1cf4bb5a2fabc22a86acee09c0fcf239f4743"
+    sha256 cellar: :any, x86_64_linux: "41f90b9d2ed4dc21668f5cced70a3fe714252053b500e3516d0d7731e74d605d"
   end
 
   depends_on "pkg-config" => :build
