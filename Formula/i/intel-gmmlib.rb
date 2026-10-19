@@ -7,7 +7,7 @@ class IntelGmmlib < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any, x86_64_linux: "5eff9970f5a69c78e110ba67f83847cfbb09dc1f1e7a5b63d9a3754287737309"
+    sha256 cellar: :any, x86_64_linux: "19748d310641b4ff7bbe548883a032aa86dbe2ac1c211a173083d5674eb19766"
   end
 
   depends_on "cmake" => :build
