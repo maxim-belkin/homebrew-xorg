@@ -1,8 +1,9 @@
 class Libsha1 < Formula
   desc "Tiny library providing SHA1 implementation"
   homepage "https://raw.githubusercontent.com/dottedmag/libsha1/master/README"
-  url "https://github.com/dottedmag/libsha1.git"
-  version "0.3"
+  url "https://github.com/dottedmag/libsha1.git",
+      tag:      "0.3",
+      revision: "3f976bbb57d77f0c6964ecd5fbd3d99a2b9f65e5"
   license "MIT"
   revision 1
 
