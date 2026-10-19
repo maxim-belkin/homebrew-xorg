@@ -9,7 +9,6 @@ env:
   HOMEBREW_DEVELOPER: 1
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
-  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
 
 concurrency:
   group: "update-formulas"
@@ -43,6 +42,10 @@ jobs:
         run: |
           brew livecheck --tap maxim-belkin/xorg --json --quiet \
             > livecheck.json 2>livecheck_stderr.txt || true
+          if ! jq -e 'type == "array"' livecheck.json >/dev/null; then
+            cat livecheck_stderr.txt
+            exit 1
+          fi
           OUTDATED_COUNT=$(jq '[.[] | select(.version.outdated == true)] | length' livecheck.json)
           TOTAL_COUNT=$(jq 'length' livecheck.json)
           echo "outdated_count=$OUTDATED_COUNT" >> "$GITHUB_OUTPUT"
