@@ -1,8 +1,8 @@
 class IntelMediaDriver < Formula
   desc "Media driver for VAAPI"
   homepage "https://github.com/intel/media-driver"
-  url "https://github.com/intel/media-driver/archive/refs/tags/intel-media-26.1.5.tar.gz"
-  sha256 "c56899fecc003d047ce6afbdf471851512e0ceac66c2ef22ac36f1e6ce46170c"
+  url "https://github.com/intel/media-driver/archive/refs/tags/intel-media-26.3.5.tar.gz"
+  sha256 "76f41c06cefc91d57e0b7d366b7a91b8420ec77939326491795f9fb26afca7e7"
   license "Apache-2.0"
 
   livecheck do
@@ -17,9 +17,9 @@ class IntelMediaDriver < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "maxim-belkin/xorg/intel-gmmlib" => :build
   depends_on "pkg-config" => :build
   depends_on "libva"
+  depends_on "maxim-belkin/xorg/intel-gmmlib"
 
   def install
     # Fix cmake_minimum_required(<3.5) rejected by CMake >= 3.30
@@ -37,9 +37,10 @@ class IntelMediaDriver < Formula
                 "cmake_minimum_required(VERSION 3.5)"
     end
 
-    args = std_cmake_args + %w[
+    args = std_cmake_args + %W[
       -DBUILD_TYPE=Release
       -DUFO_MARCH=x86_64
+      -DLIBVA_DRIVERS_PATH=#{lib}/dri
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args
@@ -48,6 +49,6 @@ class IntelMediaDriver < Formula
   end
 
   test do
-    assert_predicate lib, :directory?
+    assert_path_exists lib/"dri/iHD_drv_video.so"
   end
 end
