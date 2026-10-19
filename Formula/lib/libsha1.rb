@@ -9,7 +9,8 @@ class Libsha1 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8dbf935d10dbdf1bb6bb6a03467b7d27636eebfaa707e05f4c3ec1e16d3acb55"
+    rebuild 1
+    sha256 cellar: :any, x86_64_linux: "92828d7c690aabb7d6c15c467c94d0978c4a1a997fd6bb052b3e7dd4febc88cc"
   end
 
   depends_on "autoconf" => :build
