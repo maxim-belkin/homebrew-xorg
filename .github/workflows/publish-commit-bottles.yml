@@ -40,6 +40,17 @@ jobs:
           token: ${{ github.token }}
           branch: main
 
+      - name: Delete PR branch
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.git.deleteRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `heads/${context.payload.pull_request.head.ref}`
+            })
+
       - name: Post comment on failure
         if: ${{!success()}}
         uses: Homebrew/actions/post-comment@main
