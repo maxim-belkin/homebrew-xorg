@@ -2,8 +2,8 @@ class Xmag < Formula
   desc "X.Org Applications: xmag"
   homepage "https://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url "https://www.x.org/pub/individual/app/xmag-1.0.8.tar.xz"
-  sha256 "326d3c583d795bb53ac609d144e7f7fb1499baba7eaec14b8e6cd232ea069532"
+  url "https://www.x.org/pub/individual/app/xmag-1.0.9.tar.xz"
+  sha256 "87d82c0c08c04ef1a9988705a3506295650777b26deae97ada96a1720982c024"
   license "MIT"
 
   bottle do
