@@ -8,7 +8,7 @@ class Xmag < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/maxim-belkin/xorg"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4c8437be267cc5bb2931a67474d675aa2d8bf23946614bb62b605800cba0b63"
+    sha256 cellar: :any, x86_64_linux: "7b476425ffb53e2c516973ef7f27b3348248466001d33a4dced9f474ceb8e146"
   end
 
   depends_on "pkg-config" => :build
